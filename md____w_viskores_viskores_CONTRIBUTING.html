@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">0.0</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
   </td>
  </tr>
@@ -173,7 +173,7 @@ Add a OpenMP 4+ task-based device adapter.
 
 Cc: @user1 @user2
 </pre></li>
-<li>The "**Assign to**", "**Milestone**", and "**Labels**" fields may be left blank.</li>
+<li>The "**Assignees**", "**Milestone**", and "**Labels**" fields may be left blank.</li>
 <li>Enable the "** Allow edits and access to secrets by maintainers.**" option, so that reviewers can modify the pull request. This allows reviewers to change minor style issues without overwhelming the author with change requests.</li>
 </ol>
 <ol type="1">
@@ -239,13 +239,13 @@ Push to GitHub</h2>
 </pre><p>Note: You need have the <code>-f</code> or <code>--force</code> to overwrite the destination as you are revising a previously pushed topic and have rewritten the topic history.</p>
 <h1><a class="anchor" id="autotoc_md27"></a>
 Merge a Topic</h1>
-<p>After a topic has been reviewed and approved in a GitHub pull request, authorized developers may accept the pull request and merge clicking the merge button.</p>
+<p>After a topic has been reviewed and approved in a GitHub pull request, authorized developers may accept the pull request and merge by clicking the merge button.</p>
 <h2><a class="anchor" id="autotoc_md28"></a>
 Merge Success</h2>
 <p>If the merge succeeds the topic will appear in the upstream repository <code>main</code> branch and the pull request will be closed automatically.</p>
 <h2><a class="anchor" id="autotoc_md29"></a>
 Merge Failure</h2>
-<p>If the merge fails (likely due to a conflict), a comment will be added describing the failure. In the case of a conflict, fetch the latest upstream history and rebase on it: </p><pre class="fragment">$ git fetch origin
+<p>If the merge fails (likely due to a conflict), fetch the latest upstream history and rebase on it: </p><pre class="fragment">$ git fetch origin
 $ git rebase origin/main
 </pre><p>Return to the <a href="#share-a-topic">above step</a> to share the revised topic.</p>
 <h1><a class="anchor" id="autotoc_md30"></a>
