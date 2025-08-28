@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -67,17 +67,11 @@ Inheritance diagram for viskores::worklet::MaskIndices:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:afdced19bdfda74aa1ee8fbeebc767d55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#afdced19bdfda74aa1ee8fbeebc767d55">ThreadToOutputMapType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;</td></tr>
+<tr class="memdesc:afdced19bdfda74aa1ee8fbeebc767d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used to map thread indices to output indices.  <a href="classviskores_1_1worklet_1_1MaskIndices.html#afdced19bdfda74aa1ee8fbeebc767d55">More...</a><br /></td></tr>
 <tr class="separator:afdced19bdfda74aa1ee8fbeebc767d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5da3362783a05d01f97ac100dac18b01"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
-<tr class="memitem:a5da3362783a05d01f97ac100dac18b01"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#a5da3362783a05d01f97ac100dac18b01">GetThreadRange</a> (RangeType) const</td></tr>
-<tr class="separator:a5da3362783a05d01f97ac100dac18b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1e8f08178db6b12373ce5b18c9f999"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
-<tr class="memitem:a2a1e8f08178db6b12373ce5b18c9f999"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#afdced19bdfda74aa1ee8fbeebc767d55">ThreadToOutputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#a2a1e8f08178db6b12373ce5b18c9f999">GetThreadToOutputMap</a> (RangeType) const</td></tr>
-<tr class="separator:a2a1e8f08178db6b12373ce5b18c9f999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ad01aff25969c7328906f4c5689930860"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#ad01aff25969c7328906f4c5689930860">MaskIndices</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;indexArray, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a>=<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterTagAny.html">viskores::cont::DeviceAdapterTagAny</a>())</td></tr>
 <tr class="memdesc:ad01aff25969c7328906f4c5689930860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct using an index array.  <a href="classviskores_1_1worklet_1_1MaskIndices.html#ad01aff25969c7328906f4c5689930860">More...</a><br /></td></tr>
 <tr class="separator:ad01aff25969c7328906f4c5689930860"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -85,6 +79,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc94100a4e894896ab284578ec27f06a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#abc94100a4e894896ab284578ec27f06a">MaskIndices</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, S &gt; &amp;indexArray, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> device=<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterTagAny.html">viskores::cont::DeviceAdapterTagAny</a>())</td></tr>
 <tr class="memdesc:abc94100a4e894896ab284578ec27f06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct using an index array.  <a href="classviskores_1_1worklet_1_1MaskIndices.html#abc94100a4e894896ab284578ec27f06a">More...</a><br /></td></tr>
 <tr class="separator:abc94100a4e894896ab284578ec27f06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84a924a168b85d46f8734dbb52d47c1"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
+<tr class="memitem:aa84a924a168b85d46f8734dbb52d47c1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#aa84a924a168b85d46f8734dbb52d47c1">GetThreadRange</a> (RangeType outputRange) const</td></tr>
+<tr class="memdesc:aa84a924a168b85d46f8734dbb52d47c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of threads for a given output domain size.  <a href="classviskores_1_1worklet_1_1MaskIndices.html#aa84a924a168b85d46f8734dbb52d47c1">More...</a><br /></td></tr>
+<tr class="separator:aa84a924a168b85d46f8734dbb52d47c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e94af0d7ded23cb419b283dcdae7ea"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
+<tr class="memitem:a67e94af0d7ded23cb419b283dcdae7ea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#afdced19bdfda74aa1ee8fbeebc767d55">ThreadToOutputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#a67e94af0d7ded23cb419b283dcdae7ea">GetThreadToOutputMap</a> (RangeType outputRange) const</td></tr>
+<tr class="memdesc:a67e94af0d7ded23cb419b283dcdae7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that maps thread indices to output indices.  <a href="classviskores_1_1worklet_1_1MaskIndices.html#a67e94af0d7ded23cb419b283dcdae7ea">More...</a><br /></td></tr>
+<tr class="separator:a67e94af0d7ded23cb419b283dcdae7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -107,6 +109,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type of array handle used to map thread indices to output indices. </p>
+<p>For the case of <code><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html" title="Mask using a given array of indices to include in the output.">MaskIndices</a></code>, this is a basic array handle. </p>
 
 </div>
 </div>
@@ -194,8 +199,8 @@ template&lt;typename T , typename S &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5da3362783a05d01f97ac100dac18b01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5da3362783a05d01f97ac100dac18b01">&#9670;&nbsp;</a></span>GetThreadRange()</h2>
+<a id="aa84a924a168b85d46f8734dbb52d47c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84a924a168b85d46f8734dbb52d47c1">&#9670;&nbsp;</a></span>GetThreadRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +214,7 @@ template&lt;typename RangeType &gt; </div>
           <td class="memname"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> viskores::worklet::MaskIndices::GetThreadRange </td>
           <td>(</td>
           <td class="paramtype">RangeType&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>outputRange</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -220,10 +225,19 @@ template&lt;typename RangeType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the number of threads for a given output domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputRange</td><td>The size of the full output domain (including masked entries). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of threads. </dd></dl>
+
 </div>
 </div>
-<a id="a2a1e8f08178db6b12373ce5b18c9f999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a1e8f08178db6b12373ce5b18c9f999">&#9670;&nbsp;</a></span>GetThreadToOutputMap()</h2>
+<a id="a67e94af0d7ded23cb419b283dcdae7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e94af0d7ded23cb419b283dcdae7ea">&#9670;&nbsp;</a></span>GetThreadToOutputMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +251,7 @@ template&lt;typename RangeType &gt; </div>
           <td class="memname"><a class="el" href="classviskores_1_1worklet_1_1MaskIndices.html#afdced19bdfda74aa1ee8fbeebc767d55">ThreadToOutputMapType</a> viskores::worklet::MaskIndices::GetThreadToOutputMap </td>
           <td>(</td>
           <td class="paramtype">RangeType&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>outputRange</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -247,6 +261,15 @@ template&lt;typename RangeType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provides the array that maps thread indices to output indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputRange</td><td>The size of the full output domain (including masked entries). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A basic array of indices that identifies which output each thread writes to. </dd></dl>
 
 </div>
 </div>

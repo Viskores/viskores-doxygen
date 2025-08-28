@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -544,56 +544,62 @@ $(function() {
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <a class="code" href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">viskoresdiy::load</a>(bb, divisor);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">viskoresdiy::load</a>(bb, buffer);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    obj = <a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html">viskores::cont::ArrayHandleStride&lt;T&gt;</a>(buffer, stride, offset, modulo, divisor);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    obj = <a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html">viskores::cont::ArrayHandleStride&lt;T&gt;</a>(buffer, numValues, stride, offset, modulo, divisor);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;};</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;} <span class="comment">// namespace diy</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="preprocessor">#ifndef viskores_cont_ArrayHandleStride_cxx</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;{</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="keyword">namespace </span>cont</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;{</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="keyword">namespace </span>internal</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;{</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;char, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int8, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt8, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int16, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt16, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Float32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Float64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;} <span class="comment">// namespace internal</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;char, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int8, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt8, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int16, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt16, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  ArrayHandle&lt;viskores::Float32, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  ArrayHandle&lt;viskores::Float64, StorageTagStride&gt;;</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;}</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="preprocessor">#endif //viskores_cont_ArrayHandleStride_cxx</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="preprocessor">#endif //viskores_cont_ArrayHandleStride_h</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keyword">struct </span>Serialization&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::ArrayHandle&lt;ValueType, viskores::cont::StorageTagStride&gt;&gt;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;  : Serialization&lt;viskores::cont::ArrayHandleStride&lt;ValueType&gt;&gt;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;{</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;};</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;} <span class="comment">// namespace diy</span></div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="preprocessor">#ifndef viskores_cont_ArrayHandleStride_cxx</span></div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;{</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="keyword">namespace </span>cont</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;{</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keyword">namespace </span>internal</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;{</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;char, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int8, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt8, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int16, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt16, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Int64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::UInt64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Float32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT Storage&lt;viskores::Float64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;} <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;char, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int8, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt8, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int16, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt16, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::Int64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT ArrayHandle&lt;viskores::UInt64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;  ArrayHandle&lt;viskores::Float32, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>VISKORES_CONT_TEMPLATE_EXPORT</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;  ArrayHandle&lt;viskores::Float64, StorageTagStride&gt;;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;}</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="preprocessor">#endif //viskores_cont_ArrayHandleStride_cxx</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<span class="preprocessor">#endif //viskores_cont_ArrayHandleStride_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceviskores_1_1exec_1_1arg_html_adf6b50840b8e37ff1ccab9ddc3280884"><div class="ttname"><a href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">viskores::exec::arg::load</a></div><div class="ttdeci">T load(const U &amp;u, viskores::Id v)</div><div class="ttdef"><b>Definition:</b> FetchTagArrayDirectIn.h:44</div></div>
 <div class="ttc" id="aclassviskores_1_1VecFlat_html"><div class="ttname"><a href="classviskores_1_1VecFlat.html">viskores::VecFlat</a></div><div class="ttdoc">Treat a Vec or Vec-like object as a flat Vec.</div><div class="ttdef"><b>Definition:</b> VecFlat.h:240</div></div>

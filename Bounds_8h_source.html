@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -256,7 +256,7 @@ $(function() {
 <div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="structviskores_1_1VecTraits_3_01viskores_1_1Bounds_01_4.html#a58b1620323ea72651dba244b6c8fb359">  288</a></span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structviskores_1_1Range.html">ComponentType</a>&amp; <a class="code" href="structviskores_1_1VecTraits_3_01viskores_1_1Bounds_01_4.html#a58b1620323ea72651dba244b6c8fb359">GetComponent</a>(<span class="keyword">const</span> <a class="code" href="structviskores_1_1Bounds.html">viskores::Bounds</a>&amp; bounds,</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                                           <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> component)</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) || (component &lt; 3));</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) &amp;&amp; (component &lt; 3));</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">switch</span> (component)</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      <span class="keywordflow">case</span> 0:</div>
@@ -273,7 +273,7 @@ $(function() {
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a></div>
 <div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="structviskores_1_1VecTraits_3_01viskores_1_1Bounds_01_4.html#aa98dbfe7b62d859241bfac0bdd16aaee">  306</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="structviskores_1_1Range.html">ComponentType</a>&amp; <a class="code" href="structviskores_1_1VecTraits_3_01viskores_1_1Bounds_01_4.html#aa98dbfe7b62d859241bfac0bdd16aaee">GetComponent</a>(<a class="code" href="structviskores_1_1Bounds.html">viskores::Bounds</a>&amp; bounds, <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> component)</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) || (component &lt; 3));</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) &amp;&amp; (component &lt; 3));</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">switch</span> (component)</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="keywordflow">case</span> 0:</div>
@@ -293,7 +293,7 @@ $(function() {
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                           <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> component,</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                           <span class="keyword">const</span> <a class="code" href="structviskores_1_1Range.html">ComponentType</a>&amp; value)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) || (component &lt; 3));</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a>((component &gt;= 0) &amp;&amp; (component &lt; 3));</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">switch</span> (component)</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      <span class="keywordflow">case</span> 0:</div>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -90,47 +90,57 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// `Swap`, it results in ADL being used, causing the templated functions `cub::Swap` and</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// `viskores::Swap` to conflict.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if defined(VISKORES_CUDA_VERSION_MAJOR) &amp;&amp; (VISKORES_CUDA_VERSION_MAJOR &gt;= 12)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">cub::Swap</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  T temp = a;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  a = b;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  b = temp;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#if VISKORES_CUDA_VERSION_MAJOR == 12</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">cub::Swap</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#elif VISKORES_CUDA_VERSION_MAJOR &gt;= 13</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  using ::cuda::std::swap;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  swap(a, b);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#elif defined(VISKORES_HIP)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;__host__ <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">using</span> std::swap;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  swap(a, b);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;__device__ <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  T temp = a;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  a = b;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  b = temp;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">   71</a></span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">using</span> std::swap;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  swap(a, b);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// end namespace viskores</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif //viskores_Swap_h</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  T temp = a;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  a = b;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  b = temp;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#elif defined(VISKORES_HIP)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;__host__ <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">using</span> std::swap;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  swap(a, b);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;__device__ <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  T temp = a;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  a = b;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  b = temp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">   81</a></span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">Swap</a>(T&amp; a, T&amp; b)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">using</span> std::swap;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  swap(a, b);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// end namespace viskores</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif //viskores_Swap_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aExportMacros_8h_html_a829aa71cc8ccbad49750154bff908211"><div class="ttname"><a href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a></div><div class="ttdeci">#define VISKORES_EXEC_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:60</div></div>
 <div class="ttc" id="aExportMacros_8h_html"><div class="ttname"><a href="ExportMacros_8h.html">ExportMacros.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
-<div class="ttc" id="anamespaceviskores_html_aa5d0f9b416cb037e39efdc9f775c0659"><div class="ttname"><a href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">viskores::Swap</a></div><div class="ttdeci">void Swap(T &amp;a, T &amp;b)</div><div class="ttdoc">Performs a swap operation. Safe to call from cuda code.</div><div class="ttdef"><b>Definition:</b> Swap.h:71</div></div>
+<div class="ttc" id="anamespaceviskores_html_aa5d0f9b416cb037e39efdc9f775c0659"><div class="ttname"><a href="namespaceviskores.html#aa5d0f9b416cb037e39efdc9f775c0659">viskores::Swap</a></div><div class="ttdeci">void Swap(T &amp;a, T &amp;b)</div><div class="ttdoc">Performs a swap operation. Safe to call from cuda code.</div><div class="ttdef"><b>Definition:</b> Swap.h:81</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

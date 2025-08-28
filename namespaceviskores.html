@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -398,6 +398,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1TypeTraits_3_01short_01_4.html">TypeTraits&lt; short &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1TypeTraits_3_01signed_01char_01_4.html">TypeTraits&lt; signed char &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1TypeTraits_3_01T_01_6_01_4.html">TypeTraits&lt; T &amp; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1TypeTraits_3_01unsigned_01char_01_4.html">TypeTraits&lt; unsigned char &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -958,7 +960,10 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faa6d63b7cb803929907e5e4ee0bfe6cdf7">ErrorCode::OperationOnEmptyCell</a>, 
 <a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faac5d5b264308294e19a0fd99e7ce70283">ErrorCode::CellNotFound</a>, 
-<a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faabfaef30f1c8011c5cefa38ae470fb7aa">ErrorCode::UnknownError</a>
+<a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faa29dba97e41283ac0cbcc07c33bc3287b">ErrorCode::InvalidNumberOfIndices</a>, 
+<a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faab4080bdf74febf04d578ff105cce9d3f">ErrorCode::Unsupported</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7faabfaef30f1c8011c5cefa38ae470fb7aa">ErrorCode::UnknownError</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a326828f704debd8ce9f6fa3970b1a7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies whether an operation was successful or what type of error it had.  <a href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">More...</a><br /></td></tr>
@@ -1428,6 +1433,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a1ea92c64a7848ff7fbf3a7e37ca3bf87"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
 <tr class="memitem:a1ea92c64a7848ff7fbf3a7e37ca3bf87"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores.html#a1ea92c64a7848ff7fbf3a7e37ca3bf87">ListForEach</a> (Functor &amp;&amp;, <a class="el" href="namespaceviskores.html#abe78987f422fd6a26207c6eba2f1ad2a">viskores::ListEmpty</a>, Args &amp;&amp;...)</td></tr>
 <tr class="separator:a1ea92c64a7848ff7fbf3a7e37ca3bf87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd0daaecc64c9b653c59bb78532d7fd"><td class="memTemplParams" colspan="2">template&lt;typename Tx , typename Tlow , typename Thigh &gt; </td></tr>
+<tr class="memitem:a4cd0daaecc64c9b653c59bb78532d7fd"><td class="memTemplItemLeft" align="right" valign="top">Tx&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores.html#a4cd0daaecc64c9b653c59bb78532d7fd">Clamp</a> (Tx &amp;&amp;x, Tlow &amp;&amp;low, Thigh &amp;&amp;high)</td></tr>
+<tr class="memdesc:a4cd0daaecc64c9b653c59bb78532d7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamp <code>x</code> to the given range.  <a href="namespaceviskores.html#a4cd0daaecc64c9b653c59bb78532d7fd">More...</a><br /></td></tr>
+<tr class="separator:a4cd0daaecc64c9b653c59bb78532d7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6a81c838c7a2b0a42cf2f19272ee3d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores.html#ab6a81c838c7a2b0a42cf2f19272ee3d7">Ldexp</a> (<a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a> x, <a class="el" href="namespaceviskores.html#a551f985fe2e8dae6c5f03856ecfe0dae">viskores::Int32</a> exponent)</td></tr>
 <tr class="separator:ab6a81c838c7a2b0a42cf2f19272ee3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42eca27d98e47df64ca61a5b0b74835b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores.html#a42eca27d98e47df64ca61a5b0b74835b">Ldexp</a> (<a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a> x, <a class="el" href="namespaceviskores.html#a551f985fe2e8dae6c5f03856ecfe0dae">viskores::Int32</a> exponent)</td></tr>
@@ -3997,7 +4006,11 @@ template&lt;typename TupleType &gt; </div>
 <p>There is a special "empty" cell shape type (<code><a class="el" href="structviskores_1_1CellShapeTagEmpty.html">viskores::CellShapeTagEmpty</a></code>) that can be used as a placeholder for a cell with no information. Math operations such as interpolation cannot be performed on empty cells, and attempting to do so will result in this error. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a326828f704debd8ce9f6fa3970b1a7faac5d5b264308294e19a0fd99e7ce70283"></a>CellNotFound&#160;</td><td class="fielddoc"><p>A cell matching some given criteria could not be found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a326828f704debd8ce9f6fa3970b1a7faa29dba97e41283ac0cbcc07c33bc3287b"></a>InvalidNumberOfIndices&#160;</td><td class="fielddoc"><p>The wrong number of indices was provided for an operation. </p>
 <p>This error code is most often used in a cell locator where no cell in the given region could be found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a326828f704debd8ce9f6fa3970b1a7faab4080bdf74febf04d578ff105cce9d3f"></a>Unsupported&#160;</td><td class="fielddoc"><p>The operation is not supported. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a326828f704debd8ce9f6fa3970b1a7faabfaef30f1c8011c5cefa38ae470fb7aa"></a>UnknownError&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -5184,32 +5197,34 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ae5c653f6acf7afc7be372fb3a4b499c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c653f6acf7afc7be372fb3a4b499c3">&#9670;&nbsp;</a></span>Clamp() <span class="overload">[1/2]</span></h2>
+<a id="a4cd0daaecc64c9b653c59bb78532d7fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd0daaecc64c9b653c59bb78532d7fd">&#9670;&nbsp;</a></span>Clamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Tx , typename Tlow , typename Thigh &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a> viskores::Clamp </td>
+          <td class="memname">Tx viskores::Clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a>&#160;</td>
+          <td class="paramtype">Tx &amp;&amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a>&#160;</td>
-          <td class="paramname"><em>lo</em>, </td>
+          <td class="paramtype">Tlow &amp;&amp;&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a>&#160;</td>
-          <td class="paramname"><em>hi</em>&#160;</td>
+          <td class="paramtype">Thigh &amp;&amp;&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -5223,50 +5238,19 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Clamp <code>x</code> to the given range. </p>
 
-</div>
-</div>
-<a id="ab9e1f857da903808d7459c4b121f6852"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9e1f857da903808d7459c4b121f6852">&#9670;&nbsp;</a></span>Clamp() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a> viskores::Clamp </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a>&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a>&#160;</td>
-          <td class="paramname"><em>lo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a>&#160;</td>
-          <td class="paramname"><em>hi</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 <p>Clamp <code>x</code> to the given range. </p>
+<p>Given a value <code>x</code> and a range of valid range of values, provides the value within the range. If <code>x</code> is already within the range, that value is just returned. If <code>x</code> is outside that range, the low or high value (whichever is closer) is returned.</p>
+<p>For convenience, the <code>low</code> and <code>high</code> and high values will be typecast to the type of <code>x</code>. <code>Clamp</code> may be called for <code><a class="el" href="classviskores_1_1Vec.html" title="A short fixed-length array.">Vec</a></code> and <code><a class="el" href="classviskores_1_1Vec.html" title="A short fixed-length array.">Vec</a></code>-like objects to do a component-wise clamp. It is an error if the number of components does not match.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The value to clamp to a specific range. </td></tr>
+    <tr><td class="paramname">low</td><td>The minimum value of the valid range. </td></tr>
+    <tr><td class="paramname">high</td><td>The maximum value of the valid range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>x</code> adjusted to be in the range from <code>low</code> to <code>high</code>. </dd></dl>
 
 </div>
 </div>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -66,8 +66,10 @@ Inheritance diagram for viskores::worklet::ScatterUniform&lt; NumOutputsPerInput
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ac11e989fb102e127ea2d162d029f713d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#ac11e989fb102e127ea2d162d029f713d">OutputToInputMapType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandleImplicit.html">viskores::cont::ArrayHandleImplicit</a>&lt; detail::FunctorDiv&lt; NumOutputsPerInput &gt; &gt;</td></tr>
+<tr class="memdesc:ac11e989fb102e127ea2d162d029f713d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used to map output indices to input indices.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#ac11e989fb102e127ea2d162d029f713d">More...</a><br /></td></tr>
 <tr class="separator:ac11e989fb102e127ea2d162d029f713d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0a30996727226fffd446e9ea7b2d84c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#aa0a30996727226fffd446e9ea7b2d84c">VisitArrayType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandleImplicit.html">viskores::cont::ArrayHandleImplicit</a>&lt; detail::FunctorModulus&lt; NumOutputsPerInput &gt; &gt;</td></tr>
+<tr class="memdesc:aa0a30996727226fffd446e9ea7b2d84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used for the visit index for each output.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#aa0a30996727226fffd446e9ea7b2d84c">More...</a><br /></td></tr>
 <tr class="separator:aa0a30996727226fffd446e9ea7b2d84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -75,14 +77,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa2bc6fc46eb67ab6ca1ba404ded29f19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#aa2bc6fc46eb67ab6ca1ba404ded29f19">ScatterUniform</a> ()=default</td></tr>
 <tr class="separator:aa2bc6fc46eb67ab6ca1ba404ded29f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a719726094d0ab79d36d47a14f411a7fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#a719726094d0ab79d36d47a14f411a7fc">GetOutputRange</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> inputRange) const</td></tr>
+<tr class="memdesc:a719726094d0ab79d36d47a14f411a7fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of output values for a given input domain size.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#a719726094d0ab79d36d47a14f411a7fc">More...</a><br /></td></tr>
 <tr class="separator:a719726094d0ab79d36d47a14f411a7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba9d87021b11afcdacfa193d5d9817c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#aeba9d87021b11afcdacfa193d5d9817c">GetOutputRange</a> (<a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> inputRange) const</td></tr>
+<tr class="memdesc:aeba9d87021b11afcdacfa193d5d9817c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of output values for a given input domain size.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#aeba9d87021b11afcdacfa193d5d9817c">More...</a><br /></td></tr>
 <tr class="separator:aeba9d87021b11afcdacfa193d5d9817c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5506f0f1dbdcc975456350f7d8c33558"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
 <tr class="memitem:a5506f0f1dbdcc975456350f7d8c33558"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#ac11e989fb102e127ea2d162d029f713d">OutputToInputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#a5506f0f1dbdcc975456350f7d8c33558">GetOutputToInputMap</a> (RangeType inputRange) const</td></tr>
+<tr class="memdesc:a5506f0f1dbdcc975456350f7d8c33558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that maps output indices to input indices.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#a5506f0f1dbdcc975456350f7d8c33558">More...</a><br /></td></tr>
 <tr class="separator:a5506f0f1dbdcc975456350f7d8c33558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96464b19f5aba58fe26ec59c5405101c"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
 <tr class="memitem:a96464b19f5aba58fe26ec59c5405101c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#aa0a30996727226fffd446e9ea7b2d84c">VisitArrayType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html#a96464b19f5aba58fe26ec59c5405101c">GetVisitArray</a> (RangeType inputRange) const</td></tr>
+<tr class="memdesc:a96464b19f5aba58fe26ec59c5405101c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that gives the visit index for each output.  <a href="structviskores_1_1worklet_1_1ScatterUniform.html#a96464b19f5aba58fe26ec59c5405101c">More...</a><br /></td></tr>
 <tr class="separator:a96464b19f5aba58fe26ec59c5405101c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -90,7 +96,13 @@ Public Member Functions</h2></td></tr>
 struct viskores::worklet::ScatterUniform&lt; NumOutputsPerInput &gt;</h3>
 
 <p>A scatter that maps input to some constant numbers of output. </p>
-<p>The <code>Scatter</code> classes are responsible for defining how much output is generated based on some sized input. <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code> establishes a 1 to N mapping from input to output. That is, every input element generates N elements associated with it where N is the same for every input. The output elements are grouped by the input associated. </p>
+<p>The <code>Scatter</code> classes are responsible for defining how much output is generated based on some sized input. <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code> establishes a 1 to N mapping from input to output. That is, every input element generates N elements associated with it where N is the same for every input. The output elements are grouped by the input associated.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">NumOutputsPerInput</td><td>Specifies how many outputs are generated per input value. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac11e989fb102e127ea2d162d029f713d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac11e989fb102e127ea2d162d029f713d">&#9670;&nbsp;</a></span>OutputToInputMapType</h2>
@@ -105,6 +117,9 @@ template&lt;viskores::IdComponent NumOutputsPerInput&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type of array handle used to map output indices to input indices. </p>
+<p>For the case of <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code>, this is an implicit array that has every <code>NumOutputsPerInput</code> output indices point to the same input index. </p>
 
 </div>
 </div>
@@ -121,6 +136,9 @@ template&lt;viskores::IdComponent NumOutputsPerInput&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type of array handle used for the visit index for each output. </p>
+<p>For the case of <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code>, this is an implicit array that repeats 0, 1,... <code>NumOutputsPerInput</code> for every input. </p>
 
 </div>
 </div>
@@ -179,6 +197,15 @@ template&lt;viskores::IdComponent NumOutputsPerInput&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the number of output values for a given input domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of output values, which for a <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code> is the <code>inputRange</code> times the <code>NumOutputsPerInput</code>. </dd></dl>
+
 </div>
 </div>
 <a id="aeba9d87021b11afcdacfa193d5d9817c"></a>
@@ -206,6 +233,15 @@ template&lt;viskores::IdComponent NumOutputsPerInput&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provides the number of output values for a given input domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of output values, which for a <code><a class="el" href="structviskores_1_1worklet_1_1ScatterUniform.html" title="A scatter that maps input to some constant numbers of output.">ScatterUniform</a></code> is the <code>inputRange</code> times the <code>NumOutputsPerInput</code>. </dd></dl>
 
 </div>
 </div>
@@ -237,6 +273,15 @@ template&lt;typename RangeType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the array that maps output indices to input indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An implicit array that has every <code>NumOutputsPerInput</code> output indices point to the same input index. </dd></dl>
+
 </div>
 </div>
 <a id="a96464b19f5aba58fe26ec59c5405101c"></a>
@@ -266,6 +311,15 @@ template&lt;typename RangeType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provides the array that gives the visit index for each output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An implicit array that repeats 0, 1,... <code>NumOutputsPerInput</code> for every input. </dd></dl>
 
 </div>
 </div>

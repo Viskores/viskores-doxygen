@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -88,16 +88,18 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> WriteToCanvas(<span class="keyword">const</span> viskores::rendering::raytracing::Ray&lt;viskores::Float32&gt;&amp; rays,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;viskores::Float32&gt;</a>&amp; colors,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1rendering_1_1Camera.html">viskores::rendering::Camera</a>&amp; camera);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> WriteToCanvas(<span class="keyword">const</span> viskores::rendering::raytracing::Ray&lt;viskores::Float64&gt;&amp; rays,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;viskores::Float64&gt;</a>&amp; colors,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1rendering_1_1Camera.html">viskores::rendering::Camera</a>&amp; camera);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}; <span class="comment">// class CanvasRayTracer</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace viskores::rendering</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif //viskores_rendering_CanvasRayTracer_h</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1rendering_1_1Camera.html">viskores::rendering::Camera</a>&amp; camera,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                     <span class="keywordtype">bool</span> writeDepth = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> WriteToCanvas(<span class="keyword">const</span> viskores::rendering::raytracing::Ray&lt;viskores::Float64&gt;&amp; rays,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;viskores::Float64&gt;</a>&amp; colors,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     <span class="keyword">const</span> <a class="code" href="classviskores_1_1rendering_1_1Camera.html">viskores::rendering::Camera</a>&amp; camera,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                     <span class="keywordtype">bool</span> writeDepth = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}; <span class="comment">// class CanvasRayTracer</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// namespace viskores::rendering</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif //viskores_rendering_CanvasRayTracer_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt; viskores::Float32 &gt;</a></div></div>
 <div class="ttc" id="aclassviskores_1_1rendering_1_1CanvasRayTracer_html"><div class="ttname"><a href="classviskores_1_1rendering_1_1CanvasRayTracer.html">viskores::rendering::CanvasRayTracer</a></div><div class="ttdoc">Represents the image space that is the target of rendering using the internal ray tracing code.</div><div class="ttdef"><b>Definition:</b> CanvasRayTracer.h:33</div></div>

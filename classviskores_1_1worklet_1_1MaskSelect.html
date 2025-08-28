@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -44,8 +44,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -63,24 +65,41 @@ $(function() {
 Inheritance diagram for viskores::worklet::MaskSelect:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classviskores_1_1worklet_1_1MaskSelect.png" alt=""/>
- </div></div>
+  <img src="classviskores_1_1worklet_1_1MaskSelect.png" usemap="#viskores::worklet::MaskSelect_map" alt=""/>
+  <map id="viskores::worklet::MaskSelect_map" name="viskores::worklet::MaskSelect_map">
+<area href="classviskores_1_1worklet_1_1MaskSelectTemplate.html" title="A templated version MaskSelect." alt="viskores::worklet::MaskSelectTemplate" shape="rect" coords="0,112,226,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1MaskSelect_1_1ThreadToOutputMapWrapper.html">ThreadToOutputMapWrapper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a983c448c56c2d5e2458aa19d2c56ca9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a983c448c56c2d5e2458aa19d2c56ca9a">ThreadToOutputMapType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;</td></tr>
+<tr class="memdesc:a983c448c56c2d5e2458aa19d2c56ca9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used to map thread indices to output indices.  <a href="classviskores_1_1worklet_1_1MaskSelect.html#a983c448c56c2d5e2458aa19d2c56ca9a">More...</a><br /></td></tr>
 <tr class="separator:a983c448c56c2d5e2458aa19d2c56ca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a36ec5d826b746f28e42c6bfee1f5a72a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a36ec5d826b746f28e42c6bfee1f5a72a">MaskSelect</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;maskArray, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> device=<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterTagAny.html">viskores::cont::DeviceAdapterTagAny</a>())</td></tr>
+<tr class="memdesc:a36ec5d826b746f28e42c6bfee1f5a72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <code><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html" title="Mask using arrays to select specific elements to suppress.">MaskSelect</a></code> object using an array that masks an output value with <code>0</code> and enables an output value with <code>1</code>.  <a href="classviskores_1_1worklet_1_1MaskSelect.html#a36ec5d826b746f28e42c6bfee1f5a72a">More...</a><br /></td></tr>
 <tr class="separator:a36ec5d826b746f28e42c6bfee1f5a72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1af85711d19b8a3cb769e861317c0413"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
-<tr class="memitem:a1af85711d19b8a3cb769e861317c0413"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a1af85711d19b8a3cb769e861317c0413">GetThreadRange</a> (RangeType) const</td></tr>
-<tr class="separator:a1af85711d19b8a3cb769e861317c0413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6264212eee0face902fe01ff0167bf"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
-<tr class="memitem:abb6264212eee0face902fe01ff0167bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a983c448c56c2d5e2458aa19d2c56ca9a">ThreadToOutputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#abb6264212eee0face902fe01ff0167bf">GetThreadToOutputMap</a> (RangeType) const</td></tr>
-<tr class="separator:abb6264212eee0face902fe01ff0167bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82fb07ec3360ac348f9c31fce947824"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
+<tr class="memitem:ad82fb07ec3360ac348f9c31fce947824"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#ad82fb07ec3360ac348f9c31fce947824">GetThreadRange</a> (RangeType outputRange) const</td></tr>
+<tr class="memdesc:ad82fb07ec3360ac348f9c31fce947824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of threads for a given output domain size.  <a href="classviskores_1_1worklet_1_1MaskSelect.html#ad82fb07ec3360ac348f9c31fce947824">More...</a><br /></td></tr>
+<tr class="separator:ad82fb07ec3360ac348f9c31fce947824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add8ccc3aa0381517a4d7adf86aa29057"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
+<tr class="memitem:add8ccc3aa0381517a4d7adf86aa29057"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a983c448c56c2d5e2458aa19d2c56ca9a">ThreadToOutputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#add8ccc3aa0381517a4d7adf86aa29057">GetThreadToOutputMap</a> (RangeType outputRange) const</td></tr>
+<tr class="memdesc:add8ccc3aa0381517a4d7adf86aa29057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that maps thread indices to output indices.  <a href="classviskores_1_1worklet_1_1MaskSelect.html#add8ccc3aa0381517a4d7adf86aa29057">More...</a><br /></td></tr>
+<tr class="separator:add8ccc3aa0381517a4d7adf86aa29057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afaf7f1d281229a06ce751b7401d136b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#afaf7f1d281229a06ce751b7401d136b0">MaskSelect</a> (const <a class="el" href="structviskores_1_1worklet_1_1MaskSelect_1_1ThreadToOutputMapWrapper.html">ThreadToOutputMapWrapper</a> &amp;threadToOutputMap)</td></tr>
+<tr class="separator:afaf7f1d281229a06ce751b7401d136b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -136,11 +155,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The type of array handle used to map thread indices to output indices. </p>
+<p>For the case of <code><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html" title="Mask using arrays to select specific elements to suppress.">MaskSelect</a></code>, this is a basic array handle. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a36ec5d826b746f28e42c6bfee1f5a72a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36ec5d826b746f28e42c6bfee1f5a72a">&#9670;&nbsp;</a></span>MaskSelect()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ec5d826b746f28e42c6bfee1f5a72a">&#9670;&nbsp;</a></span>MaskSelect() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,6 +191,34 @@ Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <code><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html" title="Mask using arrays to select specific elements to suppress.">MaskSelect</a></code> object using an array that masks an output value with <code>0</code> and enables an output value with <code>1</code>. </p>
+
+</div>
+</div>
+<a id="afaf7f1d281229a06ce751b7401d136b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf7f1d281229a06ce751b7401d136b0">&#9670;&nbsp;</a></span>MaskSelect() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">viskores::worklet::MaskSelect::MaskSelect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structviskores_1_1worklet_1_1MaskSelect_1_1ThreadToOutputMapWrapper.html">ThreadToOutputMapWrapper</a> &amp;&#160;</td>
+          <td class="paramname"><em>threadToOutputMap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -212,8 +262,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1af85711d19b8a3cb769e861317c0413"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1af85711d19b8a3cb769e861317c0413">&#9670;&nbsp;</a></span>GetThreadRange()</h2>
+<a id="ad82fb07ec3360ac348f9c31fce947824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82fb07ec3360ac348f9c31fce947824">&#9670;&nbsp;</a></span>GetThreadRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +277,7 @@ template&lt;typename RangeType &gt; </div>
           <td class="memname"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> viskores::worklet::MaskSelect::GetThreadRange </td>
           <td>(</td>
           <td class="paramtype">RangeType&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>outputRange</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -238,10 +288,19 @@ template&lt;typename RangeType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the number of threads for a given output domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputRange</td><td>The size of the full output domain (including masked entries), which must be the same size as the select array provided in the constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of threads. </dd></dl>
+
 </div>
 </div>
-<a id="abb6264212eee0face902fe01ff0167bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb6264212eee0face902fe01ff0167bf">&#9670;&nbsp;</a></span>GetThreadToOutputMap()</h2>
+<a id="add8ccc3aa0381517a4d7adf86aa29057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add8ccc3aa0381517a4d7adf86aa29057">&#9670;&nbsp;</a></span>GetThreadToOutputMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +314,7 @@ template&lt;typename RangeType &gt; </div>
           <td class="memname"><a class="el" href="classviskores_1_1worklet_1_1MaskSelect.html#a983c448c56c2d5e2458aa19d2c56ca9a">ThreadToOutputMapType</a> viskores::worklet::MaskSelect::GetThreadToOutputMap </td>
           <td>(</td>
           <td class="paramtype">RangeType&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>outputRange</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -265,6 +324,15 @@ template&lt;typename RangeType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provides the array that maps thread indices to output indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outputRange</td><td>The size of the full output domain (including masked entries), which must be the same size as the select array provided in the constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A basic array of indices that identifies which output each thread writes to. </dd></dl>
 
 </div>
 </div>

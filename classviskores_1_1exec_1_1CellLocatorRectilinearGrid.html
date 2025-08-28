@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -79,6 +79,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb58ccf6aceb3f53d16e31e55e46b298"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#afb58ccf6aceb3f53d16e31e55e46b298">FindCell</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId, <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;parametric) const</td></tr>
 <tr class="memdesc:afb58ccf6aceb3f53d16e31e55e46b298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#afb58ccf6aceb3f53d16e31e55e46b298">More...</a><br /></td></tr>
 <tr class="separator:afb58ccf6aceb3f53d16e31e55e46b298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0ca8354ede280a469be2233c0e942f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#a3b0ca8354ede280a469be2233c0e942f">CountAllCells</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point) const</td></tr>
+<tr class="memdesc:a3b0ca8354ede280a469be2233c0e942f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the cells containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#a3b0ca8354ede280a469be2233c0e942f">More...</a><br /></td></tr>
+<tr class="separator:a3b0ca8354ede280a469be2233c0e942f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101a8af835bd44966351e46d1c2497dd"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType , typename ParametricCoordsVecType &gt; </td></tr>
+<tr class="memitem:a101a8af835bd44966351e46d1c2497dd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#a101a8af835bd44966351e46d1c2497dd">FindAllCells</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec, ParametricCoordsVecType &amp;pCoordsVec) const</td></tr>
+<tr class="memdesc:a101a8af835bd44966351e46d1c2497dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#a101a8af835bd44966351e46d1c2497dd">More...</a><br /></td></tr>
+<tr class="separator:a101a8af835bd44966351e46d1c2497dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -274,6 +281,83 @@ template&lt;viskores::IdComponent dimensions&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3b0ca8354ede280a469be2233c0e942f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0ca8354ede280a469be2233c0e942f">&#9670;&nbsp;</a></span>CountAllCells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> viskores::exec::CellLocatorRectilinearGrid::CountAllCells </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Count the cells containing the provided point. </p>
+<p>Count the number of cells that contain the input point. This is typically used for non-manifold meshes with overlapping cells such as block boundaries. This count can be used to a storage container to use with <code>FindAllCells</code>. </p>
+
+</div>
+</div>
+<a id="a101a8af835bd44966351e46d1c2497dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101a8af835bd44966351e46d1c2497dd">&#9670;&nbsp;</a></span>FindAllCells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellIdsType , typename ParametricCoordsVecType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> viskores::exec::CellLocatorRectilinearGrid::FindAllCells </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ParametricCoordsVecType &amp;&#160;</td>
+          <td class="paramname"><em>pCoordsVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate the cell containing the provided point. </p>
+<p>Find all cells containing the given point. This is typically used for non-manifold meshes with overlapping cells such as block boundaries.</p>
+<p>The <code>cellIds</code> parameter should be a Vec-like object with the number of entries set to the same size returned from <code>CountAllCells</code>. Often this means calling one worklet to count all the cells for some point, allocating the space for each point using a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVecVariable.html" title="Fancy array handle that groups values into vectors of different sizes.">viskores::cont::ArrayHandleGroupVecVariable</a></code>, and calling a second worklet to fill each <a class="el" href="classviskores_1_1Vec.html" title="A short fixed-length array.">Vec</a> with this method. </p>
+
+</div>
+</div>
 <a id="afb58ccf6aceb3f53d16e31e55e46b298"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb58ccf6aceb3f53d16e31e55e46b298">&#9670;&nbsp;</a></span>FindCell() <span class="overload">[1/2]</span></h2>
 

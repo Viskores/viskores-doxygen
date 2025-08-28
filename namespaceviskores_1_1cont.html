@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -157,6 +157,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOA.html">ArrayHandleSOA</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">ArrayHandle</a></code> that for Vecs stores each component in a separate physical array.  <a href="classviskores_1_1cont_1_1ArrayHandleSOA.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">ArrayHandle</a></code> that stores each component in a separate physical array with striding.  <a href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleStride.html">ArrayHandleStride</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">ArrayHandle</a></code> that accesses a basic array with strides and offsets.  <a href="classviskores_1_1cont_1_1ArrayHandleStride.html#details">More...</a><br /></td></tr>
@@ -474,6 +477,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1StorageTagSOA.html">StorageTagSOA</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1StorageTagSOAStride.html">StorageTagSOAStride</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1StorageTagStride.html">StorageTagStride</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">StorageTagUniformPoints</a></td></tr>
@@ -536,8 +541,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a8915670663a9ef414cf88fce2f4e6ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f11087403367d3de5e7ee55a7aabcd5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#a6f11087403367d3de5e7ee55a7aabcd5">StorageListBasic</a> = <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt; <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt;</td></tr>
 <tr class="separator:a6f11087403367d3de5e7ee55a7aabcd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5191156a7eb1a9aa238cb82a11833ed"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#ac5191156a7eb1a9aa238cb82a11833ed">StorageListCommon</a> = <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt; <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagSOA.html">viskores::cont::StorageTagSOA</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt; <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt; &gt;</td></tr>
-<tr class="separator:ac5191156a7eb1a9aa238cb82a11833ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b157f5d96ade4fc0c7b49969416942c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#a2b157f5d96ade4fc0c7b49969416942c">StorageListCommon</a> = <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt; <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt; <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt;, <a class="el" href="structviskores_1_1cont_1_1StorageTagSOAStride.html">viskores::cont::StorageTagSOAStride</a> &gt;</td></tr>
+<tr class="separator:a2b157f5d96ade4fc0c7b49969416942c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -752,6 +757,18 @@ Functions</h2></td></tr>
 <tr class="memitem:af9640cfedbe3a120ed1d7d312cb61261"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOA.html">ArrayHandleSOA</a>&lt; <a class="el" href="classviskores_1_1Vec.html">viskores::Vec</a>&lt; ComponentType, internal::VecSizeFromRemaining&lt; RemainingArrays... &gt;::value &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#af9640cfedbe3a120ed1d7d312cb61261">make_ArrayHandleSOA</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> length, <a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a> copy, const ComponentType *array0, const RemainingArrays *... componentArrays)</td></tr>
 <tr class="memdesc:af9640cfedbe3a120ed1d7d312cb61261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOA.html" title="An ArrayHandle that for Vecs stores each component in a separate physical array.">viskores::cont::ArrayHandleSOA</a></code> with a number of C arrays.  <a href="namespaceviskores_1_1cont.html#af9640cfedbe3a120ed1d7d312cb61261">More...</a><br /></td></tr>
 <tr class="separator:af9640cfedbe3a120ed1d7d312cb61261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3d2d2d882dff576fbf89ee28688edc"><td class="memTemplParams" colspan="2">template&lt;typename ValueType &gt; </td></tr>
+<tr class="memitem:a9b3d2d2d882dff576fbf89ee28688edc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt; ValueType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#a9b3d2d2d882dff576fbf89ee28688edc">make_ArrayHandleSOAStride</a> (std::initializer_list&lt; <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; typename <a class="el" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt; ValueType &gt;::ComponentType, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt;&gt; &amp;&amp;componentArrays)</td></tr>
+<tr class="memdesc:a9b3d2d2d882dff576fbf89ee28688edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with an initializer list of array handles.  <a href="namespaceviskores_1_1cont.html#a9b3d2d2d882dff576fbf89ee28688edc">More...</a><br /></td></tr>
+<tr class="separator:a9b3d2d2d882dff576fbf89ee28688edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fdbc5f87c950a24456f13276d750f56"><td class="memTemplParams" colspan="2">template&lt;typename ComponentType , typename... RemainingArrays&gt; </td></tr>
+<tr class="memitem:a9fdbc5f87c950a24456f13276d750f56"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt; <a class="el" href="classviskores_1_1Vec.html">viskores::Vec</a>&lt; ComponentType, internal::VecSizeFromRemaining&lt; RemainingArrays... &gt;::value &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#a9fdbc5f87c950a24456f13276d750f56">make_ArrayHandleSOAStride</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; ComponentType, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt; &amp;componentArray0, const RemainingArrays &amp;... componentArrays)</td></tr>
+<tr class="memdesc:a9fdbc5f87c950a24456f13276d750f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with a number of array handles.  <a href="namespaceviskores_1_1cont.html#a9fdbc5f87c950a24456f13276d750f56">More...</a><br /></td></tr>
+<tr class="separator:a9fdbc5f87c950a24456f13276d750f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd955f02572269a7e5d01c599179c788"><td class="memTemplParams" colspan="2">template&lt;typename ValueType &gt; </td></tr>
+<tr class="memitem:afd955f02572269a7e5d01c599179c788"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt; ValueType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#afd955f02572269a7e5d01c599179c788">make_ArrayHandleSOAStride</a> (std::initializer_list&lt; std::vector&lt; typename <a class="el" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt; ValueType &gt;::ComponentType &gt;&gt; &amp;&amp;componentVectors)</td></tr>
+<tr class="memdesc:afd955f02572269a7e5d01c599179c788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with a <code>std::vector</code> of component arrays.  <a href="namespaceviskores_1_1cont.html#afd955f02572269a7e5d01c599179c788">More...</a><br /></td></tr>
+<tr class="separator:afd955f02572269a7e5d01c599179c788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a297b0cd25db294a5a95b64d684d834"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7a297b0cd25db294a5a95b64d684d834"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleStride.html">viskores::cont::ArrayHandleStride</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1cont.html#a7a297b0cd25db294a5a95b64d684d834">make_ArrayHandleStride</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt; &amp;array, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numValues, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> stride, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> offset, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> modulo=0, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> divisor=1)</td></tr>
 <tr class="memdesc:a7a297b0cd25db294a5a95b64d684d834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array by adding a stride to a basic array.  <a href="namespaceviskores_1_1cont.html#a7a297b0cd25db294a5a95b64d684d834">More...</a><br /></td></tr>
@@ -1293,14 +1310,14 @@ template&lt;typename ShapesStorageTag  = VISKORES_DEFAULT_STORAGE_TAG, typename 
 
 </div>
 </div>
-<a id="ac5191156a7eb1a9aa238cb82a11833ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5191156a7eb1a9aa238cb82a11833ed">&#9670;&nbsp;</a></span>StorageListCommon</h2>
+<a id="a2b157f5d96ade4fc0c7b49969416942c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b157f5d96ade4fc0c7b49969416942c">&#9670;&nbsp;</a></span>StorageListCommon</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceviskores_1_1cont.html#ac5191156a7eb1a9aa238cb82a11833ed">viskores::cont::StorageListCommon</a> = typedef <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt;<a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagSOA.html">viskores::cont::StorageTagSOA</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt;<a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="namespaceviskores_1_1cont.html#a2b157f5d96ade4fc0c7b49969416942c">viskores::cont::StorageListCommon</a> = typedef <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt;<a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt;<a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt;, <a class="el" href="structviskores_1_1cont_1_1StorageTagSOAStride.html">viskores::cont::StorageTagSOAStride</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -7551,6 +7568,105 @@ template&lt;typename ComponentType , typename... RemainingVectors&gt; </div>
 </div><!-- fragment --> 
 </div>
 </div>
+<a id="a9fdbc5f87c950a24456f13276d750f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fdbc5f87c950a24456f13276d750f56">&#9670;&nbsp;</a></span>make_ArrayHandleSOAStride() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ComponentType , typename... RemainingArrays&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt; <a class="el" href="classviskores_1_1Vec.html">viskores::Vec</a>&lt;ComponentType, internal::VecSizeFromRemaining&lt;RemainingArrays...&gt;::value&gt; &gt; viskores::cont::make_ArrayHandleSOAStride </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; ComponentType, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>componentArray0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RemainingArrays &amp;...&#160;</td>
+          <td class="paramname"><em>componentArrays</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with a number of array handles. </p>
+<p>This only works if all the templated arguments are of type <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">viskores::cont::ArrayHandle</a>&lt;ComponentType&gt;</code>.</p>
+<div class="fragment"><div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components1;</div>
+<div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components2;</div>
+<div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components3;</div>
+<div class="line"><span class="comment">// Fill arrays...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> vecarray =</div>
+<div class="line">  <a class="code" href="namespaceviskores_1_1cont.html#a9b3d2d2d882dff576fbf89ee28688edc">viskores::cont::make_ArrayHandleSOAStride</a>(components1, components2, components3);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="afd955f02572269a7e5d01c599179c788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd955f02572269a7e5d01c599179c788">&#9670;&nbsp;</a></span>make_ArrayHandleSOAStride() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt;ValueType&gt; viskores::cont::make_ArrayHandleSOAStride </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; std::vector&lt; typename <a class="el" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt; ValueType &gt;::ComponentType &gt;&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>componentVectors</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with a <code>std::vector</code> of component arrays. </p>
+<p>The data is copied from the <code>std::vector</code>s to the array handle.</p>
+<div class="fragment"><div class="line">std::vector&lt;T&gt; components1;</div>
+<div class="line">std::vector&lt;T&gt; components2;</div>
+<div class="line">std::vector&lt;T&gt; components3;</div>
+<div class="line"><span class="comment">// Fill arrays...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> vecarray = viskores::cont::make_ArrayHandleSOAStride&lt;viskores::Vec&lt;T, 3&gt;&gt;(</div>
+<div class="line">  { components1, components2, components3 });</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a9b3d2d2d882dff576fbf89ee28688edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b3d2d2d882dff576fbf89ee28688edc">&#9670;&nbsp;</a></span>make_ArrayHandleSOAStride() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">ArrayHandleSOAStride</a>&lt;ValueType&gt; viskores::cont::make_ArrayHandleSOAStride </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; typename <a class="el" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt; ValueType &gt;::ComponentType, <a class="el" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a> &gt;&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>componentArrays</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html" title="An ArrayHandle that stores each component in a separate physical array with striding.">viskores::cont::ArrayHandleSOAStride</a></code> with an initializer list of array handles. </p>
+<div class="fragment"><div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components1;</div>
+<div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components2;</div>
+<div class="line"><a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a> components3;</div>
+<div class="line"><span class="comment">// Fill arrays...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> vecarray = viskores::cont::make_ArrayHandleSOAStride&lt;viskores::Vec&lt;T, 3&gt;&gt;(</div>
+<div class="line">  { components1, components2, components3 });</div>
+</div><!-- fragment --> 
+</div>
+</div>
 <a id="a7a297b0cd25db294a5a95b64d684d834"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a297b0cd25db294a5a95b64d684d834">&#9670;&nbsp;</a></span>make_ArrayHandleStride()</h2>
 
@@ -9547,10 +9663,11 @@ template&lt;typename T &gt; </div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_ad084795021c8600def1edbc8b1872921"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">viskores::cont::ArrayHandle::GetNumberOfValues</a></div><div class="ttdeci">viskores::Id GetNumberOfValues() const</div><div class="ttdoc">Returns the number of entries in the array.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:482</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a4b80f2a073d16de3e229078f743e3c7d"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a4b80f2a073d16de3e229078f743e3c7d">viskores::cont::TryExecuteOnDevice</a></div><div class="ttdeci">bool TryExecuteOnDevice(viskores::cont::DeviceAdapterId devId, Functor &amp;&amp;functor)</div><div class="ttdoc">Try to execute a functor on a specific device selected at runtime.</div><div class="ttdef"><b>Definition:</b> TryExecute.h:186</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a2a660d002917bda52fe319d3a809a344"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a2a660d002917bda52fe319d3a809a344">viskores::cont::ArrayGetValues</a></div><div class="ttdeci">void ArrayGetValues(const viskores::cont::ArrayHandle&lt; viskores::Id, SIds &gt; &amp;ids, const viskores::cont::ArrayHandle&lt; T, SData &gt; &amp;data, viskores::cont::ArrayHandle&lt; T, SOut &gt; &amp;output)</div><div class="ttdoc">Obtain a small set of values from an ArrayHandle with minimal device transfers.</div><div class="ttdef"><b>Definition:</b> ArrayGetValues.h:127</div></div>
-<div class="ttc" id="anamespaceviskores_1_1cont_html_a3ac73251dfcee427a6d163156caa9a30"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a3ac73251dfcee427a6d163156caa9a30">viskores::cont::make_ArrayHandleSOA</a></div><div class="ttdeci">ArrayHandleSOA&lt; ValueType &gt; make_ArrayHandleSOA(std::initializer_list&lt; viskores::cont::ArrayHandle&lt; typename viskores::VecTraits&lt; ValueType &gt;::ComponentType, viskores::cont::StorageTagBasic &gt;&gt; &amp;&amp;componentArrays)</div><div class="ttdoc">Create a viskores::cont::ArrayHandleSOA with an initializer list of array handles.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOA.h:518</div></div>
-<div class="ttc" id="anamespaceviskores_1_1cont_html_a9b92f2fe6c3c23da7071c725e9aaceb4"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a9b92f2fe6c3c23da7071c725e9aaceb4">viskores::cont::make_ArrayHandleSOAMove</a></div><div class="ttdeci">ArrayHandleSOA&lt; viskores::Vec&lt; ComponentType, internal::VecSizeFromRemaining&lt; RemainingVectors... &gt;::value &gt; &gt; make_ArrayHandleSOAMove(std::vector&lt; ComponentType &gt; &amp;&amp;vector0, RemainingVectors &amp;&amp;... componentVectors)</div><div class="ttdoc">Create a viskores::cont::ArrayHandleSOA with a number of std::vector.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOA.h:651</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a3ac73251dfcee427a6d163156caa9a30"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a3ac73251dfcee427a6d163156caa9a30">viskores::cont::make_ArrayHandleSOA</a></div><div class="ttdeci">ArrayHandleSOA&lt; ValueType &gt; make_ArrayHandleSOA(std::initializer_list&lt; viskores::cont::ArrayHandle&lt; typename viskores::VecTraits&lt; ValueType &gt;::ComponentType, viskores::cont::StorageTagBasic &gt;&gt; &amp;&amp;componentArrays)</div><div class="ttdoc">Create a viskores::cont::ArrayHandleSOA with an initializer list of array handles.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOA.h:522</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a9b92f2fe6c3c23da7071c725e9aaceb4"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a9b92f2fe6c3c23da7071c725e9aaceb4">viskores::cont::make_ArrayHandleSOAMove</a></div><div class="ttdeci">ArrayHandleSOA&lt; viskores::Vec&lt; ComponentType, internal::VecSizeFromRemaining&lt; RemainingVectors... &gt;::value &gt; &gt; make_ArrayHandleSOAMove(std::vector&lt; ComponentType &gt; &amp;&amp;vector0, RemainingVectors &amp;&amp;... componentVectors)</div><div class="ttdoc">Create a viskores::cont::ArrayHandleSOA with a number of std::vector.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOA.h:655</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_acb7bee0f87fc44bbd353e2d80a20a234"><div class="ttname"><a href="namespaceviskores_1_1cont.html#acb7bee0f87fc44bbd353e2d80a20a234">viskores::cont::ColorTableMap</a></div><div class="ttdeci">bool ColorTableMap(const viskores::cont::ArrayHandle&lt; T, S &gt; &amp;values, const viskores::cont::ColorTableSamplesRGBA &amp;samples, viskores::cont::ArrayHandle&lt; viskores::Vec4ui_8 &gt; &amp;rgbaOut)</div><div class="ttdoc">Sample each value through an intermediate lookup/sample table to generate RGBA colors.</div><div class="ttdef"><b>Definition:</b> ColorTableMap.h:55</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ColorTableSamplesRGBA_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ColorTableSamplesRGBA.html">viskores::cont::ColorTableSamplesRGBA</a></div><div class="ttdoc">Color Sample Table used with viskores::cont::ColorTable for fast coloring.</div><div class="ttdef"><b>Definition:</b> ColorTableSamples.h:40</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a9b3d2d2d882dff576fbf89ee28688edc"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a9b3d2d2d882dff576fbf89ee28688edc">viskores::cont::make_ArrayHandleSOAStride</a></div><div class="ttdeci">ArrayHandleSOAStride&lt; ValueType &gt; make_ArrayHandleSOAStride(std::initializer_list&lt; viskores::cont::ArrayHandle&lt; typename viskores::VecTraits&lt; ValueType &gt;::ComponentType, viskores::cont::StorageTagBasic &gt;&gt; &amp;&amp;componentArrays)</div><div class="ttdoc">Create a viskores::cont::ArrayHandleSOAStride with an initializer list of array handles.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:356</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a1e1482b3e7c4cbb782db98b3cc5c86c3"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a1e1482b3e7c4cbb782db98b3cc5c86c3">viskores::cont::ArraySetValue</a></div><div class="ttdeci">void ArraySetValue(viskores::Id id, const T &amp;value, const viskores::cont::ArrayHandle&lt; T, SData &gt; &amp;data)</div><div class="ttdoc">Set a single value in an ArrayHandle at the specified index.</div><div class="ttdef"><b>Definition:</b> ArraySetValues.h:256</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ColorTableSamplesRGB_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ColorTableSamplesRGB.html">viskores::cont::ColorTableSamplesRGB</a></div><div class="ttdoc">Color Sample Table used with viskores::cont::ColorTable for fast coloring.</div><div class="ttdef"><b>Definition:</b> ColorTableSamples.h:60</div></div>
 <!-- start footer part -->

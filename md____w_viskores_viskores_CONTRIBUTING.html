@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -43,14 +43,12 @@ $(function() {
 <div class="title">Contributing to Viskores </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>We are currently in the process of adopting software from [VTK-m]. During this transitional period, we have no formal method of accepting contributions outside of our core contributors. For the time being, new contributions should be directed at the <a href="https://m.vtk.org">VTK-m</a> project.</p>
-<p>When Viskores is ready to accept its own features, the contributing process will be similar to <a href="https://gitlab.kitware.com/vtk/vtk-m/-/blob/main/CONTRIBUTING.md">that of VTK-m's</a>.</p>
-<p>The author of all contributions must agree to the [Developer Certificate of Origin] sign-off. Any developer who submits a contribution to Viskores implicitly agrees to these conditions. That said, contributors remain as the copyright holder for independent works of authorship and that no contributor or copyright holder will be required to assign copyrights to Viskores.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<div class="textblock"><p>The author of all contributions must agree to the [Developer Certificate of Origin] sign-off. Any developer who submits a contribution to Viskores implicitly agrees to these conditions. That said, contributors remain as the copyright holder for independent works of authorship and that no contributor or copyright holder will be required to assign copyrights to Viskores.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Requirements</h1>
 <p>This page documents how to develop Viskores through <a href="http://git-scm.com">Git</a>.</p>
 <p>Git is an extremely powerful version control tool that supports many different "workflows" for individual development and collaboration. Here we document procedures used by the Viskores development community. In the interest of simplicity and brevity we do <em>not</em> provide an explanation of why we use this approach.</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Setup</h1>
 <p>Before you begin, perform initial setup:</p>
 <ol type="1">
@@ -60,13 +58,15 @@ Setup</h1>
 $ cd viskores
 </pre><p class="startli">The main repository will be configured as your <code>origin</code> remote.</p>
 </li>
+<li>Viskores data is located in a different repository and is included as a git submodule. You must initialize and update the submodule to clone the data. <pre class="fragment">$ git submodule update --init
+</pre></li>
 <li>Run the developer setup script to prepare your Viskores work tree and create Git command aliases used below: <pre class="fragment">$ ./Utilities/SetupForDevelopment.sh
 </pre></li>
 <li>(Optional but highly recommended.) Install the official <a href="https://cli.github.com/">GitHub CLI utility</a> on your developing station. This tool greatly simplifies interacting with GitHub from the command line.</li>
 <li>(Optional but highly recommended.) <a href="https://open.cdash.org/register">Register with the Viskores dashboard</a> on Kitware's CDash instance to better know how your code performs in regression tests. After registering and signing in, click on "All Dashboards" link in the upper left corner, scroll down and click "Subscribe to this project" on the right of Viskores.</li>
 <li>(Optional but highly recommended.) <a href="https://github.com/Viskores/viskores/discussions">Join us in the Viskores discussions</a> to communicate with other developers and users.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Workflow</h1>
 <p>Viskores development uses a <a href="http://public.kitware.com/Wiki/Git/Workflow/Topic">branchy workflow</a> based on topic branches. Our collaboration workflow consists of three main steps:</p>
 <ol type="1">
@@ -88,7 +88,7 @@ Workflow</h1>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Update</h1>
 <ol type="1">
 <li>Update your local <code>main</code> branch: <pre class="fragment">$ git checkout main
@@ -97,7 +97,7 @@ $ git pull
 <li>Optionally push <code>main</code> to your fork in GitHub: <pre class="fragment">$ git push github main
 </pre></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Create a Topic</h1>
 <p>All new work must be committed on topic branches. Name topics like you might name functions: concise but precise. A reader should have a general idea of the feature or fix to be developed given just the branch name.</p>
 <ol type="1">
@@ -114,7 +114,7 @@ $ git commit
 </li>
 <li>If you are adding a new feature or making significant changes to API, make sure to add a entry to <code>docs/changelog</code>. This allows release notes to properly capture all relevant changes.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Guidelines for Commit Messages</h2>
 <p>Remember to <em>motivate &amp; summarize</em>. When writing commit messages. Get into the habit of creating messages that have enough information for any developer to read and glean relevant information such as:</p>
 <ol type="1">
@@ -134,7 +134,7 @@ Guidelines for Commit Messages</h2>
 <li>Wrap the body at 80 characters</li>
 <li>Use the body to explain <code>what</code> and <code>why</code> and if applicable a brief <code>how</code>.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Share a Topic</h1>
 <p>When a topic is ready for review and possible inclusion, share it by pushing to a fork of your repository in GitHub. Be sure you have registered and signed in for [GitHub Access] and created your fork by visiting the main <a href="https://github.com/viskores/viskores">Viskores GitHub</a> repository page and using the "Fork" button in the upper right.</p>
 <ol type="1">
@@ -148,7 +148,7 @@ Share a Topic</h1>
 <p class="startli">The output will include a link to the topic branch in your fork in GitHub and a link to a page for creating a pull request.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Create a pull request</h1>
 <p>When you <a href="#share-a-topic">pushed your topic branch</a>, it will provide you with a url of the form </p><pre class="fragment">https://github.com/&lt;username&gt;/viskores/pull/new/&lt;branch_name&gt;
 </pre><p>You can copy/paste that into your web browser to create a new merge request. Alternately, you can visit your fork in GitHub, browse to the "**pull requests**" link on the left, and use the "**New pull request**" button in the upper right.</p>
@@ -179,7 +179,7 @@ Cc: @user1 @user2
 <ol type="1">
 <li>Use the "**Open pull request**" button to create the pull request and visit its page.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Guidelines for pull requests</h2>
 <p>Remember to <em>motivate &amp; summarize</em>. When creating a pull request, consider the reviewers and future users of the software. Provide enough information to motivate the pull request such as:</p>
 <ol type="1">
@@ -190,14 +190,14 @@ Guidelines for pull requests</h2>
 </ol>
 <p>Also provide a summary statement expressing what you did and if there is a choice in implementation or design pattern, the rationale for choosing a certain path. Notable software or data features should be mentioned as well.</p>
 <p>A well written pull request will motivate your reviewers, and bring them up to speed faster. Future software developers will be able to understand the reasons why something was done, and possibly avoid chasing down dead ends, Although it may take you a little more time to write a good merge request, you’ll likely see payback in faster reviews and better understood and maintainable software.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Review a pull request</h1>
 <p>Add comments mentioning specific developers using <code>@username</code> syntax to draw their attention and have the topic reviewed. After typing <code>@</code> and some text, GitHub will offer completions for developers whose real names or user names match.</p>
 <p>Comments use <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> for formatting. See GitHub documentation on <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">Special GitHub References</a> to add links to things like pull requests and commits in other repositories.</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Reviews</h2>
 <p>Reviewers may add comments providing feedback or to acknowledge their approval. All comments use the <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a>.</p>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 Fetching Changes</h3>
 <p>One may fetch the changes associated with a pull request by using either using the <code>gh pr checkout</code> command line shown at the top of the pull request page or by manually using <code>git fetch</code> to fetch the git head of the pull request as shown below: </p><pre class="fragment">$ git fetch origin pull/$branch/head
 </pre><p>This updates the local <code>FETCH_HEAD</code> to refer to the branch.</p>
@@ -209,22 +209,22 @@ Fetching Changes</h3>
 <li>Or, one may cherry-pick the commits to minimize rebuild time: <pre class="fragment">$ git cherry-pick ..FETCH_HEAD
 </pre></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Testing</h2>
 <p>Each time a pull request is created or updated automated testing is automatically triggered, and shows up under the pipeline tab.</p>
 <p>Developers can track the status of the pipeline for a merge request by using the Pipeline tab on a pull request or by clicking on stage icons as shown below:</p>
 <p><img src="docs/build_stage.png" alt="alt text" title="Pipeline" class="inline"/></p>
 <p>When trying to diagnose why a build or tests stage has failed it generally is easier to look at the pruned information reported on <a href="https://open.cdash.org/index.php?project=VISKORES">Viskores's CDash Dashboard</a>. To make it easier to see only the results for a given pull request you can click the <code>cdash</code> link under the external stage ( rightmost pipeline stage icon )</p>
 <p><img src="docs/external_stage.png" alt="alt text" title="CDash Link" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Revise a Topic</h1>
 <p>Revising a topic is a special way to modify the commits within a topic. Normally during a review of a pull request a developer will resolve issues brought up during review by adding more commits to the topic. While this is sufficient for most issues, some issues can only be resolved by rewriting the history of the topic.</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Starting Revisions</h2>
 <p>Regardless of what revisions need to be made, you first must make sure that your topic is the current branch. To make your topic branch current: </p><pre class="fragment">$ git checkout my-topic
 </pre><p>(As always, you can get the current branch with the <code>git status</code> command.)</p>
 <p>A common need for revisions is to update your topic branch to the latest version of Viskores. Even if you a revising your topic branch for some other reason, also updating to the latest main is usually not a bad idea. To update to the latest commit in main, you need to make sure that the latest commit is in your local repository. To do that run </p><pre class="fragment">$ git pull-main
-</pre><h2><a class="anchor" id="autotoc_md25"></a>
+</pre><h2><a class="anchor" id="autotoc_md24"></a>
 Make Local Revisions</h2>
 <p>The easiest way to make changes to the commits on your topic branch is to rebase it to the main branch: </p><pre class="fragment">$ git rebase -i main
 </pre><p>When you run this command, git will open your text editor with a list of all the commits that will be changed. The first word of each lines indicates a command for that commit. By default, all commits are <code>pick</code>ed, which means that they will be simply passed without change.</p>
@@ -233,36 +233,36 @@ Make Local Revisions</h2>
 <p>If you need to merge commits together, use the <code>squash</code> (or <code>s</code>) command. The rebase will give you a change to edit the commit message of the merged commit.</p>
 <p>Once you exit your editor, the rebase will begin. If you have requested to edit any commits or if git detects a conflict while applying a commit, it will stop running so that you can make changes. Make the changes you need, use <code>git add</code> to stage those changes, and then use </p><pre class="fragment">$ git rebase --continue
 </pre><p>to have git continue the rebase process. You can always run <code>git status</code> to get help about what to do next.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Push to GitHub</h2>
 <p>To push commits in your topic branch to your fork in GitHub: </p><pre class="fragment">$ git push -f
 </pre><p>Note: You need have the <code>-f</code> or <code>--force</code> to overwrite the destination as you are revising a previously pushed topic and have rewritten the topic history.</p>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Merge a Topic</h1>
 <p>After a topic has been reviewed and approved in a GitHub pull request, authorized developers may accept the pull request and merge by clicking the merge button.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Merge Success</h2>
 <p>If the merge succeeds the topic will appear in the upstream repository <code>main</code> branch and the pull request will be closed automatically.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Merge Failure</h2>
 <p>If the merge fails (likely due to a conflict), fetch the latest upstream history and rebase on it: </p><pre class="fragment">$ git fetch origin
 $ git rebase origin/main
 </pre><p>Return to the <a href="#share-a-topic">above step</a> to share the revised topic.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Fixing Problems</h1>
 <p>There are a lot of instructions in this document, and if you are not familiar with contributing to Viskores, you may get your repository in a bad state that will cause problems with the other instructions. This section attempts to capture common problems contributors have and the fixes for them.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Wrong origin Remote</h2>
 <p>The Viskores contribution workflow assumes that your <code>origin</code> remote is attached to the main Viskores GitHub repository. If it is not, that will cause problems with updating your repository. To check which remote repository origin refers to, run </p><pre class="fragment">$ git remote -v
 </pre><p>It will give you a list of remotes and their URLs that you have configured. If you have a line like </p><pre class="fragment">origin  https://github.com/viskores/viskores.git (fetch)
 </pre><p>or </p><pre class="fragment">origin  git@github.com:viskores/viskores.git (fetch)
 </pre><p>then everything is OK. If it is anything else (for example, it has your GitHub username in it), then you have a problem. Fortunately, you can fix it by simply changing the remote's URL: </p><pre class="fragment">$ git remote set-url origin https://github.com/Viskores/viskores.git
-</pre><h2><a class="anchor" id="autotoc_md32"></a>
+</pre><h2><a class="anchor" id="autotoc_md31"></a>
 main Not Tracking origin</h2>
 <p>The instructions in this document assume that your <code>main</code> branch is tracking the remote <code>main</code> branch at <code>origin</code> (which, as specified above, should be the main Viskores repository). This should be set up if you correctly cloned the main Viskores repository, but can get accidentally changed.</p>
 <p>To check which remote branch <code>main</code> is tracking, call </p><pre class="fragment">$ git rev-parse --abbrev-ref --symbolic-full-name main@{upstream}
 </pre><p>Git should respond with <code>origin/main</code>. If it responds with anything else, you need to reset the tracking: </p><pre class="fragment">$ git branch -u origin/main main
-</pre><h2><a class="anchor" id="autotoc_md33"></a>
+</pre><h2><a class="anchor" id="autotoc_md32"></a>
 Local Edits on the main Branch</h2>
 <p>The first step in the <a href="#workflow">contributing workflow</a> is that you <a href="#create-a-topic">create a topic branch</a> on which to make changes. You are not supposed to add your commits directly to <code>main</code>. However, it is easy to forget to create the topic branch.</p>
 <p>To find out if you have local commits on your main branch, check its status: </p><pre class="fragment">$ git checkout main

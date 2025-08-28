@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -70,8 +70,10 @@ Public Types</h2></td></tr>
 <tr class="memitem:a95d1a287f8709a2f1495e01d5a61f058"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a95d1a287f8709a2f1495e01d5a61f058">CountTypes</a> = <a class="el" href="structviskores_1_1List.html">viskores::List</a>&lt; <a class="el" href="namespaceviskores.html#a27c5c2d39480832d9e073800143ac745">viskores::Int64</a>, <a class="el" href="namespaceviskores.html#a551f985fe2e8dae6c5f03856ecfe0dae">viskores::Int32</a>, <a class="el" href="namespaceviskores.html#a011e737e17419be8d54717e7d8f4c833">viskores::Int16</a>, <a class="el" href="namespaceviskores.html#a51c25b092de0dab71d38ba566199f8bf">viskores::Int8</a>, <a class="el" href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a>, <a class="el" href="namespaceviskores.html#a44214830f7e13b87de4d20728b6e6297">viskores::UInt32</a>, <a class="el" href="namespaceviskores.html#a49fdbb00db997959143e0c94b52c1e0b">viskores::UInt16</a>, <a class="el" href="namespaceviskores.html#afea83468f8cfcf7f649b1fd42d117a0d">viskores::UInt8</a> &gt;</td></tr>
 <tr class="separator:a95d1a287f8709a2f1495e01d5a61f058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da85500c47236cb3c79e4e06638ff08"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;</td></tr>
+<tr class="memdesc:a4da85500c47236cb3c79e4e06638ff08"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used to map output indices to input indices.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">More...</a><br /></td></tr>
 <tr class="separator:a4da85500c47236cb3c79e4e06638ff08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc64a80817723887a00e890ea0a95b3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#afc64a80817723887a00e890ea0a95b3c">VisitArrayType</a> = <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> &gt;</td></tr>
+<tr class="memdesc:afc64a80817723887a00e890ea0a95b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of array handle used for the visit index for each output.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#afc64a80817723887a00e890ea0a95b3c">More...</a><br /></td></tr>
 <tr class="separator:afc64a80817723887a00e890ea0a95b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -80,21 +82,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6a2344fb727fe9fd5ecc5b1ea3bf8931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code> object using an array of counts for the number of outputs for each input.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#a6a2344fb727fe9fd5ecc5b1ea3bf8931">More...</a><br /></td></tr>
 <tr class="separator:a6a2344fb727fe9fd5ecc5b1ea3bf8931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaac79cc60f971aeaf21acd8049c50f50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#aaac79cc60f971aeaf21acd8049c50f50">ScatterCounting</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;countArray, bool saveInputToOutputMap)</td></tr>
+<tr class="memdesc:aaac79cc60f971aeaf21acd8049c50f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code> object using an array of counts for the number of outputs for each input.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#aaac79cc60f971aeaf21acd8049c50f50">More...</a><br /></td></tr>
 <tr class="separator:aaac79cc60f971aeaf21acd8049c50f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b3c4aa701fbddc498d5f1eefc5abca4"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
-<tr class="memitem:a8b3c4aa701fbddc498d5f1eefc5abca4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a8b3c4aa701fbddc498d5f1eefc5abca4">GetOutputToInputMap</a> (RangeType) const</td></tr>
-<tr class="separator:a8b3c4aa701fbddc498d5f1eefc5abca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf8e62f1675f8ad556554624afd7922"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
+<tr class="memitem:aecf8e62f1675f8ad556554624afd7922"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#aecf8e62f1675f8ad556554624afd7922">GetOutputToInputMap</a> (RangeType inputRange) const</td></tr>
+<tr class="memdesc:aecf8e62f1675f8ad556554624afd7922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that maps output indices to input indices.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#aecf8e62f1675f8ad556554624afd7922">More...</a><br /></td></tr>
+<tr class="separator:aecf8e62f1675f8ad556554624afd7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d3f0bb15bdf337c257117bd26c1c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a79d3f0bb15bdf337c257117bd26c1c63">GetOutputToInputMap</a> () const</td></tr>
+<tr class="memdesc:a79d3f0bb15bdf337c257117bd26c1c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the array that maps output indices to input indices.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#a79d3f0bb15bdf337c257117bd26c1c63">More...</a><br /></td></tr>
+<tr class="separator:a79d3f0bb15bdf337c257117bd26c1c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d9c235fd7e0cc7e43ed936ce013054c"><td class="memTemplParams" colspan="2">template&lt;typename RangeType &gt; </td></tr>
 <tr class="memitem:a3d9c235fd7e0cc7e43ed936ce013054c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#afc64a80817723887a00e890ea0a95b3c">VisitArrayType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a3d9c235fd7e0cc7e43ed936ce013054c">GetVisitArray</a> (RangeType) const</td></tr>
 <tr class="separator:a3d9c235fd7e0cc7e43ed936ce013054c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fb5bc7555beffe3cf66f8004b4611bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a9fb5bc7555beffe3cf66f8004b4611bc">GetOutputRange</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> inputRange) const</td></tr>
+<tr class="memdesc:a9fb5bc7555beffe3cf66f8004b4611bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of output values for a given input domain size.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#a9fb5bc7555beffe3cf66f8004b4611bc">More...</a><br /></td></tr>
 <tr class="separator:a9fb5bc7555beffe3cf66f8004b4611bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57561310d89031ddb715b0c692484e2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a57561310d89031ddb715b0c692484e2b">GetOutputRange</a> (<a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> inputRange) const</td></tr>
+<tr class="memdesc:a57561310d89031ddb715b0c692484e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of output values for a given input domain size.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#a57561310d89031ddb715b0c692484e2b">More...</a><br /></td></tr>
 <tr class="separator:a57561310d89031ddb715b0c692484e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d3f0bb15bdf337c257117bd26c1c63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a79d3f0bb15bdf337c257117bd26c1c63">GetOutputToInputMap</a> () const</td></tr>
-<tr class="separator:a79d3f0bb15bdf337c257117bd26c1c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0d58638cc50a1b0d440fdcafa598c9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#ab0d58638cc50a1b0d440fdcafa598c9c">GetInputToOutputMap</a> () const</td></tr>
-<tr class="memdesc:ab0d58638cc50a1b0d440fdcafa598c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This array will not be valid unless explicitly instructed to be saved.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#ab0d58638cc50a1b0d440fdcafa598c9c">More...</a><br /></td></tr>
+<tr class="memdesc:ab0d58638cc50a1b0d440fdcafa598c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an array that maps input values to output values.  <a href="structviskores_1_1worklet_1_1ScatterCounting.html#ab0d58638cc50a1b0d440fdcafa598c9c">More...</a><br /></td></tr>
 <tr class="separator:ab0d58638cc50a1b0d440fdcafa598c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -144,6 +151,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The type of array handle used to map output indices to input indices. </p>
+<p>For the case of <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code>, this is a basic array handle. </p>
+
 </div>
 </div>
 <a id="afc64a80817723887a00e890ea0a95b3c"></a>
@@ -157,6 +167,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type of array handle used for the visit index for each output. </p>
+<p>For the case of <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code>, this is a basic array handle. </p>
 
 </div>
 </div>
@@ -240,6 +253,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code> object using an array of counts for the number of outputs for each input. </p>
+<p>Part of the construction requires generating an input to output map, but this map is not needed for the operations of <code><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html" title="A scatter that maps input to some numbers of output.">ScatterCounting</a></code>, so by default it is deleted. However, other users might make use of it, so you can instruct the constructor to save the input to output map. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -308,8 +324,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This array will not be valid unless explicitly instructed to be saved. </p>
-<p>(See documentation for the constructor.) </p>
+<p>Provides an array that maps input values to output values. </p>
+<p>This array will not be valid unless explicitly instructed to be saved. (See documentation for the constructor.) </p>
 
 </div>
 </div>
@@ -337,6 +353,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the number of output values for a given input domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain, which must be the same size as the count array provided in the constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of output values. </dd></dl>
+
 </div>
 </div>
 <a id="a57561310d89031ddb715b0c692484e2b"></a>
@@ -363,6 +388,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the number of output values for a given input domain size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain, which must be the same size as the count array provided in the constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of output values. </dd></dl>
+
 </div>
 </div>
 <a id="a79d3f0bb15bdf337c257117bd26c1c63"></a>
@@ -388,10 +422,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Provides the array that maps output indices to input indices. </p>
+<dl class="section return"><dt>Returns</dt><dd>A basic array of indices that identifies which input provides data for each output. </dd></dl>
+
 </div>
 </div>
-<a id="a8b3c4aa701fbddc498d5f1eefc5abca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b3c4aa701fbddc498d5f1eefc5abca4">&#9670;&nbsp;</a></span>GetOutputToInputMap() <span class="overload">[2/2]</span></h2>
+<a id="aecf8e62f1675f8ad556554624afd7922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf8e62f1675f8ad556554624afd7922">&#9670;&nbsp;</a></span>GetOutputToInputMap() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +442,7 @@ template&lt;typename RangeType &gt; </div>
           <td class="memname"><a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a4da85500c47236cb3c79e4e06638ff08">OutputToInputMapType</a> viskores::worklet::ScatterCounting::GetOutputToInputMap </td>
           <td>(</td>
           <td class="paramtype">RangeType&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>inputRange</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -415,6 +452,15 @@ template&lt;typename RangeType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Provides the array that maps output indices to input indices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputRange</td><td>The size of the input domain, which must be the same size as the count array provided in the constructor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A basic array of indices that identifies which input provides data for each output. </dd></dl>
 
 </div>
 </div>

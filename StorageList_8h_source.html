@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ArrayHandleBasic_8h.html">viskores/cont/ArrayHandleBasic.h</a>&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ArrayHandleCartesianProduct_8h.html">viskores/cont/ArrayHandleCartesianProduct.h</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ArrayHandleSOA_8h.html">viskores/cont/ArrayHandleSOA.h</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ArrayHandleSOAStride_8h.html">viskores/cont/ArrayHandleSOAStride.h</a>&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ArrayHandleUniformPointCoordinates_8h.html">viskores/cont/ArrayHandleUniformPointCoordinates.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
@@ -83,25 +83,25 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">using</span> <a class="code" href="structviskores_1_1List.html">StorageListCommon</a> =</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="structviskores_1_1List.html">viskores::List</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagSOA.html">viskores::cont::StorageTagSOA</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                            <a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#ac5191156a7eb1a9aa238cb82a11833ed">   41</a></span>&#160;                                                            <a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt;&gt;;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                            <a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                            <a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt;,</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a2b157f5d96ade4fc0c7b49969416942c">   41</a></span>&#160;                 <a class="code" href="structviskores_1_1cont_1_1StorageTagSOAStride.html">viskores::cont::StorageTagSOAStride</a>&gt;;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif //viskores_cont_StorageList_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aArrayHandleSOAStride_8h_html"><div class="ttname"><a href="ArrayHandleSOAStride_8h.html">ArrayHandleSOAStride.h</a></div></div>
 <div class="ttc" id="aArrayHandleBasic_8h_html"><div class="ttname"><a href="ArrayHandleBasic_8h.html">ArrayHandleBasic.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagBasic_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a></div><div class="ttdoc">A tag for the basic implementation of a Storage object.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:53</div></div>
 <div class="ttc" id="astructviskores_1_1List_html"><div class="ttname"><a href="structviskores_1_1List.html">viskores::List</a></div><div class="ttdoc">A template used to hold a list of types.</div><div class="ttdef"><b>Definition:</b> List.h:47</div></div>
 <div class="ttc" id="aArrayHandleUniformPointCoordinates_8h_html"><div class="ttname"><a href="ArrayHandleUniformPointCoordinates_8h.html">ArrayHandleUniformPointCoordinates.h</a></div></div>
-<div class="ttc" id="aArrayHandleSOA_8h_html"><div class="ttname"><a href="ArrayHandleSOA_8h.html">ArrayHandleSOA.h</a></div></div>
+<div class="ttc" id="astructviskores_1_1cont_1_1StorageTagSOAStride_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagSOAStride.html">viskores::cont::StorageTagSOAStride</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:35</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="aArrayHandleCartesianProduct_8h_html"><div class="ttname"><a href="ArrayHandleCartesianProduct_8h.html">ArrayHandleCartesianProduct.h</a></div></div>
-<div class="ttc" id="astructviskores_1_1cont_1_1StorageTagSOA_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagSOA.html">viskores::cont::StorageTagSOA</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleSOA.h:131</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagUniformPoints_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagUniformPoints.html">viskores::cont::StorageTagUniformPoints</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleUniformPointCoordinates.h:30</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagCartesianProduct_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagCartesianProduct.html">viskores::cont::StorageTagCartesianProduct</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleCartesianProduct.h:169</div></div>
 <div class="ttc" id="aList_8h_html"><div class="ttname"><a href="List_8h.html">List.h</a></div></div>

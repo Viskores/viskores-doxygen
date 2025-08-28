@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -376,84 +376,82 @@ $(function() {
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#define VISKORES_CUDA_VERSION_MINOR </span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#if __cplusplus &gt;= 201402L || \</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">    ( defined(VISKORES_MSVC) &amp;&amp; _MSC_VER &gt;= 1910 ) || \</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">    ( defined(VISKORES_ICC)  &amp;&amp; defined(__INTEL_CXX11_MODE__) )</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#define VISKORES_HAVE_CXX_14</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#error &quot;Viskores requires at least a C++14 compiler&quot;</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">//Mark if we have enabled logging.</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="Configure_8h.html#ae4e98739a65405852d2366f0fe36a96c">  339</a></span>&#160;<span class="preprocessor">#define VISKORES_ENABLE_LOGGING</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">// Define a pair of macros, VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK and</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">// VISKORES_SWALLOW_SEMICOLON_POST_BLOCK that can be used around a block in a</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">// macro to &quot;swallow&quot; the semicolon after the macro&#39;s use so that it is</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">// used like a function without warnings about extra semicolons. It is</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment">// generally implemented by wrapping the block as a do/while with a false</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">// condition so that it executes exactly once. (See, for example,</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">// https://gcc.gnu.org/onlinedocs/cpp/Swallowing-the-Semicolon.html)</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">// However, some compilers might complain about this, too. For example, you</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">// might get a complaint about a loop with a constant expression. These</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">// macros take care of these conditions.</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#ifdef VISKORES_MSVC</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK \</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">  __pragma(warning(push)) \</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">  __pragma(warning(disable:4127)) \</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">  do</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_POST_BLOCK \</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">  while (false) \</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">  __pragma(warning(pop))</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">#else // not VISKORES_MSVC</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="Configure_8h.html#a5260446d64653cf95c37b126dcc40530">  360</a></span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK \</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor">  do</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="Configure_8h.html#aacf52a0a4f0b2be29d97af78ef54c7b2">  362</a></span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_POST_BLOCK \</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">  while (false)</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno"><a class="line" href="Configure_8h.html#ad453abe5e2f427573bc5d481e1cc0dc6">  372</a></span>&#160;<span class="preprocessor">#define VISKORES_PASS_COMMAS(...) __VA_ARGS__</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="Configure_8h.html#a43346549d7db4ddcb02ba7b857b32fcd">  402</a></span>&#160;<span class="preprocessor">#define VISKORES_EXPAND(expr) expr</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">#ifdef VISKORES_MSVC</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">//With MSVC the types that we generate cause warning C4503 (long symbol names)</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">//this doesn&#39;t affect the resulting binary so we just suppress that warning</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">#pragma warning(disable:4503)</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">//In Viskores libraries, we are typically exporting (with declspec) classes rather</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">//than the independent methods within the class. When you are exporting to a</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">//dll in MSVC and the class contains a field that is not similarly exported,</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">//then you get a warning. This is generally not an issue for our use since we</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">//are really only using classes from the standard library and distributed with</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment">//Viskores itself. The only sane way to fix the issue is to just disable the</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="comment">//warning.</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#pragma warning(disable:4251)</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#if __cplusplus &gt;= 201703L || (defined(VISKORES_MSVC) &amp;&amp; (_MSC_VER &gt;= 1928))</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="preprocessor">#define VISKORES_HAVE_CXX_17</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#error &quot;Viskores requires at least a C++17 compiler&quot;</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">//Mark if we have enabled logging.</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="Configure_8h.html#ae4e98739a65405852d2366f0fe36a96c">  337</a></span>&#160;<span class="preprocessor">#define VISKORES_ENABLE_LOGGING</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">// Define a pair of macros, VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK and</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">// VISKORES_SWALLOW_SEMICOLON_POST_BLOCK that can be used around a block in a</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">// macro to &quot;swallow&quot; the semicolon after the macro&#39;s use so that it is</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">// used like a function without warnings about extra semicolons. It is</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">// generally implemented by wrapping the block as a do/while with a false</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment">// condition so that it executes exactly once. (See, for example,</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment">// https://gcc.gnu.org/onlinedocs/cpp/Swallowing-the-Semicolon.html)</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">// However, some compilers might complain about this, too. For example, you</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">// might get a complaint about a loop with a constant expression. These</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">// macros take care of these conditions.</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#ifdef VISKORES_MSVC</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK \</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">  __pragma(warning(push)) \</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">  __pragma(warning(disable:4127)) \</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">  do</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_POST_BLOCK \</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">  while (false) \</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">  __pragma(warning(pop))</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">#else // not VISKORES_MSVC</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="Configure_8h.html#a5260446d64653cf95c37b126dcc40530">  358</a></span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_PRE_BLOCK \</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">  do</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="Configure_8h.html#aacf52a0a4f0b2be29d97af78ef54c7b2">  360</a></span>&#160;<span class="preprocessor">#define VISKORES_SWALLOW_SEMICOLON_POST_BLOCK \</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor">  while (false)</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="Configure_8h.html#ad453abe5e2f427573bc5d481e1cc0dc6">  370</a></span>&#160;<span class="preprocessor">#define VISKORES_PASS_COMMAS(...) __VA_ARGS__</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno"><a class="line" href="Configure_8h.html#a43346549d7db4ddcb02ba7b857b32fcd">  400</a></span>&#160;<span class="preprocessor">#define VISKORES_EXPAND(expr) expr</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#ifdef VISKORES_MSVC</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">//With MSVC the types that we generate cause warning C4503 (long symbol names)</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">//this doesn&#39;t affect the resulting binary so we just suppress that warning</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">#pragma warning(disable:4503)</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">//In Viskores libraries, we are typically exporting (with declspec) classes rather</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">//than the independent methods within the class. When you are exporting to a</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment">//dll in MSVC and the class contains a field that is not similarly exported,</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">//then you get a warning. This is generally not an issue for our use since we</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">//are really only using classes from the standard library and distributed with</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">//Viskores itself. The only sane way to fix the issue is to just disable the</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="comment">//warning.</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="preprocessor">#pragma warning(disable:4251)</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="comment">//----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">// Switch case fall-through policy.</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="comment">// Use &quot;VISKORES_FALLTHROUGH;&quot; to annotate deliberate fall-through in switches,</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">// use it analogously to &quot;break;&quot;.  The trailing semi-colon is required.</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">#if !defined(VISKORES_FALLTHROUGH) &amp;&amp; defined(__has_cpp_attribute)</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="preprocessor"># if __cplusplus &gt;= 201703L &amp;&amp; __has_cpp_attribute(fallthrough)</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[fallthrough]]</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor"># elif __cplusplus &gt;= 201103L &amp;&amp; __has_cpp_attribute(gnu::fallthrough)</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[gnu::fallthrough]]</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="preprocessor"># elif __cplusplus &gt;= 201103L &amp;&amp; __has_cpp_attribute(clang::fallthrough)</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[clang::fallthrough]]</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="preprocessor"># endif</span></div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">#ifndef VISKORES_FALLTHROUGH</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="Configure_8h.html#a9cdc59bc3c8fe4865503b65d42cd0e01">  438</a></span>&#160;<span class="preprocessor"># define VISKORES_FALLTHROUGH ((void)0)</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">#endif //viskores_internal_Configure_h</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment">//----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="comment">// Switch case fall-through policy.</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">// Use &quot;VISKORES_FALLTHROUGH;&quot; to annotate deliberate fall-through in switches,</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">// use it analogously to &quot;break;&quot;.  The trailing semi-colon is required.</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">#if !defined(VISKORES_FALLTHROUGH) &amp;&amp; defined(__has_cpp_attribute)</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor"># if __cplusplus &gt;= 201703L &amp;&amp; __has_cpp_attribute(fallthrough)</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[fallthrough]]</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="preprocessor"># elif __cplusplus &gt;= 201103L &amp;&amp; __has_cpp_attribute(gnu::fallthrough)</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[gnu::fallthrough]]</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor"># elif __cplusplus &gt;= 201103L &amp;&amp; __has_cpp_attribute(clang::fallthrough)</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#  define VISKORES_FALLTHROUGH [[clang::fallthrough]]</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="preprocessor"># endif</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#ifndef VISKORES_FALLTHROUGH</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="Configure_8h.html#a9cdc59bc3c8fe4865503b65d42cd0e01">  436</a></span>&#160;<span class="preprocessor"># define VISKORES_FALLTHROUGH ((void)0)</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#endif //viskores_internal_Configure_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The following empty macros are instantiation delimiters used by <code>vtk_add_instantiations</code> at CMake/ViskoresWrappers.cmake to generate transient instantiation files at the build directory. </p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Example</h1>
 <div class="fragment"><div class="line"><a class="code" href="Instantiations_8h.html#a58ae1a592966452e03e4fcadde31913f">VISKORES_INSTANTIATION_BEGIN</a></div>
 <div class="line"><span class="keyword">extern</span> <span class="keyword">template</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;viskores::Vec&lt;viskores::Vec3f_32, 3&gt;</a>&gt;</div>
@@ -84,7 +84,7 @@ Example</h1>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;viskores::Vec3f_32, viskores::cont::StorageTagSOA&gt;</a>&amp;,</div>
 <div class="line">  GradientOutputFields&lt;viskores::Vec3f_32&gt;&amp;);</div>
 <div class="line"><a class="code" href="Instantiations_8h.html#afe11ad4a7fe5165e48b7b1af4da25ee5">VISKORES_INSTANTIATION_END</a></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md36"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md35"></a>
 KNOWN ISSUES</h1>
 <p>Abstain to use the following constructors in the code section between the VISKORES_INSTANTIATION_BEGIN/END directives:</p>
 <ul>
@@ -93,7 +93,7 @@ KNOWN ISSUES</h1>
 <li>Comments that use the '$' symbol.</li>
 <li>Symbols for functions or methods that are inline. This includes methods with implementation defined in the class/struct definition.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 See Also</h1>
 <p>See the documentation for the <code>viskores_add_instantiations</code> function in CMake/ViskoresWrappers.cmake for more information. </p>
 

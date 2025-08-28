@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
   </td>
  </tr>
@@ -107,40 +107,47 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keyword">using</span> AlgorithmType = viskores::filter::flow::internal::AdvectAlgorithmThreaded&lt;DSIType&gt;;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">return</span> this-&gt;RunAlgo&lt;AlgorithmType&gt;(seeds, stepSize);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> AlgorithmType&gt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> RunAlgo(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;ParticleType&gt;</a>&amp; seeds,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                             <a class="code" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a> stepSize)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    AlgorithmType algo(this-&gt;BoundsMap, this-&gt;Blocks);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    algo.Execute(seeds, stepSize);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> algo.GetOutput();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  std::vector&lt;DSIType&gt; Blocks;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  viskores::filter::flow::internal::BoundsMap BoundsMap;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> UseThreadedAlgorithm;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="comment">// There appears to be a race condition in AdvectAlgorithmThreaded, so it is</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">//  currently disabled.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="comment">// using AlgorithmType = viskores::filter::flow::internal::AdvectAlgorithmThreaded&lt;DSIType&gt;;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="Logging_8h.html#a70486edee812206396733d018430ea69">VISKORES_LOG_S</a>(<a class="code" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875">viskores::cont::LogLevel::Info</a>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                     <span class="stringliteral">&quot;Threaded flow management currently disabled.&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">using</span> AlgorithmType = viskores::filter::flow::internal::AdvectAlgorithm&lt;DSIType&gt;;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">return</span> this-&gt;RunAlgo&lt;AlgorithmType&gt;(seeds, stepSize);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> AlgorithmType&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> RunAlgo(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;ParticleType&gt;</a>&amp; seeds,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                             <a class="code" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a> stepSize)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    AlgorithmType algo(this-&gt;BoundsMap, this-&gt;Blocks);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    algo.Execute(seeds, stepSize);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> algo.GetOutput();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">//viskores::filter::flow::internal</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  std::vector&lt;DSIType&gt; Blocks;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  viskores::filter::flow::internal::BoundsMap BoundsMap;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">bool</span> UseThreadedAlgorithm;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif //viskores_filter_flow_internal_ParticleAdvector_h</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <span class="comment">//viskores::filter::flow::internal</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif //viskores_filter_flow_internal_ParticleAdvector_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aBoundsMap_8h_html"><div class="ttname"><a href="BoundsMap_8h.html">BoundsMap.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a></div><div class="ttdoc">Manages an array-worth of data.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:313</div></div>
 <div class="ttc" id="aDataSetIntegrator_8h_html"><div class="ttname"><a href="DataSetIntegrator_8h.html">DataSetIntegrator.h</a></div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875">viskores::cont::LogLevel::Info</a></div><div class="ttdeci">@ Info</div><div class="ttdoc">Information messages (detected hardware, etc) and temporary debugging output.</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1PartitionedDataSet_html"><div class="ttname"><a href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a></div><div class="ttdoc">Comprises a set of viskores::cont::DataSet objects.</div><div class="ttdef"><b>Definition:</b> PartitionedDataSet.h:34</div></div>
 <div class="ttc" id="aAdvectAlgorithm_8h_html"><div class="ttname"><a href="AdvectAlgorithm_8h.html">AdvectAlgorithm.h</a></div></div>
+<div class="ttc" id="aLogging_8h_html_a70486edee812206396733d018430ea69"><div class="ttname"><a href="Logging_8h.html#a70486edee812206396733d018430ea69">VISKORES_LOG_S</a></div><div class="ttdeci">#define VISKORES_LOG_S(level,...)</div><div class="ttdoc">Writes a message using stream syntax to the indicated log level.</div><div class="ttdef"><b>Definition:</b> Logging.h:216</div></div>
 <div class="ttc" id="anamespaceviskores_html_af6c632281522d90b3f50ad6396efa1d5"><div class="ttname"><a href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a></div><div class="ttdeci">viskores::Float32 FloatDefault</div><div class="ttdoc">The floating point type to use when no other precision is specified.</div><div class="ttdef"><b>Definition:</b> Types.h:244</div></div>
 <div class="ttc" id="aAdvectAlgorithmThreaded_8h_html"><div class="ttname"><a href="AdvectAlgorithmThreaded_8h.html">AdvectAlgorithmThreaded.h</a></div></div>
 <!-- start footer part -->
