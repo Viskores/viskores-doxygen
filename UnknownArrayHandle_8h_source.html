@@ -698,460 +698,489 @@ $(function() {
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> componentIndex = 0; componentIndex &lt; VTraits::NUM_COMPONENTS;</div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;         ++componentIndex)</div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    {</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;      strideArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#a5d0d849a708c8987bf697e10b1e88e33">SetArray</a>(componentIndex,</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                           this-&gt;ExtractComponent&lt;ComponentType&gt;(componentIndex, allowCopy));</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    }</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    <span class="keywordflow">return</span> strideArray;</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;  }</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160; </div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallForTypes(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160; </div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallForTypesWithFloatFallback(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160; </div>
-<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallWithExtractedArray(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160; </div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> ReleaseResourcesExecution() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;      <a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html">viskores::cont::ArrayHandleStride&lt;ComponentType&gt;</a> componentArray =</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        this-&gt;ExtractComponent&lt;ComponentType&gt;(componentIndex, allowCopy);</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;      <span class="comment">// ArrayHandleSOAStride currently does not support div and mod due to Cuda compile issues.</span></div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;      <span class="keywordflow">if</span> (((componentArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html#a6e8a15934d9c8db0c66dc838edd23535">GetModulo</a>() &gt; 0) &amp;&amp;</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;           (componentArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html#a6e8a15934d9c8db0c66dc838edd23535">GetModulo</a>() &lt; componentArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">GetNumberOfValues</a>())) ||</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;          (componentArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandleStride.html#a15d7f7a84ffc8a592c70624049e25b1d">GetDivisor</a>() &gt; 1))</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;      {</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        <span class="keywordflow">if</span> (allowCopy != <a class="code" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a>)</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;        {</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;          <span class="keywordflow">throw</span> <a class="code" href="classviskores_1_1cont_1_1ErrorBadType.html">viskores::cont::ErrorBadType</a>(<span class="stringliteral">&quot;Cannot extract array of type &quot;</span> +</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;                                             this-&gt;GetArrayTypeName() +</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                                             <span class="stringliteral">&quot; without copying because ArrayHandleSOAStride &quot;</span></div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                                             <span class="stringliteral">&quot;currently does not support divisor or modulo.&quot;</span>);</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;        }</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;        {</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;          <a class="code" href="Logging_8h.html#a70486edee812206396733d018430ea69">VISKORES_LOG_S</a>(</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;            <a class="code" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a56525ae64d370c0b448ac0d60710ef17">viskores::cont::LogLevel::Warn</a>,</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            <span class="stringliteral">&quot;Extracting &quot;</span></div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;              &lt;&lt; this-&gt;GetArrayTypeName()</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; to ArrayHandleSOAStride requires full array copy because divisor and &quot;</span></div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;                 <span class="stringliteral">&quot;modulo not supported there. ExtractComponent or &quot;</span></div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;                 <span class="stringliteral">&quot;ExtractArrayFromComponents can be used without a copy.&quot;</span>);</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;          <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> arrayCopy;</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;          arrayCopy = <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;ValueType&gt;</a>{};</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;          arrayCopy.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ad08c75fc53700b44c81f088e5aa1ab37">DeepCopyFrom</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;          <span class="keywordflow">return</span> arrayCopy.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a4025fd0aeb7713db9adc79bd85b3b266">ExtractArrayWithValueType</a>&lt;ValueType&gt;(allowCopy);</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;        }</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;      }</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160; </div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;      strideArray.<a class="code" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#a5d0d849a708c8987bf697e10b1e88e33">SetArray</a>(componentIndex, componentArray);</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;    }</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    <span class="keywordflow">return</span> strideArray;</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;  }</div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallForTypes(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160; </div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallForTypesWithFloatFallback(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160; </div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> ReleaseResources() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160; </div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> PrintSummary(std::ostream&amp; out, <span class="keywordtype">bool</span> full = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;};</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160; </div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;<span class="comment">//=============================================================================</span></div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;<span class="comment">// Out of class implementations</span></div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160; </div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;{</div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160; </div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;{</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;    <span class="keywordflow">return</span> array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>&gt;();</div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;  }</div>
-<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;};</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160; </div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagBasic&gt;</div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;{</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;    <span class="keyword">using</span> UnrolledVec = viskores::internal::UnrollVec&lt;T&gt;;</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;    <span class="keywordflow">return</span> (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandleBasic.html">viskores::cont::ArrayHandleBasic&lt;T&gt;</a>&gt;() ||</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae6e9651b39c31109d02b68cd9e1e0b40">IsStorageType</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagRuntimeVec.html">viskores::cont::StorageTagRuntimeVec</a>&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;             array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;<span class="keyword">typename</span> UnrolledVec::ComponentType&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;             UnrolledVec::NUM_COMPONENTS == array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a2efb94483dfb57715fe36512a638e2a2">GetNumberOfComponentsFlat</a>()));</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;  }</div>
-<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;};</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TargetT, <span class="keyword">typename</span> SourceT, <span class="keyword">typename</span> SourceS&gt;</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;TargetT, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagCast&lt;SourceT, SourceS&gt;&gt;</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;{</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <span class="keywordflow">return</span> UnknownArrayHandleCanConvert&lt;SourceT, SourceS&gt;{}(array);</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;  }</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;};</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160; </div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvertTry</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;{</div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> operator()(S,</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;                                <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array,</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;                                <span class="keywordtype">bool</span>&amp; canConvert)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    canConvert |= UnknownArrayHandleCanConvert&lt;T, S&gt;{}(array);</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;  }</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;};</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160; </div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ss&gt;</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagMultiplexer&lt;Ss...&gt;&gt;</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;{</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;    <span class="keywordtype">bool</span> canConvert = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;      UnknownArrayHandleCanConvertTry&lt;T&gt;{}, <a class="code" href="structviskores_1_1List.html">viskores::List</a>&lt;Ss...&gt;{}, array, canConvert);</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    <span class="keywordflow">return</span> canConvert;</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;  }</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;};</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160; </div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagRuntimeVec&gt;</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;{</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;    <span class="keyword">using</span> BaseComponentType = <span class="keyword">typename</span> T::ComponentType;</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    <span class="keywordflow">return</span> (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, viskores::cont::StorageTagRuntimeVec&gt;</a>&gt;() ||</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae6e9651b39c31109d02b68cd9e1e0b40">IsStorageType</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;             array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;BaseComponentType&gt;()));</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;  }</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;};</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160; </div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagSOAStride&gt;</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;{</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keyword">using</span> VTraits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;T&gt;</a>;</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <span class="keyword">using</span> BaseComponentType = <span class="keyword">typename</span> VTraits::BaseComponentType;</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <span class="keywordflow">return</span> (!array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a3031d78f00569e963a0011ee1d287483">ExtractIsInefficient</a>() &amp;&amp; array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;BaseComponentType&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a2efb94483dfb57715fe36512a638e2a2">GetNumberOfComponentsFlat</a>() == VTraits::NUM_COMPONENTS) &amp;&amp;</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;            std::is_same&lt;BaseComponentType, typename VTraits::ComponentType&gt;::value);</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;  }</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;};</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160; </div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160; </div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
-<div class="line"><a name="l01122"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d"> 1122</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">bool</span> UnknownArrayHandle::CanConvert()<span class="keyword"> const</span></div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  <a class="code" href="ArrayHandle_8h.html#abc4c3637025d649438f3c2973b543792">VISKORES_IS_ARRAY_HANDLE</a>(ArrayHandleType);</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160; </div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  <span class="keywordflow">return</span> detail::UnknownArrayHandleCanConvert&lt;<span class="keyword">typename</span> ArrayHandleType::ValueType,</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;                                              <span class="keyword">typename</span> ArrayHandleType::StorageTag&gt;{}(*this);</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;}</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160; </div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;{</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160; </div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T,</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;          <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt;</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;            <span class="keyword">typename</span> viskores::internal::UnrollVec&lt;T&gt;::ComponentType&gt;::NUM_COMPONENTS&gt;</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleRuntimeVecAsBasic</div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> CastAndCallWithExtractedArray(Functor&amp;&amp; functor, Args&amp;&amp;... args) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160; </div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> ReleaseResourcesExecution() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160; </div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> ReleaseResources() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160; </div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> PrintSummary(std::ostream&amp; out, <span class="keywordtype">bool</span> full = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;};</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160; </div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;<span class="comment">//=============================================================================</span></div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;<span class="comment">// Out of class implementations</span></div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;{</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S&gt;</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;{</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordflow">return</span> array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>&gt;();</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;  }</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;};</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160; </div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagBasic&gt;</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;{</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    <span class="keyword">using</span> UnrolledVec = viskores::internal::UnrollVec&lt;T&gt;;</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    <span class="keywordflow">return</span> (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandleBasic.html">viskores::cont::ArrayHandleBasic&lt;T&gt;</a>&gt;() ||</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae6e9651b39c31109d02b68cd9e1e0b40">IsStorageType</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagRuntimeVec.html">viskores::cont::StorageTagRuntimeVec</a>&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;             array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;<span class="keyword">typename</span> UnrolledVec::ComponentType&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;             UnrolledVec::NUM_COMPONENTS == array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a2efb94483dfb57715fe36512a638e2a2">GetNumberOfComponentsFlat</a>()));</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;  }</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;};</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160; </div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TargetT, <span class="keyword">typename</span> SourceT, <span class="keyword">typename</span> SourceS&gt;</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;TargetT, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagCast&lt;SourceT, SourceS&gt;&gt;</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;{</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    <span class="keywordflow">return</span> UnknownArrayHandleCanConvert&lt;SourceT, SourceS&gt;{}(array);</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;  }</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;};</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160; </div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvertTry</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;{</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> operator()(S,</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;                                <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array,</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;                                <span class="keywordtype">bool</span>&amp; canConvert)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    canConvert |= UnknownArrayHandleCanConvert&lt;T, S&gt;{}(array);</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;  }</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;};</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160; </div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ss&gt;</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagMultiplexer&lt;Ss...&gt;&gt;</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;{</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="keywordtype">bool</span> canConvert = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;      UnknownArrayHandleCanConvertTry&lt;T&gt;{}, <a class="code" href="structviskores_1_1List.html">viskores::List</a>&lt;Ss...&gt;{}, array, canConvert);</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keywordflow">return</span> canConvert;</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;  }</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;};</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160; </div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagRuntimeVec&gt;</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;{</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;    <span class="keyword">using</span> BaseComponentType = <span class="keyword">typename</span> T::ComponentType;</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;    <span class="keywordflow">return</span> (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, viskores::cont::StorageTagRuntimeVec&gt;</a>&gt;() ||</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae6e9651b39c31109d02b68cd9e1e0b40">IsStorageType</a>&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a>&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;             array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;BaseComponentType&gt;()));</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  }</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;};</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160; </div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleCanConvert&lt;T, <a class="code" href="namespaceviskores.html">viskores</a>::cont::StorageTagSOAStride&gt;</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;{</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>*,</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                                <span class="keyword">const</span> detail::UnknownAHContainer*,</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                                <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp;)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    <span class="comment">// This version only gets called if T contains a `Vec`-like object that is not a strict `Vec`.</span></div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    <span class="comment">// This is rare but could happen. In this case, the type cannot be stored in an</span></div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="comment">// `ArrayHandleRuntimeVec` and therefore the load can never happen, so just ignore.</span></div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;  }</div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;};</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160; </div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleRuntimeVecAsBasic&lt;T, 1&gt;</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;{</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>* <span class="keyword">self</span>,</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;                                <span class="keyword">const</span> detail::UnknownAHContainer* container,</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                                <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    <span class="keyword">using</span> UnrolledVec = viskores::internal::UnrollVec&lt;T&gt;;</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keyword">using</span> ComponentType = <span class="keyword">typename</span> UnrolledVec::ComponentType;</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    <span class="keywordflow">if</span> (self-&gt;IsStorageType&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagRuntimeVec.html">viskores::cont::StorageTagRuntimeVec</a>&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        self-&gt;IsBaseComponentType&lt;ComponentType&gt;() &amp;&amp;</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        UnrolledVec::NUM_COMPONENTS == self-&gt;GetNumberOfComponentsFlat())</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    {</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;      <span class="comment">// Pull out the components array out of the buffers. The array might not match exactly</span></div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;      <span class="comment">// the array put in, but the buffer should still be consistent with the array (which works</span></div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;      <span class="comment">// because the size of a basic array is based on the number of bytes in the buffer).</span></div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;      <span class="keyword">using</span> RuntimeVecType =</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;        <span class="keyword">typename</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#af572cf118bc5a9d11adbf5fbd02fe697">viskores::cont::ArrayHandleRuntimeVec&lt;ComponentType&gt;::ValueType</a>;</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;      <span class="keyword">using</span> StorageRuntimeVec =</div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;        viskores::cont::internal::Storage&lt;RuntimeVecType, viskores::cont::StorageTagRuntimeVec&gt;;</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;      StorageRuntimeVec::AsArrayHandleBasic(container-&gt;Buffers(container-&gt;ArrayHandlePointer),</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;                                            array);</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    }</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    {</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    }</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;  }</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;};</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160; </div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160; </div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01183"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6ce6bffd5bedd1d891a941d048fb7ae3"> 1183</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::AsArrayHandle(</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  <span class="keywordflow">if</span> (!detail::UnknownArrayHandleRuntimeVecAsBasic&lt;T&gt;{}(<span class="keyword">this</span>, this-&gt;Container.get(), array))</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;  {</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;    this-&gt;BaseAsArrayHandle(array);</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;  }</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;}</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160; </div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;{</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160; </div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleMultiplexerCastTry</div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;{</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S, <span class="keyword">typename</span>... Ss&gt;</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> operator()(</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    S,</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt;T, <a class="code" href="structviskores_1_1cont_1_1StorageTagMultiplexer.html">viskores::cont::StorageTagMultiplexer&lt;Ss...&gt;</a>&gt;&amp; outputArray,</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="keywordtype">bool</span>&amp; converted)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    <span class="keyword">using</span> ArrayType = <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    <span class="keywordflow">if</span> (unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">CanConvert</a>&lt;ArrayType&gt;())</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    {</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;      <span class="keywordflow">if</span> (converted &amp;&amp; !unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;ArrayType&gt;())</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;      {</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;        <span class="comment">// The array has already been converted and pushed in the multiplexer. It is</span></div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;        <span class="comment">// possible that multiple array types can be put in the ArrayHandleMultiplexer</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;        <span class="comment">// (for example, and ArrayHandle or an ArrayHandle that has been cast). Exact</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;        <span class="comment">// matches will override other matches (hence, the second part of the condition),</span></div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="comment">// but at this point we have already found a better array to put inside.</span></div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;      }</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;      outputArray = <a class="code" href="classviskores_1_1cont_1_1ArrayHandleMultiplexer.html">viskores::cont::ArrayHandleMultiplexer&lt;viskores::cont::ArrayHandle&lt;T, Ss&gt;</a>...&gt;(</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;        unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a5bd19cc2cefd571d9106340cd4ec85fb">AsArrayHandle</a>&lt;ArrayType&gt;());</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;      converted = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    }</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;  }</div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;};</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160; </div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160; </div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ss&gt;</div>
-<div class="line"><a name="l01226"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a072dc7bd1b12283984a33193aef68ecc"> 1226</a></span>&#160;<span class="keywordtype">void</span> UnknownArrayHandle::AsArrayHandle(</div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt;T, <a class="code" href="structviskores_1_1cont_1_1StorageTagMultiplexer.html">viskores::cont::StorageTagMultiplexer&lt;Ss...&gt;</a>&gt;&amp; array)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;  <span class="keywordtype">bool</span> converted = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleMultiplexerCastTry{},</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;                        <a class="code" href="structviskores_1_1List.html">viskores::List</a>&lt;Ss...&gt;{},</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;                        *<span class="keyword">this</span>,</div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;                        array,</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;                        converted);</div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160; </div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;  <span class="keywordflow">if</span> (!converted)</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;  {</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, decltype(array));</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <a class="code" href="namespaceviskores_1_1cont.html#a945f308c83bb2157ee0c7a61ae540632">throwFailedDynamicCast</a>(<a class="code" href="namespaceviskores_1_1cont.html#a5cbb5d72e6df95c0f64aff4aab253add">viskores::cont::TypeToString</a>(*<span class="keyword">this</span>),</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;                           <a class="code" href="namespaceviskores_1_1cont.html#a5cbb5d72e6df95c0f64aff4aab253add">viskores::cont::TypeToString</a>(array));</div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;  }</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;}</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;{</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleTry</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;{</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;  <span class="keywordtype">void</span> operator()(<a class="code" href="structviskores_1_1List.html">viskores::List&lt;T, S&gt;</a>,</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                  Functor&amp;&amp; f,</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;                  <span class="keywordtype">bool</span>&amp; called,</div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;                  <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                  Args&amp;&amp;... args)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;    <span class="keyword">using</span> DerivedArrayType = <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>;</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;    <span class="keywordflow">if</span> (!called &amp;&amp; unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">CanConvert</a>&lt;DerivedArrayType&gt;())</div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;    {</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;      called = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;      DerivedArrayType derivedArray;</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;      unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a5bd19cc2cefd571d9106340cd4ec85fb">AsArrayHandle</a>(derivedArray);</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;      <a class="code" href="Logging_8h.html#a33ccf464eccddacdf19e5d831a2eb302">VISKORES_LOG_CAST_SUCC</a>(unknownArray, derivedArray);</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160; </div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;      <span class="comment">// If you get a compile error here, it means that you have called CastAndCall for a</span></div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;      <span class="comment">// viskores::cont::UnknownArrayHandle and the arguments of the functor do not match those</span></div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;      <span class="comment">// being passed. This is often because it is calling the functor with an ArrayHandle</span></div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;      <span class="comment">// type that was not expected. Either add overloads to the functor to accept all</span></div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;      <span class="comment">// possible array types or constrain the types tried for the CastAndCall. Note that</span></div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;      <span class="comment">// the functor will be called with an array of type viskores::cont::ArrayHandle&lt;T, S&gt;.</span></div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;      <span class="comment">// Directly using a subclass of ArrayHandle (e.g. viskores::cont::ArrayHandleConstant&lt;T&gt;)</span></div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;      <span class="comment">// might not work.</span></div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;      f(derivedArray, std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;    }</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;  }</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;};</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160; </div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160; </div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="keyword">namespace </span>internal</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;{</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160; </div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;{</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160; </div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;<span class="keyword">struct </span>IsUndefinedArrayType</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;{</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;};</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;<span class="keyword">struct </span>IsUndefinedArrayType&lt;<a class="code" href="namespaceviskores.html">viskores</a>::List&lt;T, S&gt;&gt;</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;  : viskores::cont::internal::IsInvalidArrayHandle&lt;T, S&gt;</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;{</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;};</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160; </div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueTypeList, <span class="keyword">typename</span> StorageTypeList&gt;</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="keyword">using</span> ListAllArrayTypes =</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;  <a class="code" href="namespaceviskores.html#a28674e84f10ccf253d212afb6e39e41f">viskores::ListRemoveIf&lt;viskores::ListCross&lt;ValueTypeList, StorageTypeList&gt;</a>,</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;                         detail::IsUndefinedArrayType&gt;;</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;VISKORES_CONT_EXPORT <span class="keywordtype">void</span> ThrowCastAndCallException(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp;,</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;                                                    <span class="keyword">const</span> std::type_info&amp;);</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;} <span class="comment">// namespace internal</span></div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160; </div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageTagList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01308"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a4814b53bff37eb59187dd374ce3ac2f7"> 1308</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallForTypes(Functor&amp;&amp; f, Args&amp;&amp;... args)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;  <span class="keyword">using</span> crossProduct = internal::ListAllArrayTypes&lt;TypeList, StorageTagList&gt;;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160; </div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;                        crossProduct{},</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;                        std::forward&lt;Functor&gt;(f),</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                        called,</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                        *<span class="keyword">this</span>,</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;  {</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;    <span class="comment">// throw an exception</span></div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, TypeList);</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(TypeList));</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;  }</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;}</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160; </div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageTagList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01328"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a7bb6c8a9580516949494bc7e0ed64394"> 1328</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallForTypesWithFloatFallback(Functor&amp;&amp; functor,</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                                                                            Args&amp;&amp;... args)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;  <span class="keyword">using</span> crossProduct = internal::ListAllArrayTypes&lt;TypeList, StorageTagList&gt;;</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160; </div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;                        crossProduct{},</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;                        std::forward&lt;Functor&gt;(functor),</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;                        called,</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;                        *<span class="keyword">this</span>,</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;  {</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;    <span class="comment">// Copy to a float array and try again</span></div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    <a class="code" href="Logging_8h.html#a5d3c0a20f254d8583427a7a512fa17d5">VISKORES_LOG_F</a>(<a class="code" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875">viskores::cont::LogLevel::Info</a>,</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;                   <span class="stringliteral">&quot;Cast and call from %s failed. Copying to basic float array.&quot;</span>,</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;                   this-&gt;GetArrayTypeName().c_str());</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;    <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> floatArray = this-&gt;NewInstanceFloatBasic();</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    floatArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ad08c75fc53700b44c81f088e5aa1ab37">DeepCopyFrom</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;                          crossProduct{},</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;                          std::forward&lt;Functor&gt;(functor),</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;                          called,</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;                          floatArray,</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;                          std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;  }</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;  {</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    <span class="comment">// throw an exception</span></div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, TypeList);</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(TypeList));</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;  }</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;}</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;<span class="comment">//=============================================================================</span></div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;<span class="comment">// Free function casting helpers</span></div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160; </div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
-<div class="line"><a name="l01369"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8"> 1369</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8">IsType</a>(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;{</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;  <span class="keywordflow">return</span> array.template IsType&lt;ArrayHandleType&gt;();</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;}</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160; </div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
-<div class="line"><a name="l01379"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1"> 1379</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> ArrayHandleType <a class="code" href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1">Cast</a>(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;{</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;  <span class="keywordflow">return</span> array.template AsArrayHandle&lt;ArrayHandleType&gt;();</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;}</div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;{</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160; </div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleTryExtract</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;{</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;  <span class="keywordtype">void</span> operator()(T,</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;                  Functor&amp;&amp; f,</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;                  <span class="keywordtype">bool</span>&amp; called,</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;                  <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;                  Args&amp;&amp;... args)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;    <span class="keywordflow">if</span> (!called &amp;&amp; unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;T&gt;())</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    {</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;      called = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;      <span class="keyword">auto</span> extractedArray = unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a69817a433bae60cdf3649d96090971b8">ExtractArrayFromComponents</a>&lt;T&gt;();</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;      <a class="code" href="Logging_8h.html#a33ccf464eccddacdf19e5d831a2eb302">VISKORES_LOG_CAST_SUCC</a>(unknownArray, extractedArray);</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160; </div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;      <span class="comment">// If you get a compile error here, it means that you have called</span></div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;      <span class="comment">// CastAndCallWithExtractedArray for a viskores::cont::UnknownArrayHandle and the arguments of</span></div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;      <span class="comment">// the functor do not match those being passed. This is often because it is calling the</span></div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;      <span class="comment">// functor with an ArrayHandle type that was not expected. Add overloads to the functor to</span></div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;      <span class="comment">// accept all possible array types or constrain the types tried for the CastAndCall. Note</span></div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;      <span class="comment">// that the functor will be called with an array of type that is different than the actual</span></div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;      <span class="comment">// type of the `ArrayHandle` stored in the `UnknownArrayHandle`.</span></div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;      f(extractedArray, std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    }</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;  }</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;};</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    <span class="keyword">using</span> VTraits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;T&gt;</a>;</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;    <span class="keyword">using</span> BaseComponentType = <span class="keyword">typename</span> VTraits::BaseComponentType;</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    <span class="keywordflow">return</span> (!array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a3031d78f00569e963a0011ee1d287483">ExtractIsInefficient</a>() &amp;&amp; array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;BaseComponentType&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;            (array.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a2efb94483dfb57715fe36512a638e2a2">GetNumberOfComponentsFlat</a>() == VTraits::NUM_COMPONENTS) &amp;&amp;</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;            std::is_same&lt;BaseComponentType, typename VTraits::ComponentType&gt;::value);</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;  }</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;};</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160; </div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160; </div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
+<div class="line"><a name="l01151"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d"> 1151</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">bool</span> UnknownArrayHandle::CanConvert()<span class="keyword"> const</span></div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;  <a class="code" href="ArrayHandle_8h.html#abc4c3637025d649438f3c2973b543792">VISKORES_IS_ARRAY_HANDLE</a>(ArrayHandleType);</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160; </div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;  <span class="keywordflow">return</span> detail::UnknownArrayHandleCanConvert&lt;<span class="keyword">typename</span> ArrayHandleType::ValueType,</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                                              <span class="keyword">typename</span> ArrayHandleType::StorageTag&gt;{}(*this);</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;}</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160; </div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;{</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160; </div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T,</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;          <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits</a>&lt;</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;            <span class="keyword">typename</span> viskores::internal::UnrollVec&lt;T&gt;::ComponentType&gt;::NUM_COMPONENTS&gt;</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleRuntimeVecAsBasic</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;{</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>*,</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;                                <span class="keyword">const</span> detail::UnknownAHContainer*,</div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;                                <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp;)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <span class="comment">// This version only gets called if T contains a `Vec`-like object that is not a strict `Vec`.</span></div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <span class="comment">// This is rare but could happen. In this case, the type cannot be stored in an</span></div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    <span class="comment">// `ArrayHandleRuntimeVec` and therefore the load can never happen, so just ignore.</span></div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;  }</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;};</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160; </div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleRuntimeVecAsBasic&lt;T, 1&gt;</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;{</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>* <span class="keyword">self</span>,</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;                                <span class="keyword">const</span> detail::UnknownAHContainer* container,</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;                                <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <span class="keyword">using</span> UnrolledVec = viskores::internal::UnrollVec&lt;T&gt;;</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;    <span class="keyword">using</span> ComponentType = <span class="keyword">typename</span> UnrolledVec::ComponentType;</div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;    <span class="keywordflow">if</span> (self-&gt;IsStorageType&lt;<a class="code" href="structviskores_1_1cont_1_1StorageTagRuntimeVec.html">viskores::cont::StorageTagRuntimeVec</a>&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        self-&gt;IsBaseComponentType&lt;ComponentType&gt;() &amp;&amp;</div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;        UnrolledVec::NUM_COMPONENTS == self-&gt;GetNumberOfComponentsFlat())</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;    {</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;      <span class="comment">// Pull out the components array out of the buffers. The array might not match exactly</span></div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;      <span class="comment">// the array put in, but the buffer should still be consistent with the array (which works</span></div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;      <span class="comment">// because the size of a basic array is based on the number of bytes in the buffer).</span></div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;      <span class="keyword">using</span> RuntimeVecType =</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;        <span class="keyword">typename</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#af572cf118bc5a9d11adbf5fbd02fe697">viskores::cont::ArrayHandleRuntimeVec&lt;ComponentType&gt;::ValueType</a>;</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;      <span class="keyword">using</span> StorageRuntimeVec =</div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;        viskores::cont::internal::Storage&lt;RuntimeVecType, viskores::cont::StorageTagRuntimeVec&gt;;</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;      StorageRuntimeVec::AsArrayHandleBasic(container-&gt;Buffers(container-&gt;ArrayHandlePointer),</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;                                            array);</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    }</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    {</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    }</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;  }</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;};</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160; </div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01212"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6ce6bffd5bedd1d891a941d048fb7ae3"> 1212</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::AsArrayHandle(</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T&gt;</a>&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;  <span class="keywordflow">if</span> (!detail::UnknownArrayHandleRuntimeVecAsBasic&lt;T&gt;{}(<span class="keyword">this</span>, this-&gt;Container.get(), array))</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;  {</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    this-&gt;BaseAsArrayHandle(array);</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;  }</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;}</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160; </div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;{</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160; </div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleMultiplexerCastTry</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;{</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S, <span class="keyword">typename</span>... Ss&gt;</div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> operator()(</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;    S,</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt;T, <a class="code" href="structviskores_1_1cont_1_1StorageTagMultiplexer.html">viskores::cont::StorageTagMultiplexer&lt;Ss...&gt;</a>&gt;&amp; outputArray,</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    <span class="keywordtype">bool</span>&amp; converted)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    <span class="keyword">using</span> ArrayType = <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>;</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    <span class="keywordflow">if</span> (unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">CanConvert</a>&lt;ArrayType&gt;())</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;    {</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;      <span class="keywordflow">if</span> (converted &amp;&amp; !unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">IsType</a>&lt;ArrayType&gt;())</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;      {</div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        <span class="comment">// The array has already been converted and pushed in the multiplexer. It is</span></div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        <span class="comment">// possible that multiple array types can be put in the ArrayHandleMultiplexer</span></div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        <span class="comment">// (for example, and ArrayHandle or an ArrayHandle that has been cast). Exact</span></div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        <span class="comment">// matches will override other matches (hence, the second part of the condition),</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;        <span class="comment">// but at this point we have already found a better array to put inside.</span></div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;      }</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;      outputArray = <a class="code" href="classviskores_1_1cont_1_1ArrayHandleMultiplexer.html">viskores::cont::ArrayHandleMultiplexer&lt;viskores::cont::ArrayHandle&lt;T, Ss&gt;</a>...&gt;(</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;        unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a5bd19cc2cefd571d9106340cd4ec85fb">AsArrayHandle</a>&lt;ArrayType&gt;());</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;      converted = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    }</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;  }</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;};</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160; </div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Ss&gt;</div>
+<div class="line"><a name="l01255"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a072dc7bd1b12283984a33193aef68ecc"> 1255</a></span>&#160;<span class="keywordtype">void</span> UnknownArrayHandle::AsArrayHandle(</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;  <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt;T, <a class="code" href="structviskores_1_1cont_1_1StorageTagMultiplexer.html">viskores::cont::StorageTagMultiplexer&lt;Ss...&gt;</a>&gt;&amp; array)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;  <span class="keywordtype">bool</span> converted = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleMultiplexerCastTry{},</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;                        <a class="code" href="structviskores_1_1List.html">viskores::List</a>&lt;Ss...&gt;{},</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;                        *<span class="keyword">this</span>,</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;                        array,</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;                        converted);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160; </div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;  <span class="keywordflow">if</span> (!converted)</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;  {</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, decltype(array));</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;    <a class="code" href="namespaceviskores_1_1cont.html#a945f308c83bb2157ee0c7a61ae540632">throwFailedDynamicCast</a>(<a class="code" href="namespaceviskores_1_1cont.html#a5cbb5d72e6df95c0f64aff4aab253add">viskores::cont::TypeToString</a>(*<span class="keyword">this</span>),</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                           <a class="code" href="namespaceviskores_1_1cont.html#a5cbb5d72e6df95c0f64aff4aab253add">viskores::cont::TypeToString</a>(array));</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;  }</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;}</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160; </div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;{</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160; </div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleTry</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;{</div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;  <span class="keywordtype">void</span> operator()(<a class="code" href="structviskores_1_1List.html">viskores::List&lt;T, S&gt;</a>,</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;                  Functor&amp;&amp; f,</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;                  <span class="keywordtype">bool</span>&amp; called,</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;                  <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;                  Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;    <span class="keyword">using</span> DerivedArrayType = <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;T, S&gt;</a>;</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;    <span class="keywordflow">if</span> (!called &amp;&amp; unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">CanConvert</a>&lt;DerivedArrayType&gt;())</div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    {</div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;      called = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;      DerivedArrayType derivedArray;</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;      unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a5bd19cc2cefd571d9106340cd4ec85fb">AsArrayHandle</a>(derivedArray);</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;      <a class="code" href="Logging_8h.html#a33ccf464eccddacdf19e5d831a2eb302">VISKORES_LOG_CAST_SUCC</a>(unknownArray, derivedArray);</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160; </div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;      <span class="comment">// If you get a compile error here, it means that you have called CastAndCall for a</span></div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;      <span class="comment">// viskores::cont::UnknownArrayHandle and the arguments of the functor do not match those</span></div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;      <span class="comment">// being passed. This is often because it is calling the functor with an ArrayHandle</span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;      <span class="comment">// type that was not expected. Either add overloads to the functor to accept all</span></div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;      <span class="comment">// possible array types or constrain the types tried for the CastAndCall. Note that</span></div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;      <span class="comment">// the functor will be called with an array of type viskores::cont::ArrayHandle&lt;T, S&gt;.</span></div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;      <span class="comment">// Directly using a subclass of ArrayHandle (e.g. viskores::cont::ArrayHandleConstant&lt;T&gt;)</span></div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;      <span class="comment">// might not work.</span></div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;      f(derivedArray, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    }</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;  }</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;};</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160; </div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160; </div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="keyword">namespace </span>internal</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;{</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160; </div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;{</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160; </div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="keyword">struct </span>IsUndefinedArrayType</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;{</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;};</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S&gt;</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;<span class="keyword">struct </span>IsUndefinedArrayType&lt;<a class="code" href="namespaceviskores.html">viskores</a>::List&lt;T, S&gt;&gt;</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;  : viskores::cont::internal::IsInvalidArrayHandle&lt;T, S&gt;</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;{</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;};</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160; </div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160; </div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueTypeList, <span class="keyword">typename</span> StorageTypeList&gt;</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="keyword">using</span> ListAllArrayTypes =</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;  <a class="code" href="namespaceviskores.html#a28674e84f10ccf253d212afb6e39e41f">viskores::ListRemoveIf&lt;viskores::ListCross&lt;ValueTypeList, StorageTypeList&gt;</a>,</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                         detail::IsUndefinedArrayType&gt;;</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160; </div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;VISKORES_CONT_EXPORT <span class="keywordtype">void</span> ThrowCastAndCallException(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp;,</div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                                                    <span class="keyword">const</span> std::type_info&amp;);</div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160; </div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;} <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160; </div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageTagList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01337"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a4814b53bff37eb59187dd374ce3ac2f7"> 1337</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallForTypes(Functor&amp;&amp; f, Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;  <span class="keyword">using</span> crossProduct = internal::ListAllArrayTypes&lt;TypeList, StorageTagList&gt;;</div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160; </div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;                        crossProduct{},</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;                        std::forward&lt;Functor&gt;(f),</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;                        called,</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;                        *<span class="keyword">this</span>,</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;  {</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    <span class="comment">// throw an exception</span></div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, TypeList);</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(TypeList));</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;  }</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;}</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160; </div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> TypeList, <span class="keyword">typename</span> StorageTagList, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01357"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a7bb6c8a9580516949494bc7e0ed64394"> 1357</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallForTypesWithFloatFallback(Functor&amp;&amp; functor,</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;                                                                            Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;  <span class="keyword">using</span> crossProduct = internal::ListAllArrayTypes&lt;TypeList, StorageTagList&gt;;</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160; </div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;                        crossProduct{},</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;                        std::forward&lt;Functor&gt;(functor),</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;                        called,</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;                        *<span class="keyword">this</span>,</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;  {</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="comment">// Copy to a float array and try again</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <a class="code" href="Logging_8h.html#a5d3c0a20f254d8583427a7a512fa17d5">VISKORES_LOG_F</a>(<a class="code" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875">viskores::cont::LogLevel::Info</a>,</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;                   <span class="stringliteral">&quot;Cast and call from %s failed. Copying to basic float array.&quot;</span>,</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;                   this-&gt;GetArrayTypeName().c_str());</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> floatArray = this-&gt;NewInstanceFloatBasic();</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;    floatArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ad08c75fc53700b44c81f088e5aa1ab37">DeepCopyFrom</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTry{},</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;                          crossProduct{},</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;                          std::forward&lt;Functor&gt;(functor),</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;                          called,</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;                          floatArray,</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;                          std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;  }</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;  {</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="comment">// throw an exception</span></div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, TypeList);</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(TypeList));</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;  }</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;}</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160; </div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;<span class="comment">//=============================================================================</span></div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;<span class="comment">// Free function casting helpers</span></div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160; </div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
+<div class="line"><a name="l01398"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8"> 1398</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8">IsType</a>(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;{</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;  <span class="keywordflow">return</span> array.template IsType&lt;ArrayHandleType&gt;();</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;}</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160; </div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayHandleType&gt;</div>
+<div class="line"><a name="l01408"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1"> 1408</a></span>&#160;<a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keyword">inline</span> ArrayHandleType <a class="code" href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1">Cast</a>(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; array)</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;{</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;  <span class="keywordflow">return</span> array.template AsArrayHandle&lt;ArrayHandleType&gt;();</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;}</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160; </div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;{</div>
 <div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160; </div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l01417"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a33f002c6ac04e515c1d4dc5012ed2c5d"> 1417</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallWithExtractedArray(Functor&amp;&amp; functor,</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                                                              Args&amp;&amp;... args)<span class="keyword"> const</span></div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTryExtract{},</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;                        <a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>{},</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;                        std::forward&lt;Functor&gt;(functor),</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;                        called,</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;                        *<span class="keyword">this</span>,</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;  {</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    <span class="comment">// Throw an exception.</span></div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <span class="comment">// The message will be a little wonky because the types are just the value types, not the</span></div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    <span class="comment">// full type to cast to.</span></div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, <a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>);</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(<a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>));</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;  }</div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;}</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160; </div>
-<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;}</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160; </div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;<span class="comment">//=============================================================================</span></div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;<span class="comment">// Specializations of serialization related classes</span></div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;{</div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;<span class="keyword">namespace </span>cont</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;{</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160; </div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;<span class="keyword">struct </span>VISKORES_CONT_EXPORT SerializableTypeString&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::UnknownArrayHandle&gt;</div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;{</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> std::string <a class="code" href="namespaceviskores.html#a6c948f0c6c12cec2727fe445c5334f1d">Get</a>();</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;};</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;}</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160; </div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemangled__diy__namespace.html">mangled_diy_namespace</a></div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;{</div>
-<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160; </div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;<span class="keyword">struct </span>VISKORES_CONT_EXPORT Serialization&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::UnknownArrayHandle&gt;</div>
-<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;{</div>
-<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> save(BinaryBuffer&amp; bb, <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; obj);</div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">load</a>(BinaryBuffer&amp; bb, <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; obj);</div>
-<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;};</div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160; </div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;} <span class="comment">// namespace mangled_diy_namespace</span></div>
-<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160; </div>
-<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160; </div>
-<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;<span class="preprocessor">#endif //viskores_cont_UnknownArrayHandle_h</span></div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;<span class="keyword">struct </span>UnknownArrayHandleTryExtract</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;{</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;  <span class="keywordtype">void</span> operator()(T,</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;                  Functor&amp;&amp; f,</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                  <span class="keywordtype">bool</span>&amp; called,</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;                  <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; unknownArray,</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;                  Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    <span class="keywordflow">if</span> (!called &amp;&amp; unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8a88cf3dd7e33eac5a6057c80c933512">IsBaseComponentType</a>&lt;T&gt;())</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    {</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;      called = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;      <span class="keyword">auto</span> extractedArray = unknownArray.<a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a69817a433bae60cdf3649d96090971b8">ExtractArrayFromComponents</a>&lt;T&gt;();</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;      <a class="code" href="Logging_8h.html#a33ccf464eccddacdf19e5d831a2eb302">VISKORES_LOG_CAST_SUCC</a>(unknownArray, extractedArray);</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160; </div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;      <span class="comment">// If you get a compile error here, it means that you have called</span></div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;      <span class="comment">// CastAndCallWithExtractedArray for a viskores::cont::UnknownArrayHandle and the arguments of</span></div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;      <span class="comment">// the functor do not match those being passed. This is often because it is calling the</span></div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;      <span class="comment">// functor with an ArrayHandle type that was not expected. Add overloads to the functor to</span></div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;      <span class="comment">// accept all possible array types or constrain the types tried for the CastAndCall. Note</span></div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;      <span class="comment">// that the functor will be called with an array of type that is different than the actual</span></div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;      <span class="comment">// type of the `ArrayHandle` stored in the `UnknownArrayHandle`.</span></div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;      f(extractedArray, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    }</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;  }</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;};</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160; </div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160; </div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l01446"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a33f002c6ac04e515c1d4dc5012ed2c5d"> 1446</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> UnknownArrayHandle::CastAndCallWithExtractedArray(Functor&amp;&amp; functor,</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                                                              Args&amp;&amp;... args)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;  <span class="keywordtype">bool</span> called = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;  <a class="code" href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a>(detail::UnknownArrayHandleTryExtract{},</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;                        <a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>{},</div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;                        std::forward&lt;Functor&gt;(functor),</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;                        called,</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;                        *<span class="keyword">this</span>,</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;                        std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;  <span class="keywordflow">if</span> (!called)</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;  {</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    <span class="comment">// Throw an exception.</span></div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    <span class="comment">// The message will be a little wonky because the types are just the value types, not the</span></div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;    <span class="comment">// full type to cast to.</span></div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <a class="code" href="Logging_8h.html#a96641e0e432469b03713cd1909166f1b">VISKORES_LOG_CAST_FAIL</a>(*<span class="keyword">this</span>, <a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>);</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;    internal::ThrowCastAndCallException(*<span class="keyword">this</span>, <span class="keyword">typeid</span>(<a class="code" href="structviskores_1_1List.html">viskores::TypeListScalarAll</a>));</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;  }</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;}</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160; </div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;}</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160; </div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;<span class="comment">//=============================================================================</span></div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;<span class="comment">// Specializations of serialization related classes</span></div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;{</div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;<span class="keyword">namespace </span>cont</div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;{</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160; </div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;<span class="keyword">struct </span>VISKORES_CONT_EXPORT SerializableTypeString&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::UnknownArrayHandle&gt;</div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;{</div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> std::string <a class="code" href="namespaceviskores.html#a6c948f0c6c12cec2727fe445c5334f1d">Get</a>();</div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;};</div>
+<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;}</div>
+<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160; </div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemangled__diy__namespace.html">mangled_diy_namespace</a></div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;{</div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160; </div>
+<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;<span class="keyword">struct </span>VISKORES_CONT_EXPORT Serialization&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::UnknownArrayHandle&gt;</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;{</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> save(BinaryBuffer&amp; bb, <span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; obj);</div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <span class="keywordtype">void</span> <a class="code" href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">load</a>(BinaryBuffer&amp; bb, <a class="code" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&amp; obj);</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;};</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160; </div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;} <span class="comment">// namespace mangled_diy_namespace</span></div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160; </div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160; </div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;<span class="preprocessor">#endif //viskores_cont_UnknownArrayHandle_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceviskores_1_1exec_1_1arg_html_adf6b50840b8e37ff1ccab9ddc3280884"><div class="ttname"><a href="namespaceviskores_1_1exec_1_1arg.html#adf6b50840b8e37ff1ccab9ddc3280884">viskores::exec::arg::load</a></div><div class="ttdeci">T load(const U &amp;u, viskores::Id v)</div><div class="ttdef"><b>Definition:</b> FetchTagArrayDirectIn.h:44</div></div>
 <div class="ttc" id="aArrayHandle_8h_html"><div class="ttname"><a href="ArrayHandle_8h.html">ArrayHandle.h</a></div></div>
@@ -1165,7 +1194,8 @@ $(function() {
 <div class="ttc" id="aclassviskores_1_1cont_1_1UncertainArrayHandle_html"><div class="ttname"><a href="classviskores_1_1cont_1_1UncertainArrayHandle.html">viskores::cont::UncertainArrayHandle</a></div><div class="ttdoc">An ArrayHandle of an uncertain value type and storage.</div><div class="ttdef"><b>Definition:</b> UncertainArrayHandle.h:47</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a0b22736c7201f05dbfe5f7e2926f7d04"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a0b22736c7201f05dbfe5f7e2926f7d04">viskores::cont::UnknownArrayHandle::AsArrayHandle</a></div><div class="ttdeci">void AsArrayHandle(viskores::cont::ArrayHandle&lt; T, viskores::cont::StorageTagRuntimeVec &gt; &amp;array) const</div><div class="ttdoc">Returns this array cast appropriately and stored in the given ArrayHandle type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:714</div></div>
 <div class="ttc" id="aArrayHandleCast_8h_html"><div class="ttname"><a href="ArrayHandleCast_8h.html">ArrayHandleCast.h</a></div></div>
-<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleSOAStride_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">viskores::cont::ArrayHandleSOAStride</a></div><div class="ttdoc">An ArrayHandle that stores each component in a separate physical array with striding.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:225</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a24ee7b2f9f91bc845712d68320fb17b8a56525ae64d370c0b448ac0d60710ef17"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a56525ae64d370c0b448ac0d60710ef17">viskores::cont::LogLevel::Warn</a></div><div class="ttdeci">@ Warn</div><div class="ttdoc">Less important user errors, such as out-of-bounds parameters.</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleSOAStride_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html">viskores::cont::ArrayHandleSOAStride</a></div><div class="ttdoc">An ArrayHandle that stores each component in a separate physical array with striding.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:347</div></div>
 <div class="ttc" id="aArrayHandleSOAStride_8h_html"><div class="ttname"><a href="ArrayHandleSOAStride_8h.html">ArrayHandleSOAStride.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1VecTraitsTagSizeStatic_html"><div class="ttname"><a href="structviskores_1_1VecTraitsTagSizeStatic.html">viskores::VecTraitsTagSizeStatic</a></div><div class="ttdoc">A tag for vectors where the number of components are known at compile time.</div><div class="ttdef"><b>Definition:</b> VecTraits.h:44</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleMultiplexer_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleMultiplexer.html">viskores::cont::ArrayHandleMultiplexer</a></div><div class="ttdoc">An ArrayHandle that can behave like several other handles.</div><div class="ttdef"><b>Definition:</b> ArrayHandleMultiplexer.h:430</div></div>
@@ -1184,14 +1214,14 @@ $(function() {
 <div class="ttc" id="anamespacemangled__diy__namespace_html"><div class="ttname"><a href="namespacemangled__diy__namespace.html">mangled_diy_namespace</a></div><div class="ttdef"><b>Definition:</b> Particle.h:373</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleStride_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleStride.html">viskores::cont::ArrayHandleStride</a></div><div class="ttdoc">An ArrayHandle that accesses a basic array with strides and offsets.</div><div class="ttdef"><b>Definition:</b> ArrayHandleStride.h:343</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_ad58baac161a1677d77d99945a6a7d497"><div class="ttname"><a href="namespaceviskores_1_1cont.html#ad58baac161a1677d77d99945a6a7d497">viskores::cont::printSummary_ArrayHandle</a></div><div class="ttdeci">void printSummary_ArrayHandle(const viskores::cont::ArrayHandle&lt; T, StorageT &gt; &amp;array, std::ostream &amp;out, bool full=false)</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:837</div></div>
-<div class="ttc" id="anamespaceviskores_1_1cont_html_a8681997d87a70fec1cc2ab4e7978bfd8"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8">viskores::cont::IsType</a></div><div class="ttdeci">bool IsType(const viskores::cont::UnknownArrayHandle &amp;array)</div><div class="ttdoc">Returns true if variant matches the type of ArrayHandleType.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1369</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a8681997d87a70fec1cc2ab4e7978bfd8"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a8681997d87a70fec1cc2ab4e7978bfd8">viskores::cont::IsType</a></div><div class="ttdeci">bool IsType(const viskores::cont::UnknownArrayHandle &amp;array)</div><div class="ttdoc">Returns true if variant matches the type of ArrayHandleType.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1398</div></div>
 <div class="ttc" id="astructviskores_1_1List_html"><div class="ttname"><a href="structviskores_1_1List.html">viskores::List</a></div><div class="ttdoc">A template used to hold a list of types.</div><div class="ttdef"><b>Definition:</b> List.h:47</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleCast_html_a8e191a2d1b3e10193f1da0655bcb8b74"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleCast.html#a8e191a2d1b3e10193f1da0655bcb8b74">viskores::cont::ArrayHandleCast::GetSourceArray</a></div><div class="ttdeci">ArrayHandleType GetSourceArray() const</div><div class="ttdoc">Returns the ArrayHandle that is being transformed.</div><div class="ttdef"><b>Definition:</b> ArrayHandleCast.h:179</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a06a51d448ee9944dc3d53d7436bcbd16"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a06a51d448ee9944dc3d53d7436bcbd16">viskores::cont::UnknownArrayHandle::AsArrayHandle</a></div><div class="ttdeci">void AsArrayHandle(viskores::cont::ArrayHandle&lt; T, viskores::cont::StorageTagSOAStride &gt; &amp;array) const</div><div class="ttdoc">Returns this array cast appropriately and stored in the given ArrayHandle type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:735</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a2331ab862cd8447e45bb20f465412857"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a2331ab862cd8447e45bb20f465412857">viskores::cont::ArrayExtractComponent</a></div><div class="ttdeci">viskores::cont::ArrayHandleStride&lt; typename viskores::VecTraits&lt; T &gt;::BaseComponentType &gt; ArrayExtractComponent(const viskores::cont::ArrayHandle&lt; T, S &gt; &amp;src, viskores::IdComponent componentIndex, viskores::CopyFlag allowCopy=viskores::CopyFlag::On)</div><div class="ttdoc">Pulls a component out of an ArrayHandle.</div><div class="ttdef"><b>Definition:</b> ArrayExtractComponent.h:267</div></div>
 <div class="ttc" id="anamespaceviskores_html_a8e82cb49e20cef45fbeb58dc58790216"><div class="ttname"><a href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a></div><div class="ttdeci">viskores::Int64 Id</div><div class="ttdoc">Base type to use to index arrays.</div><div class="ttdef"><b>Definition:</b> Types.h:235</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_af34a5f0d93ab497c898cbc11ebed86aa"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#af34a5f0d93ab497c898cbc11ebed86aa">viskores::cont::ArrayHandle::ReleaseResources</a></div><div class="ttdeci">void ReleaseResources() const</div><div class="ttdoc">Releases all resources in both the control and execution environments.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:600</div></div>
-<div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a6f1d9c840e6654f38772a2620f0e597d"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">viskores::cont::UnknownArrayHandle::CanConvert</a></div><div class="ttdeci">bool CanConvert() const</div><div class="ttdoc">Determine if the contained array can be passed to the given array type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1122</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a6f1d9c840e6654f38772a2620f0e597d"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6f1d9c840e6654f38772a2620f0e597d">viskores::cont::UnknownArrayHandle::CanConvert</a></div><div class="ttdeci">bool CanConvert() const</div><div class="ttdoc">Determine if the contained array can be passed to the given array type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1151</div></div>
 <div class="ttc" id="aExportMacros_8h_html_ae47b94fbf1d55103fa9aeff192d8404b"><div class="ttname"><a href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div><div class="ttdeci">#define VISKORES_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:65</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleRecombineVec_html_a1d0d1a59876636504409abf6e10655ea"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleRecombineVec.html#a1d0d1a59876636504409abf6e10655ea">viskores::cont::ArrayHandleRecombineVec::AppendComponentArray</a></div><div class="ttdeci">void AppendComponentArray(const viskores::cont::ArrayHandle&lt; ComponentType, viskores::cont::StorageTagStride &gt; &amp;array)</div><div class="ttdoc">Add a component array.</div><div class="ttdef"><b>Definition:</b> ArrayHandleRecombineVec.h:664</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagRuntimeVec_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagRuntimeVec.html">viskores::cont::StorageTagRuntimeVec</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleRuntimeVec.h:138</div></div>
@@ -1199,6 +1229,7 @@ $(function() {
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a50959a4873ba99c2145ba797a0347ac4"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a50959a4873ba99c2145ba797a0347ac4">viskores::cont::UnknownArrayHandle::Container</a></div><div class="ttdeci">std::shared_ptr&lt; detail::UnknownAHContainer &gt; Container</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:465</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a78721563269cdf385652ee04780aae5d"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a78721563269cdf385652ee04780aae5d">viskores::cont::UnknownArrayHandle::BaseAsArrayHandle</a></div><div class="ttdeci">void BaseAsArrayHandle(viskores::cont::ArrayHandle&lt; T, S &gt; &amp;array) const</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:673</div></div>
 <div class="ttc" id="anamespaceviskores_html_a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3"><div class="ttname"><a href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a></div><div class="ttdeci">@ On</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleStride_html_a15d7f7a84ffc8a592c70624049e25b1d"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleStride.html#a15d7f7a84ffc8a592c70624049e25b1d">viskores::cont::ArrayHandleStride::GetDivisor</a></div><div class="ttdeci">viskores::Id GetDivisor() const</div><div class="ttdoc">Get the divisor of the array index.</div><div class="ttdef"><b>Definition:</b> ArrayHandleStride.h:418</div></div>
 <div class="ttc" id="astructviskores_1_1VecTraits_html"><div class="ttname"><a href="structviskores_1_1VecTraits.html">viskores::VecTraits</a></div><div class="ttdoc">Traits that can be queried to treat any type as a Vec.</div><div class="ttdef"><b>Definition:</b> VecTraits.h:69</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_ae6e9651b39c31109d02b68cd9e1e0b40"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae6e9651b39c31109d02b68cd9e1e0b40">viskores::cont::UnknownArrayHandle::IsStorageType</a></div><div class="ttdeci">bool IsStorageType() const</div><div class="ttdoc">Returns true if this array matches the StorageType template argument.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:556</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_a603363f20df24f1e3e123261531a38c7"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#a603363f20df24f1e3e123261531a38c7">viskores::cont::ArrayHandle::Allocate</a></div><div class="ttdeci">void Allocate(viskores::Id numberOfValues, viskores::CopyFlag preserve, viskores::cont::Token &amp;token) const</div><div class="ttdoc">Allocates an array large enough to hold the given number of values.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:504</div></div>
@@ -1212,10 +1243,11 @@ $(function() {
 <div class="ttc" id="aDeprecated_8h_html_a206749cdf055e41c54535aebb401b0a1"><div class="ttname"><a href="Deprecated_8h.html#a206749cdf055e41c54535aebb401b0a1">VISKORES_DEPRECATED_SUPPRESS_END</a></div><div class="ttdeci">#define VISKORES_DEPRECATED_SUPPRESS_END</div><div class="ttdef"><b>Definition:</b> Deprecated.h:132</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_aa3947b5b80c3cd41d487c14efaec61e4"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#aa3947b5b80c3cd41d487c14efaec61e4">viskores::cont::UnknownArrayHandle::IsType</a></div><div class="ttdeci">bool IsType() const</div><div class="ttdoc">Returns true if this array matches the ArrayHandleType template argument.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:591</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_a5a3fed8fe7bd0389903d0acfce9264e3"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#a5a3fed8fe7bd0389903d0acfce9264e3">viskores::cont::ArrayHandle::ReleaseResourcesExecution</a></div><div class="ttdeci">void ReleaseResourcesExecution() const</div><div class="ttdoc">Releases any resources being used in the execution environment (that are not being shared by the cont...</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:593</div></div>
-<div class="ttc" id="anamespaceviskores_1_1cont_html_a0de1b84413acb19d622228fd0496e5b1"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1">viskores::cont::Cast</a></div><div class="ttdeci">ArrayHandleType Cast(const viskores::cont::UnknownArrayHandle &amp;array)</div><div class="ttdoc">Returns variant cast to the given ArrayHandle type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1379</div></div>
+<div class="ttc" id="anamespaceviskores_1_1cont_html_a0de1b84413acb19d622228fd0496e5b1"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a0de1b84413acb19d622228fd0496e5b1">viskores::cont::Cast</a></div><div class="ttdeci">ArrayHandleType Cast(const viskores::cont::UnknownArrayHandle &amp;array)</div><div class="ttdoc">Returns variant cast to the given ArrayHandle type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:1408</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_ae45dbe7fa26d5baf649202c917409ac8"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#ae45dbe7fa26d5baf649202c917409ac8">viskores::cont::UnknownArrayHandle::UnknownArrayHandle</a></div><div class="ttdeci">UnknownArrayHandle(const viskores::cont::ArrayHandle&lt; T, S &gt; &amp;array)</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:475</div></div>
 <div class="ttc" id="anamespaceviskores_html_a55808191e020f34ed9ea88251147502d"><div class="ttname"><a href="namespaceviskores.html#a55808191e020f34ed9ea88251147502d">viskores::ListForEach</a></div><div class="ttdeci">void ListForEach(Functor &amp;&amp;f, viskores::List&lt; Ts... &gt;, Args &amp;&amp;... args)</div><div class="ttdoc">For each typename represented by the list, call the functor with a default instance of that type.</div><div class="ttdef"><b>Definition:</b> List.h:745</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_a28896a4dd2aa1ebd5baa5f31e220c2bd"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#a28896a4dd2aa1ebd5baa5f31e220c2bd">viskores::cont::ArrayHandle::DeepCopyFrom</a></div><div class="ttdeci">void DeepCopyFrom(const viskores::cont::ArrayHandle&lt; ValueType, StorageTag &gt; &amp;source) const</div><div class="ttdoc">Deep copies the data in the array.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:723</div></div>
+<div class="ttc" id="aLogging_8h_html_a70486edee812206396733d018430ea69"><div class="ttname"><a href="Logging_8h.html#a70486edee812206396733d018430ea69">VISKORES_LOG_S</a></div><div class="ttdeci">#define VISKORES_LOG_S(level,...)</div><div class="ttdoc">Writes a message using stream syntax to the indicated log level.</div><div class="ttdef"><b>Definition:</b> Logging.h:216</div></div>
 <div class="ttc" id="aArrayHandleMultiplexer_8h_html"><div class="ttname"><a href="ArrayHandleMultiplexer_8h.html">ArrayHandleMultiplexer.h</a></div></div>
 <div class="ttc" id="aDeprecated_8h_html"><div class="ttname"><a href="Deprecated_8h.html">Deprecated.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a81e5956f8378be870582063e7cee62ce"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a81e5956f8378be870582063e7cee62ce">viskores::cont::UnknownArrayHandle::AsArrayHandle</a></div><div class="ttdeci">ArrayType AsArrayHandle() const</div><div class="ttdoc">Returns this array cast appropriately and stored in the given ArrayHandle type.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:747</div></div>
@@ -1234,12 +1266,13 @@ $(function() {
 <div class="ttc" id="aLogging_8h_html_a33ccf464eccddacdf19e5d831a2eb302"><div class="ttname"><a href="Logging_8h.html#a33ccf464eccddacdf19e5d831a2eb302">VISKORES_LOG_CAST_SUCC</a></div><div class="ttdeci">#define VISKORES_LOG_CAST_SUCC(inObj, outObj)</div><div class="ttdoc">Convenience macro for logging the successful cast of dynamic object.</div><div class="ttdef"><b>Definition:</b> Logging.h:232</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a></div><div class="ttdoc">An ArrayHandle of an unknown value type and storage.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:463</div></div>
 <div class="ttc" id="anamespaceviskores_html_a113186fd6accb2e5880e81dd7cdb1c94"><div class="ttname"><a href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a></div><div class="ttdeci">CopyFlag</div><div class="ttdoc">Identifier used to specify whether a function should deep copy data.</div><div class="ttdef"><b>Definition:</b> Flags.h:25</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleStride_html_a6e8a15934d9c8db0c66dc838edd23535"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleStride.html#a6e8a15934d9c8db0c66dc838edd23535">viskores::cont::ArrayHandleStride::GetModulo</a></div><div class="ttdeci">viskores::Id GetModulo() const</div><div class="ttdoc">Get the modulus of the array index.</div><div class="ttdef"><b>Definition:</b> ArrayHandleStride.h:411</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_html"><div class="ttname"><a href="classviskores_1_1cont_1_1Token.html">viskores::cont::Token</a></div><div class="ttdoc">A token to hold the scope of an ArrayHandle or other object.</div><div class="ttdef"><b>Definition:</b> Token.h:43</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_a8c378b86f00656e0b1ea38c67294bd93"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#a8c378b86f00656e0b1ea38c67294bd93">viskores::cont::ArrayHandle::GetBuffers</a></div><div class="ttdeci">const std::vector&lt; viskores::cont::internal::Buffer &gt; &amp; GetBuffers() const</div><div class="ttdoc">Returns the internal Buffer structures that hold the data.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:738</div></div>
 <div class="ttc" id="aVecTraits_8h_html"><div class="ttname"><a href="VecTraits_8h.html">VecTraits.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1UnknownArrayHandle_html_a3e3b4ec6b0153f6f6e006b0882d63ba4"><div class="ttname"><a href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a3e3b4ec6b0153f6f6e006b0882d63ba4">viskores::cont::UnknownArrayHandle::ExtractComponent</a></div><div class="ttdeci">viskores::cont::ArrayHandleStride&lt; BaseComponentType &gt; ExtractComponent(viskores::IdComponent componentIndex, viskores::CopyFlag allowCopy=viskores::CopyFlag::On) const</div><div class="ttdoc">Extract a component of the array.</div><div class="ttdef"><b>Definition:</b> UnknownArrayHandle.h:835</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a5cbb5d72e6df95c0f64aff4aab253add"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a5cbb5d72e6df95c0f64aff4aab253add">viskores::cont::TypeToString</a></div><div class="ttdeci">std::string TypeToString(const std::type_info &amp;t)</div><div class="ttdoc">Use RTTI information to retrieve the name of the type T.</div></div>
-<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleSOAStride_html_a5d0d849a708c8987bf697e10b1e88e33"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#a5d0d849a708c8987bf697e10b1e88e33">viskores::cont::ArrayHandleSOAStride::SetArray</a></div><div class="ttdeci">void SetArray(viskores::IdComponent index, const ComponentArrayType &amp;array)</div><div class="ttdoc">Replace a component array.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:338</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleSOAStride_html_a5d0d849a708c8987bf697e10b1e88e33"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#a5d0d849a708c8987bf697e10b1e88e33">viskores::cont::ArrayHandleSOAStride::SetArray</a></div><div class="ttdeci">void SetArray(viskores::IdComponent index, const ComponentArrayType &amp;array)</div><div class="ttdoc">Replace a component array.</div><div class="ttdef"><b>Definition:</b> ArrayHandleSOAStride.h:460</div></div>
 <div class="ttc" id="aDeprecated_8h_html_a4866c06fb8485e21728b597a9260f2fe"><div class="ttname"><a href="Deprecated_8h.html#a4866c06fb8485e21728b597a9260f2fe">VISKORES_DEPRECATED_SUPPRESS_BEGIN</a></div><div class="ttdeci">#define VISKORES_DEPRECATED_SUPPRESS_BEGIN</div><div class="ttdef"><b>Definition:</b> Deprecated.h:131</div></div>
 <div class="ttc" id="aviskores__cont__export_8h_html"><div class="ttname"><a href="viskores__cont__export_8h.html">viskores_cont_export.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleRuntimeVec_html_af572cf118bc5a9d11adbf5fbd02fe697"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#af572cf118bc5a9d11adbf5fbd02fe697">viskores::cont::ArrayHandleRuntimeVec::ValueType</a></div><div class="ttdeci">typename Superclass::ValueType ValueType</div><div class="ttdef"><b>Definition:</b> ArrayHandleRuntimeVec.h:349</div></div>
