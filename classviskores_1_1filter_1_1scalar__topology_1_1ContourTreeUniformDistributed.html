@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -96,13 +96,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad558a13dabe24a7abfa8654eef72a8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab653b9d9caefaaec5433f22a824ef3c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ab653b9d9caefaaec5433f22a824ef3c4">GetSaveDotFiles</a> ()</td></tr>
 <tr class="separator:ab653b9d9caefaaec5433f22a824ef3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee597835ba291be2d38f60e24f3139e7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename StorageType &gt; </td></tr>
-<tr class="memitem:aee597835ba291be2d38f60e24f3139e7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#aee597835ba291be2d38f60e24f3139e7">ComputeLocalTree</a> (const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> blockIndex, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageType &gt; &amp;fieldArray)</td></tr>
-<tr class="separator:aee597835ba291be2d38f60e24f3139e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a968b1cde328c9086adb0ffc83591970c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename StorageType , typename MeshType , typename MeshBoundaryExecType &gt; </td></tr>
-<tr class="memitem:a968b1cde328c9086adb0ffc83591970c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a968b1cde328c9086adb0ffc83591970c">ComputeLocalTreeImpl</a> (const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> blockIndex, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageType &gt; &amp;field, MeshType &amp;mesh, MeshBoundaryExecType &amp;meshBoundaryExecObject)</td></tr>
-<tr class="memdesc:a968b1cde328c9086adb0ffc83591970c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement per block contour tree computation after the MeshType has been discovered.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a968b1cde328c9086adb0ffc83591970c">More...</a><br /></td></tr>
-<tr class="separator:a968b1cde328c9086adb0ffc83591970c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classviskores_1_1filter_1_1Filter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classviskores_1_1filter_1_1Filter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1Filter.html">viskores::filter::Filter</a></td></tr>
 <tr class="memitem:aa47718833f3adf8dd6df04a8e8bf8b93 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#aa47718833f3adf8dd6df04a8e8bf8b93">Filter</a> ()</td></tr>
 <tr class="separator:aa47718833f3adf8dd6df04a8e8bf8b93 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,34 +200,41 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a3c22ee7837bb01362703c1b0907356b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7065f972bdfca3f7a426a465f7d517ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a7065f972bdfca3f7a426a465f7d517ea">DoExecutePartitions</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input) override</td></tr>
 <tr class="separator:a7065f972bdfca3f7a426a465f7d517ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6f2fad59ffb7283f17a05565851273d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename StorageType &gt; </td></tr>
+<tr class="memitem:ad6f2fad59ffb7283f17a05565851273d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ad6f2fad59ffb7283f17a05565851273d">ComputeLocalTree</a> (const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> blockIndex, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageType &gt; &amp;fieldArray, ExecutionState &amp;state)</td></tr>
+<tr class="separator:ad6f2fad59ffb7283f17a05565851273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a5f4f4569d889c7fcdca8eefdd37880"><td class="memTemplParams" colspan="2">template&lt;typename T , typename StorageType , typename MeshType , typename MeshBoundaryExecType &gt; </td></tr>
+<tr class="memitem:a8a5f4f4569d889c7fcdca8eefdd37880"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a8a5f4f4569d889c7fcdca8eefdd37880">ComputeLocalTreeImpl</a> (const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> blockIndex, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageType &gt; &amp;field, MeshType &amp;mesh, MeshBoundaryExecType &amp;meshBoundaryExecObject, ExecutionState &amp;state)</td></tr>
+<tr class="memdesc:a8a5f4f4569d889c7fcdca8eefdd37880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement per block contour tree computation after the MeshType has been discovered.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a8a5f4f4569d889c7fcdca8eefdd37880">More...</a><br /></td></tr>
+<tr class="separator:a8a5f4f4569d889c7fcdca8eefdd37880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:aaa6c5e3883d4b7eae324d5ad5a829018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#aaa6c5e3883d4b7eae324d5ad5a829018">PreExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input)</td></tr>
 <tr class="separator:aaa6c5e3883d4b7eae324d5ad5a829018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a413306a3d1afbe88203e367cfc2479ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a413306a3d1afbe88203e367cfc2479ab">PostExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;output)</td></tr>
-<tr class="separator:a413306a3d1afbe88203e367cfc2479ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c5007f451e1ffa0f9e6c1dfe27267a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a66c5007f451e1ffa0f9e6c1dfe27267a">PostExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;output, ExecutionState &amp;state)</td></tr>
+<tr class="separator:a66c5007f451e1ffa0f9e6c1dfe27267a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f43f33ede7749c61787cd6d9defd48"><td class="memTemplParams" colspan="2">template&lt;typename FieldType &gt; </td></tr>
 <tr class="memitem:a22f43f33ede7749c61787cd6d9defd48"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a22f43f33ede7749c61787cd6d9defd48">ComputeVolumeMetric</a> (viskoresdiy::Master &amp;inputContourTreeMaster, viskoresdiy::DynamicAssigner &amp;assigner, viskoresdiy::RegularSwapPartners &amp;partners, const FieldType &amp;, std::stringstream &amp;timingsStream, const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, bool useAugmentedTree, std::vector&lt; <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;&gt; &amp;intrinsicVolumes, std::vector&lt; <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;&gt; &amp;dependentVolumes)</td></tr>
 <tr class="separator:a22f43f33ede7749c61787cd6d9defd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac88a0f722504facb35fa0c3f40bffc72"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac88a0f722504facb35fa0c3f40bffc72"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac88a0f722504facb35fa0c3f40bffc72">DoPostExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;output)</td></tr>
-<tr class="memdesc:ac88a0f722504facb35fa0c3f40bffc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper function that implements the actual functionality of PostExecute.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac88a0f722504facb35fa0c3f40bffc72">More...</a><br /></td></tr>
-<tr class="separator:ac88a0f722504facb35fa0c3f40bffc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f0f25bf42fd246b6fbb96578521345"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a89f0f25bf42fd246b6fbb96578521345"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a89f0f25bf42fd246b6fbb96578521345">DoPostExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;output, ExecutionState &amp;state)</td></tr>
+<tr class="memdesc:a89f0f25bf42fd246b6fbb96578521345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper function that implements the actual functionality of PostExecute.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a89f0f25bf42fd246b6fbb96578521345">More...</a><br /></td></tr>
+<tr class="separator:a89f0f25bf42fd246b6fbb96578521345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a71c7537c1c7755ee70b9edab0710bb80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a71c7537c1c7755ee70b9edab0710bb80">UseBoundaryExtremaOnly</a></td></tr>
+<tr class="memitem:a71c7537c1c7755ee70b9edab0710bb80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a71c7537c1c7755ee70b9edab0710bb80">UseBoundaryExtremaOnly</a> = true</td></tr>
 <tr class="memdesc:a71c7537c1c7755ee70b9edab0710bb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use only boundary critical points in the parallel merge to reduce communication.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a71c7537c1c7755ee70b9edab0710bb80">More...</a><br /></td></tr>
 <tr class="separator:a71c7537c1c7755ee70b9edab0710bb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a638ba87ab795a4ec1c0b1988a000c723"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a638ba87ab795a4ec1c0b1988a000c723">UseMarchingCubes</a></td></tr>
+<tr class="memitem:a638ba87ab795a4ec1c0b1988a000c723"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a638ba87ab795a4ec1c0b1988a000c723">UseMarchingCubes</a> = false</td></tr>
 <tr class="memdesc:a638ba87ab795a4ec1c0b1988a000c723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use marching cubes connectivity for computing the contour tree.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a638ba87ab795a4ec1c0b1988a000c723">More...</a><br /></td></tr>
 <tr class="separator:a638ba87ab795a4ec1c0b1988a000c723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae59bf51d96c8d1dfe31b2cb4ad5aebec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ae59bf51d96c8d1dfe31b2cb4ad5aebec">AugmentHierarchicalTree</a></td></tr>
+<tr class="memitem:ae59bf51d96c8d1dfe31b2cb4ad5aebec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ae59bf51d96c8d1dfe31b2cb4ad5aebec">AugmentHierarchicalTree</a> = false</td></tr>
 <tr class="memdesc:ae59bf51d96c8d1dfe31b2cb4ad5aebec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augment hierarchical tree.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ae59bf51d96c8d1dfe31b2cb4ad5aebec">More...</a><br /></td></tr>
 <tr class="separator:ae59bf51d96c8d1dfe31b2cb4ad5aebec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21d4fe357c033cd98aaa1d14ff4717b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a21d4fe357c033cd98aaa1d14ff4717b2">PresimplifyThreshold</a> = 0</td></tr>
 <tr class="memdesc:a21d4fe357c033cd98aaa1d14ff4717b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold to use for volume pre-simplification.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a21d4fe357c033cd98aaa1d14ff4717b2">More...</a><br /></td></tr>
 <tr class="separator:a21d4fe357c033cd98aaa1d14ff4717b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8442017c5df0196879aca70e3196b0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac8442017c5df0196879aca70e3196b0e">SaveDotFiles</a></td></tr>
+<tr class="memitem:ac8442017c5df0196879aca70e3196b0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac8442017c5df0196879aca70e3196b0e">SaveDotFiles</a> = false</td></tr>
 <tr class="memdesc:ac8442017c5df0196879aca70e3196b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save dot files for all tree computations.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac8442017c5df0196879aca70e3196b0e">More...</a><br /></td></tr>
 <tr class="separator:ac8442017c5df0196879aca70e3196b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abed15f2ce8aa535121073f60ff3c77e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8">viskores::cont::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#abed15f2ce8aa535121073f60ff3c77e1">TimingsLogLevel</a> = <a class="el" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8aed0b6558cc63345b5c2457c8147f47d6">viskores::cont::LogLevel::Perf</a></td></tr>
@@ -243,24 +243,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad1f50259cfa1555687a90fc8a11f426d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8">viskores::cont::LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ad1f50259cfa1555687a90fc8a11f426d">TreeLogLevel</a> = <a class="el" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875">viskores::cont::LogLevel::Info</a></td></tr>
 <tr class="memdesc:ad1f50259cfa1555687a90fc8a11f426d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log level to be used for outputting metadata about the trees. Default is <a class="el" href="namespaceviskores_1_1cont.html#a24ee7b2f9f91bc845712d68320fb17b8a4059b0251f66a18cb56f544728796875" title="Information messages (detected hardware, etc) and temporary debugging output.">viskores::cont::LogLevel::Info</a>.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ad1f50259cfa1555687a90fc8a11f426d">More...</a><br /></td></tr>
 <tr class="separator:ad1f50259cfa1555687a90fc8a11f426d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46480a06ef81ed8b06a263bbc98b5a13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a46480a06ef81ed8b06a263bbc98b5a13">BlocksPerDimension</a></td></tr>
+<tr class="memitem:a46480a06ef81ed8b06a263bbc98b5a13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a46480a06ef81ed8b06a263bbc98b5a13">BlocksPerDimension</a> = { -1, -1, -1 }</td></tr>
 <tr class="memdesc:a46480a06ef81ed8b06a263bbc98b5a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about block decomposition TODO/FIXME: Remove need for this information.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a46480a06ef81ed8b06a263bbc98b5a13">More...</a><br /></td></tr>
 <tr class="separator:a46480a06ef81ed8b06a263bbc98b5a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f3cb06987d832e625a6670a6b17f67f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a3f3cb06987d832e625a6670a6b17f67f">LocalBlockIndices</a></td></tr>
 <tr class="separator:a3f3cb06987d832e625a6670a6b17f67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9b300938c71a1a04e99f178ca90ffd0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; viskores::worklet::contourtree_augmented::DataSetMesh &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac9b300938c71a1a04e99f178ca90ffd0">LocalMeshes</a></td></tr>
-<tr class="memdesc:ac9b300938c71a1a04e99f178ca90ffd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate results (one per local data block)...  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ac9b300938c71a1a04e99f178ca90ffd0">More...</a><br /></td></tr>
-<tr class="separator:ac9b300938c71a1a04e99f178ca90ffd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae33de6b3e3d5675b78207c0cc3dd7dde"><td class="memItemLeft" align="right" valign="top">std::vector&lt; viskores::worklet::contourtree_augmented::ContourTree &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ae33de6b3e3d5675b78207c0cc3dd7dde">LocalContourTrees</a></td></tr>
-<tr class="memdesc:ae33de6b3e3d5675b78207c0cc3dd7dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">... local contour trees etc. computed during fan in and used during fan out  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ae33de6b3e3d5675b78207c0cc3dd7dde">More...</a><br /></td></tr>
-<tr class="separator:ae33de6b3e3d5675b78207c0cc3dd7dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7396ffba2534a437ada3d078c0cacc9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; viskores::worklet::contourtree_distributed::BoundaryTree &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#af7396ffba2534a437ada3d078c0cacc9">LocalBoundaryTrees</a></td></tr>
-<tr class="separator:af7396ffba2534a437ada3d078c0cacc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1196286038db6e7242d0c683aa832621"><td class="memItemLeft" align="right" valign="top">std::vector&lt; viskores::worklet::contourtree_distributed::InteriorForest &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a1196286038db6e7242d0c683aa832621">LocalInteriorForests</a></td></tr>
-<tr class="separator:a1196286038db6e7242d0c683aa832621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5860bdad8ff2f9dca62c83d0a229f085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a5860bdad8ff2f9dca62c83d0a229f085">NumIterations</a></td></tr>
-<tr class="memdesc:a5860bdad8ff2f9dca62c83d0a229f085"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hierarchical trees computed by the filter (array with one entry per block)  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a5860bdad8ff2f9dca62c83d0a229f085">More...</a><br /></td></tr>
-<tr class="separator:a5860bdad8ff2f9dca62c83d0a229f085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -397,13 +384,16 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aee597835ba291be2d38f60e24f3139e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee597835ba291be2d38f60e24f3139e7">&#9670;&nbsp;</a></span>ComputeLocalTree()</h2>
+<a id="ad6f2fad59ffb7283f17a05565851273d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f2fad59ffb7283f17a05565851273d">&#9670;&nbsp;</a></span>ComputeLocalTree()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , typename StorageType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void viskores::filter::scalar_topology::ContourTreeUniformDistributed::ComputeLocalTree </td>
@@ -421,7 +411,13 @@ template&lt;typename T , typename StorageType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fieldArray</em>&#160;</td>
+          <td class="paramname"><em>fieldArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExecutionState &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -429,17 +425,25 @@ template&lt;typename T , typename StorageType &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a968b1cde328c9086adb0ffc83591970c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a968b1cde328c9086adb0ffc83591970c">&#9670;&nbsp;</a></span>ComputeLocalTreeImpl()</h2>
+<a id="a8a5f4f4569d889c7fcdca8eefdd37880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5f4f4569d889c7fcdca8eefdd37880">&#9670;&nbsp;</a></span>ComputeLocalTreeImpl()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , typename StorageType , typename MeshType , typename MeshBoundaryExecType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void viskores::filter::scalar_topology::ContourTreeUniformDistributed::ComputeLocalTreeImpl </td>
@@ -469,7 +473,13 @@ template&lt;typename T , typename StorageType , typename MeshType , typename Mes
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MeshBoundaryExecType &amp;&#160;</td>
-          <td class="paramname"><em>meshBoundaryExecObject</em>&#160;</td>
+          <td class="paramname"><em>meshBoundaryExecObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExecutionState &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -477,6 +487,11 @@ template&lt;typename T , typename StorageType , typename MeshType , typename Mes
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Implement per block contour tree computation after the MeshType has been discovered. </p>
@@ -620,8 +635,8 @@ template&lt;typename FieldType &gt; </div>
 
 </div>
 </div>
-<a id="ac88a0f722504facb35fa0c3f40bffc72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac88a0f722504facb35fa0c3f40bffc72">&#9670;&nbsp;</a></span>DoPostExecute()</h2>
+<a id="a89f0f25bf42fd246b6fbb96578521345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f0f25bf42fd246b6fbb96578521345">&#9670;&nbsp;</a></span>DoPostExecute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -641,7 +656,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExecutionState &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -786,8 +807,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a413306a3d1afbe88203e367cfc2479ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a413306a3d1afbe88203e367cfc2479ab">&#9670;&nbsp;</a></span>PostExecute()</h2>
+<a id="a66c5007f451e1ffa0f9e6c1dfe27267a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c5007f451e1ffa0f9e6c1dfe27267a">&#9670;&nbsp;</a></span>PostExecute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -805,7 +826,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ExecutionState &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1027,7 +1054,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::AugmentHierarchicalTree</td>
+          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::AugmentHierarchicalTree = false</td>
         </tr>
       </table>
   </td>
@@ -1051,7 +1078,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> viskores::filter::scalar_topology::ContourTreeUniformDistributed::BlocksPerDimension</td>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> viskores::filter::scalar_topology::ContourTreeUniformDistributed::BlocksPerDimension = { -1, -1, -1 }</td>
         </tr>
       </table>
   </td>
@@ -1084,124 +1111,6 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="af7396ffba2534a437ada3d078c0cacc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7396ffba2534a437ada3d078c0cacc9">&#9670;&nbsp;</a></span>LocalBoundaryTrees</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;viskores::worklet::contourtree_distributed::BoundaryTree&gt; viskores::filter::scalar_topology::ContourTreeUniformDistributed::LocalBoundaryTrees</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae33de6b3e3d5675b78207c0cc3dd7dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae33de6b3e3d5675b78207c0cc3dd7dde">&#9670;&nbsp;</a></span>LocalContourTrees</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;viskores::worklet::contourtree_augmented::ContourTree&gt; viskores::filter::scalar_topology::ContourTreeUniformDistributed::LocalContourTrees</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>... local contour trees etc. computed during fan in and used during fan out </p>
-
-</div>
-</div>
-<a id="a1196286038db6e7242d0c683aa832621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1196286038db6e7242d0c683aa832621">&#9670;&nbsp;</a></span>LocalInteriorForests</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;viskores::worklet::contourtree_distributed::InteriorForest&gt; viskores::filter::scalar_topology::ContourTreeUniformDistributed::LocalInteriorForests</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac9b300938c71a1a04e99f178ca90ffd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9b300938c71a1a04e99f178ca90ffd0">&#9670;&nbsp;</a></span>LocalMeshes</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;viskores::worklet::contourtree_augmented::DataSetMesh&gt; viskores::filter::scalar_topology::ContourTreeUniformDistributed::LocalMeshes</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Intermediate results (one per local data block)... </p>
-<p>... local mesh information needed at end of fan out </p>
-
-</div>
-</div>
-<a id="a5860bdad8ff2f9dca62c83d0a229f085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5860bdad8ff2f9dca62c83d0a229f085">&#9670;&nbsp;</a></span>NumIterations</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> viskores::filter::scalar_topology::ContourTreeUniformDistributed::NumIterations</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The hierarchical trees computed by the filter (array with one entry per block) </p>
-<p>Number of iterations used to compute the contour tree </p>
 
 </div>
 </div>
@@ -1239,7 +1148,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::SaveDotFiles</td>
+          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::SaveDotFiles = false</td>
         </tr>
       </table>
   </td>
@@ -1311,7 +1220,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::UseBoundaryExtremaOnly</td>
+          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::UseBoundaryExtremaOnly = true</td>
         </tr>
       </table>
   </td>
@@ -1336,7 +1245,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::UseMarchingCubes</td>
+          <td class="memname">bool viskores::filter::scalar_topology::ContourTreeUniformDistributed::UseMarchingCubes = false</td>
         </tr>
       </table>
   </td>

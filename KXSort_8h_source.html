@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> nBytes = <span class="keyword">sizeof</span>(T);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">int</span> kth_byte(<span class="keyword">const</span> T&amp; x, <span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> (x &gt;&gt; (kRadixBits * k)) &amp; kRadixMask; }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> compare(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y) { <span class="keywordflow">return</span> x &lt; y; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y) { <span class="keywordflow">return</span> x &lt; y; }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> nBytes = <span class="keyword">sizeof</span>(T);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> T kMSB = T(0x80) &lt;&lt; ((<span class="keyword">sizeof</span>(T) - 1) * 8);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> kth_byte(<span class="keyword">const</span> T&amp; x, <span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> ((x ^ kMSB) &gt;&gt; (kRadixBits * k)) &amp; kRadixMask; }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> compare(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y) { <span class="keywordflow">return</span> x &lt; y; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>(<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> T&amp; y) { <span class="keywordflow">return</span> x &lt; y; }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> RandomIt, <span class="keyword">class</span> ValueType, <span class="keyword">class</span> RadixTraits&gt;</div>
@@ -162,13 +162,13 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; kRadixBin; ++i)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    RandomIt end = last[i - 1] + count[i];</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (end == e)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    RandomIt <a class="code" href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">end</a> = last[i - 1] + count[i];</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">end</a> == e)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      last[i] = e;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">while</span> (last[i] != end)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">while</span> (last[i] != <a class="code" href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">end</a>)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      ValueType swapper = *last[i];</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordtype">int</span> tag = radix_traits.kth_byte(swapper, kWhichByte);</div>
@@ -242,6 +242,8 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacelinalg_html_a221beb31deec28fb76925998fc8e3b1c"><div class="ttname"><a href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">linalg::end</a></div><div class="ttdeci">T * end(vec&lt; T, M &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:586</div></div>
+<div class="ttc" id="anamespacelinalg_html_a314a8ed2d782c27a5970b749238fe01d"><div class="ttname"><a href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">linalg::compare</a></div><div class="ttdeci">constexpr detail::any_compare&lt; A, B &gt;::type compare(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:402</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

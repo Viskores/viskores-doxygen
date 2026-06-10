@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -51,256 +51,347 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Static control-side entry points for common device algorithms.  
+ <a href="structviskores_1_1cont_1_1Algorithm.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Algorithm_8h_source.html">Algorithm.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a169033af98722d2b1a22b3a07fa6726a"><td class="memTemplParams" colspan="2">template&lt;typename IndicesStorage &gt; </td></tr>
 <tr class="memitem:a169033af98722d2b1a22b3a07fa6726a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a169033af98722d2b1a22b3a07fa6726a">BitFieldToUnorderedSet</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">Id</a>, IndicesStorage &gt; &amp;indices)</td></tr>
+<tr class="memdesc:a169033af98722d2b1a22b3a07fa6726a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a unique, unordered list of set bit indices.  <a href="structviskores_1_1cont_1_1Algorithm.html#a169033af98722d2b1a22b3a07fa6726a">More...</a><br /></td></tr>
 <tr class="separator:a169033af98722d2b1a22b3a07fa6726a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbda6cc6dd9fb8c3d8d8d46dc80c42ce"><td class="memTemplParams" colspan="2">template&lt;typename IndicesStorage &gt; </td></tr>
 <tr class="memitem:abbda6cc6dd9fb8c3d8d8d46dc80c42ce"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#abbda6cc6dd9fb8c3d8d8d46dc80c42ce">BitFieldToUnorderedSet</a> (const <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">Id</a>, IndicesStorage &gt; &amp;indices)</td></tr>
+<tr class="memdesc:abbda6cc6dd9fb8c3d8d8d46dc80c42ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#abbda6cc6dd9fb8c3d8d8d46dc80c42ce">More...</a><br /></td></tr>
 <tr class="separator:abbda6cc6dd9fb8c3d8d8d46dc80c42ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec6c07cb5731d3670a38fcd2674f515"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:adec6c07cb5731d3670a38fcd2674f515"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#adec6c07cb5731d3670a38fcd2674f515">Copy</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:adec6c07cb5731d3670a38fcd2674f515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy values from one array to another in the execution environment.  <a href="structviskores_1_1cont_1_1Algorithm.html#adec6c07cb5731d3670a38fcd2674f515">More...</a><br /></td></tr>
 <tr class="separator:adec6c07cb5731d3670a38fcd2674f515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb1d0f59d37e721302d80fd8a37ca7f3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:aeb1d0f59d37e721302d80fd8a37ca7f3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aeb1d0f59d37e721302d80fd8a37ca7f3">Copy</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:aeb1d0f59d37e721302d80fd8a37ca7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses any available device.  <a href="structviskores_1_1cont_1_1Algorithm.html#aeb1d0f59d37e721302d80fd8a37ca7f3">More...</a><br /></td></tr>
 <tr class="separator:aeb1d0f59d37e721302d80fd8a37ca7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb1a1af73088104e250dd42a1ff65ac2"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class CStencil , class COut &gt; </td></tr>
 <tr class="memitem:acb1a1af73088104e250dd42a1ff65ac2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acb1a1af73088104e250dd42a1ff65ac2">CopyIf</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CStencil &gt; &amp;stencil, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:acb1a1af73088104e250dd42a1ff65ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy input values selected by a stencil.  <a href="structviskores_1_1cont_1_1Algorithm.html#acb1a1af73088104e250dd42a1ff65ac2">More...</a><br /></td></tr>
 <tr class="separator:acb1a1af73088104e250dd42a1ff65ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7700c30e050294f17dfa15cae53b28d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class CStencil , class COut &gt; </td></tr>
 <tr class="memitem:af7700c30e050294f17dfa15cae53b28d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af7700c30e050294f17dfa15cae53b28d">CopyIf</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CStencil &gt; &amp;stencil, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:af7700c30e050294f17dfa15cae53b28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#af7700c30e050294f17dfa15cae53b28d">More...</a><br /></td></tr>
 <tr class="separator:af7700c30e050294f17dfa15cae53b28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac442946407910a01d6e745fc48fa259"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class CStencil , class COut , class UnaryPredicate &gt; </td></tr>
 <tr class="memitem:aac442946407910a01d6e745fc48fa259"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aac442946407910a01d6e745fc48fa259">CopyIf</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CStencil &gt; &amp;stencil, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, UnaryPredicate unary_predicate)</td></tr>
+<tr class="memdesc:aac442946407910a01d6e745fc48fa259"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>unary_predicate</em> to decide which stencil values are true.  <a href="structviskores_1_1cont_1_1Algorithm.html#aac442946407910a01d6e745fc48fa259">More...</a><br /></td></tr>
 <tr class="separator:aac442946407910a01d6e745fc48fa259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac470adbb09e2601ea6afa8f4d6231450"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class CStencil , class COut , class UnaryPredicate &gt; </td></tr>
 <tr class="memitem:ac470adbb09e2601ea6afa8f4d6231450"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ac470adbb09e2601ea6afa8f4d6231450">CopyIf</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CStencil &gt; &amp;stencil, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, UnaryPredicate unary_predicate)</td></tr>
+<tr class="memdesc:ac470adbb09e2601ea6afa8f4d6231450"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>unary_predicate</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ac470adbb09e2601ea6afa8f4d6231450">More...</a><br /></td></tr>
 <tr class="separator:ac470adbb09e2601ea6afa8f4d6231450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64dd35db11dc5c1dc87690ffff890b72"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a64dd35db11dc5c1dc87690ffff890b72"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a64dd35db11dc5c1dc87690ffff890b72">CopySubRange</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> inputStartIndex, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numberOfElementsToCopy, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, COut &gt; &amp;output, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> outputIndex=0)</td></tr>
+<tr class="memdesc:a64dd35db11dc5c1dc87690ffff890b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a subrange from one array into another.  <a href="structviskores_1_1cont_1_1Algorithm.html#a64dd35db11dc5c1dc87690ffff890b72">More...</a><br /></td></tr>
 <tr class="separator:a64dd35db11dc5c1dc87690ffff890b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a244dab66618a357300571c368785c1eb"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a244dab66618a357300571c368785c1eb"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a244dab66618a357300571c368785c1eb">CopySubRange</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> inputStartIndex, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numberOfElementsToCopy, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, COut &gt; &amp;output, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> outputIndex=0)</td></tr>
+<tr class="memdesc:a244dab66618a357300571c368785c1eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a244dab66618a357300571c368785c1eb">More...</a><br /></td></tr>
 <tr class="separator:a244dab66618a357300571c368785c1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0597b7a2673c455f99e547ff9475cd5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ae0597b7a2673c455f99e547ff9475cd5">CountSetBits</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits)</td></tr>
+<tr class="memdesc:ae0597b7a2673c455f99e547ff9475cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the total number of set bits in a bit field.  <a href="structviskores_1_1cont_1_1Algorithm.html#ae0597b7a2673c455f99e547ff9475cd5">More...</a><br /></td></tr>
 <tr class="separator:ae0597b7a2673c455f99e547ff9475cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f707c27365f4ee4f16246b713dcf48"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a14f707c27365f4ee4f16246b713dcf48">CountSetBits</a> (const <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits)</td></tr>
+<tr class="memdesc:a14f707c27365f4ee4f16246b713dcf48"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a14f707c27365f4ee4f16246b713dcf48">More...</a><br /></td></tr>
 <tr class="separator:a14f707c27365f4ee4f16246b713dcf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b465707543def8ca242ed5a44e45b27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a0b465707543def8ca242ed5a44e45b27">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, bool value, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numBits)</td></tr>
+<tr class="memdesc:a0b465707543def8ca242ed5a44e45b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a bit field with a boolean value.  <a href="structviskores_1_1cont_1_1Algorithm.html#a0b465707543def8ca242ed5a44e45b27">More...</a><br /></td></tr>
 <tr class="separator:a0b465707543def8ca242ed5a44e45b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06727a05cf03a6f61325e19c8fdf863b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a06727a05cf03a6f61325e19c8fdf863b">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, bool value, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numBits)</td></tr>
+<tr class="memdesc:a06727a05cf03a6f61325e19c8fdf863b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a06727a05cf03a6f61325e19c8fdf863b">More...</a><br /></td></tr>
 <tr class="separator:a06727a05cf03a6f61325e19c8fdf863b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62787bbdf5942b9e9b71fb4cab5cdc24"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a62787bbdf5942b9e9b71fb4cab5cdc24">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, bool value)</td></tr>
+<tr class="memdesc:a62787bbdf5942b9e9b71fb4cab5cdc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size.  <a href="structviskores_1_1cont_1_1Algorithm.html#a62787bbdf5942b9e9b71fb4cab5cdc24">More...</a><br /></td></tr>
 <tr class="separator:a62787bbdf5942b9e9b71fb4cab5cdc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4db74b4c4c2816c495e97abb77b01a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aea4db74b4c4c2816c495e97abb77b01a">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, bool value)</td></tr>
+<tr class="memdesc:aea4db74b4c4c2816c495e97abb77b01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size using the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#aea4db74b4c4c2816c495e97abb77b01a">More...</a><br /></td></tr>
 <tr class="separator:aea4db74b4c4c2816c495e97abb77b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f3c879608af7451f8aa669ac2e143d"><td class="memTemplParams" colspan="2">template&lt;typename WordType &gt; </td></tr>
 <tr class="memitem:a82f3c879608af7451f8aa669ac2e143d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a82f3c879608af7451f8aa669ac2e143d">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, WordType word, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numBits)</td></tr>
+<tr class="memdesc:a82f3c879608af7451f8aa669ac2e143d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a bit field by stamping a word mask across it.  <a href="structviskores_1_1cont_1_1Algorithm.html#a82f3c879608af7451f8aa669ac2e143d">More...</a><br /></td></tr>
 <tr class="separator:a82f3c879608af7451f8aa669ac2e143d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b55769683861c4f63619494b5a5d057"><td class="memTemplParams" colspan="2">template&lt;typename WordType &gt; </td></tr>
 <tr class="memitem:a0b55769683861c4f63619494b5a5d057"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a0b55769683861c4f63619494b5a5d057">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, WordType word, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numBits)</td></tr>
+<tr class="memdesc:a0b55769683861c4f63619494b5a5d057"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a0b55769683861c4f63619494b5a5d057">More...</a><br /></td></tr>
 <tr class="separator:a0b55769683861c4f63619494b5a5d057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae07171a6e523732c92dbe1e136d3187b"><td class="memTemplParams" colspan="2">template&lt;typename WordType &gt; </td></tr>
 <tr class="memitem:ae07171a6e523732c92dbe1e136d3187b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ae07171a6e523732c92dbe1e136d3187b">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, WordType word)</td></tr>
+<tr class="memdesc:ae07171a6e523732c92dbe1e136d3187b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size.  <a href="structviskores_1_1cont_1_1Algorithm.html#ae07171a6e523732c92dbe1e136d3187b">More...</a><br /></td></tr>
 <tr class="separator:ae07171a6e523732c92dbe1e136d3187b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5868ac941135349883dcd57cac19076f"><td class="memTemplParams" colspan="2">template&lt;typename WordType &gt; </td></tr>
 <tr class="memitem:a5868ac941135349883dcd57cac19076f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a5868ac941135349883dcd57cac19076f">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a> &amp;bits, WordType word)</td></tr>
+<tr class="memdesc:a5868ac941135349883dcd57cac19076f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size using the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a5868ac941135349883dcd57cac19076f">More...</a><br /></td></tr>
 <tr class="separator:a5868ac941135349883dcd57cac19076f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7712293eb7aeffe8e7ed2baf46461c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
 <tr class="memitem:aeb7712293eb7aeffe8e7ed2baf46461c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aeb7712293eb7aeffe8e7ed2baf46461c">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, S &gt; &amp;handle, const T &amp;value)</td></tr>
+<tr class="memdesc:aeb7712293eb7aeffe8e7ed2baf46461c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill an array with a value.  <a href="structviskores_1_1cont_1_1Algorithm.html#aeb7712293eb7aeffe8e7ed2baf46461c">More...</a><br /></td></tr>
 <tr class="separator:aeb7712293eb7aeffe8e7ed2baf46461c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80ff61f6b8f9f74e4c770ee0b5f4bc3c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
 <tr class="memitem:a80ff61f6b8f9f74e4c770ee0b5f4bc3c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a80ff61f6b8f9f74e4c770ee0b5f4bc3c">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, S &gt; &amp;handle, const T &amp;value)</td></tr>
+<tr class="memdesc:a80ff61f6b8f9f74e4c770ee0b5f4bc3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a80ff61f6b8f9f74e4c770ee0b5f4bc3c">More...</a><br /></td></tr>
 <tr class="separator:a80ff61f6b8f9f74e4c770ee0b5f4bc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0e2471ba7d83602ffd234a04b88e978"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
 <tr class="memitem:ac0e2471ba7d83602ffd234a04b88e978"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ac0e2471ba7d83602ffd234a04b88e978">Fill</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, S &gt; &amp;handle, const T &amp;value, const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numValues)</td></tr>
+<tr class="memdesc:ac0e2471ba7d83602ffd234a04b88e978"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Resizes <em>handle</em> to <em>numValues</em> before filling it.  <a href="structviskores_1_1cont_1_1Algorithm.html#ac0e2471ba7d83602ffd234a04b88e978">More...</a><br /></td></tr>
 <tr class="separator:ac0e2471ba7d83602ffd234a04b88e978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2931349f0cbe2c0165b442494d7fefc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S &gt; </td></tr>
 <tr class="memitem:ac2931349f0cbe2c0165b442494d7fefc"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ac2931349f0cbe2c0165b442494d7fefc">Fill</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, S &gt; &amp;handle, const T &amp;value, const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numValues)</td></tr>
+<tr class="memdesc:ac2931349f0cbe2c0165b442494d7fefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Resizes <em>handle</em> to <em>numValues</em> and uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ac2931349f0cbe2c0165b442494d7fefc">More...</a><br /></td></tr>
 <tr class="separator:ac2931349f0cbe2c0165b442494d7fefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab108c5735ab1571d530915130ffa0047"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut &gt; </td></tr>
 <tr class="memitem:ab108c5735ab1571d530915130ffa0047"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ab108c5735ab1571d530915130ffa0047">LowerBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:ab108c5735ab1571d530915130ffa0047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find lower-bound insertion indices for a vector of query values.  <a href="structviskores_1_1cont_1_1Algorithm.html#ab108c5735ab1571d530915130ffa0047">More...</a><br /></td></tr>
 <tr class="separator:ab108c5735ab1571d530915130ffa0047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60e502d65ed609ccf3c05502801f2ca4"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut &gt; </td></tr>
 <tr class="memitem:a60e502d65ed609ccf3c05502801f2ca4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a60e502d65ed609ccf3c05502801f2ca4">LowerBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a60e502d65ed609ccf3c05502801f2ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a60e502d65ed609ccf3c05502801f2ca4">More...</a><br /></td></tr>
 <tr class="separator:a60e502d65ed609ccf3c05502801f2ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf74d28b781657226edc78fcee990607"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:acf74d28b781657226edc78fcee990607"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acf74d28b781657226edc78fcee990607">LowerBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:acf74d28b781657226edc78fcee990607"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> as the less-than operation.  <a href="structviskores_1_1cont_1_1Algorithm.html#acf74d28b781657226edc78fcee990607">More...</a><br /></td></tr>
 <tr class="separator:acf74d28b781657226edc78fcee990607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a721cda259596a1733447f2dd3d407969"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:a721cda259596a1733447f2dd3d407969"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a721cda259596a1733447f2dd3d407969">LowerBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:a721cda259596a1733447f2dd3d407969"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a721cda259596a1733447f2dd3d407969">More...</a><br /></td></tr>
 <tr class="separator:a721cda259596a1733447f2dd3d407969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8158d9349e52e926eaca96f9ac4141"><td class="memTemplParams" colspan="2">template&lt;class CIn , class COut &gt; </td></tr>
 <tr class="memitem:aac8158d9349e52e926eaca96f9ac4141"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aac8158d9349e52e926eaca96f9ac4141">LowerBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:aac8158d9349e52e926eaca96f9ac4141"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place specialization for <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> arrays.  <a href="structviskores_1_1cont_1_1Algorithm.html#aac8158d9349e52e926eaca96f9ac4141">More...</a><br /></td></tr>
 <tr class="separator:aac8158d9349e52e926eaca96f9ac4141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c40d52dd121cf7e292f154a3a6afa55"><td class="memTemplParams" colspan="2">template&lt;class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a1c40d52dd121cf7e292f154a3a6afa55"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a1c40d52dd121cf7e292f154a3a6afa55">LowerBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:a1c40d52dd121cf7e292f154a3a6afa55"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> specialization using the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a1c40d52dd121cf7e292f154a3a6afa55">More...</a><br /></td></tr>
 <tr class="separator:a1c40d52dd121cf7e292f154a3a6afa55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d080bbc9dcc64fcc181fcdc5753b33b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn &gt; </td></tr>
 <tr class="memitem:a8d080bbc9dcc64fcc181fcdc5753b33b"><td class="memTemplItemLeft" align="right" valign="top">static U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a8d080bbc9dcc64fcc181fcdc5753b33b">Reduce</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, U initialValue)</td></tr>
+<tr class="memdesc:a8d080bbc9dcc64fcc181fcdc5753b33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce an array to a single accumulated value.  <a href="structviskores_1_1cont_1_1Algorithm.html#a8d080bbc9dcc64fcc181fcdc5753b33b">More...</a><br /></td></tr>
 <tr class="separator:a8d080bbc9dcc64fcc181fcdc5753b33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b00f570754e95c902258613836a5819"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn &gt; </td></tr>
 <tr class="memitem:a1b00f570754e95c902258613836a5819"><td class="memTemplItemLeft" align="right" valign="top">static U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a1b00f570754e95c902258613836a5819">Reduce</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, U initialValue)</td></tr>
+<tr class="memdesc:a1b00f570754e95c902258613836a5819"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a1b00f570754e95c902258613836a5819">More...</a><br /></td></tr>
 <tr class="separator:a1b00f570754e95c902258613836a5819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c809bc934b097e9e7d193ede8e6263f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a3c809bc934b097e9e7d193ede8e6263f"><td class="memTemplItemLeft" align="right" valign="top">static U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a3c809bc934b097e9e7d193ede8e6263f">Reduce</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, U initialValue, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:a3c809bc934b097e9e7d193ede8e6263f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> as the reduction operation.  <a href="structviskores_1_1cont_1_1Algorithm.html#a3c809bc934b097e9e7d193ede8e6263f">More...</a><br /></td></tr>
 <tr class="separator:a3c809bc934b097e9e7d193ede8e6263f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a699bae66a22e0161b777b88b522b3555"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CIn , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a699bae66a22e0161b777b88b522b3555"><td class="memTemplItemLeft" align="right" valign="top">static U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a699bae66a22e0161b777b88b522b3555">Reduce</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, U initialValue, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:a699bae66a22e0161b777b88b522b3555"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a699bae66a22e0161b777b88b522b3555">More...</a><br /></td></tr>
 <tr class="separator:a699bae66a22e0161b777b88b522b3555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe0f7df43a46918ac9f216b86c3dd69b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CKeyIn , class CValIn , class CKeyOut , class CValOut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:abe0f7df43a46918ac9f216b86c3dd69b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#abe0f7df43a46918ac9f216b86c3dd69b">ReduceByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CKeyIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CValIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CKeyOut &gt; &amp;keys_output, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CValOut &gt; &amp;values_output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:abe0f7df43a46918ac9f216b86c3dd69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce consecutive segments of values that share equal keys.  <a href="structviskores_1_1cont_1_1Algorithm.html#abe0f7df43a46918ac9f216b86c3dd69b">More...</a><br /></td></tr>
 <tr class="separator:abe0f7df43a46918ac9f216b86c3dd69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe68835e69bb3925e2a7fa1436255e5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class CKeyIn , class CValIn , class CKeyOut , class CValOut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a5fe68835e69bb3925e2a7fa1436255e5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a5fe68835e69bb3925e2a7fa1436255e5">ReduceByKey</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CKeyIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CValIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CKeyOut &gt; &amp;keys_output, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, CValOut &gt; &amp;values_output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:a5fe68835e69bb3925e2a7fa1436255e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a5fe68835e69bb3925e2a7fa1436255e5">More...</a><br /></td></tr>
 <tr class="separator:a5fe68835e69bb3925e2a7fa1436255e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad208bafbe9247357fc6ce86553c9fe1a"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:ad208bafbe9247357fc6ce86553c9fe1a"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ad208bafbe9247357fc6ce86553c9fe1a">ScanInclusive</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:ad208bafbe9247357fc6ce86553c9fe1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an inclusive prefix sum.  <a href="structviskores_1_1cont_1_1Algorithm.html#ad208bafbe9247357fc6ce86553c9fe1a">More...</a><br /></td></tr>
 <tr class="separator:ad208bafbe9247357fc6ce86553c9fe1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a888ec83f828fc0fb6e939321041374"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a8a888ec83f828fc0fb6e939321041374"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a8a888ec83f828fc0fb6e939321041374">ScanInclusive</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a8a888ec83f828fc0fb6e939321041374"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a8a888ec83f828fc0fb6e939321041374">More...</a><br /></td></tr>
 <tr class="separator:a8a888ec83f828fc0fb6e939321041374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae262d4d411a8a1a2a1d0a71bc4d65cb6"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:ae262d4d411a8a1a2a1d0a71bc4d65cb6"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ae262d4d411a8a1a2a1d0a71bc4d65cb6">ScanInclusive</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:ae262d4d411a8a1a2a1d0a71bc4d65cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> as the scan operation.  <a href="structviskores_1_1cont_1_1Algorithm.html#ae262d4d411a8a1a2a1d0a71bc4d65cb6">More...</a><br /></td></tr>
 <tr class="separator:ae262d4d411a8a1a2a1d0a71bc4d65cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac168350bbdfe3ee90d43b8fbed34c7ca"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:ac168350bbdfe3ee90d43b8fbed34c7ca"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ac168350bbdfe3ee90d43b8fbed34c7ca">ScanInclusive</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:ac168350bbdfe3ee90d43b8fbed34c7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ac168350bbdfe3ee90d43b8fbed34c7ca">More...</a><br /></td></tr>
 <tr class="separator:ac168350bbdfe3ee90d43b8fbed34c7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e6905aab1ab56f3b5655f1c36add9a"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut , typename BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a30e6905aab1ab56f3b5655f1c36add9a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a30e6905aab1ab56f3b5655f1c36add9a">ScanInclusiveByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;values_output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:a30e6905aab1ab56f3b5655f1c36add9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inclusive prefix sums over consecutive equal-key segments.  <a href="structviskores_1_1cont_1_1Algorithm.html#a30e6905aab1ab56f3b5655f1c36add9a">More...</a><br /></td></tr>
 <tr class="separator:a30e6905aab1ab56f3b5655f1c36add9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fd839574afbf268a389b0e293d5d014"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut , typename BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a8fd839574afbf268a389b0e293d5d014"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a8fd839574afbf268a389b0e293d5d014">ScanInclusiveByKey</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;values_output, BinaryFunctor binary_functor)</td></tr>
+<tr class="memdesc:a8fd839574afbf268a389b0e293d5d014"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a8fd839574afbf268a389b0e293d5d014">More...</a><br /></td></tr>
 <tr class="separator:a8fd839574afbf268a389b0e293d5d014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade29f5a75fd8b0ebf2aaf69be28e6c7f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut &gt; </td></tr>
 <tr class="memitem:ade29f5a75fd8b0ebf2aaf69be28e6c7f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ade29f5a75fd8b0ebf2aaf69be28e6c7f">ScanInclusiveByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:ade29f5a75fd8b0ebf2aaf69be28e6c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation.  <a href="structviskores_1_1cont_1_1Algorithm.html#ade29f5a75fd8b0ebf2aaf69be28e6c7f">More...</a><br /></td></tr>
 <tr class="separator:ade29f5a75fd8b0ebf2aaf69be28e6c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acee29282cc11ed2b674aeebe26026a90"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut &gt; </td></tr>
 <tr class="memitem:acee29282cc11ed2b674aeebe26026a90"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acee29282cc11ed2b674aeebe26026a90">ScanInclusiveByKey</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:acee29282cc11ed2b674aeebe26026a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#acee29282cc11ed2b674aeebe26026a90">More...</a><br /></td></tr>
 <tr class="separator:acee29282cc11ed2b674aeebe26026a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9461d99da382455734930fc76a6488df"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a9461d99da382455734930fc76a6488df"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a9461d99da382455734930fc76a6488df">ScanExclusive</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a9461d99da382455734930fc76a6488df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an exclusive prefix sum.  <a href="structviskores_1_1cont_1_1Algorithm.html#a9461d99da382455734930fc76a6488df">More...</a><br /></td></tr>
 <tr class="separator:a9461d99da382455734930fc76a6488df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d71996e37f00e0a22823cebc60fa6a"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a74d71996e37f00e0a22823cebc60fa6a"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a74d71996e37f00e0a22823cebc60fa6a">ScanExclusive</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a74d71996e37f00e0a22823cebc60fa6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a74d71996e37f00e0a22823cebc60fa6a">More...</a><br /></td></tr>
 <tr class="separator:a74d71996e37f00e0a22823cebc60fa6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a654dd7a17cd27c691f49f43c35cffd4e"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a654dd7a17cd27c691f49f43c35cffd4e"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a654dd7a17cd27c691f49f43c35cffd4e">ScanExclusive</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binaryFunctor, const T &amp;initialValue)</td></tr>
+<tr class="memdesc:a654dd7a17cd27c691f49f43c35cffd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em> as the scan operation and <em>initialValue</em> as the first exclusive value.  <a href="structviskores_1_1cont_1_1Algorithm.html#a654dd7a17cd27c691f49f43c35cffd4e">More...</a><br /></td></tr>
 <tr class="separator:a654dd7a17cd27c691f49f43c35cffd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed4b31b0ca95478890e5f3ce8d9c94ac"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:aed4b31b0ca95478890e5f3ce8d9c94ac"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aed4b31b0ca95478890e5f3ce8d9c94ac">ScanExclusive</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binaryFunctor, const T &amp;initialValue)</td></tr>
+<tr class="memdesc:aed4b31b0ca95478890e5f3ce8d9c94ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#aed4b31b0ca95478890e5f3ce8d9c94ac">More...</a><br /></td></tr>
 <tr class="separator:aed4b31b0ca95478890e5f3ce8d9c94ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33ae3c539d706dbda51cfc29759b1e6"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:ae33ae3c539d706dbda51cfc29759b1e6"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ae33ae3c539d706dbda51cfc29759b1e6">ScanExclusiveByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;output, const U &amp;initialValue, BinaryFunctor binaryFunctor)</td></tr>
+<tr class="memdesc:ae33ae3c539d706dbda51cfc29759b1e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute exclusive prefix sums over consecutive equal-key segments.  <a href="structviskores_1_1cont_1_1Algorithm.html#ae33ae3c539d706dbda51cfc29759b1e6">More...</a><br /></td></tr>
 <tr class="separator:ae33ae3c539d706dbda51cfc29759b1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a787ee5fbf7742f2ed2dae5a70e1a1371"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename KIn , typename VIn , typename VOut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a787ee5fbf7742f2ed2dae5a70e1a1371"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a787ee5fbf7742f2ed2dae5a70e1a1371">ScanExclusiveByKey</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;output, const U &amp;initialValue, BinaryFunctor binaryFunctor)</td></tr>
+<tr class="memdesc:a787ee5fbf7742f2ed2dae5a70e1a1371"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a787ee5fbf7742f2ed2dae5a70e1a1371">More...</a><br /></td></tr>
 <tr class="separator:a787ee5fbf7742f2ed2dae5a70e1a1371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5701e92ae47a22bfb33e269a95746c3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class KIn , typename VIn , typename VOut &gt; </td></tr>
 <tr class="memitem:af5701e92ae47a22bfb33e269a95746c3"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af5701e92ae47a22bfb33e269a95746c3">ScanExclusiveByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;output)</td></tr>
+<tr class="memdesc:af5701e92ae47a22bfb33e269a95746c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and its zero-initialized value as the initial value for each segment.  <a href="structviskores_1_1cont_1_1Algorithm.html#af5701e92ae47a22bfb33e269a95746c3">More...</a><br /></td></tr>
 <tr class="separator:af5701e92ae47a22bfb33e269a95746c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d3d1e997d2080da67b22344921d9f9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class KIn , typename VIn , typename VOut &gt; </td></tr>
 <tr class="memitem:a99d3d1e997d2080da67b22344921d9f9"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a99d3d1e997d2080da67b22344921d9f9">ScanExclusiveByKey</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, KIn &gt; &amp;keys, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VIn &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, VOut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a99d3d1e997d2080da67b22344921d9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a99d3d1e997d2080da67b22344921d9f9">More...</a><br /></td></tr>
 <tr class="separator:a99d3d1e997d2080da67b22344921d9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46ce388ab20262579acf39d5c0263d49"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a46ce388ab20262579acf39d5c0263d49"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a46ce388ab20262579acf39d5c0263d49">ScanExtended</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a46ce388ab20262579acf39d5c0263d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an extended prefix sum.  <a href="structviskores_1_1cont_1_1Algorithm.html#a46ce388ab20262579acf39d5c0263d49">More...</a><br /></td></tr>
 <tr class="separator:a46ce388ab20262579acf39d5c0263d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeffa65a83597bee38a4e83acea93075"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut &gt; </td></tr>
 <tr class="memitem:aaeffa65a83597bee38a4e83acea93075"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aaeffa65a83597bee38a4e83acea93075">ScanExtended</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:aaeffa65a83597bee38a4e83acea93075"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#aaeffa65a83597bee38a4e83acea93075">More...</a><br /></td></tr>
 <tr class="separator:aaeffa65a83597bee38a4e83acea93075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af55a7eb6970e19f3ea249cc095881aa5"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:af55a7eb6970e19f3ea249cc095881aa5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af55a7eb6970e19f3ea249cc095881aa5">ScanExtended</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binaryFunctor, const T &amp;initialValue)</td></tr>
+<tr class="memdesc:af55a7eb6970e19f3ea249cc095881aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em> as the scan operation and <em>initialValue</em> as the first output entry.  <a href="structviskores_1_1cont_1_1Algorithm.html#af55a7eb6970e19f3ea249cc095881aa5">More...</a><br /></td></tr>
 <tr class="separator:af55a7eb6970e19f3ea249cc095881aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4bf5bca0c2632bca8741cf2d148e60e"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </td></tr>
 <tr class="memitem:ab4bf5bca0c2632bca8741cf2d148e60e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ab4bf5bca0c2632bca8741cf2d148e60e">ScanExtended</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, COut &gt; &amp;output, BinaryFunctor binaryFunctor, const T &amp;initialValue)</td></tr>
+<tr class="memdesc:ab4bf5bca0c2632bca8741cf2d148e60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ab4bf5bca0c2632bca8741cf2d148e60e">More...</a><br /></td></tr>
 <tr class="separator:ab4bf5bca0c2632bca8741cf2d148e60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ce297efc08b965bb2ddd9edb4794b2"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:a83ce297efc08b965bb2ddd9edb4794b2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a83ce297efc08b965bb2ddd9edb4794b2">Schedule</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, Functor functor, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numInstances)</td></tr>
+<tr class="memdesc:a83ce297efc08b965bb2ddd9edb4794b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule a 1D set of functor invocations on a device.  <a href="structviskores_1_1cont_1_1Algorithm.html#a83ce297efc08b965bb2ddd9edb4794b2">More...</a><br /></td></tr>
 <tr class="separator:a83ce297efc08b965bb2ddd9edb4794b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a077488499709425cfdbabfe8dd312b55"><td class="memTemplParams" colspan="2">template&lt;typename... Hints, typename Functor &gt; </td></tr>
 <tr class="memitem:a077488499709425cfdbabfe8dd312b55"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a077488499709425cfdbabfe8dd312b55">Schedule</a> (viskores::cont::internal::HintList&lt; Hints... &gt; hints, Functor functor, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numInstances)</td></tr>
+<tr class="memdesc:a077488499709425cfdbabfe8dd312b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>hints</em> to influence runtime device selection.  <a href="structviskores_1_1cont_1_1Algorithm.html#a077488499709425cfdbabfe8dd312b55">More...</a><br /></td></tr>
 <tr class="separator:a077488499709425cfdbabfe8dd312b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e0c15a584123773575d0ae5a31082bf"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:a0e0c15a584123773575d0ae5a31082bf"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a0e0c15a584123773575d0ae5a31082bf">Schedule</a> (Functor functor, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numInstances)</td></tr>
+<tr class="memdesc:a0e0c15a584123773575d0ae5a31082bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a0e0c15a584123773575d0ae5a31082bf">More...</a><br /></td></tr>
 <tr class="separator:a0e0c15a584123773575d0ae5a31082bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab838df557284f6aa1eac81821837370b"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:ab838df557284f6aa1eac81821837370b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ab838df557284f6aa1eac81821837370b">Schedule</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, Functor functor, <a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> rangeMax)</td></tr>
+<tr class="memdesc:ab838df557284f6aa1eac81821837370b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule a 3D set of functor invocations on a device.  <a href="structviskores_1_1cont_1_1Algorithm.html#ab838df557284f6aa1eac81821837370b">More...</a><br /></td></tr>
 <tr class="separator:ab838df557284f6aa1eac81821837370b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af654d43192ca3c8b1a95955220f65c13"><td class="memTemplParams" colspan="2">template&lt;typename... Hints, typename Functor &gt; </td></tr>
 <tr class="memitem:af654d43192ca3c8b1a95955220f65c13"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af654d43192ca3c8b1a95955220f65c13">Schedule</a> (viskores::cont::internal::HintList&lt; Hints... &gt; hints, Functor functor, <a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> rangeMax)</td></tr>
+<tr class="memdesc:af654d43192ca3c8b1a95955220f65c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>hints</em> to influence runtime device selection.  <a href="structviskores_1_1cont_1_1Algorithm.html#af654d43192ca3c8b1a95955220f65c13">More...</a><br /></td></tr>
 <tr class="separator:af654d43192ca3c8b1a95955220f65c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad028efc31e92ed7ebb2e82a47eb55e63"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:ad028efc31e92ed7ebb2e82a47eb55e63"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ad028efc31e92ed7ebb2e82a47eb55e63">Schedule</a> (Functor functor, <a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> rangeMax)</td></tr>
+<tr class="memdesc:ad028efc31e92ed7ebb2e82a47eb55e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ad028efc31e92ed7ebb2e82a47eb55e63">More...</a><br /></td></tr>
 <tr class="separator:ad028efc31e92ed7ebb2e82a47eb55e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe9b1451a668de67ffc2e77111b3901"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage &gt; </td></tr>
 <tr class="memitem:affe9b1451a668de67ffc2e77111b3901"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#affe9b1451a668de67ffc2e77111b3901">Sort</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values)</td></tr>
+<tr class="memdesc:affe9b1451a668de67ffc2e77111b3901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort an array in ascending order.  <a href="structviskores_1_1cont_1_1Algorithm.html#affe9b1451a668de67ffc2e77111b3901">More...</a><br /></td></tr>
 <tr class="separator:affe9b1451a668de67ffc2e77111b3901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ba72dce76b2ac47fca08ba511eee88"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage &gt; </td></tr>
 <tr class="memitem:a57ba72dce76b2ac47fca08ba511eee88"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a57ba72dce76b2ac47fca08ba511eee88">Sort</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values)</td></tr>
+<tr class="memdesc:a57ba72dce76b2ac47fca08ba511eee88"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a57ba72dce76b2ac47fca08ba511eee88">More...</a><br /></td></tr>
 <tr class="separator:a57ba72dce76b2ac47fca08ba511eee88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3b547f1ab6966d273495076c94262d"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:aae3b547f1ab6966d273495076c94262d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aae3b547f1ab6966d273495076c94262d">Sort</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:aae3b547f1ab6966d273495076c94262d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sorts according to <em>binary_compare</em>, which must define a strict weak ordering.  <a href="structviskores_1_1cont_1_1Algorithm.html#aae3b547f1ab6966d273495076c94262d">More...</a><br /></td></tr>
 <tr class="separator:aae3b547f1ab6966d273495076c94262d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39c5d82e6be1944000b2ab54026f14d"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:ac39c5d82e6be1944000b2ab54026f14d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ac39c5d82e6be1944000b2ab54026f14d">Sort</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:ac39c5d82e6be1944000b2ab54026f14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#ac39c5d82e6be1944000b2ab54026f14d">More...</a><br /></td></tr>
 <tr class="separator:ac39c5d82e6be1944000b2ab54026f14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb6a32aed542cea723bcc6aa0ee1832e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class StorageT , class StorageU &gt; </td></tr>
 <tr class="memitem:acb6a32aed542cea723bcc6aa0ee1832e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acb6a32aed542cea723bcc6aa0ee1832e">SortByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;keys, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;values)</td></tr>
+<tr class="memdesc:acb6a32aed542cea723bcc6aa0ee1832e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort keys and reorder associated values.  <a href="structviskores_1_1cont_1_1Algorithm.html#acb6a32aed542cea723bcc6aa0ee1832e">More...</a><br /></td></tr>
 <tr class="separator:acb6a32aed542cea723bcc6aa0ee1832e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46c029bcb3440c72d3db2706615a76cf"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class StorageT , class StorageU &gt; </td></tr>
 <tr class="memitem:a46c029bcb3440c72d3db2706615a76cf"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a46c029bcb3440c72d3db2706615a76cf">SortByKey</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;keys, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;values)</td></tr>
+<tr class="memdesc:a46c029bcb3440c72d3db2706615a76cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a46c029bcb3440c72d3db2706615a76cf">More...</a><br /></td></tr>
 <tr class="separator:a46c029bcb3440c72d3db2706615a76cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74905314871577a845310c9e7c509f91"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class StorageT , class StorageU , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:a74905314871577a845310c9e7c509f91"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a74905314871577a845310c9e7c509f91">SortByKey</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;keys, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:a74905314871577a845310c9e7c509f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sorts keys according to <em>binary_compare</em>, which must define a strict weak ordering.  <a href="structviskores_1_1cont_1_1Algorithm.html#a74905314871577a845310c9e7c509f91">More...</a><br /></td></tr>
 <tr class="separator:a74905314871577a845310c9e7c509f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a480d9e06f8ee1bbd61890deedf7ffcc4"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , class StorageT , class StorageU , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:a480d9e06f8ee1bbd61890deedf7ffcc4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a480d9e06f8ee1bbd61890deedf7ffcc4">SortByKey</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;keys, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:a480d9e06f8ee1bbd61890deedf7ffcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a480d9e06f8ee1bbd61890deedf7ffcc4">More...</a><br /></td></tr>
 <tr class="separator:a480d9e06f8ee1bbd61890deedf7ffcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaac4da4545d5721e5574fb6a8b506ec9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aaac4da4545d5721e5574fb6a8b506ec9">Synchronize</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId)</td></tr>
+<tr class="memdesc:aaac4da4545d5721e5574fb6a8b506ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for asynchronous device operations to complete.  <a href="structviskores_1_1cont_1_1Algorithm.html#aaac4da4545d5721e5574fb6a8b506ec9">More...</a><br /></td></tr>
 <tr class="separator:aaac4da4545d5721e5574fb6a8b506ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab125ebc532fe71df39e9fd7ccd81e5d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aab125ebc532fe71df39e9fd7ccd81e5d">Synchronize</a> ()</td></tr>
+<tr class="memdesc:aab125ebc532fe71df39e9fd7ccd81e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Synchronizes any selected runtime device.  <a href="structviskores_1_1cont_1_1Algorithm.html#aab125ebc532fe71df39e9fd7ccd81e5d">More...</a><br /></td></tr>
 <tr class="separator:aab125ebc532fe71df39e9fd7ccd81e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab562e4dfd097cea084d272e7df0fb88f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename V , typename StorageT , typename StorageU , typename StorageV , typename BinaryFunctor &gt; </td></tr>
 <tr class="memitem:ab562e4dfd097cea084d272e7df0fb88f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ab562e4dfd097cea084d272e7df0fb88f">Transform</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;input1, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;input2, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; V, StorageV &gt; &amp;output, BinaryFunctor binaryFunctor)</td></tr>
+<tr class="memdesc:ab562e4dfd097cea084d272e7df0fb88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a binary operation element-wise to two arrays.  <a href="structviskores_1_1cont_1_1Algorithm.html#ab562e4dfd097cea084d272e7df0fb88f">More...</a><br /></td></tr>
 <tr class="separator:ab562e4dfd097cea084d272e7df0fb88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0214274ebb666a407cd5a7171edf3aed"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename V , typename StorageT , typename StorageU , typename StorageV , typename BinaryFunctor &gt; </td></tr>
 <tr class="memitem:a0214274ebb666a407cd5a7171edf3aed"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a0214274ebb666a407cd5a7171edf3aed">Transform</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, StorageT &gt; &amp;input1, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; U, StorageU &gt; &amp;input2, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; V, StorageV &gt; &amp;output, BinaryFunctor binaryFunctor)</td></tr>
+<tr class="memdesc:a0214274ebb666a407cd5a7171edf3aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a0214274ebb666a407cd5a7171edf3aed">More...</a><br /></td></tr>
 <tr class="separator:a0214274ebb666a407cd5a7171edf3aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af18c98ef187d31f5f354354d5ba9802b"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage &gt; </td></tr>
 <tr class="memitem:af18c98ef187d31f5f354354d5ba9802b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af18c98ef187d31f5f354354d5ba9802b">Unique</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values)</td></tr>
+<tr class="memdesc:af18c98ef187d31f5f354354d5ba9802b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove adjacent duplicate values from an array.  <a href="structviskores_1_1cont_1_1Algorithm.html#af18c98ef187d31f5f354354d5ba9802b">More...</a><br /></td></tr>
 <tr class="separator:af18c98ef187d31f5f354354d5ba9802b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be4f6c78ff9b18df1d0af7f41d9e905"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage &gt; </td></tr>
 <tr class="memitem:a3be4f6c78ff9b18df1d0af7f41d9e905"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a3be4f6c78ff9b18df1d0af7f41d9e905">Unique</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values)</td></tr>
+<tr class="memdesc:a3be4f6c78ff9b18df1d0af7f41d9e905"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a3be4f6c78ff9b18df1d0af7f41d9e905">More...</a><br /></td></tr>
 <tr class="separator:a3be4f6c78ff9b18df1d0af7f41d9e905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaac87497e455f0faabb35e12c628edb"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:afaac87497e455f0faabb35e12c628edb"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#afaac87497e455f0faabb35e12c628edb">Unique</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:afaac87497e455f0faabb35e12c628edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> to decide when two adjacent values are equal.  <a href="structviskores_1_1cont_1_1Algorithm.html#afaac87497e455f0faabb35e12c628edb">More...</a><br /></td></tr>
 <tr class="separator:afaac87497e455f0faabb35e12c628edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe5dfcea52edcfb9cdbc7caf50644f72"><td class="memTemplParams" colspan="2">template&lt;typename T , class Storage , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:abe5dfcea52edcfb9cdbc7caf50644f72"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#abe5dfcea52edcfb9cdbc7caf50644f72">Unique</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, Storage &gt; &amp;values, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:abe5dfcea52edcfb9cdbc7caf50644f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#abe5dfcea52edcfb9cdbc7caf50644f72">More...</a><br /></td></tr>
 <tr class="separator:abe5dfcea52edcfb9cdbc7caf50644f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ac770f1f1472a8a74cb3e2ae37c055"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut &gt; </td></tr>
 <tr class="memitem:a76ac770f1f1472a8a74cb3e2ae37c055"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a76ac770f1f1472a8a74cb3e2ae37c055">UpperBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a76ac770f1f1472a8a74cb3e2ae37c055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find upper-bound insertion indices for a vector of query values.  <a href="structviskores_1_1cont_1_1Algorithm.html#a76ac770f1f1472a8a74cb3e2ae37c055">More...</a><br /></td></tr>
 <tr class="separator:a76ac770f1f1472a8a74cb3e2ae37c055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dff95ee8944aa8cd048d74926a91c5e"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut &gt; </td></tr>
 <tr class="memitem:a4dff95ee8944aa8cd048d74926a91c5e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a4dff95ee8944aa8cd048d74926a91c5e">UpperBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output)</td></tr>
+<tr class="memdesc:a4dff95ee8944aa8cd048d74926a91c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a4dff95ee8944aa8cd048d74926a91c5e">More...</a><br /></td></tr>
 <tr class="separator:a4dff95ee8944aa8cd048d74926a91c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd54a73202fd681784d5bce304e9ea1"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:a2cd54a73202fd681784d5bce304e9ea1"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a2cd54a73202fd681784d5bce304e9ea1">UpperBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:a2cd54a73202fd681784d5bce304e9ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> as the less-than operation.  <a href="structviskores_1_1cont_1_1Algorithm.html#a2cd54a73202fd681784d5bce304e9ea1">More...</a><br /></td></tr>
 <tr class="separator:a2cd54a73202fd681784d5bce304e9ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf63fa41e7a2bc93071db6ce5f7fda91"><td class="memTemplParams" colspan="2">template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompare &gt; </td></tr>
 <tr class="memitem:acf63fa41e7a2bc93071db6ce5f7fda91"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acf63fa41e7a2bc93071db6ce5f7fda91">UpperBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CIn &gt; &amp;input, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; T, CVal &gt; &amp;values, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;output, BinaryCompare binary_compare)</td></tr>
+<tr class="memdesc:acf63fa41e7a2bc93071db6ce5f7fda91"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#acf63fa41e7a2bc93071db6ce5f7fda91">More...</a><br /></td></tr>
 <tr class="separator:acf63fa41e7a2bc93071db6ce5f7fda91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452abad079d4b6d8308b8d7e45aa4513"><td class="memTemplParams" colspan="2">template&lt;class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a452abad079d4b6d8308b8d7e45aa4513"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a452abad079d4b6d8308b8d7e45aa4513">UpperBounds</a> (<a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> devId, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:a452abad079d4b6d8308b8d7e45aa4513"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place specialization for <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> arrays.  <a href="structviskores_1_1cont_1_1Algorithm.html#a452abad079d4b6d8308b8d7e45aa4513">More...</a><br /></td></tr>
 <tr class="separator:a452abad079d4b6d8308b8d7e45aa4513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5124c9f0c2a9e6cc3fd13a394fa3912e"><td class="memTemplParams" colspan="2">template&lt;class CIn , class COut &gt; </td></tr>
 <tr class="memitem:a5124c9f0c2a9e6cc3fd13a394fa3912e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a5124c9f0c2a9e6cc3fd13a394fa3912e">UpperBounds</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, CIn &gt; &amp;input, <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>, COut &gt; &amp;values_output)</td></tr>
+<tr class="memdesc:a5124c9f0c2a9e6cc3fd13a394fa3912e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> specialization using the runtime device selection mechanism.  <a href="structviskores_1_1cont_1_1Algorithm.html#a5124c9f0c2a9e6cc3fd13a394fa3912e">More...</a><br /></td></tr>
 <tr class="separator:a5124c9f0c2a9e6cc3fd13a394fa3912e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Static control-side entry points for common device algorithms. </p>
+<p><code><a class="el" href="structviskores_1_1cont_1_1Algorithm.html" title="Static control-side entry points for common device algorithms.">Algorithm</a></code> contains no state. It provides static methods that are invoked in the control environment and execute on a device adapter. Overloads that take a <code><a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html" title="An object used to specify a device.">DeviceAdapterId</a></code> use that device; overloads without an explicit device use the runtime device selection mechanism.</p>
+<p>Unless otherwise stated, output <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">ArrayHandle</a></code> objects are resized or allocated by these methods as needed. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abbda6cc6dd9fb8c3d8d8d46dc80c42ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abbda6cc6dd9fb8c3d8d8d46dc80c42ce">&#9670;&nbsp;</a></span>BitFieldToUnorderedSet() <span class="overload">[1/2]</span></h2>
 
@@ -336,6 +427,8 @@ template&lt;typename IndicesStorage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -381,6 +474,18 @@ template&lt;typename IndicesStorage &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Create a unique, unordered list of set bit indices. </p>
+<p>Writes into <em>indices</em> the indices of all bits set in <em>bits</em>. The resulting indices are unique, but no ordering is guaranteed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">bits</td><td>Bit field to search. </td></tr>
+    <tr><td class="paramname">indices</td><td>Output array that receives the set bit indices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of set bits, which is also the number of values written to <em>indices</em>. </dd></dl>
+
 </div>
 </div>
 <a id="aeb1d0f59d37e721302d80fd8a37ca7f3"></a>
@@ -418,6 +523,9 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses any available device. </p>
+<p>When possible, this overload prefers a device where <em>input</em> is already valid. </p>
 
 </div>
 </div>
@@ -463,6 +571,18 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Copy values from one array to another in the execution environment. </p>
+<p>Copies all values from <em>input</em> to <em>output</em>. The output array is resized to the same number of values as <em>input</em>. If <em>output</em> is already allocated, its previous contents are discarded.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Source array. </td></tr>
+    <tr><td class="paramname">output</td><td>Destination array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the copy was successfully executed on the selected device. </dd></dl>
+
 </div>
 </div>
 <a id="af7700c30e050294f17dfa15cae53b28d"></a>
@@ -506,6 +626,8 @@ template&lt;typename T , typename U , class CIn , class CStencil , class COut &g
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -557,6 +679,8 @@ template&lt;typename T , typename U , class CIn , class CStencil , class COut , 
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>unary_predicate</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="acb1a1af73088104e250dd42a1ff65ac2"></a>
@@ -606,6 +730,18 @@ template&lt;typename T , typename U , class CIn , class CStencil , class COut &g
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Conditionally copy input values selected by a stencil. </p>
+<p>Performs stream compaction on <em>input</em>. For each position, the corresponding value in <em>stencil</em> determines whether that input value is copied to <em>output</em>. Without an explicit predicate, stencil values not equal to <code><a class="el" href="classviskores_1_1TypeTraits.html" title="The TypeTraits class provides helpful compile-time information about the basic types used in Viskores...">viskores::TypeTraits</a>&lt;U&gt;::ZeroInitialization()</code> are considered true. The output array is resized to the number of selected values, and selected input values are written in input order.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Values to compact. </td></tr>
+    <tr><td class="paramname">stencil</td><td>Stencil values. Must have the same number of values as <em>input</em>. </td></tr>
+    <tr><td class="paramname">output</td><td>Destination array for selected values. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -663,6 +799,8 @@ template&lt;typename T , typename U , class CIn , class CStencil , class COut , 
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>unary_predicate</em> to decide which stencil values are true. </p>
+
 </div>
 </div>
 <a id="a244dab66618a357300571c368785c1eb"></a>
@@ -718,6 +856,8 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -781,6 +921,22 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Copy a subrange from one array into another. </p>
+<p>Copies up to <em>numberOfElementsToCopy</em> values from <em>input</em>, beginning at <em>inputStartIndex</em>, into <em>output</em> beginning at <em>outputIndex</em>. If the requested input range extends past the end of <em>input</em>, only the values up to the end of <em>input</em> are copied. If <em>output</em> is not large enough, it is resized.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>If <em>input</em> and <em>output</em> share memory, the source and destination ranges must not overlap.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Source array. </td></tr>
+    <tr><td class="paramname">inputStartIndex</td><td>First source index to copy. </td></tr>
+    <tr><td class="paramname">numberOfElementsToCopy</td><td><a class="el" href="structviskores_1_1Maximum.html" title="Binary Predicate that takes two arguments argument x, and y and returns the x if x &gt; y otherwise retu...">Maximum</a> number of values to copy. </td></tr>
+    <tr><td class="paramname">output</td><td>Destination array. </td></tr>
+    <tr><td class="paramname">outputIndex</td><td>First destination index to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the requested copy range is valid for the selected device implementation. </dd></dl>
+
 </div>
 </div>
 <a id="a14f707c27365f4ee4f16246b713dcf48"></a>
@@ -806,6 +962,8 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -842,6 +1000,16 @@ template&lt;typename T , typename U , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Count the total number of set bits in a bit field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">bits</td><td>Bit field to inspect. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bits set to 1 in <em>bits</em>. </dd></dl>
 
 </div>
 </div>
@@ -880,6 +1048,8 @@ template&lt;typename T , typename S &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -925,6 +1095,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Resizes <em>handle</em> to <em>numValues</em> and uses the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="aea4db74b4c4c2816c495e97abb77b01a"></a>
@@ -960,6 +1132,8 @@ template&lt;typename T , typename S &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size using the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1003,6 +1177,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a5868ac941135349883dcd57cac19076f"></a>
@@ -1040,6 +1216,8 @@ template&lt;typename WordType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size using the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1085,6 +1263,8 @@ template&lt;typename WordType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="aeb7712293eb7aeffe8e7ed2baf46461c"></a>
@@ -1128,6 +1308,17 @@ template&lt;typename T , typename S &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Fill an array with a value. </p>
+<p>Replaces every value in <em>handle</em> with <em>value</em>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">handle</td><td>Array to fill. </td></tr>
+    <tr><td class="paramname">value</td><td>Value to copy into every entry. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1179,6 +1370,8 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Resizes <em>handle</em> to <em>numValues</em> before filling it. </p>
+
 </div>
 </div>
 <a id="a62787bbdf5942b9e9b71fb4cab5cdc24"></a>
@@ -1220,6 +1413,8 @@ template&lt;typename T , typename S &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size. </p>
 
 </div>
 </div>
@@ -1269,6 +1464,18 @@ template&lt;typename T , typename S &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Fill a bit field with a boolean value. </p>
+<p>All bits are set to 1 when <em>value</em> is true and 0 when <em>value</em> is false. The bit field is resized to <em>numBits</em> before it is filled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">bits</td><td>Bit field to fill. </td></tr>
+    <tr><td class="paramname">value</td><td>Boolean value to stamp across the bit field. </td></tr>
+    <tr><td class="paramname">numBits</td><td>Number of bits in the resized bit field. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae07171a6e523732c92dbe1e136d3187b"></a>
@@ -1312,6 +1519,8 @@ template&lt;typename WordType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Fills the existing bit field size. </p>
 
 </div>
 </div>
@@ -1363,6 +1572,19 @@ template&lt;typename WordType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Fill a bit field by stamping a word mask across it. </p>
+<p>The bit field is resized to <em>numBits</em> before it is filled.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>WordType</code> must be an unsigned integral type.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">bits</td><td>Bit field to fill. </td></tr>
+    <tr><td class="paramname">word</td><td>Word mask to stamp across the bit field. </td></tr>
+    <tr><td class="paramname">numBits</td><td>Number of bits in the resized bit field. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a60e502d65ed609ccf3c05502801f2ca4"></a>
@@ -1406,6 +1628,8 @@ template&lt;typename T , class CIn , class CVal , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1457,6 +1681,8 @@ template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompa
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a1c40d52dd121cf7e292f154a3a6afa55"></a>
@@ -1494,6 +1720,8 @@ template&lt;class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> specialization using the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1544,6 +1772,19 @@ template&lt;typename T , class CIn , class CVal , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Find lower-bound insertion indices for a vector of query values. </p>
+<p>For each value in <em>values</em>, finds the first index in sorted <em>input</em> whose value is greater than or equal to the query value. The results are written to <em>output</em>. This is the vectorized equivalent of <code>std::lower_bound</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>input</em> must be sorted according to the default less-than ordering.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Sorted values to search. </td></tr>
+    <tr><td class="paramname">values</td><td>Query values. </td></tr>
+    <tr><td class="paramname">output</td><td>Output lower-bound indices. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1601,6 +1842,9 @@ template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompa
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> as the less-than operation. </p>
+<p><em>input</em> must be sorted according to the same comparison. </p>
+
 </div>
 </div>
 <a id="aac8158d9349e52e926eaca96f9ac4141"></a>
@@ -1645,6 +1889,9 @@ template&lt;class CIn , class COut &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place specialization for <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> arrays. </p>
+<p>The values in <em>values_output</em> are replaced with their lower-bound indices in <em>input</em>. This form is useful for inverting index maps. </p>
+
 </div>
 </div>
 <a id="a1b00f570754e95c902258613836a5819"></a>
@@ -1682,6 +1929,8 @@ template&lt;typename T , typename U , class CIn &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1727,6 +1976,8 @@ template&lt;typename T , typename U , class CIn , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a8d080bbc9dcc64fcc181fcdc5753b33b"></a>
@@ -1770,6 +2021,18 @@ template&lt;typename T , typename U , class CIn &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reduce an array to a single accumulated value. </p>
+<p>Computes the accumulated sum of <em>initialValue</em> and all values in <em>input</em>, using the default addition operation. The accumulation is run in parallel and is not a serial summation, so the operation must be associative to produce consistent results.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Values to reduce. </td></tr>
+    <tr><td class="paramname">initialValue</td><td>Initial value for the reduction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reduced total. </dd></dl>
 
 </div>
 </div>
@@ -1820,6 +2083,9 @@ template&lt;typename T , typename U , class CIn , class BinaryFunctor &gt; </div
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> as the reduction operation. </p>
+<p>The functor must be associative. </p>
 
 </div>
 </div>
@@ -1876,6 +2142,8 @@ template&lt;typename T , typename U , class CKeyIn , class CValIn , class CKeyOu
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -1939,6 +2207,23 @@ template&lt;typename T , typename U , class CKeyIn , class CValIn , class CKeyOu
 </table>
 </div><div class="memdoc">
 
+<p>Reduce consecutive segments of values that share equal keys. </p>
+<p>Partitions <em>keys</em> and <em>values</em> into consecutive segments with identical adjacent keys. Each segment is reduced with <em>binary_functor</em>. The unique segment keys are written to <em>keys_output</em>, and the reduced values are written to <em>values_output</em>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>keys</em> and <em>values</em> must have the same number of values. </dd>
+<dd>
+<em>binary_functor</em> must be associative.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">keys</td><td>Input keys. </td></tr>
+    <tr><td class="paramname">values</td><td>Input values to reduce. </td></tr>
+    <tr><td class="paramname">keys_output</td><td>Output unique segment keys. </td></tr>
+    <tr><td class="paramname">values_output</td><td>Output reduced segment values. </td></tr>
+    <tr><td class="paramname">binary_functor</td><td>Binary reduction functor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a74d71996e37f00e0a22823cebc60fa6a"></a>
@@ -1976,6 +2261,8 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -2027,6 +2314,8 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a9461d99da382455734930fc76a6488df"></a>
@@ -2070,6 +2359,19 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Compute an exclusive prefix sum. </p>
+<p>Performs a running sum on <em>input</em> and stores the result in <em>output</em>. For exclusive scans, the value at position <code>i</code> excludes the input element at position <code>i</code>. With the default addition operation, the first output value is 0, the second output value is the first input value, and so on. If <em>input</em> and <em>output</em> are the same array, the operation is performed in place.</p>
+<p>This overload uses the default addition operation. The operation must be associative to produce consistent results.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Values to scan. </td></tr>
+    <tr><td class="paramname">output</td><td>Exclusive scan output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum of all input values. </dd></dl>
 
 </div>
 </div>
@@ -2127,6 +2429,9 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em> as the scan operation and <em>initialValue</em> as the first exclusive value. </p>
+<p>The functor must be associative. </p>
+
 </div>
 </div>
 <a id="a99d3d1e997d2080da67b22344921d9f9"></a>
@@ -2170,6 +2475,8 @@ template&lt;typename T , typename U , class KIn , typename VIn , typename VOut &
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -2227,6 +2534,8 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="af5701e92ae47a22bfb33e269a95746c3"></a>
@@ -2276,6 +2585,8 @@ template&lt;typename T , typename U , class KIn , typename VIn , typename VOut &
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and its zero-initialized value as the initial value for each segment. </p>
 
 </div>
 </div>
@@ -2339,6 +2650,23 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
 </table>
 </div><div class="memdoc">
 
+<p>Compute exclusive prefix sums over consecutive equal-key segments. </p>
+<p>Works like <code>ScanExclusive</code>, but <em>keys</em> partitions <em>values</em> into consecutive segments with identical adjacent keys. A separate exclusive scan is performed on each segment, and only the scanned values are returned.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>keys</em> and <em>values</em> must have the same number of values. </dd>
+<dd>
+<em>binaryFunctor</em> must be associative.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">keys</td><td>Input keys defining scan segments. </td></tr>
+    <tr><td class="paramname">values</td><td>Values to scan. </td></tr>
+    <tr><td class="paramname">output</td><td>Output scanned values. </td></tr>
+    <tr><td class="paramname">initialValue</td><td>Initial value for each segment. </td></tr>
+    <tr><td class="paramname">binaryFunctor</td><td>Binary scan functor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aaeffa65a83597bee38a4e83acea93075"></a>
@@ -2376,6 +2704,8 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -2427,6 +2757,8 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em>, <em>initialValue</em>, and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a46ce388ab20262579acf39d5c0263d49"></a>
@@ -2470,6 +2802,19 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Compute an extended prefix sum. </p>
+<p>Computes an extended prefix sum of <em>input</em> and stores it in <em>output</em>. The output array has one more value than the input array. Exclusive scan values are stored in indices <code>[0, size - 1]</code>, and inclusive scan values are stored in indices <code>[1, size]</code>. Thus, the first output entry is 0 and the last output entry is the total sum.</p>
+<p>Unlike <code>ScanInclusive</code> and <code>ScanExclusive</code>, this method does not return the total. This can be more efficient on some devices because the total does not need to be copied back to the control environment.</p>
+<p>This overload uses the default addition operation. The operation must be associative to produce consistent results.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Values to scan. </td></tr>
+    <tr><td class="paramname">output</td><td>Extended scan output. Resized to <code>input.GetNumberOfValues() + 1</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2527,6 +2872,9 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binaryFunctor</em> as the scan operation and <em>initialValue</em> as the first output entry. </p>
+<p>The functor must be associative. </p>
+
 </div>
 </div>
 <a id="a8a888ec83f828fc0fb6e939321041374"></a>
@@ -2564,6 +2912,8 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -2609,6 +2959,8 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="ad208bafbe9247357fc6ce86553c9fe1a"></a>
@@ -2652,6 +3004,19 @@ template&lt;typename T , class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Compute an inclusive prefix sum. </p>
+<p>Performs a running sum on <em>input</em> and stores the result in <em>output</em>. For inclusive scans, the value at position <code>i</code> includes the input element at position <code>i</code>. For example, the third output value is the sum of the first three input values. If <em>input</em> and <em>output</em> are the same array, the operation is performed in place.</p>
+<p>This overload uses the default addition operation. The operation must be associative to produce consistent results.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Values to scan. </td></tr>
+    <tr><td class="paramname">output</td><td>Inclusive scan output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum of all input values. </dd></dl>
 
 </div>
 </div>
@@ -2703,6 +3068,9 @@ template&lt;typename T , class CIn , class COut , class BinaryFunctor &gt; </div
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> as the scan operation. </p>
+<p>The functor must be associative. </p>
+
 </div>
 </div>
 <a id="acee29282cc11ed2b674aeebe26026a90"></a>
@@ -2746,6 +3114,8 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation and the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -2797,6 +3167,8 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_functor</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="ade29f5a75fd8b0ebf2aaf69be28e6c7f"></a>
@@ -2846,6 +3218,8 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the default addition operation. </p>
 
 </div>
 </div>
@@ -2903,6 +3277,22 @@ template&lt;typename T , typename U , typename KIn , typename VIn , typename VOu
 </table>
 </div><div class="memdoc">
 
+<p>Compute inclusive prefix sums over consecutive equal-key segments. </p>
+<p>Works like <code>ScanInclusive</code>, but <em>keys</em> partitions <em>values</em> into consecutive segments with identical adjacent keys. A separate inclusive scan is performed on each segment, and only the scanned values are returned.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>keys</em> and <em>values</em> must have the same number of values. </dd>
+<dd>
+<em>binary_functor</em> must be associative.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">keys</td><td>Input keys defining scan segments. </td></tr>
+    <tr><td class="paramname">values</td><td>Values to scan. </td></tr>
+    <tr><td class="paramname">values_output</td><td>Output scanned values. </td></tr>
+    <tr><td class="paramname">binary_functor</td><td>Binary scan functor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0e0c15a584123773575d0ae5a31082bf"></a>
@@ -2941,6 +3331,8 @@ template&lt;typename Functor &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="ad028efc31e92ed7ebb2e82a47eb55e63"></a>
@@ -2978,6 +3370,8 @@ template&lt;typename Functor &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3023,6 +3417,18 @@ template&lt;typename Functor &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Schedule a 1D set of functor invocations on a device. </p>
+<p>Invokes <em>functor</em> once for each index in <code>[0, numInstances)</code>. Each invocation should be assumed to occur on a separate thread, although a device implementation may share threads in practice.</p>
+<p>The functor must provide a const <code>operator()(viskores::Id)</code> and must subclass <code><a class="el" href="classviskores_1_1exec_1_1FunctorBase.html" title="Base class for all user worklets invoked in the execution environment from a call to viskores::cont::...">viskores::exec::FunctorBase</a></code> for execution-environment error handling.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">functor</td><td>Function object to invoke. </td></tr>
+    <tr><td class="paramname">numInstances</td><td>Number of invocations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab838df557284f6aa1eac81821837370b"></a>
@@ -3066,6 +3472,18 @@ template&lt;typename Functor &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Schedule a 3D set of functor invocations on a device. </p>
+<p>Invokes <em>functor</em> once for every entry in a 3D index space with dimensions <em>rangeMax</em>. Each invocation should be assumed to occur on a separate thread, although a device implementation may share threads in practice.</p>
+<p>The functor must provide a const <code>operator()(viskores::Id3)</code> and must subclass <code><a class="el" href="classviskores_1_1exec_1_1FunctorBase.html" title="Base class for all user worklets invoked in the execution environment from a call to viskores::cont::...">viskores::exec::FunctorBase</a></code> for execution-environment error handling.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">functor</td><td>Function object to invoke. </td></tr>
+    <tr><td class="paramname">rangeMax</td><td>Dimensions of the 3D index space. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3111,6 +3529,8 @@ template&lt;typename... Hints, typename Functor &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>hints</em> to influence runtime device selection. </p>
+
 </div>
 </div>
 <a id="af654d43192ca3c8b1a95955220f65c13"></a>
@@ -3155,6 +3575,8 @@ template&lt;typename... Hints, typename Functor &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>hints</em> to influence runtime device selection. </p>
+
 </div>
 </div>
 <a id="a57ba72dce76b2ac47fca08ba511eee88"></a>
@@ -3182,6 +3604,8 @@ template&lt;typename T , class Storage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3221,6 +3645,8 @@ template&lt;typename T , class Storage , class BinaryCompare &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="affe9b1451a668de67ffc2e77111b3901"></a>
@@ -3258,6 +3684,16 @@ template&lt;typename T , class Storage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sort an array in ascending order. </p>
+<p>Performs an unstable in-place sort of <em>values</em> using the default less-than ordering.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">values</td><td>Array to sort in place. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3303,6 +3739,8 @@ template&lt;typename T , class Storage , class BinaryCompare &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sorts according to <em>binary_compare</em>, which must define a strict weak ordering. </p>
+
 </div>
 </div>
 <a id="a46c029bcb3440c72d3db2706615a76cf"></a>
@@ -3340,6 +3778,8 @@ template&lt;typename T , typename U , class StorageT , class StorageU &gt; </div
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3385,6 +3825,8 @@ template&lt;typename T , typename U , class StorageT , class StorageU , class Bi
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="acb6a32aed542cea723bcc6aa0ee1832e"></a>
@@ -3428,6 +3870,18 @@ template&lt;typename T , typename U , class StorageT , class StorageU &gt; </div
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sort keys and reorder associated values. </p>
+<p>Performs an unstable in-place sort of <em>keys</em> using the default less-than ordering. <em>values</em> is reordered so each value remains paired with its original key.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>keys</em> and <em>values</em> must have the same number of values.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">keys</td><td>Keys to sort in place. </td></tr>
+    <tr><td class="paramname">values</td><td>Values to reorder with their corresponding keys. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3479,6 +3933,8 @@ template&lt;typename T , typename U , class StorageT , class StorageU , class Bi
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sorts keys according to <em>binary_compare</em>, which must define a strict weak ordering. </p>
+
 </div>
 </div>
 <a id="aab125ebc532fe71df39e9fd7ccd81e5d"></a>
@@ -3503,6 +3959,8 @@ template&lt;typename T , typename U , class StorageT , class StorageU , class Bi
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Synchronizes any selected runtime device. </p>
 
 </div>
 </div>
@@ -3529,6 +3987,14 @@ template&lt;typename T , typename U , class StorageT , class StorageU , class Bi
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Wait for asynchronous device operations to complete. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to synchronize. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3579,6 +4045,8 @@ template&lt;typename T , typename U , typename V , typename StorageT , typename 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3636,6 +4104,19 @@ template&lt;typename T , typename U , typename V , typename StorageT , typename 
 </table>
 </div><div class="memdoc">
 
+<p>Apply a binary operation element-wise to two arrays. </p>
+<p>Applies <em>binaryFunctor</em> to corresponding values from <em>input1</em> and <em>input2</em> and stores the result in <em>output</em>. The input arrays do not need to have the same number of values. The output array is resized to the smaller input length.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input1</td><td>First input array. </td></tr>
+    <tr><td class="paramname">input2</td><td>Second input array. </td></tr>
+    <tr><td class="paramname">output</td><td>Destination array. </td></tr>
+    <tr><td class="paramname">binaryFunctor</td><td>Binary operation applied to corresponding input values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3be4f6c78ff9b18df1d0af7f41d9e905"></a>
@@ -3663,6 +4144,8 @@ template&lt;typename T , class Storage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3702,6 +4185,8 @@ template&lt;typename T , class Storage , class BinaryCompare &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="af18c98ef187d31f5f354354d5ba9802b"></a>
@@ -3739,6 +4224,17 @@ template&lt;typename T , class Storage &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Remove adjacent duplicate values from an array. </p>
+<p>Removes duplicate values from <em>values</em> in place. Only adjacent duplicate values are removed. Sort the array first when all duplicate values should be adjacent and removed.</p>
+<p>This overload uses <code><a class="el" href="structviskores_1_1Equal.html" title="Binary Predicate that takes two arguments argument x, and y and returns True if and only if x is equa...">viskores::Equal</a></code> to compare values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">values</td><td>Array to compact to unique adjacent values. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3784,6 +4280,9 @@ template&lt;typename T , class Storage , class BinaryCompare &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> to decide when two adjacent values are equal. </p>
+<p>The predicate must return true when the two values should be considered the same. </p>
+
 </div>
 </div>
 <a id="a4dff95ee8944aa8cd048d74926a91c5e"></a>
@@ -3827,6 +4326,8 @@ template&lt;typename T , class CIn , class CVal , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3878,6 +4379,8 @@ template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompa
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> and the runtime device selection mechanism. </p>
+
 </div>
 </div>
 <a id="a5124c9f0c2a9e6cc3fd13a394fa3912e"></a>
@@ -3915,6 +4418,8 @@ template&lt;class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> specialization using the runtime device selection mechanism. </p>
 
 </div>
 </div>
@@ -3965,6 +4470,19 @@ template&lt;typename T , class CIn , class CVal , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Find upper-bound insertion indices for a vector of query values. </p>
+<p>For each value in <em>values</em>, finds the first index in sorted <em>input</em> whose value is greater than the query value. The results are written to <em>output</em>. This is the vectorized equivalent of <code>std::upper_bound</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>input</em> must be sorted according to the default less-than ordering.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devId</td><td>Device adapter to run on. </td></tr>
+    <tr><td class="paramname">input</td><td>Sorted values to search. </td></tr>
+    <tr><td class="paramname">values</td><td>Query values. </td></tr>
+    <tr><td class="paramname">output</td><td>Output upper-bound indices. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4022,6 +4540,9 @@ template&lt;typename T , class CIn , class CVal , class COut , class BinaryCompa
 </table>
 </div><div class="memdoc">
 
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Uses <em>binary_compare</em> as the less-than operation. </p>
+<p><em>input</em> must be sorted according to the same comparison. </p>
+
 </div>
 </div>
 <a id="a452abad079d4b6d8308b8d7e45aa4513"></a>
@@ -4065,6 +4586,9 @@ template&lt;class CIn , class COut &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. In-place specialization for <code><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216" title="Base type to use to index arrays.">viskores::Id</a></code> arrays. </p>
+<p>The values in <em>values_output</em> are replaced with their upper-bound indices in <em>input</em>. This form is useful for inverting index maps. </p>
 
 </div>
 </div>

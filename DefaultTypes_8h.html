@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -68,14 +68,19 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a28e7cb8c33dc648157e0145f26a695a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DefaultTypes_8h.html#a28e7cb8c33dc648157e0145f26a695a9">VISKORES_DEFAULT_TYPE_LIST</a>&#160;&#160;&#160;::<a class="el" href="namespaceviskores.html#ab4ebc27d939bcd8196bf6facca2ca9b2">viskores::TypeListCommon</a></td></tr>
+<tr class="memdesc:a28e7cb8c33dc648157e0145f26a695a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of default numeric types to use for unknown arrays and fields.  <a href="DefaultTypes_8h.html#a28e7cb8c33dc648157e0145f26a695a9">More...</a><br /></td></tr>
 <tr class="separator:a28e7cb8c33dc648157e0145f26a695a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cf87e8dea8e836cf9e8e6e2238352d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DefaultTypes_8h.html#a6cf87e8dea8e836cf9e8e6e2238352d7">VISKORES_DEFAULT_STORAGE_LIST</a>&#160;&#160;&#160;::<a class="el" href="namespaceviskores_1_1cont.html#a2b157f5d96ade4fc0c7b49969416942c">viskores::cont::StorageListCommon</a></td></tr>
+<tr class="memdesc:a6cf87e8dea8e836cf9e8e6e2238352d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of default storage types to use for unknown arrays and fields.  <a href="DefaultTypes_8h.html#a6cf87e8dea8e836cf9e8e6e2238352d7">More...</a><br /></td></tr>
 <tr class="separator:a6cf87e8dea8e836cf9e8e6e2238352d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c02c3cda97a65f1c1e543a6905e5a1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DefaultTypes_8h.html#a8c02c3cda97a65f1c1e543a6905e5a1b">VISKORES_DEFAULT_CELL_SET_LIST_STRUCTURED</a>&#160;&#160;&#160;::<a class="el" href="namespaceviskores_1_1cont.html#afb38573900a296909c75803d3935ea2f">viskores::cont::CellSetListStructured</a></td></tr>
+<tr class="memdesc:a8c02c3cda97a65f1c1e543a6905e5a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of structured cell set types to use for unknown cell sets.  <a href="DefaultTypes_8h.html#a8c02c3cda97a65f1c1e543a6905e5a1b">More...</a><br /></td></tr>
 <tr class="separator:a8c02c3cda97a65f1c1e543a6905e5a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd85894e968065ca928afa45ad1196e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DefaultTypes_8h.html#aecd85894e968065ca928afa45ad1196e">VISKORES_DEFAULT_CELL_SET_LIST_UNSTRUCTURED</a>&#160;&#160;&#160;::<a class="el" href="namespaceviskores_1_1cont.html#afbf53004900f054346dbcc50299edb76">viskores::cont::CellSetListUnstructured</a></td></tr>
+<tr class="memdesc:aecd85894e968065ca928afa45ad1196e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of unstructured cell set types to use for unknown cell sets.  <a href="DefaultTypes_8h.html#aecd85894e968065ca928afa45ad1196e">More...</a><br /></td></tr>
 <tr class="separator:aecd85894e968065ca928afa45ad1196e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecabfc204612c2e7f2cf361443bd52bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DefaultTypes_8h.html#aecabfc204612c2e7f2cf361443bd52bc">VISKORES_DEFAULT_CELL_SET_LIST</a>&#160;&#160;&#160;::viskores::cont::internal::CellSetList</td></tr>
+<tr class="memdesc:aecabfc204612c2e7f2cf361443bd52bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of cell set types to use for unknown cell sets.  <a href="DefaultTypes_8h.html#aecabfc204612c2e7f2cf361443bd52bc">More...</a><br /></td></tr>
 <tr class="separator:aecabfc204612c2e7f2cf361443bd52bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -91,6 +96,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A list of cell set types to use for unknown cell sets. </p>
+<p>This macro resolves to a <code><a class="el" href="structviskores_1_1List.html" title="A template used to hold a list of types.">viskores::List</a></code> filled with concrete subclasses of <code><a class="el" href="classviskores_1_1cont_1_1CellSet.html" title="Defines the topological structure of the data in a DataSet.">viskores::cont::CellSet</a></code>. These are the default cell types checked during a cast and call operation on an unknown cell set. Filters that do not have restrictions on the types of cells they operate on should support the cell set types in this list. </p>
+
 </div>
 </div>
 <a id="a8c02c3cda97a65f1c1e543a6905e5a1b"></a>
@@ -104,6 +112,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A list of structured cell set types to use for unknown cell sets. </p>
+<p>This macro resolves to a <code><a class="el" href="structviskores_1_1List.html" title="A template used to hold a list of types.">viskores::List</a></code> filled with resolved types of the <code><a class="el" href="classviskores_1_1cont_1_1CellSetStructured.html" title="Defines a 1-, 2-, or 3-dimensional structured grid of points.">viskores::cont::CellSetStructured</a></code> template. Filters that only operate on structured data or have special cases for structured data can use this list in a cast and call to check for structured types. </p>
 
 </div>
 </div>
@@ -119,6 +130,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A list of unstructured cell set types to use for unknown cell sets. </p>
+<p>This macro resolves to a <code><a class="el" href="structviskores_1_1List.html" title="A template used to hold a list of types.">viskores::List</a></code> filled with concrete subclasses of <code><a class="el" href="classviskores_1_1cont_1_1CellSet.html" title="Defines the topological structure of the data in a DataSet.">viskores::cont::CellSet</a></code>. Typically, this list contains the types in <code>VISKORES_DEFAULT_CELL_SET_LIST</code> minus the structured cell sets. Filters that have special cases for structured data can use this list in a cast and call to cover the more general unstructured cases. </p>
+
 </div>
 </div>
 <a id="a6cf87e8dea8e836cf9e8e6e2238352d7"></a>
@@ -133,6 +147,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A list of default storage types to use for unknown arrays and fields. </p>
+<p>This macro resolves to a <code><a class="el" href="structviskores_1_1List.html" title="A template used to hold a list of types.">viskores::List</a></code> filled with storage tags for array containers that are typically expected in fields and other arrays. These are the default storage checked in cast and call operations that are not otherwise specified. </p>
+
 </div>
 </div>
 <a id="a28e7cb8c33dc648157e0145f26a695a9"></a>
@@ -146,6 +163,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A list of default numeric types to use for unknown arrays and fields. </p>
+<p>This macro resolves to a <code><a class="el" href="structviskores_1_1List.html" title="A template used to hold a list of types.">viskores::List</a></code> filled with numeric types and (typically) <code><a class="el" href="classviskores_1_1Vec.html" title="A short fixed-length array.">viskores::Vec</a></code> types. This is a default list of numeric types to check for when resolving array types. </p>
 
 </div>
 </div>

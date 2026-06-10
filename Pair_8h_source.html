@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -106,8 +106,8 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structviskores_1_1Pair.html#aa450a5fa5518e8318e3cbd80aee18c3b">   76</a></span>&#160;  <a class="code" href="structviskores_1_1Pair.html#aa450a5fa5518e8318e3cbd80aee18c3b">Pair</a>(<a class="code" href="structviskores_1_1Pair.html#a949d2036279174575d120be3678c2103">FirstType</a>&amp;&amp; firstSrc,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;       <a class="code" href="structviskores_1_1Pair.html#a16e5e2672d7843f1a161269dc9f0b86b">SecondType</a>&amp;&amp; secondSrc) noexcept(noexcept(<a class="code" href="structviskores_1_1Pair.html#a949d2036279174575d120be3678c2103">FirstType</a>{ std::declval&lt;FirstType&amp;&amp;&gt;() },</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                 <a class="code" href="structviskores_1_1Pair.html#a16e5e2672d7843f1a161269dc9f0b86b">SecondType</a>{ std::declval&lt;SecondType&amp;&amp;&gt;() }))</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(std::move(firstSrc))</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(std::move(secondSrc))</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(<a class="code" href="namespacestd.html">std</a>::move(firstSrc))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(<a class="code" href="namespacestd.html">std</a>::move(secondSrc))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
@@ -124,8 +124,8 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U1, <span class="keyword">typename</span> U2&gt;</div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structviskores_1_1Pair.html#aa88ac3e5e01e388a50b475b5f9a56416">   95</a></span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <a class="code" href="structviskores_1_1Pair.html#aa88ac3e5e01e388a50b475b5f9a56416">Pair</a>(<a class="code" href="structviskores_1_1Pair.html">viskores::Pair&lt;U1, U2&gt;</a>&amp;&amp; src) noexcept(</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    noexcept(U1{ std::declval&lt;U1&amp;&amp;&gt;() }, U2{ std::declval&lt;U2&amp;&amp;&gt;() }))</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(std::move(src.<a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>))</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(std::move(src.<a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>))</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(<a class="code" href="namespacestd.html">std</a>::move(src.<a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>))</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(<a class="code" href="namespacestd.html">std</a>::move(src.<a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>))</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
@@ -139,8 +139,8 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U1, <span class="keyword">typename</span> U2&gt;</div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structviskores_1_1Pair.html#a36fc53b15ddca77c1e03572818fd4cb2">  110</a></span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <a class="code" href="structviskores_1_1Pair.html#a36fc53b15ddca77c1e03572818fd4cb2">Pair</a>(std::pair&lt;U1, U2&gt;&amp;&amp; src) noexcept(noexcept(U1{ std::declval&lt;U1&amp;&amp;&gt;() },</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                                     U2{ std::declval&lt;U2&amp;&amp;&gt;() }))</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(std::move(src.<a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>))</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(std::move(src.<a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>))</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    : <a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>(<a class="code" href="namespacestd.html">std</a>::move(src.<a class="code" href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">first</a>))</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    , <a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>(<a class="code" href="namespacestd.html">std</a>::move(src.<a class="code" href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">second</a>))</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
@@ -231,6 +231,7 @@ $(function() {
 <div class="ttc" id="astructviskores_1_1Pair_html_ab7479640931923710a2650d68c578023"><div class="ttname"><a href="structviskores_1_1Pair.html#ab7479640931923710a2650d68c578023">viskores::Pair::operator!=</a></div><div class="ttdeci">bool operator!=(const viskores::Pair&lt; FirstType, SecondType &gt; &amp;other) const</div><div class="ttdef"><b>Definition:</b> Pair.h:129</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html"><div class="ttname"><a href="structviskores_1_1Pair.html">viskores::Pair</a></div><div class="ttdoc">A viskores::Pair is essentially the same as an STL pair object except that the methods (constructors ...</div><div class="ttdef"><b>Definition:</b> Pair.h:37</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_a6784c78e1f4b39f91ac77ae0e14b6243"><div class="ttname"><a href="structviskores_1_1Pair.html#a6784c78e1f4b39f91ac77ae0e14b6243">viskores::Pair::Pair</a></div><div class="ttdeci">Pair(const viskores::Pair&lt; U1, U2 &gt; &amp;src)</div><div class="ttdef"><b>Definition:</b> Pair.h:88</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_a92cfcaedd0b4635fb97a120535fb0b2c"><div class="ttname"><a href="structviskores_1_1Pair.html#a92cfcaedd0b4635fb97a120535fb0b2c">viskores::Pair::Pair</a></div><div class="ttdeci">Pair(const std::pair&lt; U1, U2 &gt; &amp;src)</div><div class="ttdef"><b>Definition:</b> Pair.h:103</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_a98420dd402faa687853165d5db72c041"><div class="ttname"><a href="structviskores_1_1Pair.html#a98420dd402faa687853165d5db72c041">viskores::Pair::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const viskores::Pair&lt; FirstType, SecondType &gt; &amp;other) const</div><div class="ttdoc">Tests ordering on the first object, and then on the second object if the first are equal.</div><div class="ttdef"><b>Definition:</b> Pair.h:138</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_af6fa5709f847a43044ea19fa7f4a9649"><div class="ttname"><a href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">viskores::Pair::second</a></div><div class="ttdeci">SecondType second</div><div class="ttdoc">The pair's second object.</div><div class="ttdef"><b>Definition:</b> Pair.h:63</div></div>

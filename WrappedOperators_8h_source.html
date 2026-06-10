@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -248,33 +248,32 @@ $(function() {
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;} <span class="comment">//namespace viskores::exec::cuda::internal</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">namespace </span>thrust</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">// We tell Thrust that our WrappedBinaryOperator is commutative so that we</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">// activate numerous fast paths inside thrust which are only available when</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">// the binary functor is commutative and the T type is is_arithmetic</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;VISKORES_THRUST_NAMESPACE_BEGIN</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">// We tell Thrust that our WrappedBinaryOperator is commutative so that we</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">// activate numerous fast paths inside thrust which are only available when</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">// the binary functor is commutative and the T type is is_arithmetic</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#if THRUST_VERSION &gt;= 200500</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keyword">struct </span>is_commutative&lt;<a class="code" href="namespaceviskores.html">viskores</a>::exec::cuda::internal::WrappedBinaryOperator&lt;T, F&gt;&gt;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  : <span class="keyword">public</span> ::cuda::std::is_arithmetic&lt;T&gt;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;};</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">struct </span>is_commutative&lt;<a class="code" href="namespaceviskores.html">viskores</a>::exec::cuda::internal::WrappedBinaryOperator&lt;T, F&gt;&gt;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  : <span class="keyword">public</span> thrust::detail::is_arithmetic&lt;T&gt;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;};</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;} <span class="comment">//namespace thrust::detail</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif //viskores_exec_cuda_internal_WrappedOperators_h</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#if THRUST_VERSION &gt;= 200500</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">struct </span>is_commutative&lt;<a class="code" href="namespaceviskores.html">viskores</a>::exec::cuda::internal::WrappedBinaryOperator&lt;T, F&gt;&gt;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  : <span class="keyword">public</span> ::cuda::std::is_arithmetic&lt;T&gt;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;};</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keyword">struct </span>is_commutative&lt;<a class="code" href="namespaceviskores.html">viskores</a>::exec::cuda::internal::WrappedBinaryOperator&lt;T, F&gt;&gt;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  : <span class="keyword">public</span> ::thrust::detail::is_arithmetic&lt;T&gt;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;};</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;VISKORES_THRUST_NAMESPACE_END <span class="comment">//namespace thrust::detail</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif //viskores_exec_cuda_internal_WrappedOperators_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aTypes_8h_html"><div class="ttname"><a href="Types_8h.html">Types.h</a></div></div>
 <div class="ttc" id="aPair_8h_html"><div class="ttname"><a href="Pair_8h.html">Pair.h</a></div></div>

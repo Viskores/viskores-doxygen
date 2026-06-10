@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -71,38 +71,47 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// order in which the sub-files are loaded.  (But the compile should still</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// succeed if the order is changed.)  Turn off formatting to keep the order.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterCuda_8h.html">viskores/cont/cuda/DeviceAdapterCuda.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterKokkos_8h.html">viskores/cont/kokkos/DeviceAdapterKokkos.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterOpenMP_8h.html">viskores/cont/openmp/DeviceAdapterOpenMP.h</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterSerial_8h.html">viskores/cont/serial/DeviceAdapterSerial.h</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterTBB_8h.html">viskores/cont/tbb/DeviceAdapterTBB.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterAlgorithm_8h.html">viskores/cont/DeviceAdapterAlgorithm.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterTag_8h.html">viskores/cont/DeviceAdapterTag.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterMemoryManager_8h.html">viskores/cont/internal/DeviceAdapterMemoryManager.h</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>cont</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef VISKORES_DOXYGEN_ONLY</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">struct </span>DeviceAdapterTag___</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif //VISKORES_DOXYGEN_ONLY</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">namespace </span>internal</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// namespace internal</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif //viskores_cont_DeviceAdapter_h</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#if defined(VISKORES_IS_VISKORES_TARGET) &amp;&amp; !defined(VISKORES_NO_ERROR_ON_MIXED_CUDA_CXX_TAG)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef VISKORES_IS_DEVICE_SOURCE</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#error Source file is including device code but not marked as a device source.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef VISKORES_DEVICE_LINKED</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#error Including device code without linking device libraries.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// clang-format off</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterCuda_8h.html">viskores/cont/cuda/DeviceAdapterCuda.h</a>&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterKokkos_8h.html">viskores/cont/kokkos/DeviceAdapterKokkos.h</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterOpenMP_8h.html">viskores/cont/openmp/DeviceAdapterOpenMP.h</a>&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterSerial_8h.html">viskores/cont/serial/DeviceAdapterSerial.h</a>&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterTBB_8h.html">viskores/cont/tbb/DeviceAdapterTBB.h</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterAlgorithm_8h.html">viskores/cont/DeviceAdapterAlgorithm.h</a>&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterTag_8h.html">viskores/cont/DeviceAdapterTag.h</a>&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="DeviceAdapterMemoryManager_8h.html">viskores/cont/internal/DeviceAdapterMemoryManager.h</a>&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>cont</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef VISKORES_DOXYGEN_ONLY</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">struct </span>DeviceAdapterTag___</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif //VISKORES_DOXYGEN_ONLY</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">namespace </span>internal</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;} <span class="comment">// namespace viskores::cont</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif //viskores_cont_DeviceAdapter_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aDeviceAdapterTBB_8h_html"><div class="ttname"><a href="DeviceAdapterTBB_8h.html">DeviceAdapterTBB.h</a></div></div>
 <div class="ttc" id="aDeviceAdapterTag_8h_html"><div class="ttname"><a href="DeviceAdapterTag_8h.html">DeviceAdapterTag.h</a></div></div>

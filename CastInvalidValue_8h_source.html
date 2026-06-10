@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -93,11 +93,11 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (viskores::IsInf(invalidValue) &amp;&amp; (invalidValue &gt; 0))</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">return</span> T(std::numeric_limits&lt;ComponentType&gt;::max());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">return</span> T(<a class="code" href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">std::numeric_limits&lt;ComponentType&gt;::max</a>());</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span> T(std::numeric_limits&lt;ComponentType&gt;::min());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span> T(<a class="code" href="namespacelinalg.html#a212a51490f6a9593ac19b9e4d8f2199b">std::numeric_limits&lt;ComponentType&gt;::min</a>());</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">else</span></div>
@@ -113,9 +113,11 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif //viskores_cont_internal_CastInvalidValue_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aTypes_8h_html"><div class="ttname"><a href="Types_8h.html">Types.h</a></div></div>
+<div class="ttc" id="anamespacelinalg_html_a7e41ae5d80c9c89dd0c54fba72a6d929"><div class="ttname"><a href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">linalg::max</a></div><div class="ttdeci">constexpr apply_t&lt; detail::max, A, B &gt; max(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:503</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="aMath_8h_html"><div class="ttname"><a href="Math_8h.html">Math.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1TypeTraitsUnknownTag_html"><div class="ttname"><a href="structviskores_1_1TypeTraitsUnknownTag.html">viskores::TypeTraitsUnknownTag</a></div><div class="ttdoc">Tag used to identify types that aren't Real, Integer, Scalar or Vector.</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:28</div></div>
+<div class="ttc" id="anamespacelinalg_html_a212a51490f6a9593ac19b9e4d8f2199b"><div class="ttname"><a href="namespacelinalg.html#a212a51490f6a9593ac19b9e4d8f2199b">linalg::min</a></div><div class="ttdeci">constexpr apply_t&lt; detail::min, A, B &gt; min(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:502</div></div>
 <div class="ttc" id="astructviskores_1_1VecTraits_html_abd027edbb9cad52dffdde651621b9918"><div class="ttname"><a href="structviskores_1_1VecTraits.html#abd027edbb9cad52dffdde651621b9918">viskores::VecTraits::BaseComponentType</a></div><div class="ttdeci">T BaseComponentType</div><div class="ttdoc">Base component type in the vector.</div><div class="ttdef"><b>Definition:</b> VecTraits.h:86</div></div>
 <div class="ttc" id="anamespaceviskores_html_a87daa0e8ab1805ee441976f4e334daba"><div class="ttname"><a href="namespaceviskores.html#a87daa0e8ab1805ee441976f4e334daba">viskores::Float64</a></div><div class="ttdeci">double Float64</div><div class="ttdoc">Base type to use for 64-bit floating-point numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:169</div></div>
 <div class="ttc" id="astructviskores_1_1TypeTraitsIntegerTag_html"><div class="ttname"><a href="structviskores_1_1TypeTraitsIntegerTag.html">viskores::TypeTraitsIntegerTag</a></div><div class="ttdoc">Tag used to identify types that store integer numbers.</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:44</div></div>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -117,6 +117,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a01b6af6da31a81c5027d6ec149c91308"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a5feb60db06ed98f1a838de7d2b4a4e8d">Thisclass</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a01b6af6da31a81c5027d6ec149c91308">operator=</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a5feb60db06ed98f1a838de7d2b4a4e8d">Thisclass</a> &amp;&amp;src) noexcept</td></tr>
 <tr class="separator:a01b6af6da31a81c5027d6ec149c91308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7df102cb99edcd40c9325229798e7591"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a7df102cb99edcd40c9325229798e7591">ArrayHandleCounting</a> (CountingValueType start, CountingValueType step, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> length)</td></tr>
+<tr class="memdesc:a7df102cb99edcd40c9325229798e7591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html" title="ArrayHandleCounting is a specialization of ArrayHandle.">ArrayHandleCounting</a></code> with the provided <code>start</code>, <code>step</code>, and <code>length</code>.  <a href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a7df102cb99edcd40c9325229798e7591">More...</a><br /></td></tr>
 <tr class="separator:a7df102cb99edcd40c9325229798e7591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb58c0a259a2db36a509452d8b4dc58"><td class="memItemLeft" align="right" valign="top">CountingValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html#a2cb58c0a259a2db36a509452d8b4dc58">GetStart</a> () const</td></tr>
 <tr class="separator:a2cb58c0a259a2db36a509452d8b4dc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,7 +250,7 @@ Additional Inherited Members</h2></td></tr>
 class viskores::cont::ArrayHandleCounting&lt; CountingValueType &gt;</h3>
 
 <p><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html" title="ArrayHandleCounting is a specialization of ArrayHandle.">ArrayHandleCounting</a> is a specialization of <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html" title="Manages an array-worth of data.">ArrayHandle</a>. </p>
-<p>By default it contains a increment value, that is increment for each step between zero and the passed in length </p>
+<p>It is defined by a start, a step, and the length of the array. The value in the first index is the start value, and each subsequent value is incremented by the step. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1f5da94b81301fcaa2e1833e82fb8a36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f5da94b81301fcaa2e1833e82fb8a36">&#9670;&nbsp;</a></span>ReadPortalType</h2>
@@ -600,6 +601,16 @@ template&lt;typename CountingValueType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct an <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleCounting.html" title="ArrayHandleCounting is a specialization of ArrayHandle.">ArrayHandleCounting</a></code> with the provided <code>start</code>, <code>step</code>, and <code>length</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The value of the first entry of the array (index 0). </td></tr>
+    <tr><td class="paramname">step</td><td>The amount each subsequent entry is incremented. </td></tr>
+    <tr><td class="paramname">length</td><td>The overall length of the array. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

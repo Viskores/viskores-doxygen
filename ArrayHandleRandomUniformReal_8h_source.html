@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -121,9 +121,9 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    (<a class="code" href="classviskores_1_1cont_1_1ArrayHandleTransform.html">viskores::cont::ArrayHandleTransform</a>&lt;<a class="code" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformBits.html">viskores::cont::ArrayHandleRandomUniformBits</a>,</div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#a8b80dce98f8742a066210ec0aeb1d6de">   87</a></span>&#160;                                          detail::CanonicalFunctor&lt;Real&gt;&gt;));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#ab660b77888e7d2041106a4855b059ec7">   96</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#ab660b77888e7d2041106a4855b059ec7">ArrayHandleRandomUniformReal</a>(<a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> length,</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#ab660b77888e7d2041106a4855b059ec7">   96</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#ab660b77888e7d2041106a4855b059ec7">ArrayHandleRandomUniformReal</a>(<a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a>,</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                        <a class="code" href="classviskores_1_1Vec.html">SeedType</a> seed = { std::random_device{}() })</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    : Superclass(<a class="code" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformBits.html">viskores::cont::ArrayHandleRandomUniformBits</a>{ length, seed },</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    : Superclass(<a class="code" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformBits.html">viskores::cont::ArrayHandleRandomUniformBits</a>{ <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a>, seed },</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                 detail::CanonicalFunctor&lt;Real&gt;{})</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
@@ -136,6 +136,7 @@ $(function() {
 <div class="ttc" id="aArrayHandleRandomUniformBits_8h_html"><div class="ttname"><a href="ArrayHandleRandomUniformBits_8h.html">ArrayHandleRandomUniformBits.h</a></div></div>
 <div class="ttc" id="aArrayHandleTransform_8h_html"><div class="ttname"><a href="ArrayHandleTransform_8h.html">ArrayHandleTransform.h</a></div></div>
 <div class="ttc" id="aExportMacros_8h_html_a829aa71cc8ccbad49750154bff908211"><div class="ttname"><a href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a></div><div class="ttdeci">#define VISKORES_EXEC_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:60</div></div>
+<div class="ttc" id="anamespacelinalg_html_afb1bb751c8c810fd0fd67d44bef8df95"><div class="ttname"><a href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">linalg::length</a></div><div class="ttdeci">T length(const vec&lt; T, M &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:515</div></div>
 <div class="ttc" id="anamespaceviskores_html_a8e82cb49e20cef45fbeb58dc58790216"><div class="ttname"><a href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a></div><div class="ttdeci">viskores::Int64 Id</div><div class="ttdoc">Base type to use to index arrays.</div><div class="ttdef"><b>Definition:</b> Types.h:235</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="anamespaceviskores_html_afcbbc86b7129a2612785d217e77a633a"><div class="ttname"><a href="namespaceviskores.html#afcbbc86b7129a2612785d217e77a633a">viskores::Float32</a></div><div class="ttdeci">float Float32</div><div class="ttdoc">Base type to use for 32-bit floating-point numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:165</div></div>

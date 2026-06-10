@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -121,6 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a23d7f4b55ad63c331d6d758d0ff21660"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1interop_1_1anari.html#a23d7f4b55ad63c331d6d758d0ff21660">AnariMaterialInputString</a> (<a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> p)</td></tr>
 <tr class="memdesc:a23d7f4b55ad63c331d6d758d0ff21660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the appropriate ANARI attribute string based on field index.  <a href="namespaceviskores_1_1interop_1_1anari.html#a23d7f4b55ad63c331d6d758d0ff21660">More...</a><br /></td></tr>
 <tr class="separator:a23d7f4b55ad63c331d6d758d0ff21660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ece976d92126f1a0f5dae6194912fd1"><td class="memItemLeft" align="right" valign="top">VISKORES_ANARI_EXPORT anari_cpp::Device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1interop_1_1anari.html#a9ece976d92126f1a0f5dae6194912fd1">ANARILoadDevice</a> (const std::string &amp;libraryName)</td></tr>
+<tr class="memdesc:a9ece976d92126f1a0f5dae6194912fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an ANARI device from the library of the provided name.  <a href="namespaceviskores_1_1interop_1_1anari.html#a9ece976d92126f1a0f5dae6194912fd1">More...</a><br /></td></tr>
+<tr class="separator:a9ece976d92126f1a0f5dae6194912fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada582780629fb8ea86edd5e8ce5899ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1interop_1_1anari.html#ada582780629fb8ea86edd5e8ce5899ac">NoopANARIDeleter</a> (const void *, const void *)</td></tr>
 <tr class="separator:ada582780629fb8ea86edd5e8ce5899ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -142,6 +145,36 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9ece976d92126f1a0f5dae6194912fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ece976d92126f1a0f5dae6194912fd1">&#9670;&nbsp;</a></span>ANARILoadDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VISKORES_ANARI_EXPORT anari_cpp::Device viskores::interop::anari::ANARILoadDevice </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>libraryName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads an ANARI device from the library of the provided name. </p>
+<p>Given the name of an ANARI device library, attempts to find the associated library (named <code>anari_library_</code> plus the provided <code>libraryName</code> with the standard shared object library prefix and extension for the current system), opens it, and returns an ANARI device object. This is a convenience function that essentially uses <code>anari::loadLibrary</code> to open the library and <code>anari::newDevice</code> to create the device.</p>
+<p>An additional feature of this method is that if you provide the string <code>viskores</code> for <code>libraryName</code>, this function will be able to load the device without having to find the device on the system. Typically, to find the library you need an environment variable such as <code>LD_LIBRARY_PATH</code> or an internal library rpath pointing to the directory containing the library. For the "viskores" library, the device will be loaded directly regardless of its location.</p>
+<p>This method will also link the ANARI device's logging to the Viskores logging so the ANARI logging can be controlled through Viskores' configuration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">libraryName</td><td>The name of the library to load. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An open ANARI device or <code>nullptr</code> if the library cannot be opened. </dd></dl>
+
+</div>
+</div>
 <a id="a23d7f4b55ad63c331d6d758d0ff21660"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23d7f4b55ad63c331d6d758d0ff21660">&#9670;&nbsp;</a></span>AnariMaterialInputString()</h2>
 

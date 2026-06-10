@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -72,6 +72,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d5b91160496e60756978df3cf6416f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1resampling_1_1Probe.html#a7d5b91160496e60756978df3cf6416f6">SetGeometry</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;geometry)</td></tr>
 <tr class="memdesc:a7d5b91160496e60756978df3cf6416f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the geometry to probe with.  <a href="classviskores_1_1filter_1_1resampling_1_1Probe.html#a7d5b91160496e60756978df3cf6416f6">More...</a><br /></td></tr>
 <tr class="separator:a7d5b91160496e60756978df3cf6416f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce43d2a075857088c61a226eb928e96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1resampling_1_1Probe.html#adce43d2a075857088c61a226eb928e96">SetGeometry</a> (const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &gt; &amp;points)</td></tr>
+<tr class="memdesc:adce43d2a075857088c61a226eb928e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the geometry of the filter from an array of point coordinates.  <a href="classviskores_1_1filter_1_1resampling_1_1Probe.html#adce43d2a075857088c61a226eb928e96">More...</a><br /></td></tr>
+<tr class="separator:adce43d2a075857088c61a226eb928e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad87cb27ef5bff0c56542df676eb0aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1resampling_1_1Probe.html#a4ad87cb27ef5bff0c56542df676eb0aa">SetGeometry</a> (const std::vector&lt; <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &gt; &amp;points, <a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a> copyFlag=<a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a>)</td></tr>
+<tr class="memdesc:a4ad87cb27ef5bff0c56542df676eb0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for setting the geometry with an array of points.  <a href="classviskores_1_1filter_1_1resampling_1_1Probe.html#a4ad87cb27ef5bff0c56542df676eb0aa">More...</a><br /></td></tr>
+<tr class="separator:a4ad87cb27ef5bff0c56542df676eb0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad790d8103ef385755b51f8478b0090"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1resampling_1_1Probe.html#acad790d8103ef385755b51f8478b0090">GetGeometry</a> () const</td></tr>
 <tr class="memdesc:acad790d8103ef385755b51f8478b0090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the geometry to probe with.  <a href="classviskores_1_1filter_1_1resampling_1_1Probe.html#acad790d8103ef385755b51f8478b0090">More...</a><br /></td></tr>
 <tr class="separator:acad790d8103ef385755b51f8478b0090"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,8 +362,72 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ad87cb27ef5bff0c56542df676eb0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad87cb27ef5bff0c56542df676eb0aa">&#9670;&nbsp;</a></span>SetGeometry() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viskores::filter::resampling::Probe::SetGeometry </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a>&#160;</td>
+          <td class="paramname"><em>copyFlag</em> = <code><a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience method for setting the geometry with an array of points. </p>
+
+</div>
+</div>
+<a id="adce43d2a075857088c61a226eb928e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce43d2a075857088c61a226eb928e96">&#9670;&nbsp;</a></span>SetGeometry() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void viskores::filter::resampling::Probe::SetGeometry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the geometry of the filter from an array of point coordinates. </p>
+<p>This convenience method constructs an explicit dataset internally, using the provided array of 3D points as the coordinate system. Each point is represented as a vertex cell (<code>CellSetSingleType</code> with cell type <code>Vertex</code>), resulting in an explicit vertex dataset.</p>
+<p>The constructed dataset is then used as the input geometry for the filter. This is equivalent to manually creating an explicit dataset with vertex cells and passing it to <code>SetGeometry(const DataSet&amp;)</code>.</p>
+<p>Note: The output dataset of the filter will contain:</p><ul>
+<li>A coordinate system defined by the input points.</li>
+<li>A cell set of type <code>CellSetSingleType</code>, where each cell is a single vertex corresponding to one input point. </li>
+</ul>
+
+</div>
+</div>
 <a id="a7d5b91160496e60756978df3cf6416f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d5b91160496e60756978df3cf6416f6">&#9670;&nbsp;</a></span>SetGeometry()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5b91160496e60756978df3cf6416f6">&#9670;&nbsp;</a></span>SetGeometry() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

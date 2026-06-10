@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -597,10 +597,10 @@ $(function() {
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="comment">//one value. The decorator array is then 1/16 the length of the input array,</span></div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="comment">//and we can use inclusive scan as the second level to compute the final</span></div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="comment">//result.</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> length = (input.<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">GetNumberOfValues</a>() / 16);</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    length += (input.<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">GetNumberOfValues</a>() % 16 == 0) ? 0 : 1;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a> = (input.<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">GetNumberOfValues</a>() / 16);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a> += (input.<a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html#ad084795021c8600def1edbc8b1872921">GetNumberOfValues</a>() % 16 == 0) ? 0 : 1;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keyword">auto</span> reduced = <a class="code" href="namespaceviskores_1_1cont.html#a7c05dd5e0089f45842c6d538927d67ba">viskores::cont::make_ArrayHandleDecorator</a>(</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;      length, ReduceDecoratorImpl&lt;U, BinaryFunctor&gt;(initialValue, binary_functor), input);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;      <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a>, ReduceDecoratorImpl&lt;U, BinaryFunctor&gt;(initialValue, binary_functor), input);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle&lt;U, viskores::cont::StorageTagBasic&gt;</a> inclusiveScanStorage;</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keyword">const</span> U scanResult =</div>
@@ -1254,6 +1254,7 @@ $(function() {
 <div class="ttc" id="aArrayHandleZip_8h_html"><div class="ttname"><a href="ArrayHandleZip_8h.html">ArrayHandleZip.h</a></div></div>
 <div class="ttc" id="aTypeTraits_8h_html"><div class="ttname"><a href="TypeTraits_8h.html">TypeTraits.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1TypeTraits_html"><div class="ttname"><a href="classviskores_1_1TypeTraits.html">viskores::TypeTraits</a></div><div class="ttdoc">The TypeTraits class provides helpful compile-time information about the basic types used in Viskores...</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:69</div></div>
+<div class="ttc" id="anamespacelinalg_html_afb1bb751c8c810fd0fd67d44bef8df95"><div class="ttname"><a href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">linalg::length</a></div><div class="ttdeci">T length(const vec&lt; T, M &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:515</div></div>
 <div class="ttc" id="anamespaceviskores_html_a8e82cb49e20cef45fbeb58dc58790216"><div class="ttname"><a href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a></div><div class="ttdeci">viskores::Int64 Id</div><div class="ttdoc">Base type to use to index arrays.</div><div class="ttdef"><b>Definition:</b> Types.h:235</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandle_html_af34a5f0d93ab497c898cbc11ebed86aa"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandle.html#af34a5f0d93ab497c898cbc11ebed86aa">viskores::cont::ArrayHandle::ReleaseResources</a></div><div class="ttdeci">void ReleaseResources() const</div><div class="ttdoc">Releases all resources in both the control and execution environments.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:600</div></div>
 <div class="ttc" id="aExportMacros_8h_html_ae47b94fbf1d55103fa9aeff192d8404b"><div class="ttname"><a href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div><div class="ttdeci">#define VISKORES_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:65</div></div>

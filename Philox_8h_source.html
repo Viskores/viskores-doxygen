@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -115,14 +115,14 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; R; ++i)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      counters = round(counters, keys);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      counters = <a class="code" href="namespacelinalg.html#a3ee3e7f736f14956c848a09f5586f9c3">round</a>(counters, keys);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      keys = bump_keys(keys);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> counters;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> counters_type round(counters_type counters, keys_type round_keys)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> counters_type <a class="code" href="namespacelinalg.html#a3ee3e7f736f14956c848a09f5586f9c3">round</a>(counters_type counters, keys_type round_keys)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">auto</span> constexpr multipliers = philox_parameters&lt;UIntType, 2, consts...&gt;::multipliers;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classviskores_1_1Vec.html">viskores::Vec&lt;UIntType, 2&gt;</a> r = mulhilo(multipliers[0], counters[0]);</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">using</span> counters_type = <a class="code" href="classviskores_1_1Vec.html">viskores::Vec&lt;UIntType, 4&gt;</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">using</span> keys_type = <a class="code" href="classviskores_1_1Vec.html">viskores::Vec&lt;UIntType, 2&gt;</a>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> counters_type round(counters_type counters, keys_type round_keys)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">static</span> <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> counters_type <a class="code" href="namespacelinalg.html#a3ee3e7f736f14956c848a09f5586f9c3">round</a>(counters_type counters, keys_type round_keys)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">auto</span> constexpr multipliers = philox_parameters&lt;UIntType, 4, consts...&gt;::multipliers;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="classviskores_1_1Vec.html">viskores::Vec&lt;UIntType, 2&gt;</a> r0 = mulhilo(multipliers[0], counters[0]);</div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; R; ++i)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      counters = round(counters, keys);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      counters = <a class="code" href="namespacelinalg.html#a3ee3e7f736f14956c848a09f5586f9c3">round</a>(counters, keys);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      keys = bump_key(keys);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> counters;</div>
@@ -185,6 +185,7 @@ $(function() {
 <div class="ttc" id="aTypes_8h_html"><div class="ttname"><a href="Types_8h.html">Types.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_1_1random_html_a458e84a093fa4f7efe23bf4331adb675"><div class="ttname"><a href="namespaceviskores_1_1random.html#a458e84a093fa4f7efe23bf4331adb675">viskores::random::PhiloxFunctor2x32x7</a></div><div class="ttdeci">detail::philox_functor&lt; viskores::UInt32, 2, 7, 0xD256D193, 0x9E3779B9 &gt; PhiloxFunctor2x32x7</div><div class="ttdef"><b>Definition:</b> Philox.h:128</div></div>
 <div class="ttc" id="aExportMacros_8h_html_a829aa71cc8ccbad49750154bff908211"><div class="ttname"><a href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a></div><div class="ttdeci">#define VISKORES_EXEC_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:60</div></div>
+<div class="ttc" id="anamespacelinalg_html_a3ee3e7f736f14956c848a09f5586f9c3"><div class="ttname"><a href="namespacelinalg.html#a3ee3e7f736f14956c848a09f5586f9c3">linalg::round</a></div><div class="ttdeci">apply_t&lt; detail::std_round, A &gt; round(const A &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:486</div></div>
 <div class="ttc" id="aclassviskores_1_1Vec_3_01T_00_012_01_4_html"><div class="ttname"><a href="classviskores_1_1Vec_3_01T_00_012_01_4.html">viskores::Vec&lt; T, 2 &gt;</a></div><div class="ttdef"><b>Definition:</b> Types.h:909</div></div>
 <div class="ttc" id="anamespaceviskores_1_1random_html_a9b977dfec69ce84d2c736bae4a71d485"><div class="ttname"><a href="namespaceviskores_1_1random.html#a9b977dfec69ce84d2c736bae4a71d485">viskores::random::PhiloxFunctor2x32x10</a></div><div class="ttdeci">detail::philox_functor&lt; viskores::UInt32, 2, 10, 0xD256D193, 0x9E3779B9 &gt; PhiloxFunctor2x32x10</div><div class="ttdef"><b>Definition:</b> Philox.h:130</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>

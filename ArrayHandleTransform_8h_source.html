@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">struct </span>TransformFunctorManagerImpl;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Prov<span class="keywordtype">id</span>edFunctorType&gt;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">struct </span>TransformFunctorManagerImpl&lt;ProvidedFunctorType, std::false_type&gt;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">struct </span>TransformFunctorManagerImpl&lt;ProvidedFunctorType, <a class="code" href="namespacestd.html">std</a>::false_type&gt;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="StaticAssert_8h.html#aef17ceea0ef7a388252b8d50384246f6">VISKORES_STATIC_ASSERT_MSG</a>(</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    !viskores::cont::internal::IsExecutionObjectBase&lt;ProvidedFunctorType&gt;::value,</div>
@@ -224,7 +224,7 @@ $(function() {
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;};</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Prov<span class="keywordtype">id</span>edFunctorType&gt;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">struct </span>TransformFunctorManagerImpl&lt;ProvidedFunctorType, std::true_type&gt;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">struct </span>TransformFunctorManagerImpl&lt;ProvidedFunctorType, <a class="code" href="namespacestd.html">std</a>::true_type&gt;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="ExecutionAndControlObjectBase_8h.html#a3c9c68cc0033323f06331266b73359b3">VISKORES_IS_EXECUTION_AND_CONTROL_OBJECT</a>(ProvidedFunctorType);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
@@ -710,6 +710,7 @@ $(function() {
 <div class="ttc" id="aExecutionAndControlObjectBase_8h_html_a3c9c68cc0033323f06331266b73359b3"><div class="ttname"><a href="ExecutionAndControlObjectBase_8h.html#a3c9c68cc0033323f06331266b73359b3">VISKORES_IS_EXECUTION_AND_CONTROL_OBJECT</a></div><div class="ttdeci">#define VISKORES_IS_EXECUTION_AND_CONTROL_OBJECT(execObject)</div><div class="ttdoc">Checks that the argument is a proper execution object.</div><div class="ttdef"><b>Definition:</b> ExecutionAndControlObjectBase.h:69</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleTransform_html_ac81c9ffe49ec306d309f949f870d6af6"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleTransform.html#ac81c9ffe49ec306d309f949f870d6af6">viskores::cont::ArrayHandleTransform::GetTransformedArray</a></div><div class="ttdeci">ArrayHandleType GetTransformedArray() const</div><div class="ttdoc">Returns the ArrayHandle that is being transformed.</div><div class="ttdef"><b>Definition:</b> ArrayHandleTransform.h:536</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleTransform_html_a25252e5d44500c2143be6893c41f79e1"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleTransform.html#a25252e5d44500c2143be6893c41f79e1">viskores::cont::ArrayHandleTransform::ArrayHandleTransform</a></div><div class="ttdeci">ArrayHandleTransform()</div><div class="ttdef"><b>Definition:</b> ArrayHandleTransform.h:518</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="aArrayHandle_8h_html_a1a3cd47c69807a61e136447731f87aa1"><div class="ttname"><a href="ArrayHandle_8h.html#a1a3cd47c69807a61e136447731f87aa1">VISKORES_ARRAY_HANDLE_SUBCLASS</a></div><div class="ttdeci">#define VISKORES_ARRAY_HANDLE_SUBCLASS(classname, fullclasstype, superclass)</div><div class="ttdoc">Macro to make default methods in ArrayHandle subclasses.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:256</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleTransform_html_a43e7d2400166182132f51686088e4c02"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleTransform.html#a43e7d2400166182132f51686088e4c02">viskores::cont::ArrayHandleTransform::ArrayHandleTransform</a></div><div class="ttdeci">ArrayHandleTransform(const ArrayHandleType &amp;handle, const FunctorType &amp;functor=FunctorType(), const InverseFunctorType &amp;inverseFunctor=InverseFunctorType())</div><div class="ttdef"><b>Definition:</b> ArrayHandleTransform.h:520</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleTransform_html_a02bdde302198a90beb8b88276991779b"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleTransform.html#a02bdde302198a90beb8b88276991779b">viskores::cont::ArrayHandleTransform::ValueType</a></div><div class="ttdeci">typename Superclass::ValueType ValueType</div><div class="ttdef"><b>Definition:</b> ArrayHandleTransform.h:518</div></div>

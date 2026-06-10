@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... T&gt;</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classviskores_1_1worklet_1_1DispatcherReduceByKey.html#a81d855ab34137ae33f036579917bd3ce">   48</a></span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a> <a class="code" href="classviskores_1_1worklet_1_1DispatcherReduceByKey.html#a81d855ab34137ae33f036579917bd3ce">DispatcherReduceByKey</a>(T&amp;&amp;... args)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    : <a class="code" href="classviskores_1_1worklet_1_1DispatcherReduceByKey.html#a6a5341dfe9511dc7d2dcccbee9eedc3e">Superclass</a>(std::forward&lt;T&gt;(args)...)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    : <a class="code" href="classviskores_1_1worklet_1_1DispatcherReduceByKey.html#a6a5341dfe9511dc7d2dcccbee9eedc3e">Superclass</a>(<a class="code" href="namespacestd.html">std</a>::forward&lt;T&gt;(args)...)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
@@ -138,6 +138,7 @@ $(function() {
 <div class="ttc" id="aStaticAssert_8h_html_aef17ceea0ef7a388252b8d50384246f6"><div class="ttname"><a href="StaticAssert_8h.html#aef17ceea0ef7a388252b8d50384246f6">VISKORES_STATIC_ASSERT_MSG</a></div><div class="ttdeci">#define VISKORES_STATIC_ASSERT_MSG(condition, message)</div><div class="ttdef"><b>Definition:</b> StaticAssert.h:26</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1DispatcherReduceByKey_html_a81d855ab34137ae33f036579917bd3ce"><div class="ttname"><a href="classviskores_1_1worklet_1_1DispatcherReduceByKey.html#a81d855ab34137ae33f036579917bd3ce">viskores::worklet::DispatcherReduceByKey::DispatcherReduceByKey</a></div><div class="ttdeci">DispatcherReduceByKey(T &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> DispatcherReduceByKey.h:48</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1arg_1_1TypeCheckTagKeys_html"><div class="ttname"><a href="structviskores_1_1cont_1_1arg_1_1TypeCheckTagKeys.html">viskores::cont::arg::TypeCheckTagKeys</a></div><div class="ttdoc">Check for a Keys object.</div><div class="ttdef"><b>Definition:</b> TypeCheckTagKeys.h:32</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="aTypeCheckTagKeys_8h_html"><div class="ttname"><a href="TypeCheckTagKeys_8h.html">TypeCheckTagKeys.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1WorkletReduceByKey_html"><div class="ttname"><a href="classviskores_1_1worklet_1_1WorkletReduceByKey.html">viskores::worklet::WorkletReduceByKey</a></div><div class="ttdoc">Base class for worklets that group elements by keys.</div><div class="ttdef"><b>Definition:</b> WorkletReduceByKey.h:62</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1arg_1_1TypeCheck_html"><div class="ttname"><a href="structviskores_1_1cont_1_1arg_1_1TypeCheck.html">viskores::cont::arg::TypeCheck</a></div><div class="ttdoc">Class for checking that a type matches the semantics for an argument.</div><div class="ttdef"><b>Definition:</b> TypeCheck.h:42</div></div>

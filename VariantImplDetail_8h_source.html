@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -122,13 +122,13 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T0, <span class="keyword">typename</span> T1, <span class="keyword">typename</span>... Ts&gt;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;constexpr std::size_t MaxSizeOf()</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> std::max(<span class="keyword">sizeof</span>(T0), MaxSizeOf&lt;T1, Ts...&gt;());</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">std::max</a>(<span class="keyword">sizeof</span>(T0), MaxSizeOf&lt;T1, Ts...&gt;());</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;constexpr std::size_t MaxSizeOf()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">return</span> std::max({ <span class="keyword">sizeof</span>(Ts)... });</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">std::max</a>({ <span class="keyword">sizeof</span>(Ts)... });</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;constexpr std::size_t MaxAlignmentOf()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> std::max({ std::alignment_of&lt;Ts&gt;::value... });</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">std::max</a>({ std::alignment_of&lt;Ts&gt;::value... });</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// --------------------------------------------------------------------------------</span></div>
@@ -1254,6 +1254,7 @@ $(function() {
 <div class="ttc" id="aTypes_8h_html"><div class="ttname"><a href="Types_8h.html">Types.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a2404df9b667b4f6a7d730de52aa414f0"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a2404df9b667b4f6a7d730de52aa414f0">viskores::cont::CastAndCall</a></div><div class="ttdeci">void CastAndCall(const DynamicObject &amp;dynamicObject, Functor &amp;&amp;f, Args &amp;&amp;... args)</div><div class="ttdoc">A Generic interface to CastAndCall.</div><div class="ttdef"><b>Definition:</b> CastAndCall.h:55</div></div>
 <div class="ttc" id="anamespaceviskores_html_a51c25b092de0dab71d38ba566199f8bf"><div class="ttname"><a href="namespaceviskores.html#a51c25b092de0dab71d38ba566199f8bf">viskores::Int8</a></div><div class="ttdeci">int8_t Int8</div><div class="ttdoc">Base type to use for 8-bit signed integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:173</div></div>
+<div class="ttc" id="anamespacelinalg_html_a7e41ae5d80c9c89dd0c54fba72a6d929"><div class="ttname"><a href="namespacelinalg.html#a7e41ae5d80c9c89dd0c54fba72a6d929">linalg::max</a></div><div class="ttdeci">constexpr apply_t&lt; detail::max, A, B &gt; max(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:503</div></div>
 <div class="ttc" id="anamespaceviskores_html_aca2ec71d38de7693e10bc433f43dbf40"><div class="ttname"><a href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a></div><div class="ttdeci">viskores::Int32 IdComponent</div><div class="ttdoc">Base type to use to index small lists.</div><div class="ttdef"><b>Definition:</b> Types.h:202</div></div>
 <div class="ttc" id="astructviskores_1_1List_html"><div class="ttname"><a href="structviskores_1_1List.html">viskores::List</a></div><div class="ttdoc">A template used to hold a list of types.</div><div class="ttdef"><b>Definition:</b> List.h:47</div></div>
 <div class="ttc" id="anamespaceviskores_html_a27c5c2d39480832d9e073800143ac745"><div class="ttname"><a href="namespaceviskores.html#a27c5c2d39480832d9e073800143ac745">viskores::Int64</a></div><div class="ttdeci">signed long long Int64</div><div class="ttdoc">Base type to use for 64-bit signed integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:212</div></div>

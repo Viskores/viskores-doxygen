@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -270,7 +270,7 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;          <span class="keywordflow">for</span> (<span class="keyword">auto</span> idit = newIDs.begin(); idit != newIDs.end(); idit++)</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;          {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> bid = *idit;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">auto</span> ranks = dsiInfo.BoundsMap.FindRank(bid);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ranks = dsiInfo.BoundsMap.FindRank(bid);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">if</span> (std::find(ranks.begin(), ranks.end(), this-&gt;Rank) != ranks.end())</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;              newIDs.erase(idit);</div>

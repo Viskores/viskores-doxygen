@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -74,93 +74,93 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceviskores.html">viskores</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">   28</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">HashType</a> = <a class="code" href="namespaceviskores.html#a44214830f7e13b87de4d20728b6e6297">viskores::UInt32</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>detail</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> constexpr <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> FNV1A_OFFSET = 2166136261;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> constexpr <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> FNV1A_PRIME = 16777619;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> HashFNV1a32(<span class="keyword">const</span> InVecType&amp; inVec)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">using</span> Traits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> numComponents = Traits::GetNumberOfComponents(inVec);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> hash = FNV1A_OFFSET;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index = 0; index &lt; numComponents; index++)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> dataBits =</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>(Traits::GetComponent(inVec, index));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    hash = (hash * FNV1A_PRIME) ^ dataBits;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> hash;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> HashFNV1a64(<span class="keyword">const</span> InVecType&amp; inVec)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">using</span> Traits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> numComponents = Traits::GetNumberOfComponents(inVec);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> hash = FNV1A_OFFSET;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index = 0; index &lt; numComponents; index++)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a> allDataBits =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a><span class="keyword">&gt;</span>(Traits::GetComponent(inVec, index));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> upperDataBits =</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>((allDataBits &amp; 0xFFFFFFFF00000000L) &gt;&gt; 32);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    hash = (hash * FNV1A_PRIME) ^ upperDataBits;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> lowerDataBits =</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>(allDataBits &amp; 0x00000000FFFFFFFFL);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    hash = (hash * FNV1A_PRIME) ^ lowerDataBits;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> hash;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// If you get a compile error saying that there is no implementation of the class HashChooser,</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// then you have tried to make a hash from an invalid type (like a float).</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> NumericTag, std::<span class="keywordtype">size_t</span> DataSize&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">struct </span>HashChooser;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">struct </span>HashChooser&lt;<a class="code" href="namespaceviskores.html">viskores</a>::<a class="code" href="structviskores_1_1TypeTraitsIntegerTag.html">TypeTraitsIntegerTag</a>, 4&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">static</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> viskores::detail::HashFNV1a32(inVec);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">struct </span>HashChooser&lt;<a class="code" href="namespaceviskores.html">viskores</a>::<a class="code" href="structviskores_1_1TypeTraitsIntegerTag.html">TypeTraitsIntegerTag</a>, 8&gt;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">static</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> viskores::detail::HashFNV1a64(inVec);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">  117</a></span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">using</span> <a class="code" href="structviskores_1_1VecTraits.html">VecTraits</a> = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">using</span> ComponentType = <span class="keyword">typename</span> <a class="code" href="structviskores_1_1VecTraits.html#a9b44b7eb35d23c059a0a2ac80a409efa">VecTraits::ComponentType</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">using</span> ComponentTraits = <a class="code" href="classviskores_1_1TypeTraits.html">viskores::TypeTraits&lt;ComponentType&gt;</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">using</span> Chooser = detail::HashChooser&lt;<span class="keyword">typename</span> ComponentTraits::NumericTag, <span class="keyword">sizeof</span>(ComponentType)&gt;;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Chooser::Hash</a>(inVec);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace viskores</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif //viskores_Hash_h</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">   29</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">HashType</a> = <a class="code" href="namespaceviskores.html#a44214830f7e13b87de4d20728b6e6297">viskores::UInt32</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>detail</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> constexpr <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> FNV1A_OFFSET = 2166136261;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> constexpr <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> FNV1A_PRIME = 16777619;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> HashFNV1a32(<span class="keyword">const</span> InVecType&amp; inVec)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">using</span> Traits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> numComponents = Traits::GetNumberOfComponents(inVec);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> hash = FNV1A_OFFSET;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index = 0; index &lt; numComponents; index++)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> dataBits =</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>(Traits::GetComponent(inVec, index));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    hash = (hash * FNV1A_PRIME) ^ dataBits;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> hash;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> HashFNV1a64(<span class="keyword">const</span> InVecType&amp; inVec)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">using</span> Traits = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> numComponents = Traits::GetNumberOfComponents(inVec);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> hash = FNV1A_OFFSET;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index = 0; index &lt; numComponents; index++)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a> allDataBits =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a><span class="keyword">&gt;</span>(Traits::GetComponent(inVec, index));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> upperDataBits =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>((allDataBits &amp; 0xFFFFFFFF00000000L) &gt;&gt; 32);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    hash = (hash * FNV1A_PRIME) ^ upperDataBits;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> lowerDataBits =</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a><span class="keyword">&gt;</span>(allDataBits &amp; 0x00000000FFFFFFFFL);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    hash = (hash * FNV1A_PRIME) ^ lowerDataBits;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">return</span> hash;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// If you get a compile error saying that there is no implementation of the class HashChooser,</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// then you have tried to make a hash from an invalid type (like a float).</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> NumericTag, std::<span class="keywordtype">size_t</span> DataSize&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">struct </span>HashChooser;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">struct </span>HashChooser&lt;<a class="code" href="namespaceviskores.html">viskores</a>::<a class="code" href="structviskores_1_1TypeTraitsIntegerTag.html">TypeTraitsIntegerTag</a>, 4&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">static</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> viskores::detail::HashFNV1a32(inVec);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">struct </span>HashChooser&lt;<a class="code" href="namespaceviskores.html">viskores</a>::<a class="code" href="structviskores_1_1TypeTraitsIntegerTag.html">TypeTraitsIntegerTag</a>, 8&gt;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">static</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> viskores::detail::HashFNV1a64(inVec);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> InVecType&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">  118</a></span>&#160;<a class="code" href="ExportMacros_8h.html#a829aa71cc8ccbad49750154bff908211">VISKORES_EXEC_CONT</a> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Hash</a>(<span class="keyword">const</span> InVecType&amp; inVec)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">using</span> <a class="code" href="structviskores_1_1VecTraits.html">VecTraits</a> = <a class="code" href="structviskores_1_1VecTraits.html">viskores::VecTraits&lt;InVecType&gt;</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">using</span> ComponentType = <span class="keyword">typename</span> <a class="code" href="structviskores_1_1VecTraits.html#a9b44b7eb35d23c059a0a2ac80a409efa">VecTraits::ComponentType</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">using</span> ComponentTraits = <a class="code" href="classviskores_1_1TypeTraits.html">viskores::TypeTraits&lt;ComponentType&gt;</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">using</span> Chooser = detail::HashChooser&lt;<span class="keyword">typename</span> ComponentTraits::NumericTag, <span class="keyword">sizeof</span>(ComponentType)&gt;;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">Chooser::Hash</a>(inVec);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <span class="comment">// namespace viskores</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif //viskores_Hash_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aTypes_8h_html"><div class="ttname"><a href="Types_8h.html">Types.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_html_aca2ec71d38de7693e10bc433f43dbf40"><div class="ttname"><a href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a></div><div class="ttdeci">viskores::Int32 IdComponent</div><div class="ttdoc">Base type to use to index small lists.</div><div class="ttdef"><b>Definition:</b> Types.h:202</div></div>
@@ -170,9 +170,9 @@ $(function() {
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="astructviskores_1_1VecTraits_html"><div class="ttname"><a href="structviskores_1_1VecTraits.html">viskores::VecTraits</a></div><div class="ttdoc">Traits that can be queried to treat any type as a Vec.</div><div class="ttdef"><b>Definition:</b> VecTraits.h:69</div></div>
 <div class="ttc" id="anamespaceviskores_html_ad73d0fee6a8e525142086920906c2fcf"><div class="ttname"><a href="namespaceviskores.html#ad73d0fee6a8e525142086920906c2fcf">viskores::UInt64</a></div><div class="ttdeci">unsigned long long UInt64</div><div class="ttdoc">Base type to use for 64-bit signed integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:215</div></div>
-<div class="ttc" id="anamespaceviskores_html_ab3243131369e179a32c5f4adba6165ae"><div class="ttname"><a href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">viskores::Hash</a></div><div class="ttdeci">viskores::HashType Hash(const InVecType &amp;inVec)</div><div class="ttdoc">Returns a 32-bit hash on a group of integer-type values.</div><div class="ttdef"><b>Definition:</b> Hash.h:117</div></div>
+<div class="ttc" id="anamespaceviskores_html_ab3243131369e179a32c5f4adba6165ae"><div class="ttname"><a href="namespaceviskores.html#ab3243131369e179a32c5f4adba6165ae">viskores::Hash</a></div><div class="ttdeci">viskores::HashType Hash(const InVecType &amp;inVec)</div><div class="ttdoc">Returns a 32-bit hash on a group of integer-type values.</div><div class="ttdef"><b>Definition:</b> Hash.h:118</div></div>
 <div class="ttc" id="astructviskores_1_1VecTraits_html_a9b44b7eb35d23c059a0a2ac80a409efa"><div class="ttname"><a href="structviskores_1_1VecTraits.html#a9b44b7eb35d23c059a0a2ac80a409efa">viskores::VecTraits::ComponentType</a></div><div class="ttdeci">T ComponentType</div><div class="ttdoc">Type of the components in the vector.</div><div class="ttdef"><b>Definition:</b> VecTraits.h:79</div></div>
-<div class="ttc" id="anamespaceviskores_html_ab5002959e32ca5ce4833bb9c41d498b0"><div class="ttname"><a href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a></div><div class="ttdeci">viskores::UInt32 HashType</div><div class="ttdef"><b>Definition:</b> Hash.h:28</div></div>
+<div class="ttc" id="anamespaceviskores_html_ab5002959e32ca5ce4833bb9c41d498b0"><div class="ttname"><a href="namespaceviskores.html#ab5002959e32ca5ce4833bb9c41d498b0">viskores::HashType</a></div><div class="ttdeci">viskores::UInt32 HashType</div><div class="ttdoc">An integer type used for hash functions.</div><div class="ttdef"><b>Definition:</b> Hash.h:29</div></div>
 <div class="ttc" id="anamespaceviskores_html_a44214830f7e13b87de4d20728b6e6297"><div class="ttname"><a href="namespaceviskores.html#a44214830f7e13b87de4d20728b6e6297">viskores::UInt32</a></div><div class="ttdeci">uint32_t UInt32</div><div class="ttdoc">Base type to use for 32-bit unsigned integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:193</div></div>
 <div class="ttc" id="astructviskores_1_1TypeTraitsIntegerTag_html"><div class="ttname"><a href="structviskores_1_1TypeTraitsIntegerTag.html">viskores::TypeTraitsIntegerTag</a></div><div class="ttdoc">Tag used to identify types that store integer numbers.</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:44</div></div>
 <div class="ttc" id="aVecTraits_8h_html"><div class="ttname"><a href="VecTraits_8h.html">VecTraits.h</a></div></div>

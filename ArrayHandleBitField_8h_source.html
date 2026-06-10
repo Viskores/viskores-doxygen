@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -250,7 +250,7 @@ $(function() {
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div>
 <div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="classviskores_1_1cont_1_1ArrayHandleBitField.html#afb4df45e9d1c1e65a8127162713a7130">  206</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleBitField.html#afb4df45e9d1c1e65a8127162713a7130">ArrayHandleBitField</a>(<span class="keyword">const</span> <a class="code" href="classviskores_1_1cont_1_1BitField.html">viskores::cont::BitField</a>&amp; bitField)</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    : <a class="code" href="classviskores_1_1cont_1_1ArrayHandleBitField.html#acc5707fba985ebfaa5149db3dc0fd439">Superclass</a>(std::vector&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::internal::Buffer&gt;(1, bitField.GetBuffer()))</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    : <a class="code" href="classviskores_1_1cont_1_1ArrayHandleBitField.html#acc5707fba985ebfaa5149db3dc0fd439">Superclass</a>(<a class="code" href="namespacestd.html">std</a>::vector&lt;<a class="code" href="namespaceviskores.html">viskores</a>::cont::internal::Buffer&gt;(1, bitField.GetBuffer()))</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;};</div>
@@ -292,6 +292,7 @@ $(function() {
 <div class="ttc" id="anamespaceviskores_html_afea83468f8cfcf7f649b1fd42d117a0d"><div class="ttname"><a href="namespaceviskores.html#afea83468f8cfcf7f649b1fd42d117a0d">viskores::UInt8</a></div><div class="ttdeci">uint8_t UInt8</div><div class="ttdoc">Base type to use for 8-bit unsigned integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:177</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1DeviceAdapterId_html"><div class="ttname"><a href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a></div><div class="ttdoc">An object used to specify a device.</div><div class="ttdef"><b>Definition:</b> DeviceAdapterTag.h:66</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ErrorBadValue_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ErrorBadValue.html">viskores::cont::ErrorBadValue</a></div><div class="ttdoc">This class is thrown when a Viskores function or method encounters an invalid value that inhibits pro...</div><div class="ttdef"><b>Definition:</b> ErrorBadValue.h:33</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="anamespaceviskores_html_a6c948f0c6c12cec2727fe445c5334f1d"><div class="ttname"><a href="namespaceviskores.html#a6c948f0c6c12cec2727fe445c5334f1d">viskores::Get</a></div><div class="ttdeci">auto Get(const viskores::Tuple&lt; Ts... &gt; &amp;tuple)</div><div class="ttdoc">Retrieve the object from a viskores::Tuple at the given index.</div><div class="ttdef"><b>Definition:</b> Tuple.h:89</div></div>
 <div class="ttc" id="anamespaceviskores_html_a351a7b2bf690e14353352dca4341954d"><div class="ttname"><a href="namespaceviskores.html#a351a7b2bf690e14353352dca4341954d">viskores::WordTypeDefault</a></div><div class="ttdeci">viskores::UInt32 WordTypeDefault</div><div class="ttdoc">The default word size used for atomic bitwise operations.</div><div class="ttdef"><b>Definition:</b> Types.h:206</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_af0abef93dae84c5317296c84050bd715"><div class="ttname"><a href="namespaceviskores_1_1cont.html#af0abef93dae84c5317296c84050bd715">viskores::cont::make_ArrayHandleBitField</a></div><div class="ttdeci">viskores::cont::ArrayHandleBitField make_ArrayHandleBitField(const viskores::cont::BitField &amp;bitField)</div><div class="ttdef"><b>Definition:</b> ArrayHandleBitField.h:212</div></div>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -671,24 +671,24 @@ $(function() {
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;  <span class="comment">// Compute the length of coefficients for 1D transforms</span></div>
 <div class="line"><a name="l00623"></a><span class="lineno"><a class="line" href="classviskores_1_1worklet_1_1WaveletCompressor.html#ac05bd32dd0d425985e0ab4eee069d323">  623</a></span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="classviskores_1_1worklet_1_1WaveletCompressor.html#ac05bd32dd0d425985e0ab4eee069d323">ComputeCoeffLength</a>(std::vector&lt;viskores::Id&gt;&amp; L, <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> nLevels)</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  {</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> sum = L[0]; <span class="comment">// 1st level cA</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> = L[0]; <span class="comment">// 1st level cA</span></div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt;= size_t(nLevels); i++)</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    {</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;      sum += L[i];</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;      <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> += L[i];</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a>;</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;  }</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;  <span class="comment">// Compute the length of coefficients for 2D transforms</span></div>
 <div class="line"><a name="l00633"></a><span class="lineno"><a class="line" href="classviskores_1_1worklet_1_1WaveletCompressor.html#a1cef3c1a050a694310a623de9c6b8768">  633</a></span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="classviskores_1_1worklet_1_1WaveletCompressor.html#a1cef3c1a050a694310a623de9c6b8768">ComputeCoeffLength2</a>(std::vector&lt;viskores::Id&gt;&amp; L, <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> nLevels)</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;  {</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> sum = (L[0] * L[1]); <span class="comment">// 1st level cA</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> = (L[0] * L[1]); <span class="comment">// 1st level cA</span></div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt;= size_t(nLevels); i++)</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    {</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;      sum += L[i * 6 - 4] * L[i * 6 - 3]; <span class="comment">// cDh</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;      sum += L[i * 6 - 2] * L[i * 6 - 1]; <span class="comment">// cDv</span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;      sum += L[i * 6 - 0] * L[i * 6 + 1]; <span class="comment">// cDd</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;      <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> += L[i * 6 - 4] * L[i * 6 - 3]; <span class="comment">// cDh</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;      <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> += L[i * 6 - 2] * L[i * 6 - 1]; <span class="comment">// cDv</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;      <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> += L[i * 6 - 0] * L[i * 6 + 1]; <span class="comment">// cDd</span></div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    }</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a>;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;  }</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;  <span class="comment">// Compute approximate coefficient length at a specific level</span></div>
@@ -732,7 +732,8 @@ $(function() {
 <div class="ttc" id="aclassviskores_1_1worklet_1_1WaveletCompressor_html_a2489bf66ad95ad1ac7acedb2d24907fa"><div class="ttname"><a href="classviskores_1_1worklet_1_1WaveletCompressor.html#a2489bf66ad95ad1ac7acedb2d24907fa">viskores::worklet::WaveletCompressor::WaveDecompose</a></div><div class="ttdeci">viskores::Id WaveDecompose(const SignalArrayType &amp;sigIn, viskores::Id nLevels, CoeffArrayType &amp;coeffOut, std::vector&lt; viskores::Id &gt; &amp;L)</div><div class="ttdef"><b>Definition:</b> WaveletCompressor.h:43</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1WaveletCompressor_html_aa93ec6e32c480061970e629363c49733"><div class="ttname"><a href="classviskores_1_1worklet_1_1WaveletCompressor.html#aa93ec6e32c480061970e629363c49733">viskores::worklet::WaveletCompressor::EvaluateReconstruction</a></div><div class="ttdeci">viskores::Id EvaluateReconstruction(const ArrayType &amp;original, const ArrayType &amp;reconstruct)</div><div class="ttdef"><b>Definition:</b> WaveletCompressor.h:460</div></div>
 <div class="ttc" id="anamespaceviskores_html_acd6afd377c0c61527f320f13e2be3de7"><div class="ttname"><a href="namespaceviskores.html#acd6afd377c0c61527f320f13e2be3de7">viskores::Log10</a></div><div class="ttdeci">viskores::Float32 Log10(viskores::Float32 x)</div><div class="ttdef"><b>Definition:</b> Math.h:1587</div></div>
-<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleCounting_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleCounting.html">viskores::cont::ArrayHandleCounting</a></div><div class="ttdoc">ArrayHandleCounting is a specialization of ArrayHandle.</div><div class="ttdef"><b>Definition:</b> ArrayHandleCounting.h:140</div></div>
+<div class="ttc" id="anamespacelinalg_html_aa52953122cc774b07a6967df3fcd4c66"><div class="ttname"><a href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">linalg::sum</a></div><div class="ttdeci">constexpr scalar_t&lt; A &gt; sum(const A &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:413</div></div>
+<div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleCounting_html"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleCounting.html">viskores::cont::ArrayHandleCounting</a></div><div class="ttdoc">ArrayHandleCounting is a specialization of ArrayHandle.</div><div class="ttdef"><b>Definition:</b> ArrayHandleCounting.h:141</div></div>
 <div class="ttc" id="aAssert_8h_html_a38d79fa42ae0df9b0a23afcf408edb92"><div class="ttname"><a href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a></div><div class="ttdeci">#define VISKORES_ASSERT(condition)</div><div class="ttdef"><b>Definition:</b> Assert.h:51</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1WaveletCompressor_html_a8e14c5ef7d84ba7bdea4db2a126aedfe"><div class="ttname"><a href="classviskores_1_1worklet_1_1WaveletCompressor.html#a8e14c5ef7d84ba7bdea4db2a126aedfe">viskores::worklet::WaveletCompressor::GetApproxLengthLevN</a></div><div class="ttdeci">viskores::Id GetApproxLengthLevN(viskores::Id sigInLen, viskores::Id levN)</div><div class="ttdef"><b>Definition:</b> WaveletCompressor.h:646</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1WaveletCompressor_html_a09d5c946f37b6f62cde14e2c95145299"><div class="ttname"><a href="classviskores_1_1worklet_1_1WaveletCompressor.html#a09d5c946f37b6f62cde14e2c95145299">viskores::worklet::WaveletCompressor::ComputeL3</a></div><div class="ttdeci">void ComputeL3(viskores::Id inX, viskores::Id inY, viskores::Id inZ, viskores::Id nLev, std::vector&lt; viskores::Id &gt; &amp;L)</div><div class="ttdef"><b>Definition:</b> WaveletCompressor.h:563</div></div>

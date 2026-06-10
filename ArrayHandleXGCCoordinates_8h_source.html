@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -423,7 +423,7 @@ $(function() {
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="namespaceviskores_1_1cont.html#a7172af4530c559215b2f94870d3b8b8e">  375</a></span>&#160;<a class="code" href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html">viskores::cont::ArrayHandleXGCCoordinates&lt;T&gt;</a> <a class="code" href="namespaceviskores_1_1cont.html#a97deb2a2a1e9bc33362a2cd9057e5261">make_ArrayHandleXGCCoordinates</a>(</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keyword">const</span> T* array,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> length,</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a>,</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numberOfPlanesOwned,</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  <span class="keywordtype">bool</span> cylindrical,</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numberOfPlanes = -1,</div>
@@ -434,7 +434,7 @@ $(function() {
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    numberOfPlanes = numberOfPlanesOwned;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html">ArrayHandleXGCCoordinates&lt;T&gt;</a>(<a class="code" href="namespaceviskores_1_1cont.html#ab389153eb025c4062d6795e07b078fc1">viskores::cont::make_ArrayHandle</a>(array, length, copy),</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html">ArrayHandleXGCCoordinates&lt;T&gt;</a>(<a class="code" href="namespaceviskores_1_1cont.html#ab389153eb025c4062d6795e07b078fc1">viskores::cont::make_ArrayHandle</a>(array, <a class="code" href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">length</a>, copy),</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                      numberOfPlanes,</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                      numberOfPlanesOwned,</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                                      planeStartId,</div>
@@ -569,6 +569,7 @@ $(function() {
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a97deb2a2a1e9bc33362a2cd9057e5261"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a97deb2a2a1e9bc33362a2cd9057e5261">viskores::cont::make_ArrayHandleXGCCoordinates</a></div><div class="ttdeci">viskores::cont::ArrayHandleXGCCoordinates&lt; T &gt; make_ArrayHandleXGCCoordinates(const viskores::cont::ArrayHandle&lt; T &gt; &amp;arrHandle, viskores::Id numberOfPlanesOwned, bool cylindrical, viskores::Id numberOfPlanes=-1, viskores::Id planeStartId=0)</div><div class="ttdef"><b>Definition:</b> ArrayHandleXGCCoordinates.h:359</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagXGCCoordinates_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagXGCCoordinates.html">viskores::cont::StorageTagXGCCoordinates</a></div><div class="ttdef"><b>Definition:</b> ArrayHandleXGCCoordinates.h:145</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleXGCCoordinates_html_adcb9545101b20051197479a65241c2db"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html#adcb9545101b20051197479a65241c2db">viskores::cont::ArrayHandleXGCCoordinates::GetArray</a></div><div class="ttdeci">OriginalType GetArray() const</div><div class="ttdef"><b>Definition:</b> ArrayHandleXGCCoordinates.h:352</div></div>
+<div class="ttc" id="anamespacelinalg_html_afb1bb751c8c810fd0fd67d44bef8df95"><div class="ttname"><a href="namespacelinalg.html#afb1bb751c8c810fd0fd67d44bef8df95">linalg::length</a></div><div class="ttdeci">T length(const vec&lt; T, M &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:515</div></div>
 <div class="ttc" id="anamespaceviskores_html_a8e82cb49e20cef45fbeb58dc58790216"><div class="ttname"><a href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a></div><div class="ttdeci">viskores::Int64 Id</div><div class="ttdoc">Base type to use to index arrays.</div><div class="ttdef"><b>Definition:</b> Types.h:235</div></div>
 <div class="ttc" id="aExportMacros_8h_html_ae47b94fbf1d55103fa9aeff192d8404b"><div class="ttname"><a href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div><div class="ttdeci">#define VISKORES_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:65</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>

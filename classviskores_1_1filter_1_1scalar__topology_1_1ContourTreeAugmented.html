@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -75,6 +75,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c9abfdcd9a7385418d4435b457e4b7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#a9c9abfdcd9a7385418d4435b457e4b7d">ContourTreeAugmented</a> (bool useMarchingCubes=false, unsigned int computeRegularStructure=1)</td></tr>
 <tr class="memdesc:a9c9abfdcd9a7385418d4435b457e4b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the contour tree filter.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#a9c9abfdcd9a7385418d4435b457e4b7d">More...</a><br /></td></tr>
 <tr class="separator:a9c9abfdcd9a7385418d4435b457e4b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac57f43cd941c8044d4d167907555b60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#aac57f43cd941c8044d4d167907555b60">ContourTreeAugmented</a> (<a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html">ContourTreeAugmented</a> &amp;&amp;src)</td></tr>
+<tr class="separator:aac57f43cd941c8044d4d167907555b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476aba22527ec50d9fb5c281509c1596"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#a476aba22527ec50d9fb5c281509c1596">~ContourTreeAugmented</a> ()</td></tr>
+<tr class="separator:a476aba22527ec50d9fb5c281509c1596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7e9a90098fa870fe2d836163cb6bd9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#ac7e9a90098fa870fe2d836163cb6bd9f">SetBlockIndices</a> (<a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> blocksPerDim, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a3cc22c6be2f1935ef8a64c21a1196528">viskores::Id3</a> &gt; &amp;localBlockIndices)</td></tr>
 <tr class="memdesc:ac7e9a90098fa870fe2d836163cb6bd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the spatial decomposition of the data in case we run in parallel with a multi-block dataset.  <a href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html#ac7e9a90098fa870fe2d836163cb6bd9f">More...</a><br /></td></tr>
 <tr class="separator:ac7e9a90098fa870fe2d836163cb6bd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
 <p>In addition to single-block computation, the filter also supports multi-block regular grids. The blocks are processed in parallel using DIY and then the tree are merged progressively using a binary-reduction scheme to compute the final contour tree. I.e., in the multi-block context, the final tree is constructed on rank 0. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9c9abfdcd9a7385418d4435b457e4b7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c9abfdcd9a7385418d4435b457e4b7d">&#9670;&nbsp;</a></span>ContourTreeAugmented()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9abfdcd9a7385418d4435b457e4b7d">&#9670;&nbsp;</a></span>ContourTreeAugmented() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,6 +344,41 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aac57f43cd941c8044d4d167907555b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac57f43cd941c8044d4d167907555b60">&#9670;&nbsp;</a></span>ContourTreeAugmented() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">viskores::filter::scalar_topology::ContourTreeAugmented::ContourTreeAugmented </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeAugmented.html">ContourTreeAugmented</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a476aba22527ec50d9fb5c281509c1596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476aba22527ec50d9fb5c281509c1596">&#9670;&nbsp;</a></span>~ContourTreeAugmented()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">viskores::filter::scalar_topology::ContourTreeAugmented::~ContourTreeAugmented </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

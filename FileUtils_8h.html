@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -78,6 +78,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af9e5b630706d1094d312c948994e08ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1io.html#af9e5b630706d1094d312c948994e08ee">viskores::io::CreateDirectoriesFromFilePath</a> (const std::string &amp;filePath)</td></tr>
 <tr class="memdesc:af9e5b630706d1094d312c948994e08ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates all the directories found in a given filePath component if they don't exist.  <a href="namespaceviskores_1_1io.html#af9e5b630706d1094d312c948994e08ee">More...</a><br /></td></tr>
 <tr class="separator:af9e5b630706d1094d312c948994e08ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8535a13f8f24f3b6d3ac342b20f5e25d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1io.html#a8535a13f8f24f3b6d3ac342b20f5e25d">viskores::io::IsAbsolutePath</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:a8535a13f8f24f3b6d3ac342b20f5e25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if filePath is an absolute filesystem path.  <a href="namespaceviskores_1_1io.html#a8535a13f8f24f3b6d3ac342b20f5e25d">More...</a><br /></td></tr>
+<tr class="separator:a8535a13f8f24f3b6d3ac342b20f5e25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcb32cd481201f6984e6ec4122504ae"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1io.html#a4bcb32cd481201f6984e6ec4122504ae">viskores::io::MakeAbsolutePath</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:a4bcb32cd481201f6984e6ec4122504ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an absolute path to filePath.  <a href="namespaceviskores_1_1io.html#a4bcb32cd481201f6984e6ec4122504ae">More...</a><br /></td></tr>
+<tr class="separator:a4bcb32cd481201f6984e6ec4122504ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a375770cfbffd573f33a63e3c97ebb918"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceviskores_1_1io.html#a375770cfbffd573f33a63e3c97ebb918">viskores::io::MergePaths</a> (const std::string &amp;filePathPrefix, const std::string &amp;filePathSuffix)</td></tr>
 <tr class="memdesc:a375770cfbffd573f33a63e3c97ebb918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges two filepath strings together using the correct system filepath seperator EX: MergePaths("path/to/merge", "some/filename.txt") = "path/to/merge/some/filename.txt" EX: MergePaths("path/to/merge/", "/some/filename.txt") = "path/to/merge/some/filename.txt".  <a href="namespaceviskores_1_1io.html#a375770cfbffd573f33a63e3c97ebb918">More...</a><br /></td></tr>
 <tr class="separator:a375770cfbffd573f33a63e3c97ebb918"><td class="memSeparator" colspan="2">&#160;</td></tr>

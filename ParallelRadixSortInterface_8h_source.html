@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -100,11 +100,11 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">struct </span>is_valid_compare_type&lt;std::less&lt;T&gt;&gt; : std::integral_constant&lt;bool, true&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">struct </span>is_valid_compare_type&lt;<a class="code" href="namespacestd.html">std</a>::<a class="code" href="namespacelinalg.html#add67cae7ce854c49f91351f054ad080b">less</a>&lt;T&gt;&gt; : std::integral_constant&lt;bool, true&gt;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">struct </span>is_valid_compare_type&lt;std::greater&lt;T&gt;&gt; : std::integral_constant&lt;bool, true&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">struct </span>is_valid_compare_type&lt;<a class="code" href="namespacestd.html">std</a>::<a class="code" href="namespacelinalg.html#aa86c6e1bbaa5cdf232a4c64bf8e638c6">greater</a>&lt;T&gt;&gt; : std::integral_constant&lt;bool, true&gt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
@@ -211,10 +211,13 @@ $(function() {
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif // viskores_cont_internal_ParallelRadixSortInterface_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacelinalg_html_aa86c6e1bbaa5cdf232a4c64bf8e638c6"><div class="ttname"><a href="namespacelinalg.html#aa86c6e1bbaa5cdf232a4c64bf8e638c6">linalg::greater</a></div><div class="ttdeci">constexpr apply_t&lt; detail::op_gt, A, B &gt; greater(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:497</div></div>
 <div class="ttc" id="aArrayHandle_8h_html"><div class="ttname"><a href="ArrayHandle_8h.html">ArrayHandle.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1SortLess_html"><div class="ttname"><a href="structviskores_1_1SortLess.html">viskores::SortLess</a></div><div class="ttdoc">Binary Predicate that takes two arguments argument x, and y and returns True if and only if x is less...</div><div class="ttdef"><b>Definition:</b> BinaryPredicates.h:53</div></div>
+<div class="ttc" id="anamespacelinalg_html_add67cae7ce854c49f91351f054ad080b"><div class="ttname"><a href="namespacelinalg.html#add67cae7ce854c49f91351f054ad080b">linalg::less</a></div><div class="ttdeci">constexpr apply_t&lt; detail::op_lt, A, B &gt; less(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:496</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1StorageTagBasic_html"><div class="ttname"><a href="structviskores_1_1cont_1_1StorageTagBasic.html">viskores::cont::StorageTagBasic</a></div><div class="ttdoc">A tag for the basic implementation of a Storage object.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:53</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="aBinaryPredicates_8h_html"><div class="ttname"><a href="BinaryPredicates_8h.html">BinaryPredicates.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1SortGreater_html"><div class="ttname"><a href="structviskores_1_1SortGreater.html">viskores::SortGreater</a></div><div class="ttdoc">Binary Predicate that takes two arguments argument x, and y and returns True if and only if x is grea...</div><div class="ttdef"><b>Definition:</b> BinaryPredicates.h:66</div></div>
 <!-- start footer part -->

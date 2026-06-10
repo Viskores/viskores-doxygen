@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> minIndices = boundary.<a class="code" href="structviskores_1_1exec_1_1BoundaryState.html#a0c25fdbe580c737487d6dd571c44d602">MinNeighborIndices</a>(this-&gt;<a class="code" href="classviskores_1_1worklet_1_1AveragePointNeighborhood.html#a18ba8b23ea0ea78b11fc4478bf488bec">BoundaryRadius</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">auto</span> maxIndices = boundary.<a class="code" href="structviskores_1_1exec_1_1BoundaryState.html#ab36c9a11a769a40356b9efe9d158368f">MaxNeighborIndices</a>(this-&gt;<a class="code" href="classviskores_1_1worklet_1_1AveragePointNeighborhood.html#a18ba8b23ea0ea78b11fc4478bf488bec">BoundaryRadius</a>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    T sum(0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    T <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a>(0);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> size = 0;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> i = minIndices[0]; i &lt;= maxIndices[0]; i++)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
@@ -112,12 +112,12 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> k = minIndices[2]; k &lt;= maxIndices[2]; k++)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          sum = sum + inputField.<a class="code" href="structviskores_1_1exec_1_1FieldNeighborhood.html#a26fa4fdada38d3b8c89904dd069628b2">Get</a>(i, j, k);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> = <a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> + inputField.<a class="code" href="structviskores_1_1exec_1_1FieldNeighborhood.html#a26fa4fdada38d3b8c89904dd069628b2">Get</a>(i, j, k);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          size++;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(sum / size);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(<a class="code" href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">sum</a> / size);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
@@ -145,6 +145,7 @@ $(function() {
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1AveragePointNeighborhood_html_a6935e414b45a6dff3ee29b862683a035"><div class="ttname"><a href="classviskores_1_1worklet_1_1AveragePointNeighborhood.html#a6935e414b45a6dff3ee29b862683a035">viskores::worklet::AveragePointNeighborhood::InputDomain</a></div><div class="ttdeci">_1 InputDomain</div><div class="ttdef"><b>Definition:</b> AveragePointNeighborhood.h:40</div></div>
 <div class="ttc" id="astructviskores_1_1exec_1_1FieldNeighborhood_html"><div class="ttname"><a href="structviskores_1_1exec_1_1FieldNeighborhood.html">viskores::exec::FieldNeighborhood</a></div><div class="ttdoc">Retrieves field values from a neighborhood.</div><div class="ttdef"><b>Definition:</b> FieldNeighborhood.h:42</div></div>
+<div class="ttc" id="anamespacelinalg_html_aa52953122cc774b07a6967df3fcd4c66"><div class="ttname"><a href="namespacelinalg.html#aa52953122cc774b07a6967df3fcd4c66">linalg::sum</a></div><div class="ttdeci">constexpr scalar_t&lt; A &gt; sum(const A &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:413</div></div>
 <div class="ttc" id="aAssert_8h_html_a38d79fa42ae0df9b0a23afcf408edb92"><div class="ttname"><a href="Assert_8h.html#a38d79fa42ae0df9b0a23afcf408edb92">VISKORES_ASSERT</a></div><div class="ttdeci">#define VISKORES_ASSERT(condition)</div><div class="ttdef"><b>Definition:</b> Assert.h:51</div></div>
 <div class="ttc" id="aclassviskores_1_1worklet_1_1AveragePointNeighborhood_html_ab44379bf49ccb7328f58db125941b7f1"><div class="ttname"><a href="classviskores_1_1worklet_1_1AveragePointNeighborhood.html#ab44379bf49ccb7328f58db125941b7f1">viskores::worklet::AveragePointNeighborhood::operator()</a></div><div class="ttdeci">InputFieldPortalType::ValueType operator()(const viskores::exec::FieldNeighborhood&lt; InputFieldPortalType &gt; &amp;inputField, const viskores::exec::BoundaryState &amp;boundary) const</div><div class="ttdef"><b>Definition:</b> AveragePointNeighborhood.h:49</div></div>
 <div class="ttc" id="astructviskores_1_1exec_1_1FieldNeighborhood_html_a26fa4fdada38d3b8c89904dd069628b2"><div class="ttname"><a href="structviskores_1_1exec_1_1FieldNeighborhood.html#a26fa4fdada38d3b8c89904dd069628b2">viskores::exec::FieldNeighborhood::Get</a></div><div class="ttdeci">ValueType Get(viskores::IdComponent i, viskores::IdComponent j, viskores::IdComponent k) const</div><div class="ttdoc">Retrieve a field value relative to the visited element.</div><div class="ttdef"><b>Definition:</b> FieldNeighborhood.h:69</div></div>

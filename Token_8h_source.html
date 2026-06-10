@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structviskores_1_1cont_1_1Token_1_1ObjectReferenceImpl.html#a5c334fe09b6c4b6fa5de362a193993d9">   65</a></span>&#160;    <a class="code" href="structviskores_1_1cont_1_1Token_1_1ObjectReferenceImpl.html#a5c334fe09b6c4b6fa5de362a193993d9">ObjectReferenceImpl</a>(ObjectType&amp;&amp; <span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      : Object(std::move(object))</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      : Object(<a class="code" href="namespacestd.html">std</a>::move(object))</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
@@ -226,6 +226,7 @@ $(function() {
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_1_1Reference_html_ac5c15da00c262622a2e45887cda64da9"><div class="ttname"><a href="classviskores_1_1cont_1_1Token_1_1Reference.html#ac5c15da00c262622a2e45887cda64da9">viskores::cont::Token::Reference::operator==</a></div><div class="ttdeci">bool operator==(Reference rhs) const</div><div class="ttdef"><b>Definition:</b> Token.h:149</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1Token_1_1ObjectReference_html"><div class="ttname"><a href="structviskores_1_1cont_1_1Token_1_1ObjectReference.html">viskores::cont::Token::ObjectReference</a></div><div class="ttdef"><b>Definition:</b> Token.h:50</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_1_1Reference_html_a2571f311b21b99f2eb5088a6226e9789"><div class="ttname"><a href="classviskores_1_1cont_1_1Token_1_1Reference.html#a2571f311b21b99f2eb5088a6226e9789">viskores::cont::Token::Reference::InternalsPointer</a></div><div class="ttdeci">const void * InternalsPointer</div><div class="ttdef"><b>Definition:</b> Token.h:142</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_html_a3f75797e02c5919b2d20a41f73b86ea5"><div class="ttname"><a href="classviskores_1_1cont_1_1Token.html#a3f75797e02c5919b2d20a41f73b86ea5">viskores::cont::Token::GetReference</a></div><div class="ttdeci">Reference GetReference() const</div><div class="ttdoc">Returns a reference object to this Token.</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_1_1Reference_html"><div class="ttname"><a href="classviskores_1_1cont_1_1Token_1_1Reference.html">viskores::cont::Token::Reference</a></div><div class="ttdef"><b>Definition:</b> Token.h:139</div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1Token_html_a72da1b9bc95a27feeb7e574e3890e6ac"><div class="ttname"><a href="classviskores_1_1cont_1_1Token.html#a72da1b9bc95a27feeb7e574e3890e6ac">viskores::cont::Token::Attach</a></div><div class="ttdeci">void Attach(T &amp;&amp;object, viskores::cont::Token::ReferenceCount *referenceCountPointer, std::unique_lock&lt; std::mutex &gt; &amp;lock, std::condition_variable *conditionVariablePointer)</div><div class="ttdoc">Add an object to attach to the Token.</div><div class="ttdef"><b>Definition:</b> Token.h:109</div></div>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -44,9 +44,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classviskores_1_1filter_1_1flow_1_1StreamSurface-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">viskores::filter::flow::StreamSurface Class Reference</div>  </div>
@@ -63,26 +61,154 @@ Inheritance diagram for viskores::filter::flow::StreamSurface:</div>
  <div class="center">
   <img src="classviskores_1_1filter_1_1flow_1_1StreamSurface.png" usemap="#viskores::filter::flow::StreamSurface_map" alt=""/>
   <map id="viskores::filter::flow::StreamSurface_map" name="viskores::filter::flow::StreamSurface_map">
-<area href="classviskores_1_1filter_1_1Filter.html" title="Base class for all filters." alt="viskores::filter::Filter" shape="rect" coords="0,0,209,24"/>
+<area href="classviskores_1_1filter_1_1flow_1_1Streamline.html" title="Advect particles in a vector field and display the path they take." alt="viskores::filter::flow::Streamline" shape="rect" coords="0,168,404,192"/>
+<area href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html" alt="viskores::filter::flow::FilterParticleAdvectionSteadyState&lt; Streamline &gt;" shape="rect" coords="0,112,404,136"/>
+<area href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html" title="base class for advecting particles in a vector field." alt="viskores::filter::flow::FilterParticleAdvection" shape="rect" coords="0,56,404,80"/>
+<area href="classviskores_1_1filter_1_1Filter.html" title="Base class for all filters." alt="viskores::filter::Filter" shape="rect" coords="0,0,404,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a185711049780c7a089060ed7cad263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a8a185711049780c7a089060ed7cad263">SetStepSize</a> (<a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a> s)</td></tr>
-<tr class="memdesc:a8a185711049780c7a089060ed7cad263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the step size used for the numerical integrator.  <a href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a8a185711049780c7a089060ed7cad263">More...</a><br /></td></tr>
-<tr class="separator:a8a185711049780c7a089060ed7cad263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adefa375b13414ba1248df67acd0705d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#adefa375b13414ba1248df67acd0705d6">SetNumberOfSteps</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> n)</td></tr>
-<tr class="memdesc:adefa375b13414ba1248df67acd0705d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the maximum number of integration steps for each particle.  <a href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#adefa375b13414ba1248df67acd0705d6">More...</a><br /></td></tr>
-<tr class="separator:adefa375b13414ba1248df67acd0705d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e157da8f04fc57fee33bcd0ae2d5e9f"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
-<tr class="memitem:a5e157da8f04fc57fee33bcd0ae2d5e9f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a5e157da8f04fc57fee33bcd0ae2d5e9f">SetSeeds</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; ParticleType &gt; &amp;seeds)</td></tr>
-<tr class="memdesc:a5e157da8f04fc57fee33bcd0ae2d5e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the seed locations for the particle advection.  <a href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a5e157da8f04fc57fee33bcd0ae2d5e9f">More...</a><br /></td></tr>
-<tr class="separator:a5e157da8f04fc57fee33bcd0ae2d5e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20ceedb25d3e17f0a2a538466b401b47"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
-<tr class="memitem:a20ceedb25d3e17f0a2a538466b401b47"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a20ceedb25d3e17f0a2a538466b401b47">SetSeeds</a> (const std::vector&lt; ParticleType &gt; &amp;seeds, <a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a> copyFlag=<a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a>)</td></tr>
-<tr class="memdesc:a20ceedb25d3e17f0a2a538466b401b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the seed locations for the particle advection.  <a href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a20ceedb25d3e17f0a2a538466b401b47">More...</a><br /></td></tr>
-<tr class="separator:a20ceedb25d3e17f0a2a538466b401b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a303a236d8ade3114ec76a79e4618c58a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a303a236d8ade3114ec76a79e4618c58a">DoExecutePartitions</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;inData) override</td></tr>
+<tr class="separator:a303a236d8ade3114ec76a79e4618c58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html">viskores::filter::flow::FilterParticleAdvectionSteadyState&lt; Streamline &gt;</a></td></tr>
+<tr class="memitem:ac077d731f0df8d5f1f8aada7e888d6b5 inherit pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#ac077d731f0df8d5f1f8aada7e888d6b5">DoExecutePartitions</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input) override</td></tr>
+<tr class="separator:ac077d731f0df8d5f1f8aada7e888d6b5 inherit pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html">viskores::filter::flow::FilterParticleAdvection</a></td></tr>
+<tr class="memitem:a350c15c6c9243ee2c2c18f6d8effa9a3 inherit pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a350c15c6c9243ee2c2c18f6d8effa9a3">ValidateOptions</a> () const</td></tr>
+<tr class="separator:a350c15c6c9243ee2c2c18f6d8effa9a3 inherit pro_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classviskores_1_1filter_1_1Filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classviskores_1_1filter_1_1Filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1Filter.html">viskores::filter::Filter</a></td></tr>
+<tr class="memitem:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a6f56120132ad471ae092feedad608118">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet) const</td></tr>
+<tr class="memdesc:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a6f56120132ad471ae092feedad608118">More...</a><br /></td></tr>
+<tr class="separator:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a51d9cd432e624c6995d88cb379f33bd8">CreateResultField</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;resultField) const</td></tr>
+<tr class="memdesc:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#a51d9cd432e624c6995d88cb379f33bd8">More...</a><br /></td></tr>
+<tr class="separator:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#ab352d4c1439c22e40e88658ea41d6322">CreateResultField</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, <a class="el" href="classviskores_1_1cont_1_1Field.html#a5f604e4f44f75cf1cbe6da4f986975bd">viskores::cont::Field::Association</a> resultFieldAssociation, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
+<tr class="memdesc:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#ab352d4c1439c22e40e88658ea41d6322">More...</a><br /></td></tr>
+<tr class="separator:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#abe86079ed8dd3d5a6665b0c118885d54">CreateResultFieldPoint</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
+<tr class="memdesc:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#abe86079ed8dd3d5a6665b0c118885d54">More...</a><br /></td></tr>
+<tr class="separator:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a527b9d9cb733738b5bf1afa1120c904a">CreateResultFieldCell</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
+<tr class="memdesc:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#a527b9d9cb733738b5bf1afa1120c904a">More...</a><br /></td></tr>
+<tr class="separator:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a838ec247e6d25281eecffe26374961a3">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;resultPartitions) const</td></tr>
+<tr class="memdesc:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a838ec247e6d25281eecffe26374961a3">More...</a><br /></td></tr>
+<tr class="separator:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
+<tr class="memitem:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a3f45fbc5edc7a0cb9a99fc8af4e5d369">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;resultPartitions, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
+<tr class="memdesc:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a3f45fbc5edc7a0cb9a99fc8af4e5d369">More...</a><br /></td></tr>
+<tr class="separator:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
+<tr class="memitem:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a0292134ef6d642d852fc5e17f46f280c">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
+<tr class="memdesc:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a0292134ef6d642d852fc5e17f46f280c">More...</a><br /></td></tr>
+<tr class="separator:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
+<tr class="memitem:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a09a3adeb07b3ffd9cef4ebb562f0ef5c">CreateResultCoordinateSystem</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, const <a class="el" href="classviskores_1_1cont_1_1CoordinateSystem.html">viskores::cont::CoordinateSystem</a> &amp;resultCoordSystem, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
+<tr class="memdesc:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a09a3adeb07b3ffd9cef4ebb562f0ef5c">More...</a><br /></td></tr>
+<tr class="separator:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
+<tr class="memitem:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#ac166dc462d825cffb35701017d912099">CreateResultCoordinateSystem</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, const std::string &amp;coordsName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;coordsData, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
+<tr class="memdesc:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#ac166dc462d825cffb35701017d912099">More...</a><br /></td></tr>
+<tr class="separator:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a01866782b46fb387b11192cdbefa1ca6">GetFieldFromDataSet</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input) const</td></tr>
+<tr class="memdesc:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an input field from a <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> object.  <a href="classviskores_1_1filter_1_1Filter.html#a01866782b46fb387b11192cdbefa1ca6">More...</a><br /></td></tr>
+<tr class="separator:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a08454a8acc7224b8ee4f7481a390c23a">GetFieldFromDataSet</a> (<a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input) const</td></tr>
+<tr class="memdesc:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an input field from a <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> object.  <a href="classviskores_1_1filter_1_1Filter.html#a08454a8acc7224b8ee4f7481a390c23a">More...</a><br /></td></tr>
+<tr class="separator:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a5fc8781cad13719eddfd02b84480833c">CastAndCallScalarField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input scalar field.  <a href="classviskores_1_1filter_1_1Filter.html#a5fc8781cad13719eddfd02b84480833c">More...</a><br /></td></tr>
+<tr class="separator:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a23b5bee38aeb26a87641c9ecef4ff510">CastAndCallScalarField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input scalar field.  <a href="classviskores_1_1filter_1_1Filter.html#a23b5bee38aeb26a87641c9ecef4ff510">More...</a><br /></td></tr>
+<tr class="separator:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;viskores::IdComponent VecSize, typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a16e2041e42cad019f261c2f53d2ae2b6">CastAndCallVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input vector field.  <a href="classviskores_1_1filter_1_1Filter.html#a16e2041e42cad019f261c2f53d2ae2b6">More...</a><br /></td></tr>
+<tr class="separator:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;viskores::IdComponent VecSize, typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a37ab194a602c04481083cfb94ba6c045">CastAndCallVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input vector field.  <a href="classviskores_1_1filter_1_1Filter.html#a37ab194a602c04481083cfb94ba6c045">More...</a><br /></td></tr>
+<tr class="separator:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a6eeb38eb36eb5fc65f40277c1226e8e9">CastAndCallVariableVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is like <code>CastAndCallVecField</code> except that it can be used for a field of unknown vector size (or scalars).  <a href="classviskores_1_1filter_1_1Filter.html#a6eeb38eb36eb5fc65f40277c1226e8e9">More...</a><br /></td></tr>
+<tr class="separator:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
+<tr class="memitem:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a1442151fef2c1a08bd862a259f7f6cc4">CastAndCallVariableVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is like <code>CastAndCallVecField</code> except that it can be used for a field of unknown vector size (or scalars).  <a href="classviskores_1_1filter_1_1Filter.html#a1442151fef2c1a08bd862a259f7f6cc4">More...</a><br /></td></tr>
+<tr class="separator:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classviskores_1_1filter_1_1flow_1_1Streamline')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">viskores::filter::flow::Streamline</a></td></tr>
+<tr class="memitem:aea8f043e438571c443852867d3842e7a inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#aea8f043e438571c443852867d3842e7a">ParticleType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#aea8f043e438571c443852867d3842e7a">ParticleType</a></td></tr>
+<tr class="separator:aea8f043e438571c443852867d3842e7a inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10bedc067877a230227c9761a18c7846 inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a10bedc067877a230227c9761a18c7846">TerminationType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a10bedc067877a230227c9761a18c7846">TerminationType</a></td></tr>
+<tr class="separator:a10bedc067877a230227c9761a18c7846 inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae814c16277c37f09263634f79d8dc63d inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#ae814c16277c37f09263634f79d8dc63d">AnalysisType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#ae814c16277c37f09263634f79d8dc63d">AnalysisType</a></td></tr>
+<tr class="separator:ae814c16277c37f09263634f79d8dc63d inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38e868fd9a730dc1e0dc7fac3c138fd1 inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a38e868fd9a730dc1e0dc7fac3c138fd1">ArrayType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a38e868fd9a730dc1e0dc7fac3c138fd1">ArrayType</a></td></tr>
+<tr class="separator:a38e868fd9a730dc1e0dc7fac3c138fd1 inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd0d06644202d0d7a806b75b4c04aff inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a0dd0d06644202d0d7a806b75b4c04aff">FieldType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a0dd0d06644202d0d7a806b75b4c04aff">FieldType</a></td></tr>
+<tr class="separator:a0dd0d06644202d0d7a806b75b4c04aff inherit pub_types_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html">viskores::filter::flow::FilterParticleAdvectionSteadyState&lt; Streamline &gt;</a></td></tr>
+<tr class="memitem:a78abb26ebf87dda1cfa04c29f1ee0b9c inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#a78abb26ebf87dda1cfa04c29f1ee0b9c">ParticleType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#a78abb26ebf87dda1cfa04c29f1ee0b9c">ParticleType</a></td></tr>
+<tr class="separator:a78abb26ebf87dda1cfa04c29f1ee0b9c inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01a05694447cf62ca762bbeb93271a3 inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#aa01a05694447cf62ca762bbeb93271a3">FieldType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#aa01a05694447cf62ca762bbeb93271a3">FieldType</a></td></tr>
+<tr class="separator:aa01a05694447cf62ca762bbeb93271a3 inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa836672cbceaf86629f954a83830662d inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#aa836672cbceaf86629f954a83830662d">TerminationType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#aa836672cbceaf86629f954a83830662d">TerminationType</a></td></tr>
+<tr class="separator:aa836672cbceaf86629f954a83830662d inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438a7ee5ee989d35be0076d8e58f6569 inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#a438a7ee5ee989d35be0076d8e58f6569">AnalysisType</a> = typename <a class="el" href="structviskores_1_1filter_1_1flow_1_1FlowTraits.html">FlowTraits</a>&lt; <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">Streamline</a> &gt;::<a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState.html#a438a7ee5ee989d35be0076d8e58f6569">AnalysisType</a></td></tr>
+<tr class="separator:a438a7ee5ee989d35be0076d8e58f6569 inherit pub_types_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvectionSteadyState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html">viskores::filter::flow::Streamline</a></td></tr>
+<tr class="memitem:aea92750d7c5be89e0360e8b9a381e58a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a0dd0d06644202d0d7a806b75b4c04aff">FieldType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#aea92750d7c5be89e0360e8b9a381e58a">GetField</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;data) const</td></tr>
+<tr class="separator:aea92750d7c5be89e0360e8b9a381e58a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24cd5e8a6ca908b12bd31e188ae4c261 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a10bedc067877a230227c9761a18c7846">TerminationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a24cd5e8a6ca908b12bd31e188ae4c261">GetTermination</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;data) const</td></tr>
+<tr class="separator:a24cd5e8a6ca908b12bd31e188ae4c261 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f5990a272bcd49b4a9fbf93414445d inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#ae814c16277c37f09263634f79d8dc63d">AnalysisType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1Streamline.html#a77f5990a272bcd49b4a9fbf93414445d">GetAnalysis</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;data) const</td></tr>
+<tr class="separator:a77f5990a272bcd49b4a9fbf93414445d inherit pub_methods_classviskores_1_1filter_1_1flow_1_1Streamline"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html">viskores::filter::flow::FilterParticleAdvection</a></td></tr>
+<tr class="memitem:a593c804066e61aadf68b54e7536dc8db inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a593c804066e61aadf68b54e7536dc8db">CanThread</a> () const override</td></tr>
+<tr class="memdesc:a593c804066e61aadf68b54e7536dc8db inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the filter can execute on partitions in concurrent threads.  <a href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a593c804066e61aadf68b54e7536dc8db">More...</a><br /></td></tr>
+<tr class="separator:a593c804066e61aadf68b54e7536dc8db inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5b76b9bfacaf00d4e01185097873ba inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a1d5b76b9bfacaf00d4e01185097873ba">SetStepSize</a> (<a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a> s)</td></tr>
+<tr class="memdesc:a1d5b76b9bfacaf00d4e01185097873ba inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the step size used for the numerical integrator.  <a href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a1d5b76b9bfacaf00d4e01185097873ba">More...</a><br /></td></tr>
+<tr class="separator:a1d5b76b9bfacaf00d4e01185097873ba inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b76962e628252dc28f8342fd90544e3 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a1b76962e628252dc28f8342fd90544e3">SetNumberOfSteps</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> n)</td></tr>
+<tr class="memdesc:a1b76962e628252dc28f8342fd90544e3 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the maximum number of integration steps for each particle.  <a href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a1b76962e628252dc28f8342fd90544e3">More...</a><br /></td></tr>
+<tr class="separator:a1b76962e628252dc28f8342fd90544e3 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db485564ed9cfd9c963ee87b2a3c8bb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
+<tr class="memitem:a7db485564ed9cfd9c963ee87b2a3c8bb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a7db485564ed9cfd9c963ee87b2a3c8bb">SetSeeds</a> (<a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; ParticleType &gt; &amp;seeds)</td></tr>
+<tr class="memdesc:a7db485564ed9cfd9c963ee87b2a3c8bb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the seed locations for the particle advection.  <a href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a7db485564ed9cfd9c963ee87b2a3c8bb">More...</a><br /></td></tr>
+<tr class="separator:a7db485564ed9cfd9c963ee87b2a3c8bb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e3255e61d192a87d5f26028db8901c inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
+<tr class="memitem:a56e3255e61d192a87d5f26028db8901c inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a56e3255e61d192a87d5f26028db8901c">SetSeeds</a> (const std::vector&lt; ParticleType &gt; &amp;seeds, <a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a> copyFlag=<a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a>)</td></tr>
+<tr class="memdesc:a56e3255e61d192a87d5f26028db8901c inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the seed locations for the particle advection.  <a href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a56e3255e61d192a87d5f26028db8901c">More...</a><br /></td></tr>
+<tr class="separator:a56e3255e61d192a87d5f26028db8901c inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7587f72d0f49d1d59dea3a6975a918 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a3b7587f72d0f49d1d59dea3a6975a918">SetBlockIDs</a> (const std::vector&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;blockIds)</td></tr>
+<tr class="separator:a3b7587f72d0f49d1d59dea3a6975a918 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f888d623b075cbedfa201e542fd631 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#ab0f888d623b075cbedfa201e542fd631">SetSolverRK4</a> ()</td></tr>
+<tr class="separator:ab0f888d623b075cbedfa201e542fd631 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfce1fc7231d00ba346af065013dc455 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#acfce1fc7231d00ba346af065013dc455">SetSolverEuler</a> ()</td></tr>
+<tr class="separator:acfce1fc7231d00ba346af065013dc455 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2f3b90cae8fab781a64c629045b30a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a8e2f3b90cae8fab781a64c629045b30a">GetUseThreadedAlgorithm</a> ()</td></tr>
+<tr class="separator:a8e2f3b90cae8fab781a64c629045b30a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7181b74d00e862f62990ec063b9661a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#ae7181b74d00e862f62990ec063b9661a">SetUseThreadedAlgorithm</a> (bool val)</td></tr>
+<tr class="separator:ae7181b74d00e862f62990ec063b9661a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2254da9478d1e01d33a31f321f8f3b48 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a2254da9478d1e01d33a31f321f8f3b48">SetUseAsynchronousCommunication</a> ()</td></tr>
+<tr class="separator:a2254da9478d1e01d33a31f321f8f3b48 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41e3726d4455d5fd6b814f30a0c45fb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#aa41e3726d4455d5fd6b814f30a0c45fb">GetUseAsynchronousCommunication</a> ()</td></tr>
+<tr class="separator:aa41e3726d4455d5fd6b814f30a0c45fb inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ee7f292768d2cc0bb707fac4999bc8 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a49ee7f292768d2cc0bb707fac4999bc8">SetUseSynchronousCommunication</a> ()</td></tr>
+<tr class="separator:a49ee7f292768d2cc0bb707fac4999bc8 inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba64246dcfb6b36c8b42c2096f770a2a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#aba64246dcfb6b36c8b42c2096f770a2a">GetUseSynchronousCommunication</a> ()</td></tr>
+<tr class="separator:aba64246dcfb6b36c8b42c2096f770a2a inherit pub_methods_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classviskores_1_1filter_1_1Filter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classviskores_1_1filter_1_1Filter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1Filter.html">viskores::filter::Filter</a></td></tr>
 <tr class="memitem:aa47718833f3adf8dd6df04a8e8bf8b93 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#aa47718833f3adf8dd6df04a8e8bf8b93">Filter</a> ()</td></tr>
 <tr class="separator:aa47718833f3adf8dd6df04a8e8bf8b93 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,9 +291,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4582630898b66bf518dab0a7c9ca8eb3 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a4582630898b66bf518dab0a7c9ca8eb3">GetNumberOfActiveFields</a> () const</td></tr>
 <tr class="memdesc:a4582630898b66bf518dab0a7c9ca8eb3 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of active fields currently set.  <a href="classviskores_1_1filter_1_1Filter.html#a4582630898b66bf518dab0a7c9ca8eb3">More...</a><br /></td></tr>
 <tr class="separator:a4582630898b66bf518dab0a7c9ca8eb3 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af83357015ad2df06b7ab181a75c3662b inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#af83357015ad2df06b7ab181a75c3662b">CanThread</a> () const</td></tr>
-<tr class="memdesc:af83357015ad2df06b7ab181a75c3662b inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the filter can execute on partitions in concurrent threads.  <a href="classviskores_1_1filter_1_1Filter.html#af83357015ad2df06b7ab181a75c3662b">More...</a><br /></td></tr>
-<tr class="separator:af83357015ad2df06b7ab181a75c3662b inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbbf6ee581d811552650786200f550bd inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#adbbf6ee581d811552650786200f550bd">SetThreadsPerCPU</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numThreads)</td></tr>
 <tr class="separator:adbbf6ee581d811552650786200f550bd inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add6202c185e6773d7450b12605c7da7c inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#add6202c185e6773d7450b12605c7da7c">SetThreadsPerGPU</a> (<a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> numThreads)</td></tr>
@@ -183,90 +306,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a036a2822a21ac92b1c0266a9277bffa0 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a036a2822a21ac92b1c0266a9277bffa0">SetInvoker</a> (<a class="el" href="structviskores_1_1cont_1_1Invoker.html">viskores::cont::Invoker</a> inv)</td></tr>
 <tr class="memdesc:a036a2822a21ac92b1c0266a9277bffa0 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify the <a class="el" href="structviskores_1_1cont_1_1Invoker.html" title="Allows launching any worklet without a dispatcher.">viskores::cont::Invoker</a> to be used to execute worklets by this filter instance.  <a href="classviskores_1_1filter_1_1Filter.html#a036a2822a21ac92b1c0266a9277bffa0">More...</a><br /></td></tr>
 <tr class="separator:a036a2822a21ac92b1c0266a9277bffa0 inherit pub_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a764d76362179b60b159a5a19748945ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a764d76362179b60b159a5a19748945ae">DoExecute</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inData) override</td></tr>
-<tr class="separator:a764d76362179b60b159a5a19748945ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ade767fdc5b2d8079425086edc5d8098a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#ade767fdc5b2d8079425086edc5d8098a">NumberOfSteps</a> = 0</td></tr>
-<tr class="separator:ade767fdc5b2d8079425086edc5d8098a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1fc0bb412a4b9cfed457598952dd38e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#af1fc0bb412a4b9cfed457598952dd38e">Seeds</a></td></tr>
-<tr class="separator:af1fc0bb412a4b9cfed457598952dd38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a336fb41b50af63e54008887b25d78181"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1StreamSurface.html#a336fb41b50af63e54008887b25d78181">StepSize</a> = 0</td></tr>
-<tr class="separator:a336fb41b50af63e54008887b25d78181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classviskores_1_1filter_1_1Filter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classviskores_1_1filter_1_1Filter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classviskores_1_1filter_1_1Filter.html">viskores::filter::Filter</a></td></tr>
-<tr class="memitem:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a6f56120132ad471ae092feedad608118">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet) const</td></tr>
-<tr class="memdesc:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a6f56120132ad471ae092feedad608118">More...</a><br /></td></tr>
-<tr class="separator:a6f56120132ad471ae092feedad608118 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a51d9cd432e624c6995d88cb379f33bd8">CreateResultField</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;resultField) const</td></tr>
-<tr class="memdesc:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#a51d9cd432e624c6995d88cb379f33bd8">More...</a><br /></td></tr>
-<tr class="separator:a51d9cd432e624c6995d88cb379f33bd8 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#ab352d4c1439c22e40e88658ea41d6322">CreateResultField</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, <a class="el" href="classviskores_1_1cont_1_1Field.html#a5f604e4f44f75cf1cbe6da4f986975bd">viskores::cont::Field::Association</a> resultFieldAssociation, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
-<tr class="memdesc:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#ab352d4c1439c22e40e88658ea41d6322">More...</a><br /></td></tr>
-<tr class="separator:ab352d4c1439c22e40e88658ea41d6322 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#abe86079ed8dd3d5a6665b0c118885d54">CreateResultFieldPoint</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
-<tr class="memdesc:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#abe86079ed8dd3d5a6665b0c118885d54">More...</a><br /></td></tr>
-<tr class="separator:abe86079ed8dd3d5a6665b0c118885d54 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a527b9d9cb733738b5bf1afa1120c904a">CreateResultFieldCell</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const std::string &amp;resultFieldName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;resultFieldArray) const</td></tr>
-<tr class="memdesc:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>  <a href="classviskores_1_1filter_1_1Filter.html#a527b9d9cb733738b5bf1afa1120c904a">More...</a><br /></td></tr>
-<tr class="separator:a527b9d9cb733738b5bf1afa1120c904a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a838ec247e6d25281eecffe26374961a3">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;resultPartitions) const</td></tr>
-<tr class="memdesc:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a838ec247e6d25281eecffe26374961a3">More...</a><br /></td></tr>
-<tr class="separator:a838ec247e6d25281eecffe26374961a3 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
-<tr class="memitem:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a3f45fbc5edc7a0cb9a99fc8af4e5d369">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;input, const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;resultPartitions, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
-<tr class="memdesc:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a3f45fbc5edc7a0cb9a99fc8af4e5d369">More...</a><br /></td></tr>
-<tr class="separator:a3f45fbc5edc7a0cb9a99fc8af4e5d369 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
-<tr class="memitem:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a0292134ef6d642d852fc5e17f46f280c">CreateResult</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
-<tr class="memdesc:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a0292134ef6d642d852fc5e17f46f280c">More...</a><br /></td></tr>
-<tr class="separator:a0292134ef6d642d852fc5e17f46f280c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
-<tr class="memitem:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a09a3adeb07b3ffd9cef4ebb562f0ef5c">CreateResultCoordinateSystem</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, const <a class="el" href="classviskores_1_1cont_1_1CoordinateSystem.html">viskores::cont::CoordinateSystem</a> &amp;resultCoordSystem, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
-<tr class="memdesc:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#a09a3adeb07b3ffd9cef4ebb562f0ef5c">More...</a><br /></td></tr>
-<tr class="separator:a09a3adeb07b3ffd9cef4ebb562f0ef5c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename FieldMapper &gt; </td></tr>
-<tr class="memitem:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#ac166dc462d825cffb35701017d912099">CreateResultCoordinateSystem</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;inDataSet, const <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html">viskores::cont::UnknownCellSet</a> &amp;resultCellSet, const std::string &amp;coordsName, const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;coordsData, FieldMapper &amp;&amp;fieldMapper) const</td></tr>
-<tr class="memdesc:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the output data set for <code>DoExecute</code>.  <a href="classviskores_1_1filter_1_1Filter.html#ac166dc462d825cffb35701017d912099">More...</a><br /></td></tr>
-<tr class="separator:ac166dc462d825cffb35701017d912099 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a01866782b46fb387b11192cdbefa1ca6">GetFieldFromDataSet</a> (const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input) const</td></tr>
-<tr class="memdesc:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an input field from a <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> object.  <a href="classviskores_1_1filter_1_1Filter.html#a01866782b46fb387b11192cdbefa1ca6">More...</a><br /></td></tr>
-<tr class="separator:a01866782b46fb387b11192cdbefa1ca6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a08454a8acc7224b8ee4f7481a390c23a">GetFieldFromDataSet</a> (<a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> index, const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;input) const</td></tr>
-<tr class="memdesc:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an input field from a <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> object.  <a href="classviskores_1_1filter_1_1Filter.html#a08454a8acc7224b8ee4f7481a390c23a">More...</a><br /></td></tr>
-<tr class="separator:a08454a8acc7224b8ee4f7481a390c23a inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a352e61e711e070ef54291e970bf145dc inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a352e61e711e070ef54291e970bf145dc">DoExecutePartitions</a> (const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;inData)</td></tr>
-<tr class="separator:a352e61e711e070ef54291e970bf145dc inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a5fc8781cad13719eddfd02b84480833c">CastAndCallScalarField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input scalar field.  <a href="classviskores_1_1filter_1_1Filter.html#a5fc8781cad13719eddfd02b84480833c">More...</a><br /></td></tr>
-<tr class="separator:a5fc8781cad13719eddfd02b84480833c inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a23b5bee38aeb26a87641c9ecef4ff510">CastAndCallScalarField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input scalar field.  <a href="classviskores_1_1filter_1_1Filter.html#a23b5bee38aeb26a87641c9ecef4ff510">More...</a><br /></td></tr>
-<tr class="separator:a23b5bee38aeb26a87641c9ecef4ff510 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;viskores::IdComponent VecSize, typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a16e2041e42cad019f261c2f53d2ae2b6">CastAndCallVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input vector field.  <a href="classviskores_1_1filter_1_1Filter.html#a16e2041e42cad019f261c2f53d2ae2b6">More...</a><br /></td></tr>
-<tr class="separator:a16e2041e42cad019f261c2f53d2ae2b6 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;viskores::IdComponent VecSize, typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a37ab194a602c04481083cfb94ba6c045">CastAndCallVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to get the array from a filter's input vector field.  <a href="classviskores_1_1filter_1_1Filter.html#a37ab194a602c04481083cfb94ba6c045">More...</a><br /></td></tr>
-<tr class="separator:a37ab194a602c04481083cfb94ba6c045 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a6eeb38eb36eb5fc65f40277c1226e8e9">CastAndCallVariableVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> &amp;fieldArray, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is like <code>CastAndCallVecField</code> except that it can be used for a field of unknown vector size (or scalars).  <a href="classviskores_1_1filter_1_1Filter.html#a6eeb38eb36eb5fc65f40277c1226e8e9">More...</a><br /></td></tr>
-<tr class="separator:a6eeb38eb36eb5fc65f40277c1226e8e9 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplParams" colspan="2">template&lt;typename Functor , typename... Args&gt; </td></tr>
-<tr class="memitem:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a1442151fef2c1a08bd862a259f7f6cc4">CastAndCallVariableVecField</a> (const <a class="el" href="classviskores_1_1cont_1_1Field.html">viskores::cont::Field</a> &amp;field, Functor &amp;&amp;functor, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is like <code>CastAndCallVecField</code> except that it can be used for a field of unknown vector size (or scalars).  <a href="classviskores_1_1filter_1_1Filter.html#a1442151fef2c1a08bd862a259f7f6cc4">More...</a><br /></td></tr>
-<tr class="separator:a1442151fef2c1a08bd862a259f7f6cc4 inherit pro_methods_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html">viskores::filter::flow::FilterParticleAdvection</a></td></tr>
+<tr class="memitem:aba2b1bca59f0066056966adf5e759d4a inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#aba2b1bca59f0066056966adf5e759d4a">BlockIdsSet</a> = false</td></tr>
+<tr class="separator:aba2b1bca59f0066056966adf5e759d4a inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049f094ce4575112ebfba08805561e83 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a049f094ce4575112ebfba08805561e83">BlockIds</a></td></tr>
+<tr class="separator:a049f094ce4575112ebfba08805561e83 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99eab26bbf3338dbc49919f00046894d inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">viskores::filter::flow::internal::BoundsMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a99eab26bbf3338dbc49919f00046894d">BoundsMap</a></td></tr>
+<tr class="separator:a99eab26bbf3338dbc49919f00046894d inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb378e6b78bf416149b42252f2d11d1 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#affb378e6b78bf416149b42252f2d11d1">NumberOfSteps</a> = 0</td></tr>
+<tr class="separator:affb378e6b78bf416149b42252f2d11d1 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb9870ab695d34becc6fc3140c8a63be inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#afb9870ab695d34becc6fc3140c8a63be">Seeds</a></td></tr>
+<tr class="separator:afb9870ab695d34becc6fc3140c8a63be inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183556685fcd86e1da3de4b8f47e0f99 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores_1_1filter_1_1flow.html#a4e37810326beb7d309a898b8aabbf2c3">viskores::filter::flow::IntegrationSolverType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a183556685fcd86e1da3de4b8f47e0f99">SolverType</a></td></tr>
+<tr class="separator:a183556685fcd86e1da3de4b8f47e0f99 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6101569a3aac4a33fc6ad31f5059463d inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a6101569a3aac4a33fc6ad31f5059463d">StepSize</a> = 0</td></tr>
+<tr class="separator:a6101569a3aac4a33fc6ad31f5059463d inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95536875c7551f6000419e4f752baed3 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a95536875c7551f6000419e4f752baed3">UseThreadedAlgorithm</a> = false</td></tr>
+<tr class="separator:a95536875c7551f6000419e4f752baed3 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a517614575fe22987b664bb2ca345f7 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores_1_1filter_1_1flow.html#a347734226be54c2a5986ec370d78b55d">viskores::filter::flow::VectorFieldType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection.html#a5a517614575fe22987b664bb2ca345f7">VecFieldType</a></td></tr>
+<tr class="separator:a5a517614575fe22987b664bb2ca345f7 inherit pro_attribs_classviskores_1_1filter_1_1flow_1_1FilterParticleAdvection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classviskores_1_1filter_1_1Filter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classviskores_1_1filter_1_1Filter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classviskores_1_1filter_1_1Filter.html">viskores::filter::Filter</a></td></tr>
 <tr class="memitem:a122f8d1ef77b7bb7f87c5279bc8f8f12 inherit pro_attribs_classviskores_1_1filter_1_1Filter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1cont_1_1Invoker.html">viskores::cont::Invoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1filter_1_1Filter.html#a122f8d1ef77b7bb7f87c5279bc8f8f12">Invoke</a></td></tr>
 <tr class="separator:a122f8d1ef77b7bb7f87c5279bc8f8f12 inherit pro_attribs_classviskores_1_1filter_1_1Filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,8 +334,8 @@ Additional Inherited Members</h2></td></tr>
 <p>This filter takes as input a velocity vector field and seed locations. The seed locations should be arranged in a line or curve. The filter then traces the path each seed point would take if moving at the velocity specified by the field and connects all the lines together into a surface. Mathematically, this is the surface that is tangent to the velocity field everywhere.</p>
 <p>The output of this filter is a <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> containing a mesh for the created surface. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a764d76362179b60b159a5a19748945ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a764d76362179b60b159a5a19748945ae">&#9670;&nbsp;</a></span>DoExecute()</h2>
+<a id="a303a236d8ade3114ec76a79e4618c58a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303a236d8ade3114ec76a79e4618c58a">&#9670;&nbsp;</a></span>DoExecutePartitions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,218 +344,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> viskores::filter::flow::StreamSurface::DoExecute </td>
+          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> viskores::filter::flow::StreamSurface::DoExecutePartitions </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1cont_1_1PartitionedDataSet.html">viskores::cont::PartitionedDataSet</a> &amp;&#160;</td>
           <td class="paramname"><em>inData</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classviskores_1_1filter_1_1Filter.html#a9ed1cf9cb66af903ab03e4157f3032af">viskores::filter::Filter</a>.</p>
-
-</div>
-</div>
-<a id="adefa375b13414ba1248df67acd0705d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adefa375b13414ba1248df67acd0705d6">&#9670;&nbsp;</a></span>SetNumberOfSteps()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void viskores::filter::flow::StreamSurface::SetNumberOfSteps </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a>&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specifies the maximum number of integration steps for each particle. </p>
-<p>Some particle paths may loop and continue indefinitely. This parameter sets an upper limit on the total length of advection. </p>
-
-</div>
-</div>
-<a id="a20ceedb25d3e17f0a2a538466b401b47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20ceedb25d3e17f0a2a538466b401b47">&#9670;&nbsp;</a></span>SetSeeds() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ParticleType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void viskores::filter::flow::StreamSurface::SetSeeds </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; ParticleType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>seeds</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94">viskores::CopyFlag</a>&#160;</td>
-          <td class="paramname"><em>copyFlag</em> = <code><a class="el" href="namespaceviskores.html#a113186fd6accb2e5880e81dd7cdb1c94a521c36a31c2762741cf0f8890cbe05e3">viskores::CopyFlag::On</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify the seed locations for the particle advection. </p>
-<p>Each seed represents one particle that is advected by the vector field. The particles are represented by a <code><a class="el" href="classviskores_1_1Particle.html">viskores::Particle</a></code> object. </p>
-
-</div>
-</div>
-<a id="a5e157da8f04fc57fee33bcd0ae2d5e9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e157da8f04fc57fee33bcd0ae2d5e9f">&#9670;&nbsp;</a></span>SetSeeds() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ParticleType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void viskores::filter::flow::StreamSurface::SetSeeds </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; ParticleType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>seeds</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify the seed locations for the particle advection. </p>
-<p>Each seed represents one particle that is advected by the vector field. The particles are represented by a <code><a class="el" href="classviskores_1_1Particle.html">viskores::Particle</a></code> object. </p>
-
-</div>
-</div>
-<a id="a8a185711049780c7a089060ed7cad263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a185711049780c7a089060ed7cad263">&#9670;&nbsp;</a></span>SetStepSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void viskores::filter::flow::StreamSurface::SetStepSize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a>&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specifies the step size used for the numerical integrator. </p>
-<p>The numerical integrators operate by advancing each particle by a finite amount. This parameter defines the distance to advance each time. Smaller values are more accurate but take longer to integrate. An appropriate step size is usually around the size of each cell. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ade767fdc5b2d8079425086edc5d8098a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade767fdc5b2d8079425086edc5d8098a">&#9670;&nbsp;</a></span>NumberOfSteps</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> viskores::filter::flow::StreamSurface::NumberOfSteps = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af1fc0bb412a4b9cfed457598952dd38e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1fc0bb412a4b9cfed457598952dd38e">&#9670;&nbsp;</a></span>Seeds</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html">viskores::cont::UnknownArrayHandle</a> viskores::filter::flow::StreamSurface::Seeds</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a336fb41b50af63e54008887b25d78181"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a336fb41b50af63e54008887b25d78181">&#9670;&nbsp;</a></span>StepSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceviskores.html#af6c632281522d90b3f50ad6396efa1d5">viskores::FloatDefault</a> viskores::filter::flow::StreamSurface::StepSize = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Reimplemented from <a class="el" href="classviskores_1_1filter_1_1Filter.html#a352e61e711e070ef54291e970bf145dc">viskores::filter::Filter</a>.</p>
 
 </div>
 </div>

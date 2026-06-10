@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -61,17 +61,25 @@ $(function() {
 : <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a57b3d1786e8d07428671e121510fffe4">viskores::rendering::Camera</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Wireframer.html#a37a550b7f49b4c01c1c91ec1595fe9f8">viskores::rendering::Wireframer</a>
 </li>
-<li>Camera2D
-: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a4ae7011247c4416ce6d51ed06e2bd383">viskores::rendering::Camera</a>
+<li>camera()
+: <a class="el" href="structviskores__device_1_1Camera.html#af72fcbfca2e05eba47e1c959d498531f">viskores_device::Camera</a>
 </li>
-<li>Camera2DStruct()
-: <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera2DStruct.html#a3f154af35b1e8eeb9afbaac4c07a7e15">viskores::rendering::Camera::Camera2DStruct</a>
+<li>Camera()
+: <a class="el" href="structviskores__device_1_1Camera.html#a74544ce3b61c9bcec55b301d393d784c">viskores_device::Camera</a>
+</li>
+<li>camera()
+: <a class="el" href="structviskores__device_1_1Orthographic.html#acc07781dbbb23d860c8733dedb090f04">viskores_device::Orthographic</a>
+, <a class="el" href="structviskores__device_1_1Perspective.html#a0ea0bee04062613bbad1a0eab1ff5fd7">viskores_device::Perspective</a>
+, <a class="el" href="structviskores__device_1_1UnknownCamera.html#aa51401d3d4d99531a35bbc4c381c67e3">viskores_device::UnknownCamera</a>
+</li>
+<li>Camera2D
+: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#af3f889e5c6f699ccac6bfb8ec8233f59">viskores::rendering::Camera</a>
 </li>
 <li>Camera3D
-: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a255c5612f3a32e5a61b0b2379d47420e">viskores::rendering::Camera</a>
+: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a2cb770465906359b325ef88452ff2de4">viskores::rendering::Camera</a>
 </li>
-<li>Camera3DStruct()
-: <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera3DStruct.html#a2d5c494cb460ecceef665fdcc32ba672">viskores::rendering::Camera::Camera3DStruct</a>
+<li>cameras
+: <a class="el" href="structviskores__device_1_1ViskoresDeviceGlobalState_1_1ObjectCounts.html#af100d735c777b079b5b4f8d8e5bd5871">viskores_device::ViskoresDeviceGlobalState::ObjectCounts</a>
 </li>
 <li>CanContinue()
 : <a class="el" href="classviskores_1_1ParticleStatus.html#abdc74323d877b0aa03c225e652824bf7">viskores::ParticleStatus</a>
@@ -102,6 +110,7 @@ $(function() {
 , <a class="el" href="classviskores_1_1rendering_1_1TextRenderer.html#a7af887ea36c4c0c066d8a8cd8ca4979e">viskores::rendering::TextRenderer</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Wireframer.html#a20e2aa98f7cc4816b0818d478c773280">viskores::rendering::Wireframer</a>
 , <a class="el" href="classviskores_1_1rendering_1_1WorldAnnotator.html#a49229e6dda9edc647108e7182d968f0d">viskores::rendering::WorldAnnotator</a>
+, <a class="el" href="structviskores__device_1_1Frame.html#af56d1ecabf482bead48b74fab8b5f6b3">viskores_device::Frame</a>
 </li>
 <li>CanvasRayTracer()
 : <a class="el" href="classviskores_1_1rendering_1_1CanvasRayTracer.html#aee31e3543b93f430d991143b8ee8a4d5">viskores::rendering::CanvasRayTracer</a>
@@ -213,7 +222,11 @@ $(function() {
 , <a class="el" href="classviskores_1_1cont_1_1CellLocatorUniformBins.html#a3699c20300678363843226be8d816b22">viskores::cont::CellLocatorUniformBins</a>
 , <a class="el" href="classviskores_1_1exec_1_1CellLocatorBoundingIntervalHierarchy.html#aa46bdfb100986b2b5289eabfa46a34cd">viskores::exec::CellLocatorBoundingIntervalHierarchy&lt; CellSetType &gt;</a>
 , <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a318dee285b00c62577485078249bc112">viskores::exec::CellLocatorTwoLevel&lt; CellStructureType &gt;</a>
+, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1WriteCellAndParametric.html#a15a59b4ffefc8c3408c1c290c4961415">viskores::exec::CellLocatorTwoLevel&lt; CellStructureType &gt;::WriteCellAndParametric&lt; CellIdVecType, ParametricCoordsVecType &gt;</a>
+, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1WriteCellIdOnly.html#a0fce7055a0623035621a306c43b81db2">viskores::exec::CellLocatorTwoLevel&lt; CellStructureType &gt;::WriteCellIdOnly&lt; CellIdVecType &gt;</a>
 , <a class="el" href="classviskores_1_1exec_1_1CellLocatorUniformBins.html#a421d63f75634c0068f89398398ea4f1a">viskores::exec::CellLocatorUniformBins&lt; CellStructureType &gt;</a>
+, <a class="el" href="structviskores_1_1exec_1_1CellLocatorUniformBins_1_1WriteCellAndParametric.html#a183507e19d93975b855ffcc2b406a300">viskores::exec::CellLocatorUniformBins&lt; CellStructureType &gt;::WriteCellAndParametric&lt; CellIdVecType, ParametricCoordsVecType &gt;</a>
+, <a class="el" href="structviskores_1_1exec_1_1CellLocatorUniformBins_1_1WriteCellIdOnly.html#a217ac43011bcbc3042b4a75c7ea3279b">viskores::exec::CellLocatorUniformBins&lt; CellStructureType &gt;::WriteCellIdOnly&lt; CellIdVecType &gt;</a>
 , <a class="el" href="structviskores_1_1exec_1_1twolevelgrid_1_1TwoLevelUniformGridExecutionObject.html#a59b4c9b613717ed6a3b31bea3ec9742e">viskores::exec::twolevelgrid::TwoLevelUniformGridExecutionObject&lt; Device &gt;</a>
 </li>
 <li>CellIndex
@@ -228,7 +241,7 @@ $(function() {
 : <a class="el" href="structviskores_1_1exec_1_1CellLocatorBoundingIntervalHierarchyNode.html#a948bd518b16af7d4968341da80a2ac65">viskores::exec::CellLocatorBoundingIntervalHierarchyNode</a>
 </li>
 <li>CellLocatorExecList
-: <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a3b4da7aed23b4c693f86e843b9036dfb">viskores::cont::CellLocatorBoundingIntervalHierarchy</a>
+: <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#aa64071bd23c7467a5260606904e0b28d">viskores::cont::CellLocatorBoundingIntervalHierarchy</a>
 , <a class="el" href="classviskores_1_1cont_1_1CellLocatorTwoLevel.html#a3f240c34640af41f56037631c09ec110">viskores::cont::CellLocatorTwoLevel</a>
 , <a class="el" href="classviskores_1_1cont_1_1CellLocatorUniformBins.html#a3f20f2ec27a150a2515e7372553a950e">viskores::cont::CellLocatorUniformBins</a>
 </li>
@@ -295,7 +308,7 @@ $(function() {
 , <a class="el" href="classviskores_1_1cont_1_1CellLocatorUniformBins.html#a5cdd6e11f271a29050c0918bdf2fe591">viskores::cont::CellLocatorUniformBins</a>
 </li>
 <li>CellSetExplicit()
-: <a class="el" href="classviskores_1_1cont_1_1CellSetExplicit.html#a3c129df47050ed7228922146b0617431">viskores::cont::CellSetExplicit&lt; ShapesStorageTag, ConnectivityStorageTag, OffsetsStorageTag &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1CellSetExplicit.html#a1d5bb9875f53808dc1d0137d6c2fac67">viskores::cont::CellSetExplicit&lt; ShapesStorageTag, ConnectivityStorageTag, OffsetsStorageTag &gt;</a>
 </li>
 <li>CellSetExtrude()
 : <a class="el" href="classviskores_1_1cont_1_1CellSetExtrude.html#a7682120c435f97d5028ce5ce503783ab">viskores::cont::CellSetExtrude</a>
@@ -507,9 +520,16 @@ $(function() {
 , <a class="el" href="classviskores_1_1rendering_1_1BoundingBoxAnnotation.html#a73490d61d3111e8d9cc809d13eab19db">viskores::rendering::BoundingBoxAnnotation</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Color.html#aa6db16d0e3315e6d6289b62d0314cb9e">viskores::rendering::Color</a>
 </li>
+<li>color()
+: <a class="el" href="structviskores__device_1_1MatteMaterial.html#a9365713568f8a15322d22daaad63b923">viskores_device::MatteMaterial</a>
+, <a class="el" href="structviskores__device_1_1PixelSample.html#ac0d9be98d280c8faa4b7acb7b62f8395">viskores_device::PixelSample</a>
+</li>
 <li>ColorArrayType
 : <a class="el" href="classviskores_1_1io_1_1ImageReaderBase.html#add2d638066c676baecfc20a45c0ace37">viskores::io::ImageReaderBase</a>
 , <a class="el" href="classviskores_1_1io_1_1ImageWriterBase.html#a5cd840b3abf55e1468406379995915f6">viskores::io::ImageWriterBase</a>
+</li>
+<li>colorAttribute()
+: <a class="el" href="structviskores__device_1_1MatteMaterial.html#a9f6176f54860d0b7033add05fbf54194">viskores_device::MatteMaterial</a>
 </li>
 <li>ColorBarAnnotation
 : <a class="el" href="classviskores_1_1rendering_1_1Canvas.html#a1e2d9ae5ec2e1673392c013a832db818">viskores::rendering::Canvas</a>
@@ -556,6 +576,32 @@ $(function() {
 <li>CombineSummaries()
 : <a class="el" href="structviskores_1_1cont_1_1openmp_1_1scan_1_1ScanExclusiveBody.html#a03113884f5692318bd20c3789f990c78">viskores::cont::openmp::scan::ScanExclusiveBody&lt; InPortalT, OutPortalT, RawFunctorT &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1openmp_1_1scan_1_1ScanInclusiveBody.html#adb3add5c111096007fa523d2d7f68d4b">viskores::cont::openmp::scan::ScanInclusiveBody&lt; InPortalT, OutPortalT, RawFunctorT &gt;</a>
+</li>
+<li>commitParameters()
+: <a class="el" href="structviskores__device_1_1Camera.html#a33ce981cec9ef928821578a8c95c4a36">viskores_device::Camera</a>
+, <a class="el" href="structviskores__device_1_1Cylinder.html#a2ed97f354383092db749d331678f305b">viskores_device::Cylinder</a>
+, <a class="el" href="structviskores__device_1_1Frame.html#a104db538ac572d46a781512adbfa1347">viskores_device::Frame</a>
+, <a class="el" href="structviskores__device_1_1Geometry.html#a82a0bb90c76ab60fae97b4b0cc7c87f3">viskores_device::Geometry</a>
+, <a class="el" href="classviskores__device_1_1Geometry_1_1FieldArrayParameters.html#ad9009fb87e576239c4c5bc6b28d7badc">viskores_device::Geometry::FieldArrayParameters</a>
+, <a class="el" href="structviskores__device_1_1Group.html#a8be34a81a3ee68c99371fb08afd95588">viskores_device::Group</a>
+, <a class="el" href="structviskores__device_1_1Image1DSampler.html#a32a37a8f88eafd19e5d9cccc960a75c3">viskores_device::Image1DSampler</a>
+, <a class="el" href="structviskores__device_1_1Instance.html#ac8049082e4393d14c76bc1a811f0a99e">viskores_device::Instance</a>
+, <a class="el" href="structviskores__device_1_1MatteMaterial.html#a4cb4d20cb1c47e66b2c06da5aaf5520b">viskores_device::MatteMaterial</a>
+, <a class="el" href="structviskores__device_1_1Orthographic.html#ab33cd9166a5c3248aa11b63087d0e6cf">viskores_device::Orthographic</a>
+, <a class="el" href="structviskores__device_1_1Perspective.html#ad7df34aa26fc2797d2ef487536d441f6">viskores_device::Perspective</a>
+, <a class="el" href="structviskores__device_1_1Quad.html#a12c7d8c45ca6d7ed2e53572f9a82a20d">viskores_device::Quad</a>
+, <a class="el" href="structviskores__device_1_1Renderer.html#a37ba947605723720d87a1a5fcf40ae83">viskores_device::Renderer</a>
+, <a class="el" href="structviskores__device_1_1Sampler.html#abe86e210feccb32df6ad51dc251d7c02">viskores_device::Sampler</a>
+, <a class="el" href="structviskores__device_1_1Sphere.html#a02fa87e7f1b0252c2681d5627aef2dd7">viskores_device::Sphere</a>
+, <a class="el" href="structviskores__device_1_1StructuredRegularField.html#a20747b318b0cbfdf000a733927f57dbb">viskores_device::StructuredRegularField</a>
+, <a class="el" href="structviskores__device_1_1Surface.html#aa6af56e383664e134d24cb9a1d4f4226">viskores_device::Surface</a>
+, <a class="el" href="structviskores__device_1_1TransferFunction1D.html#a320446256f8a2a6ecbe854297d87aa07">viskores_device::TransferFunction1D</a>
+, <a class="el" href="structviskores__device_1_1Triangle.html#a17162d7c9dee8871c14e6bcc68fbbcab">viskores_device::Triangle</a>
+, <a class="el" href="structviskores__device_1_1UnknownGeometry.html#a16e7c571bbc20059d67c44f8dd1d754a">viskores_device::UnknownGeometry</a>
+, <a class="el" href="structviskores__device_1_1UnknownObject.html#acbf2125486dded4ac0ad0c425425ccbb">viskores_device::UnknownObject</a>
+, <a class="el" href="structviskores__device_1_1UnknownSpatialField.html#abb37640c47f7b9c50f8c30019836565d">viskores_device::UnknownSpatialField</a>
+, <a class="el" href="structviskores__device_1_1Volume.html#a1834f69c4c225822bd939d850b54abfb">viskores_device::Volume</a>
+, <a class="el" href="structviskores__device_1_1World.html#ace45b6835b68490f63dd9e33cb9f5f94">viskores_device::World</a>
 </li>
 <li>CompactPointFields
 : <a class="el" href="classviskores_1_1filter_1_1clean__grid_1_1CleanGrid.html#ac606c1264b643f1df96a115f4ce9e56b">viskores::filter::clean_grid::CleanGrid</a>
@@ -678,10 +724,10 @@ $(function() {
 : <a class="el" href="classviskores_1_1worklet_1_1KernelSplatterFilterUniformGrid_1_1ComputeLocalNeighborId.html#a1c10274b7a0829eaaec411308d1d3ed4">viskores::worklet::KernelSplatterFilterUniformGrid&lt; Kernel, DeviceAdapter &gt;::ComputeLocalNeighborId</a>
 </li>
 <li>ComputeLocalTree()
-: <a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#aee597835ba291be2d38f60e24f3139e7">viskores::filter::scalar_topology::ContourTreeUniformDistributed</a>
+: <a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#ad6f2fad59ffb7283f17a05565851273d">viskores::filter::scalar_topology::ContourTreeUniformDistributed</a>
 </li>
 <li>ComputeLocalTreeImpl()
-: <a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a968b1cde328c9086adb0ffc83591970c">viskores::filter::scalar_topology::ContourTreeUniformDistributed</a>
+: <a class="el" href="classviskores_1_1filter_1_1scalar__topology_1_1ContourTreeUniformDistributed.html#a8a5f4f4569d889c7fcdca8eefdd37880">viskores::filter::scalar_topology::ContourTreeUniformDistributed</a>
 </li>
 <li>ComputeMidpoint()
 : <a class="el" href="structviskores_1_1cont_1_1openmp_1_1scan_1_1Adder.html#a3a4b0677096990fb3f54674b0123d6f2">viskores::cont::openmp::scan::Adder&lt; ScanBody &gt;</a>
@@ -755,7 +801,7 @@ $(function() {
 : <a class="el" href="classviskores_1_1exec_1_1ConnectivityExtrude.html#a5fa5421b9684ed7256e0d75e81dca02c">viskores::exec::ConnectivityExtrude</a>
 </li>
 <li>ConnectivityPermutedVisitCellsWithPoints()
-: <a class="el" href="classviskores_1_1exec_1_1ConnectivityPermutedVisitCellsWithPoints.html#a6accbf4e14ac66ad519e9707d6f213d3">viskores::exec::ConnectivityPermutedVisitCellsWithPoints&lt; PermutationPortal, OriginalConnectivity &gt;</a>
+: <a class="el" href="classviskores_1_1exec_1_1ConnectivityPermutedVisitCellsWithPoints.html#a83240d6f19b3d89cab1e5ddd7197c704">viskores::exec::ConnectivityPermutedVisitCellsWithPoints&lt; PermutationPortal, OriginalConnectivity &gt;</a>
 </li>
 <li>ConnectivityPermutedVisitPointsWithCells()
 : <a class="el" href="classviskores_1_1exec_1_1ConnectivityPermutedVisitPointsWithCells.html#a91237b22d155921bd9a203ad00f683e1">viskores::exec::ConnectivityPermutedVisitPointsWithCells&lt; ConnectivityPortalType, OffsetPortalType &gt;</a>
@@ -860,13 +906,6 @@ $(function() {
 , <a class="el" href="classviskores_1_1rendering_1_1Quadralizer_1_1CountQuads.html#adce6eb8538ba872ba077a2d4287e431a">viskores::rendering::Quadralizer::CountQuads</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Quadralizer_1_1Quadralize.html#aaae2c84d7a4d971bf5fc48aa0bf7fca1">viskores::rendering::Quadralizer::Quadralize</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Quadralizer_1_1SegmentedStructured.html#a343ace273cf7343d392fc0ba2f6f6ebc">viskores::rendering::Quadralizer::SegmentedStructured&lt; DIM &gt;</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1CountTriangles.html#a26f577935a5d531048183bfc8aa70611">viskores::rendering::Triangulator::CountTriangles</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1IndicesSort.html#a84b416a373cb5f93e46e7f9b21da3953">viskores::rendering::Triangulator::IndicesSort</a>
-, <a class="el" href="structviskores_1_1rendering_1_1Triangulator_1_1InterleaveArrays12.html#a4dabbba5b9f69d59cd9282e03a38c9b8">viskores::rendering::Triangulator::InterleaveArrays12</a>
-, <a class="el" href="structviskores_1_1rendering_1_1Triangulator_1_1InterleaveArrays2.html#a2807cdbf4da030273986dced748aea49">viskores::rendering::Triangulator::InterleaveArrays2</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1Triangulate.html#a194d571cf08c95fc7370ad6bbe913ab9">viskores::rendering::Triangulator::Triangulate</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1TriangulateStructured.html#a005864d722a0b7b4db27a4ffd924e6a1">viskores::rendering::Triangulator::TriangulateStructured&lt; DIM &gt;</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1UniqueTriangles.html#ab77f6c6071a3d55273ad8b92b625f234">viskores::rendering::Triangulator::UniqueTriangles</a>
 , <a class="el" href="structviskores_1_1worklet_1_1AverageByKey_1_1AverageWorklet.html#a9e2b6e5c2bba8f14fe3c25105c74f498">viskores::worklet::AverageByKey::AverageWorklet</a>
 , <a class="el" href="classviskores_1_1worklet_1_1AveragePointNeighborhood.html#a0fcbd287c6c3624740eb9c71c8c78a93">viskores::worklet::AveragePointNeighborhood</a>
 , <a class="el" href="structviskores_1_1worklet_1_1CellDeepCopy_1_1CountCellPoints.html#a1a4c7b73fb36870be4c5b1b4c2a93977">viskores::worklet::CellDeepCopy::CountCellPoints</a>
@@ -924,7 +963,7 @@ $(function() {
 : <a class="el" href="classviskores_1_1cont_1_1DataSet.html#a94d30abab34d23e9defaedd46d769153">viskores::cont::DataSet</a>
 </li>
 <li>Copy()
-: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#aeb1d0f59d37e721302d80fd8a37ca7f3">viskores::cont::Algorithm</a>
+: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#adec6c07cb5731d3670a38fcd2674f515">viskores::cont::Algorithm</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm.html#a3a3dc5a8bc0fdec96a9a7014f6dc978c">viskores::cont::DeviceAdapterAlgorithm&lt; DeviceAdapterTag &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#a59724bd6d407790679cfaba26c3ac250">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagKokkos_01_4.html#a875a6cd0f42a622820e9fc7b2450901d">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagKokkos &gt;</a>
@@ -936,22 +975,22 @@ $(function() {
 : <a class="el" href="structviskores_1_1cont_1_1tbb_1_1CopyBody.html#acb9669f2770b9532e43f058ff74d8103">viskores::cont::tbb::CopyBody&lt; InputPortalType, OutputPortalType &gt;</a>
 </li>
 <li>CopyIf()
-: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#acb1a1af73088104e250dd42a1ff65ac2">viskores::cont::Algorithm</a>
+: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#af7700c30e050294f17dfa15cae53b28d">viskores::cont::Algorithm</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm.html#a83ca92eaac87182ac3305cfd37236777">viskores::cont::DeviceAdapterAlgorithm&lt; DeviceAdapterTag &gt;</a>
-, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#ad377f20f96eb477858fec5d7e8bc222a">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
+, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#afb7ffa6bb743db0d08a7717b9c11d51a">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagOpenMP_01_4.html#a054c0c0db2e9bb0243d5c5f21c878f30">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagOpenMP &gt;</a>
-, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagSerial_01_4.html#a0c055a19223562bfb549fdf85084f181">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagSerial &gt;</a>
-, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagTBB_01_4.html#afeb1088475f06a3ce2ab8a136abe173a">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagTBB &gt;</a>
+, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagSerial_01_4.html#a3a167b3316924dab123d822f9a317e9f">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagSerial &gt;</a>
+, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagTBB_01_4.html#a0b2dfd4e27525b0ca2a0a9936d6ba56e">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagTBB &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1openmp_1_1CopyIfHelper.html#a9ea11e5649591b040585f5a18f05138f">viskores::cont::openmp::CopyIfHelper</a>
 </li>
 <li>CopyIfBody()
-: <a class="el" href="structviskores_1_1cont_1_1tbb_1_1CopyIfBody.html#ab110fb46884ccae2a49897739a1c593c">viskores::cont::tbb::CopyIfBody&lt; InputPortalType, StencilPortalType, OutputPortalType, UnaryPredicateType &gt;</a>
+: <a class="el" href="structviskores_1_1cont_1_1tbb_1_1CopyIfBody.html#aecf2b340ea1bd5843b5bfb78426f7057">viskores::cont::tbb::CopyIfBody&lt; InputPortalType, StencilPortalType, OutputPortalType, UnaryPredicateType &gt;</a>
 </li>
 <li>CopyIfHelper()
 : <a class="el" href="structviskores_1_1cont_1_1openmp_1_1CopyIfHelper.html#ad8f597abdc573ab7a6d93e2569dbfff9">viskores::cont::openmp::CopyIfHelper</a>
 </li>
 <li>CopyIfPortal()
-: <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#a3bd9a856d01b5f38164c51fb0479254c">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
+: <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#a4626e9424492418ddab5d046632760ad">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
 </li>
 <li>CopyInto()
 : <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderRectilinear.html#ad180747b2d831e2d3e75b7ae88bad928">viskores::cont::DataSetBuilderRectilinear</a>
@@ -982,7 +1021,7 @@ $(function() {
 : <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#af24d626a3b1fe1847beff789f8cdd2da">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
 </li>
 <li>CopyShallowIfPossible()
-: <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#accbb666a783d2edbc1e7143b81446015">viskores::cont::UnknownArrayHandle</a>
+: <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a8cb095150dde32160fdc99fa0b78858c">viskores::cont::UnknownArrayHandle</a>
 </li>
 <li>CopyStateFrom()
 : <a class="el" href="classviskores_1_1cont_1_1RuntimeDeviceTracker.html#a600a3f37865901a193915017bf4d2e2b">viskores::cont::RuntimeDeviceTracker</a>
@@ -1019,7 +1058,7 @@ $(function() {
 : <a class="el" href="classviskores_1_1rendering_1_1Cylinderizer_1_1CountSegments.html#a4008761e73870258ca048ab75cc1b75b">viskores::rendering::Cylinderizer::CountSegments</a>
 </li>
 <li>CountSetBits()
-: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#a14f707c27365f4ee4f16246b713dcf48">viskores::cont::Algorithm</a>
+: <a class="el" href="structviskores_1_1cont_1_1Algorithm.html#ae0597b7a2673c455f99e547ff9475cd5">viskores::cont::Algorithm</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm.html#af6e3dfa8ae3c3ecc09c59b6358a8c071">viskores::cont::DeviceAdapterAlgorithm&lt; DeviceAdapterTag &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagCuda_01_4.html#a66d12066853f127b747dfb2b7e6b87ee">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagCuda &gt;</a>
 , <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagKokkos_01_4.html#a2b99a9c69a0524945d11fb0d5ea8e4e8">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagKokkos &gt;</a>
@@ -1033,18 +1072,15 @@ $(function() {
 <li>CountsPortalType
 : <a class="el" href="classviskores_1_1exec_1_1ReverseConnectivityExtrude.html#a1f359c93739a5f9ea0b956cf24c8abb3">viskores::exec::ReverseConnectivityExtrude</a>
 </li>
-<li>CountTriangles()
-: <a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1CountTriangles.html#a3f2f4dbd23723853a1fa073f4ef715a8">viskores::rendering::Triangulator::CountTriangles</a>
-</li>
 <li>CountTypes
 : <a class="el" href="structviskores_1_1worklet_1_1ScatterCounting.html#a95d1a287f8709a2f1495e01d5a61f058">viskores::worklet::ScatterCounting</a>
 </li>
 <li>Create()
-: <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderCurvilinear.html#a5f3774530bb747f73bf72d76a8631f13">viskores::cont::DataSetBuilderCurvilinear</a>
-, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderExplicit.html#a3d9220e439bd4bc6161036c576325dae">viskores::cont::DataSetBuilderExplicit</a>
+: <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderCurvilinear.html#ac0a31e8860cddb2827debcea3c1c1038">viskores::cont::DataSetBuilderCurvilinear</a>
+, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderExplicit.html#a83e6a24b1bb903f4f36cea6544e4a823">viskores::cont::DataSetBuilderExplicit</a>
 , <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderExplicitIterative.html#a67a403f4722adaa0afebc1e9a1f22b5b">viskores::cont::DataSetBuilderExplicitIterative</a>
-, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderRectilinear.html#a94719ecfd259c4c3d901860bf5cf8f11">viskores::cont::DataSetBuilderRectilinear</a>
-, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderUniform.html#a2f21a9d8cc4dc831a78af4753d488043">viskores::cont::DataSetBuilderUniform</a>
+, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderRectilinear.html#a8e3f0c6d68ea1142d4f2b11ff43a5571">viskores::cont::DataSetBuilderRectilinear</a>
+, <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderUniform.html#a909a4a134c17b90fd33587a29b438043">viskores::cont::DataSetBuilderUniform</a>
 </li>
 <li>CreateDataSet()
 : <a class="el" href="classviskores_1_1cont_1_1DataSetBuilderUniform.html#aa0c4bc3c79cb5c4ec8de762b725feefb">viskores::cont::DataSetBuilderUniform</a>
@@ -1055,6 +1091,16 @@ $(function() {
 <li>CreateFromPoints()
 : <a class="el" href="classviskores_1_1Frustum.html#afc84b9147d43ea4604bb077799d6283e">viskores::Frustum</a>
 </li>
+<li>createInstance()
+: <a class="el" href="structviskores__device_1_1Camera.html#aa00918784cd4acb485ab9fcf9a862c39">viskores_device::Camera</a>
+, <a class="el" href="structviskores__device_1_1Geometry.html#aad53ccff492353c1153d2b900963a2fc">viskores_device::Geometry</a>
+, <a class="el" href="structviskores__device_1_1Light.html#a14af28fcf63d693b606a2db5a58426e4">viskores_device::Light</a>
+, <a class="el" href="structviskores__device_1_1Material.html#ae8f8c04ffce0b4769b3682ee3e93533b">viskores_device::Material</a>
+, <a class="el" href="structviskores__device_1_1Renderer.html#ab75b50a8c0d9991c779fefe8a2d7008f">viskores_device::Renderer</a>
+, <a class="el" href="structviskores__device_1_1Sampler.html#a499d701777d8ad0a8fe8ad0d6b10d336">viskores_device::Sampler</a>
+, <a class="el" href="structviskores__device_1_1SpatialField.html#abe19f3b9202820da0ef21c747c9a2def">viskores_device::SpatialField</a>
+, <a class="el" href="structviskores__device_1_1Volume.html#a2705944aedd92199dc13c96507e8e4e1">viskores_device::Volume</a>
+</li>
 <li>CreateLiberation2Sans()
 : <a class="el" href="classviskores_1_1rendering_1_1BitmapFontFactory.html#a571a25b0ba6a95816c0786cf3f2c630d">viskores::rendering::BitmapFontFactory</a>
 </li>
@@ -1062,15 +1108,16 @@ $(function() {
 : <a class="el" href="structviskores_1_1rendering_1_1MatrixHelpers.html#a23fdf728405712bf3c719e0ded4af5cd">viskores::rendering::MatrixHelpers</a>
 </li>
 <li>CreateProjectionMatrix()
-: <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera2DStruct.html#a0653048b772834fe898b1bf52132c997">viskores::rendering::Camera::Camera2DStruct</a>
-, <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera3DStruct.html#abfaa95e5540d6c601ee315195a4e5b51">viskores::rendering::Camera::Camera3DStruct</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a109f79b829faa7534e648b0e4ce902db">viskores::rendering::Camera</a>
+: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a109f79b829faa7534e648b0e4ce902db">viskores::rendering::Camera</a>
+</li>
+<li>CreateRaytracingCamera()
+: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a4045e1a7f6a2b5475e27a5965c2b1406">viskores::rendering::Camera</a>
 </li>
 <li>CreateResult()
-: <a class="el" href="classviskores_1_1filter_1_1Filter.html#a0292134ef6d642d852fc5e17f46f280c">viskores::filter::Filter</a>
+: <a class="el" href="classviskores_1_1filter_1_1Filter.html#a838ec247e6d25281eecffe26374961a3">viskores::filter::Filter</a>
 </li>
 <li>CreateResultCoordinateSystem()
-: <a class="el" href="classviskores_1_1filter_1_1Filter.html#a09a3adeb07b3ffd9cef4ebb562f0ef5c">viskores::filter::Filter</a>
+: <a class="el" href="classviskores_1_1filter_1_1Filter.html#ac166dc462d825cffb35701017d912099">viskores::filter::Filter</a>
 </li>
 <li>CreateResultField()
 : <a class="el" href="classviskores_1_1filter_1_1Filter.html#a51d9cd432e624c6995d88cb379f33bd8">viskores::filter::Filter</a>
@@ -1085,9 +1132,7 @@ $(function() {
 : <a class="el" href="structviskores_1_1rendering_1_1MatrixHelpers.html#a7efa5a763a1c8629013a630cb4b169ca">viskores::rendering::MatrixHelpers</a>
 </li>
 <li>CreateViewMatrix()
-: <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera2DStruct.html#a011c0e220c6d51599a1474a26eb7cba3">viskores::rendering::Camera::Camera2DStruct</a>
-, <a class="el" href="structviskores_1_1rendering_1_1Camera_1_1Camera3DStruct.html#af5c131d88b34a4dd9968a079992bd83d">viskores::rendering::Camera::Camera3DStruct</a>
-, <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a32dd97ac5961d257d6712f5000e82623">viskores::rendering::Camera</a>
+: <a class="el" href="classviskores_1_1rendering_1_1Camera.html#a32dd97ac5961d257d6712f5000e82623">viskores::rendering::Camera</a>
 </li>
 <li>CreateWorldAnnotator()
 : <a class="el" href="classviskores_1_1rendering_1_1Canvas.html#a258deb159bc091fd8007e26f0d271ea7">viskores::rendering::Canvas</a>
@@ -1095,8 +1140,17 @@ $(function() {
 <li>CrossProduct()
 : <a class="el" href="classviskores_1_1filter_1_1vector__analysis_1_1CrossProduct.html#a254fd53fd51d92c9a1ec870f377c2b4c">viskores::filter::vector_analysis::CrossProduct</a>
 </li>
+<li>CubicInterpolate()
+: <a class="el" href="classviskores_1_1exec_1_1SplineEvaluateUniformGrid.html#aaf4840bc7dcc1ff1bfb87c39db9ec422">viskores::exec::SplineEvaluateUniformGrid</a>
+</li>
+<li>CubicInterpolateNonUniform()
+: <a class="el" href="classviskores_1_1exec_1_1SplineEvaluateRectilinearGrid.html#a0ed0913d1c926c4d81e1e26246f5d087">viskores::exec::SplineEvaluateRectilinearGrid</a>
+</li>
 <li>Current
 : <a class="el" href="structviskores_1_1interop_1_1anari_1_1ANARIMapper.html#a577c9895664124fd03a7845116f9f8bb">viskores::interop::anari::ANARIMapper</a>
+</li>
+<li>currentFrame
+: <a class="el" href="structviskores__device_1_1ViskoresDeviceGlobalState.html#a3ce822a57da1e5d702d283b678caae3a">viskores_device::ViskoresDeviceGlobalState</a>
 </li>
 <li>CustRes
 : <a class="el" href="classviskores_1_1filter_1_1flow_1_1Lagrangian.html#af96d14418a27379eaf872d7ca9c5c306">viskores::filter::flow::Lagrangian</a>
@@ -1108,7 +1162,8 @@ $(function() {
 : <a class="el" href="classviskores_1_1filter_1_1flow_1_1Lagrangian.html#ac215eea5c198a2f198fab1695e0ee527">viskores::filter::flow::Lagrangian</a>
 </li>
 <li>Cylinder()
-: <a class="el" href="classviskores_1_1Cylinder.html#ad052a09b707a9f8546e81961cb510351">viskores::Cylinder</a>
+: <a class="el" href="classviskores_1_1Cylinder.html#afbc682a59405756473c1894c55feee6a">viskores::Cylinder</a>
+, <a class="el" href="structviskores__device_1_1Cylinder.html#ad350b2811a80627ca721f26215828c1b">viskores_device::Cylinder</a>
 </li>
 <li>Cylinderize()
 : <a class="el" href="classviskores_1_1rendering_1_1Cylinderizer_1_1Cylinderize.html#a300c5f0804e69bbbf2a06c290b710844">viskores::rendering::Cylinderizer::Cylinderize</a>

@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -66,12 +66,22 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure capturing the location of a cell in the search structure.  <a href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1WriteCellAndParametric.html">WriteCellAndParametric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1WriteCellIdOnly.html">WriteCellIdOnly</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aff5bcdefa9e7a9d527b82b0c60fe00f5"><td class="memTemplParams" colspan="2">template&lt;typename CellSetType &gt; </td></tr>
 <tr class="memitem:aff5bcdefa9e7a9d527b82b0c60fe00f5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#aff5bcdefa9e7a9d527b82b0c60fe00f5">CellLocatorTwoLevel</a> (const viskores::internal::cl_uniform_bins::Grid &amp;topLevelGrid, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#af436e148dca39c53dacffdfd7a1835a4">DimVec3</a> &gt; &amp;leafDimensions, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;leafStartIndex, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;cellStartIndex, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;cellCount, const <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html">viskores::cont::ArrayHandle</a>&lt; <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &gt; &amp;cellIds, const CellSetType &amp;cellSet, const <a class="el" href="classviskores_1_1cont_1_1CoordinateSystem.html">viskores::cont::CoordinateSystem</a> &amp;coords, <a class="el" href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a> device, <a class="el" href="classviskores_1_1cont_1_1Token.html">viskores::cont::Token</a> &amp;token)</td></tr>
 <tr class="separator:aff5bcdefa9e7a9d527b82b0c60fe00f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bfea77d2ec0781d5793b966b669771"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ab2bfea77d2ec0781d5793b966b669771">FindCellId</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId) const</td></tr>
+<tr class="memdesc:ab2bfea77d2ec0781d5793b966b669771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the id of the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ab2bfea77d2ec0781d5793b966b669771">More...</a><br /></td></tr>
+<tr class="separator:ab2bfea77d2ec0781d5793b966b669771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6b21b87897acec11a69f0e95cb6fcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a1d6b21b87897acec11a69f0e95cb6fcb">FindCellId</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;lastCell) const</td></tr>
+<tr class="memdesc:a1d6b21b87897acec11a69f0e95cb6fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the id of the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a1d6b21b87897acec11a69f0e95cb6fcb">More...</a><br /></td></tr>
+<tr class="separator:a1d6b21b87897acec11a69f0e95cb6fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3038bf017fd34a56e171d04b0c1bfd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ae3038bf017fd34a56e171d04b0c1bfd2">FindCell</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId, <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;pCoords) const</td></tr>
 <tr class="memdesc:ae3038bf017fd34a56e171d04b0c1bfd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ae3038bf017fd34a56e171d04b0c1bfd2">More...</a><br /></td></tr>
 <tr class="separator:ae3038bf017fd34a56e171d04b0c1bfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -85,6 +95,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf15bb59c173f8b054be1c0bab70b1d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#adf15bb59c173f8b054be1c0bab70b1d8">FindAllCells</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec, ParametricCoordsVecType &amp;pCoordsVec) const</td></tr>
 <tr class="memdesc:adf15bb59c173f8b054be1c0bab70b1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the cell containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#adf15bb59c173f8b054be1c0bab70b1d8">More...</a><br /></td></tr>
 <tr class="separator:adf15bb59c173f8b054be1c0bab70b1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d588bec864ee9da3e9e3a51af8feb3b"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType &gt; </td></tr>
+<tr class="memitem:a8d588bec864ee9da3e9e3a51af8feb3b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a8d588bec864ee9da3e9e3a51af8feb3b">FindAllCellIds</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec) const</td></tr>
+<tr class="memdesc:a8d588bec864ee9da3e9e3a51af8feb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate all cell ids containing the provided point.  <a href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a8d588bec864ee9da3e9e3a51af8feb3b">More...</a><br /></td></tr>
+<tr class="separator:a8d588bec864ee9da3e9e3a51af8feb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -105,9 +119,29 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a3d09d435f972f92904d1fbaa4ee61b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a3d09d435f972f92904d1fbaa4ee61b41">FindCellImpl</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;lastCell, <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> *pCoords) const</td></tr>
+<tr class="separator:a3d09d435f972f92904d1fbaa4ee61b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d01888978219e117f8a6af85407d3ac"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType &gt; </td></tr>
+<tr class="memitem:a7d01888978219e117f8a6af85407d3ac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a7d01888978219e117f8a6af85407d3ac">InitializeAllCellIds</a> (CellIdsType &amp;cellIdVec) const</td></tr>
+<tr class="separator:a7d01888978219e117f8a6af85407d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f31567d621b261eb21163d809e35fd"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType , typename ParametricCoordsVecType &gt; </td></tr>
+<tr class="memitem:ab0f31567d621b261eb21163d809e35fd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ab0f31567d621b261eb21163d809e35fd">FindAllCellsImpl</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec, ParametricCoordsVecType &amp;pCoordsVec) const</td></tr>
+<tr class="separator:ab0f31567d621b261eb21163d809e35fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82341f7d7242a1a708503ccb1634ab74"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType &gt; </td></tr>
+<tr class="memitem:a82341f7d7242a1a708503ccb1634ab74"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a82341f7d7242a1a708503ccb1634ab74">FindAllCellsImpl</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec) const</td></tr>
+<tr class="separator:a82341f7d7242a1a708503ccb1634ab74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996dae12b5b105a55c8c8b6a580f32d7"><td class="memTemplParams" colspan="2">template&lt;typename CellIdsType , typename WriteHitType &gt; </td></tr>
+<tr class="memitem:a996dae12b5b105a55c8c8b6a580f32d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a996dae12b5b105a55c8c8b6a580f32d7">FindAllCellsImplCommon</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, CellIdsType &amp;cellIdVec, WriteHitType &amp;writeHit) const</td></tr>
+<tr class="separator:a996dae12b5b105a55c8c8b6a580f32d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5e8331c1e5ad3fae7fa6003fcc81db"><td class="memTemplParams" colspan="2">template&lt;typename CellIdVecType , typename WriteHitType &gt; </td></tr>
+<tr class="memitem:aab5e8331c1e5ad3fae7fa6003fcc81db"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#aab5e8331c1e5ad3fae7fa6003fcc81db">IterateLeavesImpl</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ad11a23a1ab7c497529b9d715eec2104b">IterateMode</a> &amp;mode, CellIdVecType &amp;cellIdVec, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;lastCell, WriteHitType &amp;writeHit) const</td></tr>
+<tr class="separator:aab5e8331c1e5ad3fae7fa6003fcc81db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9061e1d4403f28c35c040480f8a21e23"><td class="memTemplParams" colspan="2">template&lt;typename CellIdVecType , typename ParametricCoordsVecType &gt; </td></tr>
 <tr class="memitem:a9061e1d4403f28c35c040480f8a21e23"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a9061e1d4403f28c35c040480f8a21e23">IterateLeaves</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ad11a23a1ab7c497529b9d715eec2104b">IterateMode</a> &amp;mode, CellIdVecType &amp;cellIdVec, ParametricCoordsVecType &amp;pCoordsVec, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;lastCell) const</td></tr>
 <tr class="separator:a9061e1d4403f28c35c040480f8a21e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0679c047fb31f59e65a2b291b8aa85"><td class="memTemplParams" colspan="2">template&lt;typename CellIdVecType &gt; </td></tr>
+<tr class="memitem:a9b0679c047fb31f59e65a2b291b8aa85"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a9b0679c047fb31f59e65a2b291b8aa85">IterateLeavesCellIds</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ad11a23a1ab7c497529b9d715eec2104b">IterateMode</a> &amp;mode, CellIdVecType &amp;cellIdVec, <a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;lastCell) const</td></tr>
+<tr class="separator:a9b0679c047fb31f59e65a2b291b8aa85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a3ba6e021f7166ea722bce0f68527a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ab9a3ba6e021f7166ea722bce0f68527a">PointInCell</a> (const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;point, const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cid, <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;pCoords) const</td></tr>
 <tr class="separator:ab9a3ba6e021f7166ea722bce0f68527a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a074c91de3d6cd7522b055d00b0262443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a074c91de3d6cd7522b055d00b0262443">PointInLeaf</a> (const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;point, const <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;leafIdx, <a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;cellId, <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;pCoords) const</td></tr>
@@ -395,6 +429,49 @@ template&lt;typename CellStructureType &gt; </div>
 
 </div>
 </div>
+<a id="a8d588bec864ee9da3e9e3a51af8feb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d588bec864ee9da3e9e3a51af8feb3b">&#9670;&nbsp;</a></span>FindAllCellIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdsType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindAllCellIds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate all cell ids containing the provided point. </p>
+<p>This method returns the same cell ids as <code><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#adf15bb59c173f8b054be1c0bab70b1d8" title="Locate the cell containing the provided point.">FindAllCells()</a></code> without requiring parametric coordinates. </p>
+
+</div>
+</div>
 <a id="adf15bb59c173f8b054be1c0bab70b1d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf15bb59c173f8b054be1c0bab70b1d8">&#9670;&nbsp;</a></span>FindAllCells()</h2>
 
@@ -442,6 +519,138 @@ template&lt;typename CellIdsType , typename ParametricCoordsVecType &gt; </div>
 <p>Locate the cell containing the provided point. </p>
 <p>Find all cells containing the given point. This is typically used for non-manifold meshes with overlapping cells such as block boundaries.</p>
 <p>The <code>cellIds</code> parameter should be a Vec-like object with the number of entries set to the same size returned from <code>CountAllCells</code>. Often this means calling one worklet to count all the cells for some point, allocating the space for each point using a <code><a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVecVariable.html" title="Fancy array handle that groups values into vectors of different sizes.">viskores::cont::ArrayHandleGroupVecVariable</a></code>, and calling a second worklet to fill each <a class="el" href="classviskores_1_1Vec.html" title="A short fixed-length array.">Vec</a> with this method. </p>
+
+</div>
+</div>
+<a id="a82341f7d7242a1a708503ccb1634ab74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82341f7d7242a1a708503ccb1634ab74">&#9670;&nbsp;</a></span>FindAllCellsImpl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdsType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindAllCellsImpl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0f31567d621b261eb21163d809e35fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f31567d621b261eb21163d809e35fd">&#9670;&nbsp;</a></span>FindAllCellsImpl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdsType , typename ParametricCoordsVecType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindAllCellsImpl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ParametricCoordsVecType &amp;&#160;</td>
+          <td class="paramname"><em>pCoordsVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a996dae12b5b105a55c8c8b6a580f32d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996dae12b5b105a55c8c8b6a580f32d7">&#9670;&nbsp;</a></span>FindAllCellsImplCommon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdsType , typename WriteHitType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindAllCellsImplCommon </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceviskores.html#abb422027052141614ec406112a05576d">viskores::Vec3f</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WriteHitType &amp;&#160;</td>
+          <td class="paramname"><em>writeHit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -549,6 +758,174 @@ template&lt;typename CellStructureType &gt; </div>
 
 </div>
 </div>
+<a id="ab2bfea77d2ec0781d5793b966b669771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bfea77d2ec0781d5793b966b669771">&#9670;&nbsp;</a></span>FindCellId() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindCellId </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;&#160;</td>
+          <td class="paramname"><em>cellId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate the id of the cell containing the provided point. </p>
+<p>This method returns the same cell id as <code><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ae3038bf017fd34a56e171d04b0c1bfd2" title="Locate the cell containing the provided point.">FindCell()</a></code> without requiring the caller to provide parametric coordinates. </p>
+
+</div>
+</div>
+<a id="a1d6b21b87897acec11a69f0e95cb6fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6b21b87897acec11a69f0e95cb6fcb">&#9670;&nbsp;</a></span>FindCellId() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindCellId </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;&#160;</td>
+          <td class="paramname"><em>cellId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>lastCell</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate the id of the cell containing the provided point. </p>
+<p>This method returns the same cell id as <code><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ae3038bf017fd34a56e171d04b0c1bfd2" title="Locate the cell containing the provided point.">FindCell()</a></code> without requiring the caller to provide parametric coordinates. </p>
+
+</div>
+</div>
+<a id="a3d09d435f972f92904d1fbaa4ee61b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d09d435f972f92904d1fbaa4ee61b41">&#9670;&nbsp;</a></span>FindCellImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#a326828f704debd8ce9f6fa3970b1a7fa">viskores::ErrorCode</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::FindCellImpl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> &amp;&#160;</td>
+          <td class="paramname"><em>cellId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>lastCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> *&#160;</td>
+          <td class="paramname"><em>pCoords</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d01888978219e117f8a6af85407d3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d01888978219e117f8a6af85407d3ac">&#9670;&nbsp;</a></span>InitializeAllCellIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdsType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::InitializeAllCellIds </td>
+          <td>(</td>
+          <td class="paramtype">CellIdsType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9061e1d4403f28c35c040480f8a21e23"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9061e1d4403f28c35c040480f8a21e23">&#9670;&nbsp;</a></span>IterateLeaves()</h2>
 
@@ -591,6 +968,116 @@ template&lt;typename CellIdVecType , typename ParametricCoordsVecType &gt; </div
           <td></td>
           <td class="paramtype"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;&#160;</td>
           <td class="paramname"><em>lastCell</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b0679c047fb31f59e65a2b291b8aa85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0679c047fb31f59e65a2b291b8aa85">&#9670;&nbsp;</a></span>IterateLeavesCellIds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdVecType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::IterateLeavesCellIds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ad11a23a1ab7c497529b9d715eec2104b">IterateMode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdVecType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>lastCell</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab5e8331c1e5ad3fae7fa6003fcc81db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5e8331c1e5ad3fae7fa6003fcc81db">&#9670;&nbsp;</a></span>IterateLeavesImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CellStructureType &gt; </div>
+<div class="memtemplate">
+template&lt;typename CellIdVecType , typename WriteHitType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceviskores.html#aca2ec71d38de7693e10bc433f43dbf40">viskores::IdComponent</a> <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html">viskores::exec::CellLocatorTwoLevel</a>&lt; CellStructureType &gt;::IterateLeavesImpl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#a38ea6eec0e0f78a2b224cbfaea6956f4">FloatVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classviskores_1_1exec_1_1CellLocatorTwoLevel.html#ad11a23a1ab7c497529b9d715eec2104b">IterateMode</a> &amp;&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CellIdVecType &amp;&#160;</td>
+          <td class="paramname"><em>cellIdVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structviskores_1_1exec_1_1CellLocatorTwoLevel_1_1LastCell.html">LastCell</a> &amp;&#160;</td>
+          <td class="paramname"><em>lastCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WriteHitType &amp;&#160;</td>
+          <td class="paramname"><em>writeHit</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

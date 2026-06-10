@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -53,6 +53,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for sources that generate a single data set.  
+ <a href="classviskores_1_1source_1_1Source.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Source_8h_source.html">Source.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for viskores::source::Source:</div>
@@ -72,19 +75,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a26cd9413c986a486e2fe396ea0336e73"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1source_1_1Source.html#a26cd9413c986a486e2fe396ea0336e73">~Source</a> ()=default</td></tr>
 <tr class="separator:a26cd9413c986a486e2fe396ea0336e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99b3221d6cfa724adaafb911a944ea98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1source_1_1Source.html#a99b3221d6cfa724adaafb911a944ea98">Execute</a> () const</td></tr>
+<tr class="memdesc:a99b3221d6cfa724adaafb911a944ea98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the data set for this source.  <a href="classviskores_1_1source_1_1Source.html#a99b3221d6cfa724adaafb911a944ea98">More...</a><br /></td></tr>
 <tr class="separator:a99b3221d6cfa724adaafb911a944ea98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a908184ae2a3edae43a01d70f24a1c63e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classviskores_1_1cont_1_1DataSet.html">viskores::cont::DataSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1source_1_1Source.html#a908184ae2a3edae43a01d70f24a1c63e">DoExecute</a> () const =0</td></tr>
+<tr class="memdesc:a908184ae2a3edae43a01d70f24a1c63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation hook used by subclasses to generate their data.  <a href="classviskores_1_1source_1_1Source.html#a908184ae2a3edae43a01d70f24a1c63e">More...</a><br /></td></tr>
 <tr class="separator:a908184ae2a3edae43a01d70f24a1c63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a6d9c2dd6b9d856562333a014646714e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structviskores_1_1cont_1_1Invoker.html">viskores::cont::Invoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1source_1_1Source.html#a6d9c2dd6b9d856562333a014646714e4">Invoke</a></td></tr>
+<tr class="memdesc:a6d9c2dd6b9d856562333a014646714e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoker used by source implementations to run worklets.  <a href="classviskores_1_1source_1_1Source.html#a6d9c2dd6b9d856562333a014646714e4">More...</a><br /></td></tr>
 <tr class="separator:a6d9c2dd6b9d856562333a014646714e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for sources that generate a single data set. </p>
+<p>A source creates a new <code><a class="el" href="classviskores_1_1cont_1_1DataSet.html" title="Contains and manages the geometric data structures that Viskores operates on.">viskores::cont::DataSet</a></code> when <code>Execute</code> is called. Subclasses implement <code>DoExecute</code> to construct the concrete data set. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26cd9413c986a486e2fe396ea0336e73"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26cd9413c986a486e2fe396ea0336e73">&#9670;&nbsp;</a></span>~Source()</h2>
 
@@ -134,6 +143,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation hook used by subclasses to generate their data. </p>
+
 <p>Implemented in <a class="el" href="classviskores_1_1source_1_1Wavelet.html#a14e93e75d748c3a5f92202855214ed23">viskores::source::Wavelet</a>, <a class="el" href="classviskores_1_1source_1_1Oscillator.html#ab8cb1ce6f95b1057407c53e492707b10">viskores::source::Oscillator</a>, <a class="el" href="classviskores_1_1source_1_1PerlinNoise.html#ad2f4ae393a1f48537b8ad29614850a24">viskores::source::PerlinNoise</a>, and <a class="el" href="classviskores_1_1source_1_1Tangle.html#a99b7d1edc24492ee304eaf1f716a1509">viskores::source::Tangle</a>.</p>
 
 </div>
@@ -161,6 +172,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Generates the data set for this source. </p>
+<p>The returned data set is newly generated from the current source parameters. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -183,6 +197,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invoker used by source implementations to run worklets. </p>
 
 </div>
 </div>

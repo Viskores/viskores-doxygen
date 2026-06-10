@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -234,14 +234,14 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">struct </span>GetInverseFunctorTypeImpl;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> DecoratorImplT, <span class="keyword">template</span> &lt;<span class="keyword">typename</span>...&gt; <span class="keyword">class </span>List, <span class="keyword">typename</span>... PortalTs&gt;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">struct </span>GetInverseFunctorTypeImpl&lt;std::true_type, DecoratorImplT, List&lt;PortalTs...&gt;&gt;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">struct </span>GetInverseFunctorTypeImpl&lt;<a class="code" href="namespacestd.html">std</a>::true_type, DecoratorImplT, List&lt;PortalTs...&gt;&gt;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keyword">using</span> type =</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    decltype(std::declval&lt;DecoratorImplT&gt;().CreateInverseFunctor(std::declval&lt;PortalTs&amp;&amp;&gt;()...));</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> DecoratorImplT, <span class="keyword">typename</span> PortalList&gt;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">struct </span>GetInverseFunctorTypeImpl&lt;std::false_type, DecoratorImplT, PortalList&gt;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">struct </span>GetInverseFunctorTypeImpl&lt;<a class="code" href="namespacestd.html">std</a>::false_type, DecoratorImplT, PortalList&gt;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keyword">using</span> type = viskores::internal::decor::NoOpInverseFunctor;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
@@ -730,6 +730,7 @@ $(function() {
 <div class="ttc" id="aStaticAssert_8h_html_aef17ceea0ef7a388252b8d50384246f6"><div class="ttname"><a href="StaticAssert_8h.html#aef17ceea0ef7a388252b8d50384246f6">VISKORES_STATIC_ASSERT_MSG</a></div><div class="ttdeci">#define VISKORES_STATIC_ASSERT_MSG(condition, message)</div><div class="ttdef"><b>Definition:</b> StaticAssert.h:26</div></div>
 <div class="ttc" id="astructviskores_1_1cont_1_1DeviceAdapterId_html"><div class="ttname"><a href="structviskores_1_1cont_1_1DeviceAdapterId.html">viskores::cont::DeviceAdapterId</a></div><div class="ttdoc">An object used to specify a device.</div><div class="ttdef"><b>Definition:</b> DeviceAdapterTag.h:66</div></div>
 <div class="ttc" id="anamespaceviskores_1_1cont_html_a7c05dd5e0089f45842c6d538927d67ba"><div class="ttname"><a href="namespaceviskores_1_1cont.html#a7c05dd5e0089f45842c6d538927d67ba">viskores::cont::make_ArrayHandleDecorator</a></div><div class="ttdeci">ArrayHandleDecorator&lt; typename std::decay&lt; DecoratorImplT &gt;::type, typename std::decay&lt; ArrayTs &gt;::type... &gt; make_ArrayHandleDecorator(viskores::Id numValues, DecoratorImplT &amp;&amp;f, ArrayTs &amp;&amp;... arrays)</div><div class="ttdoc">Create an ArrayHandleDecorator with the specified number of values that uses the provided DecoratorIm...</div><div class="ttdef"><b>Definition:</b> ArrayHandleDecorator.h:713</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> linalg.h:661</div></div>
 <div class="ttc" id="aStaticAssert_8h_html"><div class="ttname"><a href="StaticAssert_8h.html">StaticAssert.h</a></div></div>
 <div class="ttc" id="aclassviskores_1_1cont_1_1ArrayHandleDecorator_html_a38f6defc6907107a922cfe34accb08e4"><div class="ttname"><a href="classviskores_1_1cont_1_1ArrayHandleDecorator.html#a38f6defc6907107a922cfe34accb08e4">viskores::cont::ArrayHandleDecorator::ArrayHandleDecorator</a></div><div class="ttdeci">ArrayHandleDecorator(viskores::Id numValues, const typename std::decay&lt; DecoratorImplT &gt;::type &amp;impl, const typename std::decay&lt; ArrayTs &gt;::type &amp;... arrays)</div><div class="ttdef"><b>Definition:</b> ArrayHandleDecorator.h:699</div></div>
 <div class="ttc" id="aArrayHandle_8h_html_a1a3cd47c69807a61e136447731f87aa1"><div class="ttname"><a href="ArrayHandle_8h.html#a1a3cd47c69807a61e136447731f87aa1">VISKORES_ARRAY_HANDLE_SUBCLASS</a></div><div class="ttdeci">#define VISKORES_ARRAY_HANDLE_SUBCLASS(classname, fullclasstype, superclass)</div><div class="ttdoc">Macro to make default methods in ArrayHandle subclasses.</div><div class="ttdef"><b>Definition:</b> ArrayHandle.h:256</div></div>

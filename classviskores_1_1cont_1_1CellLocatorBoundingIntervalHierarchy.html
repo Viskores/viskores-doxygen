@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -73,9 +73,9 @@ Inheritance diagram for viskores::cont::CellLocatorBoundingIntervalHierarchy:</d
 Public Types</h2></td></tr>
 <tr class="memitem:a330aaffd251445284134fe703d7e7828"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a330aaffd251445284134fe703d7e7828">SupportedCellSets</a> = ::viskores::cont::internal::CellSetList</td></tr>
 <tr class="separator:a330aaffd251445284134fe703d7e7828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4da7aed23b4c693f86e843b9036dfb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a3b4da7aed23b4c693f86e843b9036dfb">CellLocatorExecList</a> = <a class="el" href="namespaceviskores.html#ac619d7f8320970b47659ec000e854be7">viskores::ListTransform</a>&lt; <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a330aaffd251445284134fe703d7e7828">SupportedCellSets</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorBoundingIntervalHierarchy.html">viskores::exec::CellLocatorBoundingIntervalHierarchy</a> &gt;</td></tr>
-<tr class="separator:a3b4da7aed23b4c693f86e843b9036dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2423b8b17249b00a84b6e22a353b4ae0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a2423b8b17249b00a84b6e22a353b4ae0">ExecObjType</a> = <a class="el" href="namespaceviskores.html#a830688b5428ee181f86f094c1a94fdc0">viskores::ListApply</a>&lt; <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a3b4da7aed23b4c693f86e843b9036dfb">CellLocatorExecList</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorMultiplexer.html">viskores::exec::CellLocatorMultiplexer</a> &gt;</td></tr>
+<tr class="memitem:aa64071bd23c7467a5260606904e0b28d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#aa64071bd23c7467a5260606904e0b28d">CellLocatorExecList</a> = typename detail::CellLocatorBoundingIntervalHierarchyExecList&lt; <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a330aaffd251445284134fe703d7e7828">SupportedCellSets</a> &gt;::type</td></tr>
+<tr class="separator:aa64071bd23c7467a5260606904e0b28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2423b8b17249b00a84b6e22a353b4ae0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a2423b8b17249b00a84b6e22a353b4ae0">ExecObjType</a> = <a class="el" href="namespaceviskores.html#a830688b5428ee181f86f094c1a94fdc0">viskores::ListApply</a>&lt; <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#aa64071bd23c7467a5260606904e0b28d">CellLocatorExecList</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorMultiplexer.html">viskores::exec::CellLocatorMultiplexer</a> &gt;</td></tr>
 <tr class="separator:a2423b8b17249b00a84b6e22a353b4ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17a1f8141c34cd36418340ea9c46b937"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a17a1f8141c34cd36418340ea9c46b937">LastCell</a> = typename ExecObjType::LastCell</td></tr>
 <tr class="separator:a17a1f8141c34cd36418340ea9c46b937"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,14 +149,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>A cell locator that performs a recursive division of space. </p>
 <p><code><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html" title="A cell locator that performs a recursive division of space.">CellLocatorBoundingIntervalHierarchy</a></code> creates a search structure by recursively dividing the space in which data lives. It starts by choosing an axis to split and then defines a number of splitting planes (set with <code><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a86c86ed2052d7b553f53006d928563ae" title="Specify the number of splitting planes to use each time a region is divided.">SetNumberOfSplittingPlanes()</a></code>). These splitting planes divide the physical region into partitions, and the cells are divided among these partitions. The algorithm then recurses into each region and repeats the process until the regions are divided to the point where the contain no more than a maximum number of cells (specified with <code><a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a7b45509c601f69b5e7be37fe0c732610" title="Specify the number of cells in each leaf.">SetMaxLeafSize()</a></code>). </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a3b4da7aed23b4c693f86e843b9036dfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b4da7aed23b4c693f86e843b9036dfb">&#9670;&nbsp;</a></span>CellLocatorExecList</h2>
+<a id="aa64071bd23c7467a5260606904e0b28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64071bd23c7467a5260606904e0b28d">&#9670;&nbsp;</a></span>CellLocatorExecList</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a3b4da7aed23b4c693f86e843b9036dfb">viskores::cont::CellLocatorBoundingIntervalHierarchy::CellLocatorExecList</a> =  <a class="el" href="namespaceviskores.html#ac619d7f8320970b47659ec000e854be7">viskores::ListTransform</a>&lt;<a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a330aaffd251445284134fe703d7e7828">SupportedCellSets</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorBoundingIntervalHierarchy.html">viskores::exec::CellLocatorBoundingIntervalHierarchy</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#aa64071bd23c7467a5260606904e0b28d">viskores::cont::CellLocatorBoundingIntervalHierarchy::CellLocatorExecList</a> =  typename detail::CellLocatorBoundingIntervalHierarchyExecList&lt;<a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a330aaffd251445284134fe703d7e7828">SupportedCellSets</a>&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -170,7 +170,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a2423b8b17249b00a84b6e22a353b4ae0">viskores::cont::CellLocatorBoundingIntervalHierarchy::ExecObjType</a> =  <a class="el" href="namespaceviskores.html#a830688b5428ee181f86f094c1a94fdc0">viskores::ListApply</a>&lt;<a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a3b4da7aed23b4c693f86e843b9036dfb">CellLocatorExecList</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorMultiplexer.html">viskores::exec::CellLocatorMultiplexer</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#a2423b8b17249b00a84b6e22a353b4ae0">viskores::cont::CellLocatorBoundingIntervalHierarchy::ExecObjType</a> =  <a class="el" href="namespaceviskores.html#a830688b5428ee181f86f094c1a94fdc0">viskores::ListApply</a>&lt;<a class="el" href="classviskores_1_1cont_1_1CellLocatorBoundingIntervalHierarchy.html#aa64071bd23c7467a5260606904e0b28d">CellLocatorExecList</a>, <a class="el" href="classviskores_1_1exec_1_1CellLocatorMultiplexer.html">viskores::exec::CellLocatorMultiplexer</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

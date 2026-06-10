@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -84,21 +84,27 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;VISKORES_IO_EXPORT <span class="keywordtype">bool</span> <a class="code" href="namespaceviskores_1_1io.html#af9e5b630706d1094d312c948994e08ee">CreateDirectoriesFromFilePath</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;VISKORES_IO_EXPORT std::string <a class="code" href="namespaceviskores_1_1io.html#a375770cfbffd573f33a63e3c97ebb918">MergePaths</a>(<span class="keyword">const</span> std::string&amp; filePathPrefix,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                          <span class="keyword">const</span> std::string&amp; filePathSuffix);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;VISKORES_IO_EXPORT std::string <a class="code" href="namespaceviskores_1_1io.html#a8fb1b31c637ff191d41e9ff2b9cb3cc2">PrefixStringToFilename</a>(<span class="keyword">const</span> std::string&amp; filePath,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                      <span class="keyword">const</span> std::string&amp; prefix);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;VISKORES_IO_EXPORT <span class="keywordtype">char</span> <a class="code" href="namespaceviskores_1_1io.html#a9761d290af3e0f10877615af5d3260f2">GetWindowsPathSeperator</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace viskores::io</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;} <span class="comment">// namespace viskores</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif //viskores_io_FileUtils_h</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;VISKORES_IO_EXPORT <span class="keywordtype">bool</span> <a class="code" href="namespaceviskores_1_1io.html#a8535a13f8f24f3b6d3ac342b20f5e25d">IsAbsolutePath</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;VISKORES_IO_EXPORT std::string <a class="code" href="namespaceviskores_1_1io.html#a4bcb32cd481201f6984e6ec4122504ae">MakeAbsolutePath</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;VISKORES_IO_EXPORT std::string <a class="code" href="namespaceviskores_1_1io.html#a375770cfbffd573f33a63e3c97ebb918">MergePaths</a>(<span class="keyword">const</span> std::string&amp; filePathPrefix,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                          <span class="keyword">const</span> std::string&amp; filePathSuffix);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;VISKORES_IO_EXPORT std::string <a class="code" href="namespaceviskores_1_1io.html#a8fb1b31c637ff191d41e9ff2b9cb3cc2">PrefixStringToFilename</a>(<span class="keyword">const</span> std::string&amp; filePath,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                      <span class="keyword">const</span> std::string&amp; prefix);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;VISKORES_IO_EXPORT <span class="keywordtype">char</span> <a class="code" href="namespaceviskores_1_1io.html#a9761d290af3e0f10877615af5d3260f2">GetWindowsPathSeperator</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">// namespace viskores::io</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace viskores</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif //viskores_io_FileUtils_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceviskores_1_1io_html_aa0690f25ef39bf88c5024add1652396d"><div class="ttname"><a href="namespaceviskores_1_1io.html#aa0690f25ef39bf88c5024add1652396d">viskores::io::Filename</a></div><div class="ttdeci">std::string Filename(const std::string &amp;filePath)</div><div class="ttdoc">Returns the filename component of a filePath string.</div></div>
 <div class="ttc" id="aviskores__io__export_8h_html"><div class="ttname"><a href="viskores__io__export_8h.html">viskores_io_export.h</a></div></div>
+<div class="ttc" id="anamespaceviskores_1_1io_html_a4bcb32cd481201f6984e6ec4122504ae"><div class="ttname"><a href="namespaceviskores_1_1io.html#a4bcb32cd481201f6984e6ec4122504ae">viskores::io::MakeAbsolutePath</a></div><div class="ttdeci">std::string MakeAbsolutePath(const std::string &amp;filePath)</div><div class="ttdoc">Returns an absolute path to filePath.</div></div>
+<div class="ttc" id="anamespaceviskores_1_1io_html_a8535a13f8f24f3b6d3ac342b20f5e25d"><div class="ttname"><a href="namespaceviskores_1_1io.html#a8535a13f8f24f3b6d3ac342b20f5e25d">viskores::io::IsAbsolutePath</a></div><div class="ttdeci">bool IsAbsolutePath(const std::string &amp;filePath)</div><div class="ttdoc">Returns true if filePath is an absolute filesystem path.</div></div>
 <div class="ttc" id="anamespaceviskores_1_1io_html_a9761d290af3e0f10877615af5d3260f2"><div class="ttname"><a href="namespaceviskores_1_1io.html#a9761d290af3e0f10877615af5d3260f2">viskores::io::GetWindowsPathSeperator</a></div><div class="ttdeci">char GetWindowsPathSeperator(const std::string &amp;filePath)</div><div class="ttdoc">determine which path separator to use for windows given a provided path Should return one of either '...</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="anamespaceviskores_1_1io_html_a375770cfbffd573f33a63e3c97ebb918"><div class="ttname"><a href="namespaceviskores_1_1io.html#a375770cfbffd573f33a63e3c97ebb918">viskores::io::MergePaths</a></div><div class="ttdeci">std::string MergePaths(const std::string &amp;filePathPrefix, const std::string &amp;filePathSuffix)</div><div class="ttdoc">Merges two filepath strings together using the correct system filepath seperator EX: MergePaths(&quot;path...</div></div>

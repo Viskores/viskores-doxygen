@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -204,6 +204,12 @@ $(function() {
 : <a class="el" href="classviskores_1_1exec_1_1ColorTable.html#ac5e4f878bd0f7ef60d445e9d921bdb2f">viskores::exec::ColorTable</a>
 , <a class="el" href="classviskores_1_1worklet_1_1ScalarsToColors.html#abbbd6472edd869fb1f452d23b849a04b">viskores::worklet::ScalarsToColors</a>
 </li>
+<li>alphaCutoff()
+: <a class="el" href="structviskores__device_1_1MatteMaterial.html#a286686fa824e33af3c83b0e8322805dc">viskores_device::MatteMaterial</a>
+</li>
+<li>alphaMode()
+: <a class="el" href="structviskores__device_1_1MatteMaterial.html#a978353b7db98d257493956391bf0cac3">viskores_device::MatteMaterial</a>
+</li>
 <li>Amr()
 : <a class="el" href="classviskores_1_1source_1_1Amr.html#a1e644dc22567aa8ffb5e194a48d9dbc9">viskores::source::Amr</a>
 </li>
@@ -291,11 +297,26 @@ $(function() {
 , <a class="el" href="classviskores_1_1Tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T5_00_01T6_00_01T7_00_01T8_00404dcf219c15eff919485f0c298d3afb.html#aad0886040720c33130b368fd2b9eb667">viskores::Tuple&lt; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, Ts... &gt;</a>
 , <a class="el" href="classviskores_1_1Tuple_3_4.html#a51288404cfe0500544638ec1461c1654">viskores::Tuple&lt;&gt;</a>
 </li>
+<li>Approach
+: <a class="el" href="classviskores_1_1filter_1_1uncertainty_1_1FiberUncertainUniform.html#a330261a95037f111091ce3e71ecc2a39">viskores::filter::uncertainty::FiberUncertainUniform</a>
+</li>
+<li>ApproachEnum
+: <a class="el" href="classviskores_1_1filter_1_1uncertainty_1_1FiberUncertainUniform.html#a0b0b1a45f39f89684b49983e7c8bb52f">viskores::filter::uncertainty::FiberUncertainUniform</a>
+</li>
 <li>Area()
 : <a class="el" href="structviskores_1_1Bounds.html#a48a8df1189e383723c0e6fc67f0a58b7">viskores::Bounds</a>
 </li>
 <li>AreAllTypesRemoved()
 : <a class="el" href="classviskores_1_1filter_1_1entity__extraction_1_1GhostCellRemove.html#a2c1e36b9eac918b5f64d0db6b9a3ad66">viskores::filter::entity_extraction::GhostCellRemove</a>
+</li>
+<li>Array1D()
+: <a class="el" href="structviskores__device_1_1Array1D.html#ab6e87d83e2c7cc98b2185939d5fae8ac">viskores_device::Array1D</a>
+</li>
+<li>Array2D()
+: <a class="el" href="structviskores__device_1_1Array2D.html#ac3491a5ac46a9ef24f2e1b21111e4aca">viskores_device::Array2D</a>
+</li>
+<li>Array3D()
+: <a class="el" href="structviskores__device_1_1Array3D.html#a9c5d783c4b0e7e880c72b42a524a0580">viskores_device::Array3D</a>
 </li>
 <li>ArrayHandle()
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandle.html#aa3c15396a60b6dd0718efa8a4915f938">viskores::cont::ArrayHandle&lt; T, StorageTag_ &gt;</a>
@@ -316,7 +337,7 @@ $(function() {
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandleCompositeVector.html#a259acf5c00cd787cdaa46a829b1d58f4">viskores::cont::ArrayHandleCompositeVector&lt; ArrayTs &gt;</a>
 </li>
 <li>ArrayHandleConcatenate()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleConcatenate.html#af8b9aad90c62eca98522e73f1a79cd08">viskores::cont::ArrayHandleConcatenate&lt; ArrayHandleType1, ArrayHandleType2 &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleConcatenate.html#ab4dbbb545686f2edffe8510f7133dd9e">viskores::cont::ArrayHandleConcatenate&lt; ArrayHandleType1, ArrayHandleType2 &gt;</a>
 </li>
 <li>ArrayHandleConstant()
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandleConstant.html#a2f9443bb59b96a8d186f51871da9a65b">viskores::cont::ArrayHandleConstant&lt; T &gt;</a>
@@ -331,73 +352,79 @@ $(function() {
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandleDiscard.html#af302ff324903127cc1a8611c37846d21">viskores::cont::ArrayHandleDiscard&lt; ValueType_ &gt;</a>
 </li>
 <li>ArrayHandleExtractComponent()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleExtractComponent.html#a851fa0313db891bdf1154deb1b407842">viskores::cont::ArrayHandleExtractComponent&lt; ArrayHandleType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleExtractComponent.html#a1bd3f0f1e2946b8d39225cdd19373997">viskores::cont::ArrayHandleExtractComponent&lt; ArrayHandleType &gt;</a>
 </li>
 <li>ArrayHandleGroupVec()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVec.html#a19b8d2dcd14820c75aa31ba7e3bd048c">viskores::cont::ArrayHandleGroupVec&lt; ComponentsArrayHandleType, NUM_COMPONENTS &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVec.html#a6056a52f545bf50179f4e99e9ae504af">viskores::cont::ArrayHandleGroupVec&lt; ComponentsArrayHandleType, NUM_COMPONENTS &gt;</a>
 </li>
 <li>ArrayHandleGroupVecVariable()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVecVariable.html#a8808ce564eb9073168ef1d71a2fe0541">viskores::cont::ArrayHandleGroupVecVariable&lt; ComponentsArrayHandleType, OffsetsArrayHandleType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleGroupVecVariable.html#a20b46cb8c911e79751e7fd3da9d3dcaf">viskores::cont::ArrayHandleGroupVecVariable&lt; ComponentsArrayHandleType, OffsetsArrayHandleType &gt;</a>
 </li>
 <li>ArrayHandleImplicit()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleImplicit.html#a6cb448b753e66b68bf2dc83d967ea545">viskores::cont::ArrayHandleImplicit&lt; FunctorType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleImplicit.html#a5280c1d2411d6c13e30e5db083aa339b">viskores::cont::ArrayHandleImplicit&lt; FunctorType &gt;</a>
 </li>
 <li>ArrayHandleIndex()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleIndex.html#a33bdbc003e9bdd06a97926f762557555">viskores::cont::ArrayHandleIndex</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleIndex.html#a0183fdb8501f51b4e0a5777977b549cf">viskores::cont::ArrayHandleIndex</a>
 </li>
 <li>ArrayHandleMultiplexer()
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandleMultiplexer.html#a91cc0ccc47b2f5d24699bcae7c4d1f3b">viskores::cont::ArrayHandleMultiplexer&lt; ArrayHandleTypes &gt;</a>
 </li>
 <li>ArrayHandleOffsetsToNumComponents()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleOffsetsToNumComponents.html#a90ffb00a479681840b94bdcf8435390c">viskores::cont::ArrayHandleOffsetsToNumComponents&lt; OffsetsArray &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleOffsetsToNumComponents.html#a78c54ded1d7fd57e114c0823d78411e0">viskores::cont::ArrayHandleOffsetsToNumComponents&lt; OffsetsArray &gt;</a>
 </li>
 <li>ArrayHandlePermutation()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandlePermutation.html#ac0a4db0d731c2468ad42d2278b956c02">viskores::cont::ArrayHandlePermutation&lt; IndexArrayHandleType, ValueArrayHandleType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandlePermutation.html#a515dfe76f3f657819d2c30cdd2367f24">viskores::cont::ArrayHandlePermutation&lt; IndexArrayHandleType, ValueArrayHandleType &gt;</a>
 </li>
 <li>ArrayHandleRandomStandardNormal()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomStandardNormal.html#ad17f24b1be71114513a4f55e70516543">viskores::cont::ArrayHandleRandomStandardNormal&lt; Real &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomStandardNormal.html#a328516da6cb7bef6a1cd6cab4f06e89a">viskores::cont::ArrayHandleRandomStandardNormal&lt; Real &gt;</a>
 </li>
 <li>ArrayHandleRandomUniformBits()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformBits.html#a41341b120ed3aa5785a86818733540c7">viskores::cont::ArrayHandleRandomUniformBits</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformBits.html#a1384524bed3f9d67b5773e7bab3daf24">viskores::cont::ArrayHandleRandomUniformBits</a>
 </li>
 <li>ArrayHandleRandomUniformReal()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#a7e5c9addbdb49bbb27663756f2588f77">viskores::cont::ArrayHandleRandomUniformReal&lt; Real &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRandomUniformReal.html#a105e5d0e63c03966656e54f31f086268">viskores::cont::ArrayHandleRandomUniformReal&lt; Real &gt;</a>
 </li>
 <li>ArrayHandleRecombineVec()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRecombineVec.html#ade44717749740795a780eaa8f51eb9c7">viskores::cont::ArrayHandleRecombineVec&lt; ComponentType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRecombineVec.html#adc2dbea59fae2be3b99b265c748d9682">viskores::cont::ArrayHandleRecombineVec&lt; ComponentType &gt;</a>
 </li>
 <li>ArrayHandleReverse()
 : <a class="el" href="classviskores_1_1cont_1_1ArrayHandleReverse.html#a9a470c232223b56549ff46ab76981a7c">viskores::cont::ArrayHandleReverse&lt; ArrayHandleType &gt;</a>
 </li>
 <li>ArrayHandleRuntimeVec()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#acba4d53cb509d4033d354bf33f21daa8">viskores::cont::ArrayHandleRuntimeVec&lt; ComponentType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#a04b70bb46821a93eeeb09aa48f560473">viskores::cont::ArrayHandleRuntimeVec&lt; ComponentType &gt;</a>
 </li>
 <li>ArrayHandleSOA()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOA.html#a9d2fc4a639e07d48fe855ee61a085bfe">viskores::cont::ArrayHandleSOA&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOA.html#a63d1e1f2376437911771d69abce77722">viskores::cont::ArrayHandleSOA&lt; T &gt;</a>
 </li>
 <li>ArrayHandleSOAStride()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#a43ccb657180b075484686aa7ce0bd928">viskores::cont::ArrayHandleSOAStride&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSOAStride.html#afebde5631c970c6094b7e8fe4098adc5">viskores::cont::ArrayHandleSOAStride&lt; T &gt;</a>
 </li>
 <li>ArrayHandleStride()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleStride.html#a48fdc864047b38e47c2876142a8ebd0c">viskores::cont::ArrayHandleStride&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleStride.html#ade83b4452868512e95036542a0ed4a00">viskores::cont::ArrayHandleStride&lt; T &gt;</a>
 </li>
 <li>ArrayHandleSwizzle()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSwizzle.html#a55318d47484aa93a0153f31fdcf1c7fa">viskores::cont::ArrayHandleSwizzle&lt; ArrayHandleType, OutSize &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleSwizzle.html#a7c6a99af9be06df8466e58608a02281a">viskores::cont::ArrayHandleSwizzle&lt; ArrayHandleType, OutSize &gt;</a>
 </li>
 <li>ArrayHandleTransform()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleTransform.html#a43e7d2400166182132f51686088e4c02">viskores::cont::ArrayHandleTransform&lt; ArrayHandleType, FunctorType, InverseFunctorType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleTransform.html#a25252e5d44500c2143be6893c41f79e1">viskores::cont::ArrayHandleTransform&lt; ArrayHandleType, FunctorType, InverseFunctorType &gt;</a>
 </li>
 <li>ArrayHandleUniformPointCoordinates()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleUniformPointCoordinates.html#a22228c5756d6102ad910c572a1203e7e">viskores::cont::ArrayHandleUniformPointCoordinates</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleUniformPointCoordinates.html#a782992edb5147d6720dec00a23f3d806">viskores::cont::ArrayHandleUniformPointCoordinates</a>
 </li>
 <li>ArrayHandleView()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleView.html#add9e388481ffc2dc0ce51c7cbb3b6779">viskores::cont::ArrayHandleView&lt; ArrayHandleType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleView.html#a642d8a180e64606269218a02b55f24da">viskores::cont::ArrayHandleView&lt; ArrayHandleType &gt;</a>
 </li>
 <li>ArrayHandleXGCCoordinates()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html#adfbf71948d7169b70bee30102ade91ef">viskores::cont::ArrayHandleXGCCoordinates&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleXGCCoordinates.html#aa3c65ab0c71597fcfc73fbe1465d426e">viskores::cont::ArrayHandleXGCCoordinates&lt; T &gt;</a>
 </li>
 <li>ArrayHandleZip()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleZip.html#a872afd796b4b37c5d86b0fc8f2b627c4">viskores::cont::ArrayHandleZip&lt; FirstHandleType, SecondHandleType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleZip.html#a4ff5bdfa1df7b65049f15cee7c2ad62a">viskores::cont::ArrayHandleZip&lt; FirstHandleType, SecondHandleType &gt;</a>
+</li>
+<li>arrayMapAcquire()
+: <a class="el" href="structviskores__device_1_1RenderingSemaphore.html#a390eb82a5e5e5e44b53dc65230fba709">viskores_device::RenderingSemaphore</a>
+</li>
+<li>arrayMapRelease()
+: <a class="el" href="structviskores__device_1_1RenderingSemaphore.html#a92cbc51986b939236750d7250c82d4b0">viskores_device::RenderingSemaphore</a>
 </li>
 <li>ArrayPortalConst
 : <a class="el" href="structviskores_1_1exec_1_1twolevelgrid_1_1TwoLevelUniformGridExecutionObject.html#a6ff70ba2d321aa0b9d3bebff179bd8f7">viskores::exec::twolevelgrid::TwoLevelUniformGridExecutionObject&lt; Device &gt;</a>
@@ -411,13 +438,16 @@ $(function() {
 , <a class="el" href="classviskores_1_1cont_1_1DeviceAdapterAlgorithm_3_01viskores_1_1cont_1_1DeviceAdapterTagKokkos_01_4_1_1ScanInclusiveOperator.html#ab6b4c2c4b6988b48f5f6729fc8824b69">viskores::cont::DeviceAdapterAlgorithm&lt; viskores::cont::DeviceAdapterTagKokkos &gt;::ScanInclusiveOperator</a>
 </li>
 <li>ArrayPortalToIterators()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayPortalToIterators_3_01PortalType_00_01std_1_1false__type_01_4.html#ab21faf7d0aa7a7881099979ab3b4ad1e">viskores::cont::ArrayPortalToIterators&lt; PortalType, std::false_type &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayPortalToIterators_3_01PortalType_00_01std_1_1false__type_01_4.html#a1365aa7846756199087acc0272f4fb2e">viskores::cont::ArrayPortalToIterators&lt; PortalType, std::false_type &gt;</a>
 , <a class="el" href="classviskores_1_1cont_1_1ArrayPortalToIterators_3_01PortalType_00_01std_1_1true__type_01_4.html#aa5f1dafb68526b89cad881e5d5bb8667">viskores::cont::ArrayPortalToIterators&lt; PortalType, std::true_type &gt;</a>
 </li>
 <li>Arrays
 : <a class="el" href="structviskores_1_1interop_1_1anari_1_1ANARIMapperGlyphs.html#a088680da2ceb8c4aad4d277bb1151659">viskores::interop::anari::ANARIMapperGlyphs</a>
 , <a class="el" href="structviskores_1_1interop_1_1anari_1_1ANARIMapperPoints.html#a751c90ecf98c4700caf24c57a8a798bd">viskores::interop::anari::ANARIMapperPoints</a>
 , <a class="el" href="structviskores_1_1interop_1_1anari_1_1ANARIMapperTriangles.html#a3cac4b482bc41fbfd52503229a0e932e">viskores::interop::anari::ANARIMapperTriangles</a>
+</li>
+<li>arrays
+: <a class="el" href="structviskores__device_1_1ViskoresDeviceGlobalState_1_1ObjectCounts.html#a22c7dbee847136f9291b146080881b83">viskores_device::ViskoresDeviceGlobalState::ObjectCounts</a>
 </li>
 <li>ArraysFloatDefault
 : <a class="el" href="classviskores_1_1cont_1_1CoordinateSystem.html#a5b4421019a69424a0c8d4339ad857e14">viskores::cont::CoordinateSystem</a>
@@ -441,10 +471,10 @@ $(function() {
 , <a class="el" href="classviskores_1_1filter_1_1flow_1_1WarpXStreamline.html#a40b6bbf92fc7a7119c85af0ad2a4a4dd">viskores::filter::flow::WarpXStreamline</a>
 </li>
 <li>AsArrayHandle()
-: <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a6ce6bffd5bedd1d891a941d048fb7ae3">viskores::cont::UnknownArrayHandle</a>
+: <a class="el" href="classviskores_1_1cont_1_1UnknownArrayHandle.html#a072dc7bd1b12283984a33193aef68ecc">viskores::cont::UnknownArrayHandle</a>
 </li>
 <li>AsArrayHandleBasic()
-: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#aafba8a87690e3a6bc365e214925239bb">viskores::cont::ArrayHandleRuntimeVec&lt; ComponentType &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1ArrayHandleRuntimeVec.html#a287ea1ddf3c2d513f89ed1749219d4c3">viskores::cont::ArrayHandleRuntimeVec&lt; ComponentType &gt;</a>
 </li>
 <li>AsCellSet()
 : <a class="el" href="classviskores_1_1cont_1_1UnknownCellSet.html#a7612352031b7f3a4faf68ebdc65059a2">viskores::cont::UnknownCellSet</a>
@@ -488,13 +518,13 @@ $(function() {
 , <a class="el" href="classviskores_1_1rendering_1_1MapperGlyphBase.html#adda9721cafa96830d98ac91a52da8801">viskores::rendering::MapperGlyphBase</a>
 </li>
 <li>AtomicArray()
-: <a class="el" href="classviskores_1_1cont_1_1AtomicArray.html#adc9db8bfbe03d8057b1ac29f47e22448">viskores::cont::AtomicArray&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1cont_1_1AtomicArray.html#a2159f1baf2e174514d335170a39220d7">viskores::cont::AtomicArray&lt; T &gt;</a>
 </li>
 <li>AtomicArrayExecutionObject()
-: <a class="el" href="classviskores_1_1exec_1_1AtomicArrayExecutionObject.html#a597df12eead2159cfb562621e4d818a5">viskores::exec::AtomicArrayExecutionObject&lt; T &gt;</a>
+: <a class="el" href="classviskores_1_1exec_1_1AtomicArrayExecutionObject.html#af0dbc46365c6ffd2a07d6b46e68608ec">viskores::exec::AtomicArrayExecutionObject&lt; T &gt;</a>
 </li>
 <li>Attach()
-: <a class="el" href="classviskores_1_1cont_1_1Token.html#a72da1b9bc95a27feeb7e574e3890e6ac">viskores::cont::Token</a>
+: <a class="el" href="classviskores_1_1cont_1_1Token.html#a98d577f2f570da1035093901d7405bc9">viskores::cont::Token</a>
 </li>
 <li>Attribute
 : <a class="el" href="structviskores_1_1interop_1_1anari_1_1PointsParameters_1_1VertexData.html#a207922a9f99c29d23d16fa84ed89848b">viskores::interop::anari::PointsParameters::VertexData</a>
@@ -528,11 +558,11 @@ $(function() {
 : <a class="el" href="classviskores_1_1rendering_1_1AxisAnnotation.html#a7d3dd843a7ab67992d74634beb32b9f0">viskores::rendering::AxisAnnotation</a>
 </li>
 <li>AxisAnnotation2D()
-: <a class="el" href="classviskores_1_1rendering_1_1AxisAnnotation2D.html#aa36785b85327adc37bed49debbe3058a">viskores::rendering::AxisAnnotation2D</a>
+: <a class="el" href="classviskores_1_1rendering_1_1AxisAnnotation2D.html#afc58cb970df9425b0c1a838c33fb174d">viskores::rendering::AxisAnnotation2D</a>
 , <a class="el" href="classviskores_1_1rendering_1_1Canvas.html#a99b613e696b7188be496786867cde750">viskores::rendering::Canvas</a>
 </li>
 <li>AxisAnnotation3D()
-: <a class="el" href="classviskores_1_1rendering_1_1AxisAnnotation3D.html#abb191a6b43792c1dd122818865f2b9dc">viskores::rendering::AxisAnnotation3D</a>
+: <a class="el" href="classviskores_1_1rendering_1_1AxisAnnotation3D.html#a27acf72f88cceb2f33651c17ade126c9">viskores::rendering::AxisAnnotation3D</a>
 </li>
 <li>AxisColor
 : <a class="el" href="classviskores_1_1rendering_1_1View.html#ab0cf2fcc2a67ac4ab49e7c92e118bfe4">viskores::rendering::View</a>
@@ -543,9 +573,14 @@ $(function() {
 </li>
 <li>AxisPortals
 : <a class="el" href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#aa3509c508e9b35a804e04c48312757bd">viskores::exec::CellLocatorRectilinearGrid</a>
+, <a class="el" href="classviskores_1_1exec_1_1SplineEvaluateRectilinearGrid.html#a780eee548f6452e68198b42b7e7cba78">viskores::exec::SplineEvaluateRectilinearGrid</a>
 </li>
 <li>AxisPortalType
 : <a class="el" href="classviskores_1_1exec_1_1CellLocatorRectilinearGrid.html#aa27c2cb05b3a9f65f6aaf76d845fdf82">viskores::exec::CellLocatorRectilinearGrid</a>
+, <a class="el" href="classviskores_1_1exec_1_1SplineEvaluateRectilinearGrid.html#a6ea39f75336052faef315c3cca3f3a45">viskores::exec::SplineEvaluateRectilinearGrid</a>
+</li>
+<li>AxisType
+: <a class="el" href="classviskores_1_1exec_1_1SplineEvaluateRectilinearGrid.html#a544f3beb02a67de6679717d3f8f5d362">viskores::exec::SplineEvaluateRectilinearGrid</a>
 </li>
 <li>Azimuth()
 : <a class="el" href="classviskores_1_1rendering_1_1Camera.html#ab5536557a5551ebe94979949af530d7a">viskores::rendering::Camera</a>

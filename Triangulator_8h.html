@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -50,41 +50,16 @@ $(function() {
 <div class="title">Triangulator.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;typeinfo&gt;</code><br />
-<code>#include &lt;<a class="el" href="Algorithm_8h_source.html">viskores/cont/Algorithm.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="ArrayHandleCounting_8h_source.html">viskores/cont/ArrayHandleCounting.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="CellSetPermutation_8h_source.html">viskores/cont/CellSetPermutation.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="DataSet_8h_source.html">viskores/cont/DataSet.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="UncertainCellSet_8h_source.html">viskores/cont/UncertainCellSet.h</a>&gt;</code><br />
-<code>#include &lt;viskores/rendering/raytracing/MeshConnectivityBuilder.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="DispatcherMapField_8h_source.html">viskores/worklet/DispatcherMapField.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="DispatcherMapTopology_8h_source.html">viskores/worklet/DispatcherMapTopology.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="ScatterUniform_8h_source.html">viskores/worklet/ScatterUniform.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="WorkletMapField_8h_source.html">viskores/worklet/WorkletMapField.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="WorkletMapTopology_8h_source.html">viskores/worklet/WorkletMapTopology.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;viskores/rendering/raytracing/Triangulator.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="Deprecated_8h_source.html">viskores/Deprecated.h</a>&gt;</code><br />
 </div>
 <p><a href="Triangulator_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores__deprecated__Triangulator__h__warning.html">viskores_deprecated_Triangulator_h_warning</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator.html">viskores::rendering::Triangulator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classviskores_1_1rendering_1_1Triangulator.html" title="Triangulator creates a minimal set of triangles from a cell set.">Triangulator</a> creates a minimal set of triangles from a cell set.  <a href="classviskores_1_1rendering_1_1Triangulator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1rendering_1_1Triangulator_1_1InterleaveArrays12.html">viskores::rendering::Triangulator::InterleaveArrays12</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1rendering_1_1Triangulator_1_1InterleaveArrays2.html">viskores::rendering::Triangulator::InterleaveArrays2</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1CountTriangles.html">viskores::rendering::Triangulator::CountTriangles</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1TriangulateStructured.html">viskores::rendering::Triangulator::TriangulateStructured&lt; DIM &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1IndicesSort.html">viskores::rendering::Triangulator::IndicesSort</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviskores_1_1rendering_1_1Triangulator_1_1IndicesLessThan.html">viskores::rendering::Triangulator::IndicesLessThan</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1UniqueTriangles.html">viskores::rendering::Triangulator::UniqueTriangles</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classviskores_1_1rendering_1_1Triangulator_1_1Triangulate.html">viskores::rendering::Triangulator::Triangulate</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

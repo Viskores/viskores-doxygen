@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -236,9 +236,9 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="ExportMacros_8h.html#a9bd0edd4625baab8fe77992b568dd76c">VISKORES_SUPPRESS_EXEC_WARNINGS</a></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="ExportMacros_8h.html#a1859aa5ce5b61da65a9c9898211f2a58">VISKORES_EXEC</a></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  ReduceKeySeriesStates(<span class="keywordtype">bool</span> start = <span class="keyword">false</span>, <span class="keywordtype">bool</span> end = <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  ReduceKeySeriesStates(<span class="keywordtype">bool</span> start = <span class="keyword">false</span>, <span class="keywordtype">bool</span> <a class="code" href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">end</a> = <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    : fStart(start)</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    , fEnd(end)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    , fEnd(<a class="code" href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">end</a>)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
@@ -736,7 +736,7 @@ $(function() {
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;__host__ <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> IteratorDistance(<span class="keyword">const</span> Iterator&amp; from, <span class="keyword">const</span> Iterator&amp; to)</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;{</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a><span class="keyword">&gt;</span>(std::distance(from, to));</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a><span class="keyword">&gt;</span>(<a class="code" href="namespacelinalg.html#a2efaa36e3729ed223886246215a17251">std::distance</a>(from, to));</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;}</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
@@ -752,7 +752,7 @@ $(function() {
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<a class="code" href="ExportMacros_8h.html#a1859aa5ce5b61da65a9c9898211f2a58">VISKORES_EXEC</a> <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> IteratorDistance(<span class="keyword">const</span> Iterator&amp; from, <span class="keyword">const</span> Iterator&amp; to)</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;{</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="preprocessor">#ifndef VISKORES_CUDA_DEVICE_PASS</span></div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a><span class="keyword">&gt;</span>(std::distance(from, to));</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a><span class="keyword">&gt;</span>(<a class="code" href="namespacelinalg.html#a2efaa36e3729ed223886246215a17251">std::distance</a>(from, to));</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;  <span class="keywordflow">return</span> IteratorDistanceImpl(</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    from, to, <span class="keyword">typename</span> std::iterator_traits&lt;Iterator&gt;::iterator_category{});</div>
@@ -882,10 +882,10 @@ $(function() {
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;  BitonicSortMergeKernel(<span class="keyword">const</span> PortalType&amp; portal,</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                         <span class="keyword">const</span> BinaryCompare&amp; compare,</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                         <span class="keyword">const</span> BinaryCompare&amp; <a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>,</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                         <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> groupSize)</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    : Portal(portal)</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    , Compare(compare)</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    , Compare(<a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>)</div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    , GroupSize(groupSize)</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;  {</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;  }</div>
@@ -925,10 +925,10 @@ $(function() {
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160; </div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;  <a class="code" href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;  BitonicSortCrossoverKernel(<span class="keyword">const</span> PortalType&amp; portal,</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                             <span class="keyword">const</span> BinaryCompare&amp; compare,</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                             <span class="keyword">const</span> BinaryCompare&amp; <a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>,</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                             <a class="code" href="namespaceviskores.html#a8e82cb49e20cef45fbeb58dc58790216">viskores::Id</a> groupSize)</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    : Portal(portal)</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    , Compare(compare)</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    , Compare(<a class="code" href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">compare</a>)</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    , GroupSize(groupSize)</div>
 <div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;  {</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;  }</div>
@@ -1353,7 +1353,7 @@ $(function() {
 <div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
 <div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;<span class="preprocessor">#endif //viskores_cont_internal_FunctorsGeneral_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aWireframer_8h_html_a09aaa041708216f898f9a2afb7dd4820"><div class="ttname"><a href="Wireframer_8h.html#a09aaa041708216f898f9a2afb7dd4820">Offset</a></div><div class="ttdeci">viskores::Float32 Offset</div><div class="ttdef"><b>Definition:</b> Wireframer.h:410</div></div>
+<div class="ttc" id="aWireframer_8h_html_a09aaa041708216f898f9a2afb7dd4820"><div class="ttname"><a href="Wireframer_8h.html#a09aaa041708216f898f9a2afb7dd4820">Offset</a></div><div class="ttdeci">viskores::Float32 Offset</div><div class="ttdef"><b>Definition:</b> Wireframer.h:409</div></div>
 <div class="ttc" id="aclassviskores_1_1exec_1_1FunctorBase_html"><div class="ttname"><a href="classviskores_1_1exec_1_1FunctorBase.html">viskores::exec::FunctorBase</a></div><div class="ttdoc">Base class for all user worklets invoked in the execution environment from a call to viskores::cont::...</div><div class="ttdef"><b>Definition:</b> FunctorBase.h:38</div></div>
 <div class="ttc" id="astructviskores_1_1SortLess_html"><div class="ttname"><a href="structviskores_1_1SortLess.html">viskores::SortLess</a></div><div class="ttdoc">Binary Predicate that takes two arguments argument x, and y and returns True if and only if x is less...</div><div class="ttdef"><b>Definition:</b> BinaryPredicates.h:53</div></div>
 <div class="ttc" id="aUnaryPredicates_8h_html"><div class="ttname"><a href="UnaryPredicates_8h.html">UnaryPredicates.h</a></div></div>
@@ -1371,6 +1371,8 @@ $(function() {
 <div class="ttc" id="aExportMacros_8h_html_ae47b94fbf1d55103fa9aeff192d8404b"><div class="ttname"><a href="ExportMacros_8h.html#ae47b94fbf1d55103fa9aeff192d8404b">VISKORES_CONT</a></div><div class="ttdeci">#define VISKORES_CONT</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:65</div></div>
 <div class="ttc" id="anamespaceviskores_html"><div class="ttname"><a href="namespaceviskores.html">viskores</a></div><div class="ttdoc">Groups connected points that have the same field value.</div><div class="ttdef"><b>Definition:</b> Atomic.h:27</div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_aa6e1bef8ef1ef9431018e8f25aacbc40"><div class="ttname"><a href="structviskores_1_1Pair.html#aa6e1bef8ef1ef9431018e8f25aacbc40">viskores::Pair::first</a></div><div class="ttdeci">FirstType first</div><div class="ttdoc">The pair's first object.</div><div class="ttdef"><b>Definition:</b> Pair.h:58</div></div>
+<div class="ttc" id="anamespacelinalg_html_a2efaa36e3729ed223886246215a17251"><div class="ttname"><a href="namespacelinalg.html#a2efaa36e3729ed223886246215a17251">linalg::distance</a></div><div class="ttdeci">T distance(const vec&lt; T, M &gt; &amp;a, const vec&lt; T, M &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:518</div></div>
+<div class="ttc" id="anamespacelinalg_html_a221beb31deec28fb76925998fc8e3b1c"><div class="ttname"><a href="namespacelinalg.html#a221beb31deec28fb76925998fc8e3b1c">linalg::end</a></div><div class="ttdeci">T * end(vec&lt; T, M &gt; &amp;a)</div><div class="ttdef"><b>Definition:</b> linalg.h:586</div></div>
 <div class="ttc" id="aFunctorBase_8h_html"><div class="ttname"><a href="FunctorBase_8h.html">FunctorBase.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_html_ab206a04687a3f14824b953fdc9302016"><div class="ttname"><a href="namespaceviskores.html#ab206a04687a3f14824b953fdc9302016">viskores::CountSetBits</a></div><div class="ttdeci">viskores::Int32 CountSetBits(viskores::UInt32 word)</div><div class="ttdoc">Count the total number of bits set in word.</div><div class="ttdef"><b>Definition:</b> Math.h:3003</div></div>
 <div class="ttc" id="aConfigure_8h_html_ad453abe5e2f427573bc5d481e1cc0dc6"><div class="ttname"><a href="Configure_8h.html#ad453abe5e2f427573bc5d481e1cc0dc6">VISKORES_PASS_COMMAS</a></div><div class="ttdeci">#define VISKORES_PASS_COMMAS(...)</div><div class="ttdef"><b>Definition:</b> Configure.h:370</div></div>
@@ -1382,6 +1384,7 @@ $(function() {
 <div class="ttc" id="anamespaceviskores_html_a551f985fe2e8dae6c5f03856ecfe0dae"><div class="ttname"><a href="namespaceviskores.html#a551f985fe2e8dae6c5f03856ecfe0dae">viskores::Int32</a></div><div class="ttdeci">int32_t Int32</div><div class="ttdoc">Base type to use for 32-bit signed integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:189</div></div>
 <div class="ttc" id="aBinaryPredicates_8h_html"><div class="ttname"><a href="BinaryPredicates_8h.html">BinaryPredicates.h</a></div></div>
 <div class="ttc" id="astructviskores_1_1Pair_html_af6fa5709f847a43044ea19fa7f4a9649"><div class="ttname"><a href="structviskores_1_1Pair.html#af6fa5709f847a43044ea19fa7f4a9649">viskores::Pair::second</a></div><div class="ttdeci">SecondType second</div><div class="ttdoc">The pair's second object.</div><div class="ttdef"><b>Definition:</b> Pair.h:63</div></div>
+<div class="ttc" id="anamespacelinalg_html_a314a8ed2d782c27a5970b749238fe01d"><div class="ttname"><a href="namespacelinalg.html#a314a8ed2d782c27a5970b749238fe01d">linalg::compare</a></div><div class="ttdeci">constexpr detail::any_compare&lt; A, B &gt;::type compare(const A &amp;a, const B &amp;b)</div><div class="ttdef"><b>Definition:</b> linalg.h:402</div></div>
 <div class="ttc" id="aUpperBound_8h_html"><div class="ttname"><a href="UpperBound_8h.html">UpperBound.h</a></div></div>
 <div class="ttc" id="anamespaceviskores_html_a44214830f7e13b87de4d20728b6e6297"><div class="ttname"><a href="namespaceviskores.html#a44214830f7e13b87de4d20728b6e6297">viskores::UInt32</a></div><div class="ttdeci">uint32_t UInt32</div><div class="ttdoc">Base type to use for 32-bit unsigned integer numbers.</div><div class="ttdef"><b>Definition:</b> Types.h:193</div></div>
 <div class="ttc" id="aExportMacros_8h_html_a1859aa5ce5b61da65a9c9898211f2a58"><div class="ttname"><a href="ExportMacros_8h.html#a1859aa5ce5b61da65a9c9898211f2a58">VISKORES_EXEC</a></div><div class="ttdeci">#define VISKORES_EXEC</div><div class="ttdef"><b>Definition:</b> ExportMacros.h:59</div></div>

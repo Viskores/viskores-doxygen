@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Viskores
-   &#160;<span id="projectnumber">1.1</span>
+   &#160;<span id="projectnumber">1.2</span>
    </div>
   </td>
  </tr>
@@ -77,10 +77,12 @@ Workflow</h1>
 </li>
 <li>Code Review (requires [GitHub Access]):<ul>
 <li><a href="#share-a-topic">Share a Topic</a></li>
-<li><a href="#create-a-merge-request">Create a pull request</a></li>
-<li><a href="#review-a-merge-request">Review a pull request</a></li>
-<li><a href="#reformat-a-topic">Reformat a Topic</a></li>
+<li><a href="#create-a-pull-request">Create a pull request</a></li>
+<li><a href="#review-a-pull-request">Review a pull request</a></li>
 <li><a href="#revise-a-topic">Revise a Topic</a></li>
+<li><a href="#reformat-a-topic">Reformat a Topic</a></li>
+<li><a href="#provide-a-changelog">Provide a Changelog</a></li>
+<li><a href="#squash-commits">Squash Commits</a></li>
 </ul>
 </li>
 <li>Integrate Changes:<ul>
@@ -238,31 +240,65 @@ Push to GitHub</h2>
 <p>To push commits in your topic branch to your fork in GitHub: </p><pre class="fragment">$ git push -f
 </pre><p>Note: You need have the <code>-f</code> or <code>--force</code> to overwrite the destination as you are revising a previously pushed topic and have rewritten the topic history.</p>
 <h1><a class="anchor" id="autotoc_md26"></a>
+Reformat a Topic</h1>
+<p>In addition to the regular <a href="#testing">testing</a> of contributed code for correctness, GitHub will run a check on your source code to ensure that your new code conforms to the coding style of Viskores. In the list of checks on your GitHub pull request page, you will see a check named <code>CI / format (pull_request)</code>.</p>
+<p><img src="docs/pr_checks_format.png" alt="CI / format (pull_request) listed in PR checks" class="inline"/></p>
+<p>If this check is failing, click the <code>CI / format (pull_request)</code> link to get details. You will see details on each of the steps taken when checking the format. The step named <code>Check formatting</code> will list details on necessary formatting changes. The step <code>Upload format patch</code> contains a link (shown at the bottom of the following image) for a code patch that will correct your formatting.</p>
+<p><img src="docs/format-patch-download.png" alt="Format patch download link" class="inline"/></p>
+<p>This link will download a <code>.zip</code> archive containing a file named <code>format.patch</code>. You can apply the patch using the <code>patch</code> command.</p>
+<div class="fragment"><div class="line">patch -p1 &lt; format.patch</div>
+</div><!-- fragment --><p>With your code modified, you can update your pull request like any other revision described in the <a href="#revise-a-topic">Revise a Topic</a> section.</p>
+<h1><a class="anchor" id="autotoc_md27"></a>
+Provide a Changelog</h1>
+<p>All but the most trivial contributions to Viskores should provide a changelog file. A changelog is a simple text file that provides an overview of the modifications or additions you have made. The changelogs are important for making the release notes when we make a new release of Viskores. Without them, it is hard to summarize the changes from one version to the next. A reviewer will likely ask you to provide a changelog if you have not already provided one.</p>
+<p>The changelogs are located in the <code>docs/changelog</code> directory. Simply create a file in this directory. Changelogs follow <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown</a> text conventions and should have an extension of <code>.md</code>. There is an example changelog named <code>0-sample-topic.md</code>. There are instructions in this file on how a changelog should be written. You can copy this file to a name describing your contribution and edit accordingly.</p>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Squash Commits</h1>
+<p>Before your changes are merged into Viskores, you may be asked to squash your commits together. Each commit merged into Viskores should be a self-contained, working contribution. This means that each pull request usually has one commit as multiple commits usually justify breaking the contribution into multiple pull requests.</p>
+<p>Having self-contained commits is an important feature to maintain Viskores. When problems are identified, a <code>git bisect</code> may be needed to identify where the problem was introduced. Even if the problem was not introduced by your contribution, commits with partial contributions that contain intermediate problems interferes with finding where problems are introduced.</p>
+<p>There are two basic approaches to squashing commits: rebasing and resetting.</p>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Rebase to Squash Commits</h2>
+<p><code>git rebase</code> is a powerful tool to adjust the commit history. It takes a section of the git history and reappl An interactive rebase, using the <code>-i</code> argument, gives you an opportunity to modify the commits. Assuming you currently have your topic branch checked out, execute</p>
+<div class="fragment"><div class="line">git rebase -i main</div>
+</div><!-- fragment --><p>The rebase command will first open your editor and give you an opportunity to modify the commits that are being re-applied. Follow the instructions to squash all commits into the first one.</p>
+<p>Rebasing works best when you are squashing a simple, linear history. If you have a long history or <em>any</em> merge commits (for example if you merged in changes to the main branch while developing). In this case, it is easier to <a href="#reset-to-squash-commits">use reset to squash commits</a>.</p>
+<h2><a class="anchor" id="autotoc_md30"></a>
+Reset to Squash Commits</h2>
+<p><code>git reset</code> can be used to delete whatever history your changes have and place all your changes ready to be staged and commited. Assuming you have your topic branch checked out, start by executing the following commands.</p>
+<div class="fragment"><div class="line">git merge main</div>
+<div class="line">git reset --soft main</div>
+</div><!-- fragment --><p>The <code>merge</code> command will make sure that your topic branch is up to date with the main branch, and the <code>reset</code> command will change your topic branch to point to the same commit as main. All the commits from your branch (that you are trying to replace) are principally lost, and any changes you have made are staged for a new commit.</p>
+<p>Note that the command <code>reset</code> will basically do a <code>diff</code> between the files you currently have and the files of the <code>main</code> branch and stage all those differences. If anyone has contributed to the <code>main</code> branch since you started your topic branch, the reset could pick up those changes and undo them in your reset. <em>This is bad.</em> Running the <code>merge</code> command shown above before the <code>reset</code> will prevent you from accidentally reverting changes from other pull requests.</p>
+<p>Once you have reset your branch, you can do a normal <code>commit</code> to apply all of your changes to a single commit.</p>
+<div class="fragment"><div class="line">git commit</div>
+</div><!-- fragment --><p>You can copy/paste from your <a href="#provide-a-changelog">changelog</a> to make the commit message.</p>
+<h1><a class="anchor" id="autotoc_md31"></a>
 Merge a Topic</h1>
 <p>After a topic has been reviewed and approved in a GitHub pull request, authorized developers may accept the pull request and merge by clicking the merge button.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Merge Success</h2>
 <p>If the merge succeeds the topic will appear in the upstream repository <code>main</code> branch and the pull request will be closed automatically.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Merge Failure</h2>
 <p>If the merge fails (likely due to a conflict), fetch the latest upstream history and rebase on it: </p><pre class="fragment">$ git fetch origin
 $ git rebase origin/main
 </pre><p>Return to the <a href="#share-a-topic">above step</a> to share the revised topic.</p>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Fixing Problems</h1>
 <p>There are a lot of instructions in this document, and if you are not familiar with contributing to Viskores, you may get your repository in a bad state that will cause problems with the other instructions. This section attempts to capture common problems contributors have and the fixes for them.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Wrong origin Remote</h2>
 <p>The Viskores contribution workflow assumes that your <code>origin</code> remote is attached to the main Viskores GitHub repository. If it is not, that will cause problems with updating your repository. To check which remote repository origin refers to, run </p><pre class="fragment">$ git remote -v
 </pre><p>It will give you a list of remotes and their URLs that you have configured. If you have a line like </p><pre class="fragment">origin  https://github.com/viskores/viskores.git (fetch)
 </pre><p>or </p><pre class="fragment">origin  git@github.com:viskores/viskores.git (fetch)
 </pre><p>then everything is OK. If it is anything else (for example, it has your GitHub username in it), then you have a problem. Fortunately, you can fix it by simply changing the remote's URL: </p><pre class="fragment">$ git remote set-url origin https://github.com/Viskores/viskores.git
-</pre><h2><a class="anchor" id="autotoc_md31"></a>
+</pre><h2><a class="anchor" id="autotoc_md36"></a>
 main Not Tracking origin</h2>
 <p>The instructions in this document assume that your <code>main</code> branch is tracking the remote <code>main</code> branch at <code>origin</code> (which, as specified above, should be the main Viskores repository). This should be set up if you correctly cloned the main Viskores repository, but can get accidentally changed.</p>
 <p>To check which remote branch <code>main</code> is tracking, call </p><pre class="fragment">$ git rev-parse --abbrev-ref --symbolic-full-name main@{upstream}
 </pre><p>Git should respond with <code>origin/main</code>. If it responds with anything else, you need to reset the tracking: </p><pre class="fragment">$ git branch -u origin/main main
-</pre><h2><a class="anchor" id="autotoc_md32"></a>
+</pre><h2><a class="anchor" id="autotoc_md37"></a>
 Local Edits on the main Branch</h2>
 <p>The first step in the <a href="#workflow">contributing workflow</a> is that you <a href="#create-a-topic">create a topic branch</a> on which to make changes. You are not supposed to add your commits directly to <code>main</code>. However, it is easy to forget to create the topic branch.</p>
 <p>To find out if you have local commits on your main branch, check its status: </p><pre class="fragment">$ git checkout main
